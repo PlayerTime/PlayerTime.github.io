@@ -78,7 +78,12 @@ async function charger() {
     return;
   }
   Stats.init(DONNEES.compteur);
-  if (lienDon()) $('#zone-don').append(boutonDon('Faire un don à Player Time'));
+  if (lienDon()) {
+    $('#zone-don').append(boutonDon('Faire un don à Player Time'));
+    const flottant = boutonDon('Faire un don');
+    flottant.classList.add('don-flottant');
+    document.body.append(flottant);
+  }
   dessinerListe();
   router();
   if (Stats.actif()) {
@@ -277,6 +282,7 @@ function panneau(p) {
       : 'Sélectionne ta ROM officielle. Le patch la vérifie puis crée la version française, que tu télécharges.' }),
     el('p', { class: 'attendue', text: `ROM attendue : ${p.rom_attendue}` + (info.crc_source ? ` (CRC32 ${info.crc_source}).` : '.') }),
     depot, barre, journal, sorties,
+    encartDon('Ce patch est gratuit. Si tu veux soutenir mon travail, tu peux faire un don.'),
     el('p', { class: 'meta-patch', text:
       `Patch ${p.date_maj ? 'du ' + p.date_maj : ''}${p.revision ? ', révision ' + p.revision : ''}, ${ko(info.taille_patch)}. ` +
       'Le patch se fait dans ton navigateur : ta ROM ne quitte pas ton ordinateur.' }));

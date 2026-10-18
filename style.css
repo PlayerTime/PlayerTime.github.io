@@ -228,3 +228,10 @@ dialog#visionneuse img { display: block; max-width: 100%; max-height: 78vh; marg
 .encart-don { margin-top: 14px; padding-top: 12px; border-top: 1px solid #3c4aa0; }
 .encart-don p { margin: 0 0 10px; color: var(--texte-doux); font-size: .95rem; }
 .telechargements .encart-don { align-self: stretch; }
+
+.don-flottant {
+  position: fixed; right: 16px; bottom: 16px; z-index: 20;
+  box-shadow: 0 4px 0 #8f2a3d, 0 6px 18px #0008;
+}
+body { padding-bottom: 70px; }
+@media (max-width: 560px) { .don-flottant { right: 12px; bottom: 12px; padding: 10px 12px 11px; font-size: .95rem; } }
