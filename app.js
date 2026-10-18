@@ -18,6 +18,53 @@ const ko = n => n < 1024 * 1024 ? `${Math.max(1, Math.round(n / 1024))} Ko` : `$
 
 let DONNEES = null;
 
+/* ---------- Statistiques (GoatCounter : gratuit, sans cookies) ---------- */
+const Stats = (() => {
+  let code = null, pret = false;
+  const attente = [], cache = new Map();
+  function init(c) {
+    if (!c || !/^[a-z0-9-]+$/i.test(c)) return;
+    code = c.toLowerCase();
+    window.goatcounter = { no_onload: true };
+    const s = el('script', { async: true, src: 'https://gc.zgo.at/count.js', 'data-goatcounter': `https://${code}.goatcounter.com/count` });
+    s.onload = () => { pret = true; attente.splice(0).forEach(a => compter(a)); };
+    document.head.append(s);
+  }
+  function compter(a) {
+    if (!code) return;
+    if (!pret || !window.goatcounter.count) { attente.push(a); return; }
+    try { window.goatcounter.count(a); } catch (e) { /* bloqueur de publicité : on ignore */ }
+  }
+  async function lire(chemin) {
+    if (!code) return null;
+    if (!cache.has(chemin)) {
+      cache.set(chemin, fetch(`https://${code}.goatcounter.com/counter/${encodeURIComponent(chemin)}.json`)
+        .then(r => r.status === 404 ? { count: '0' } : r.json())
+        .then(j => parseInt(String(j.count).replace(/[^\d]/g, ''), 10) || 0)
+        .catch(() => null));
+    }
+    return cache.get(chemin);
+  }
+  return {
+    init,
+    actif: () => !!code,
+    vue: (path, title) => compter({ path, title }),
+    patch: (id, titre) => {
+      compter({ path: 'patch-' + id, title: 'Patch : ' + titre, event: true });
+      const c = cache.get('patch-' + id);
+      if (c) cache.set('patch-' + id, c.then(n => (n || 0) + 1));
+    },
+    lire,
+  };
+})();
+const nbFois = n => n === 1 ? 'Patché 1 fois' : `Patché ${n.toLocaleString('fr-FR')} fois`;
+async function remplirCompteur(span, id) {
+  const n = await Stats.lire('patch-' + id);
+  if (n == null) { span.remove(); return; }
+  span.textContent = nbFois(n);
+  span.hidden = false;
+}
+
 async function charger() {
   try {
     // « no-store » : on récupère toujours la dernière version publiée des patchs
@@ -28,15 +75,31 @@ async function charger() {
     $('#liste-vide').textContent = "Impossible de charger la liste des projets. Recharge la page dans un instant.";
     return;
   }
+  Stats.init(DONNEES.compteur);
   dessinerListe();
   router();
+  if (Stats.actif()) {
+    Stats.lire('TOTAL').then(n => {
+      if (n == null) return;
+      const v = $('#visites');
+      v.textContent = n === 1 ? '1 visite sur le site.' : `${n.toLocaleString('fr-FR')} visites sur le site.`;
+      v.hidden = false;
+    });
+  }
 }
 
 function etiquettes(p) {
   return el('div', { class: 'etiquettes' },
     el('span', { class: 'etiquette', text: p.plateforme }),
     el('span', { class: 'etiquette statut-' + slug(p.statut || ''), text: p.statut }),
-    p.date_maj ? el('span', { class: 'etiquette', text: 'Mis à jour le ' + p.date_maj }) : null);
+    p.date_maj ? el('span', { class: 'etiquette', text: 'Mis à jour le ' + p.date_maj }) : null,
+    compteur(p));
+}
+function compteur(p) {
+  if (!Stats.actif() || !p.patch) return null;
+  const span = el('span', { class: 'etiquette etiquette-compteur', hidden: true });
+  remplirCompteur(span, p.id);
+  return span;
 }
 
 function vignette(p) {
@@ -69,6 +132,7 @@ function router() {
   const p = m && DONNEES.projets.find(x => x.id === m[1]);
   $('#vue-liste').hidden = !!p;
   $('#vue-jeu').hidden = !p;
+  Stats.vue(p ? '/jeu/' + p.id : '/', p ? p.titre : 'Accueil');
   if (p) {
     dessinerJeu(p);
     document.title = `${p.titre} – Player Time`;
@@ -168,6 +232,8 @@ function panneau(p) {
         res[0].nom = p.nom_sortie;
       }
       log('Ta ROM française est prête.', 'ok');
+      Stats.patch(p.id, p.titre);
+      document.querySelectorAll('.etiquette-compteur').forEach(sp => remplirCompteur(sp, p.id));
       for (const f of res) {
         const url = URL.createObjectURL(f.blob);
         sorties.append(el('a', { class: 'bouton', href: url, download: f.nom, text: 'Télécharger ' + f.nom }));

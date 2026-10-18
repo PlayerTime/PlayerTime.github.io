@@ -1,5 +1,6 @@
 {
  "titre": "Traduction et amélioration de Player Time",
+ "compteur": "playertime",
  "projets": [
   {
    "ordre": 1,
@@ -209,11 +210,11 @@
     "format": "bps",
     "crc_source": "E0594ABE",
     "taille_source": 1572864,
-    "crc_sortie": "0078E057",
+    "crc_sortie": "4563E687",
     "taille_sortie": 2097152,
-    "taille_patch": 828424
+    "taille_patch": 831056
    },
-   "revision": 2,
+   "revision": 3,
    "date_maj": "18/10/2026"
   },
   {

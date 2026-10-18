@@ -119,6 +119,8 @@ main:focus { outline: none; }
   border: 2px solid currentColor; border-radius: 3px; color: var(--texte-doux);
 }
 .etiquette.statut-terminee { color: var(--ok); }
+.etiquette-compteur { color: var(--texte); border-style: dotted; }
+#visites { font: 600 1rem/1.3 var(--pixel); color: var(--cadre); }
 .etiquette.statut-en-cours, .etiquette.statut-version-de-test { color: var(--cadre); }
 
 /* ---------- Page d'un jeu ---------- */
