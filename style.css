@@ -57,7 +57,9 @@ a { color: var(--cadre); }
   overflow: hidden; background: #2a3fb0;
 }
 .portrait img { width: 100%; height: 100%; display: block; object-fit: cover; image-rendering: auto; }
-.titre-texte { min-width: 0; }
+.titre-texte { min-width: 0; flex: 1; }
+.logo { flex: none; width: 210px; height: auto; image-rendering: pixelated; align-self: center; margin-right: 8px; }
+@media (max-width: 860px) { .logo { width: 150px; } }
 h1 {
   font: 700 clamp(1.7rem, 4.2vw, 2.9rem)/1.1 var(--pixel);
   margin: 0 0 8px;
@@ -213,8 +215,16 @@ dialog#visionneuse img { display: block; max-width: 100%; max-height: 78vh; marg
 @media (max-width: 560px) {
   .fenetre-titre { flex-direction: column; align-items: flex-start; gap: 14px; padding: 16px; }
   .portrait { width: 84px; }
+  .logo { width: 160px; order: -1; margin: 0; }
   .fenetre { padding: 14px 16px; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* dons */
+.bouton-don { background: #e8607a; color: #fff; box-shadow: 0 4px 0 #8f2a3d; }
+#zone-don { margin: 4px 0 14px; }
+.encart-don { margin-top: 14px; padding-top: 12px; border-top: 1px solid #3c4aa0; }
+.encart-don p { margin: 0 0 10px; color: var(--texte-doux); font-size: .95rem; }
+.telechargements .encart-don { align-self: stretch; }

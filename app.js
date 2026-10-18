@@ -49,19 +49,21 @@ const Stats = (() => {
     init,
     actif: () => !!code,
     vue: (path, title) => compter({ path, title }),
-    patch: (id, titre) => {
-      compter({ path: 'patch-' + id, title: 'Patch : ' + titre, event: true });
-      const c = cache.get('patch-' + id);
-      if (c) cache.set('patch-' + id, c.then(n => (n || 0) + 1));
+    evenement: (chemin, titre) => {
+      compter({ path: chemin, title: titre, event: true });
+      const c = cache.get(chemin);
+      if (c) cache.set(chemin, c.then(n => (n || 0) + 1));
     },
     lire,
   };
 })();
-const nbFois = n => n === 1 ? 'Patché 1 fois' : `Patché ${n.toLocaleString('fr-FR')} fois`;
-async function remplirCompteur(span, id) {
-  const n = await Stats.lire('patch-' + id);
+const estJeu = p => p.patch && p.patch.format === 'jeu';
+const cheminCompteur = p => (estJeu(p) ? 'telechargement-' : 'patch-') + p.id;
+const nbFois = (n, jeu) => `${jeu ? 'Téléchargé' : 'Patché'} ${n.toLocaleString('fr-FR')} fois`;
+async function remplirCompteur(span, p) {
+  const n = await Stats.lire(cheminCompteur(p));
   if (n == null) { span.remove(); return; }
-  span.textContent = nbFois(n);
+  span.textContent = nbFois(n, estJeu(p));
   span.hidden = false;
 }
 
@@ -76,6 +78,7 @@ async function charger() {
     return;
   }
   Stats.init(DONNEES.compteur);
+  if (lienDon()) $('#zone-don').append(boutonDon('Faire un don à Player Time'));
   dessinerListe();
   router();
   if (Stats.actif()) {
@@ -97,8 +100,8 @@ function etiquettes(p) {
 }
 function compteur(p) {
   if (!Stats.actif() || !p.patch) return null;
-  const span = el('span', { class: 'etiquette etiquette-compteur', hidden: true });
-  remplirCompteur(span, p.id);
+  const span = el('span', { class: 'etiquette etiquette-compteur', 'data-id': p.id, hidden: true });
+  remplirCompteur(span, p);
   return span;
 }
 
@@ -109,18 +112,33 @@ function vignette(p) {
         : el('div', { class: 'vignette-vide', style: `--teinte:${p.couleur || ''}`, text: p.titre }));
 }
 
+function carte(p) {
+  return el('li', {},
+    el('a', { class: 'fenetre carte-jeu', href: '#/jeu/' + p.id },
+      vignette(p),
+      el('div', { class: 'carte-corps' },
+        el('h3', { text: p.titre }),
+        p.sous_titre ? el('p', { class: 'sous', text: p.sous_titre }) : null,
+        el('p', { class: 'resume', text: p.resume || '' }),
+        etiquettes(p))));
+}
+
 function dessinerListe() {
-  const g = $('#grille');
-  g.replaceChildren();
+  const zone = $('#listes');
+  zone.replaceChildren();
+  // un groupe par catégorie (« categorie » dans fiche.json), dans l'ordre d'apparition
+  const groupes = new Map();
   for (const p of DONNEES.projets) {
-    g.append(el('li', {},
-      el('a', { class: 'fenetre carte-jeu', href: '#/jeu/' + p.id },
-        vignette(p),
-        el('div', { class: 'carte-corps' },
-          el('h3', { text: p.titre }),
-          p.sous_titre ? el('p', { class: 'sous', text: p.sous_titre }) : null,
-          el('p', { class: 'resume', text: p.resume || '' }),
-          etiquettes(p)))));
+    const c = p.categorie || 'Traductions et améliorations';
+    if (!groupes.has(c)) groupes.set(c, []);
+    groupes.get(c).push(p);
+  }
+  let i = 0;
+  for (const [nom, liste] of groupes) {
+    const id = 'groupe-' + (i++);
+    zone.append(el('section', { 'aria-labelledby': id },
+      el('h2', { id, class: 'titre-section', text: nom }),
+      el('ul', { class: 'grille' }, liste.map(carte))));
   }
   $('#liste-vide').hidden = DONNEES.projets.length > 0;
   $('#liste-vide').textContent = 'Aucun projet pour le moment.';
@@ -177,7 +195,7 @@ function ouvrir(im) {
 
 function notes(p) {
   const bloc = el('section', { class: 'fenetre notes', 'aria-labelledby': 'titre-notes' },
-    el('h2', { id: 'titre-notes', text: 'Modifications apportées' }));
+    el('h2', { id: 'titre-notes', text: p.titre_notes || (estJeu(p) ? 'À propos du jeu' : 'Modifications apportées') }));
   for (const partie of p.notes || []) {
     if (partie.titre) bloc.append(el('h3', { text: partie.titre }));
     let ul = null;
@@ -203,6 +221,7 @@ function panneau(p) {
       el('p', { class: 'attendue', text: `ROM à prévoir : ${p.rom_attendue}.` }));
     return box;
   }
+  if (info.format === 'jeu') return panneauJeu(p, box);
   const cd = info.format === 'sfcd';
   const journal = el('ul', { class: 'journal', 'aria-live': 'polite' });
   const barre = el('div', { class: 'barre', hidden: true }, el('div'));
@@ -232,13 +251,15 @@ function panneau(p) {
         res[0].nom = p.nom_sortie;
       }
       log('Ta ROM française est prête.', 'ok');
-      Stats.patch(p.id, p.titre);
-      document.querySelectorAll('.etiquette-compteur').forEach(sp => remplirCompteur(sp, p.id));
+      Stats.evenement(cheminCompteur(p), 'Patch : ' + p.titre);
+      document.querySelectorAll(`.etiquette-compteur[data-id="${p.id}"]`).forEach(sp => remplirCompteur(sp, p));
       for (const f of res) {
         const url = URL.createObjectURL(f.blob);
         sorties.append(el('a', { class: 'bouton', href: url, download: f.nom, text: 'Télécharger ' + f.nom }));
       }
       sorties.querySelector('a').click();
+      const merci = encartDon('Merci ! Si la traduction te plaît, tu peux soutenir mon travail.');
+      if (merci) sorties.append(merci);
     } catch (e) {
       console.error(e);
       log(e instanceof Patcheur.ErreurPatch ? e.message : 'Erreur inattendue : ' + e.message, 'erreur');
@@ -259,6 +280,35 @@ function panneau(p) {
     el('p', { class: 'meta-patch', text:
       `Patch ${p.date_maj ? 'du ' + p.date_maj : ''}${p.revision ? ', révision ' + p.revision : ''}, ${ko(info.taille_patch)}. ` +
       'Le patch se fait dans ton navigateur : ta ROM ne quitte pas ton ordinateur.' }));
+  return box;
+}
+
+/* ---------- Don (lien_don dans config.json : PayPal, Ko-fi, Tipeee...) ---------- */
+const lienDon = () => DONNEES && /^https:\/\//.test(DONNEES.don || '') ? DONNEES.don : null;
+function boutonDon(texte) {
+  return el('a', { class: 'bouton bouton-don', href: lienDon(), target: '_blank', rel: 'noopener', text: '♥ ' + texte,
+    onclick: () => Stats.evenement('don-clic', 'Clic sur le lien de don') });
+}
+function encartDon(phrase) {
+  if (!lienDon()) return null;
+  return el('div', { class: 'encart-don' }, el('p', { text: phrase }), boutonDon('Faire un don'));
+}
+
+function panneauJeu(p, box) {
+  const info = p.patch;
+  $('h2', box).textContent = 'Télécharger le jeu';
+  const lien = el('a', { class: 'bouton', href: info.fichier + '?r=' + p.revision, download: p.nom_sortie,
+    text: 'Télécharger ' + p.nom_sortie,
+    onclick: () => {
+      Stats.evenement(cheminCompteur(p), 'Téléchargement : ' + p.titre);
+      setTimeout(() => document.querySelectorAll(`.etiquette-compteur[data-id="${p.id}"]`).forEach(sp => remplirCompteur(sp, p)), 300);
+    } });
+  box.append(
+    el('p', { text: p.texte_telechargement || 'Jeu gratuit : télécharge la ROM et lance-la dans un émulateur Mega Drive ou sur une cartouche flash.' }),
+    el('div', { class: 'telechargements' }, lien),
+    encartDon('Le jeu est gratuit. Si tu veux m\u2019aider à le continuer, tu peux faire un don.'),
+    el('p', { class: 'meta-patch', text:
+      `Version ${p.date_maj ? 'du ' + p.date_maj : ''}${p.revision ? ', révision ' + p.revision : ''}, ${ko(info.taille_patch)}.` }));
   return box;
 }
 

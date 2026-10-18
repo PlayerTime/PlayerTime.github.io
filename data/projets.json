@@ -1,7 +1,88 @@
 {
  "titre": "Traduction et amélioration de Player Time",
  "compteur": "playertime",
+ "don": "",
  "projets": [
+  {
+   "ordre": 0,
+   "categorie": "Mes jeux",
+   "titre": "Gem Assault",
+   "sous_titre": "Mon jeu Mega Drive, gratuit",
+   "plateforme": "Mega Drive",
+   "statut": "Version en cours",
+   "resume": "Un jeu de gemmes en duel, créé avec SecondBASIC. Version pas encore finie, à télécharger gratuitement.",
+   "nom_sortie": "Gem Assault.bin",
+   "format": "jeu",
+   "couleur": "#e0a030",
+   "texte_telechargement": "Jeu gratuit, version pas encore finie : télécharge la ROM et lance-la dans un émulateur Mega Drive ou sur une cartouche flash.",
+   "id": "gem-assault",
+   "notes": [
+    {
+     "titre": "",
+     "blocs": [
+      {
+       "texte": "Gem Assault est mon propre jeu, gratuit. Cette version n'est pas encore terminée : d'autres mises à jour suivront."
+      }
+     ]
+    },
+    {
+     "titre": "Le jeu",
+     "blocs": [
+      {
+       "puce": "Des gemmes tombent dans le puits : à toi de faire des combos."
+      },
+      {
+       "puce": "Deux puits côte à côte, pour le joueur 1 et le joueur 2."
+      },
+      {
+       "puce": "Trois difficultés : Easy, Normal, Hard."
+      },
+      {
+       "puce": "Manette 3 ou 6 boutons."
+      }
+     ]
+    },
+    {
+     "titre": "Crédits",
+     "blocs": [
+      {
+       "puce": "Réalisation : Player Time."
+      },
+      {
+       "puce": "Musique : DocDeadmeat et Jojojoboco."
+      },
+      {
+       "puce": "Créé avec SecondBASIC Studio."
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/gem-assault/01_titre.png",
+     "legende": "L'écran titre"
+    },
+    {
+     "src": "images/gem-assault/02_partie.png",
+     "legende": "Une partie en cours"
+    },
+    {
+     "src": "images/gem-assault/03_niveau1.png",
+     "legende": "Le niveau 1"
+    },
+    {
+     "src": "images/gem-assault/04_options.png",
+     "legende": "Choix de la manette et de la difficulté"
+    }
+   ],
+   "patch": {
+    "fichier": "jeux/gem-assault.bin",
+    "format": "jeu",
+    "taille_patch": 407808
+   },
+   "revision": 1,
+   "date_maj": "18/10/2026"
+  },
   {
    "ordre": 1,
    "titre": "Shining Force",
@@ -210,11 +291,11 @@
     "format": "bps",
     "crc_source": "E0594ABE",
     "taille_source": 1572864,
-    "crc_sortie": "4563E687",
-    "taille_sortie": 2097152,
-    "taille_patch": 831056
+    "crc_sortie": "B8AC7CB4",
+    "taille_sortie": 3145728,
+    "taille_patch": 922686
    },
-   "revision": 3,
+   "revision": 4,
    "date_maj": "18/10/2026"
   },
   {
@@ -444,7 +525,20 @@
      ]
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "images/shining-force-cd/01_titre.png",
+     "legende": "Écran titre traduit : « Appuyez sur Start », « Présenté par Sonic »"
+    },
+    {
+     "src": "images/shining-force-cd/02_dialogue.png",
+     "legende": "Dialogue traduit depuis le japonais, police accentuée"
+    },
+    {
+     "src": "images/shining-force-cd/03_combat.png",
+     "legende": "Combat : PV / PM, classes et messages en français"
+    }
+   ],
    "patch": {
     "fichier": "patchs/shining-force-cd.patch",
     "format": "sfcd",
