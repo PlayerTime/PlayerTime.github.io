@@ -1,0 +1,553 @@
+{
+ "titre": "Traduction et amélioration de Player Time",
+ "projets": [
+  {
+   "ordre": 1,
+   "titre": "Shining Force",
+   "sous_titre": "L'Héritage des Dieux",
+   "plateforme": "Mega Drive",
+   "statut": "Terminée",
+   "resume": "La traduction française complète du premier Shining Force, refaite depuis le texte japonais, avec les corrections du jeu d'origine.",
+   "rom_attendue": "Shining Force (USA)",
+   "nom_sortie": "Shining Force (FR).bin",
+   "format": "bps",
+   "couleur": "#c9871f",
+   "id": "shining-force-fr",
+   "notes": [
+    {
+     "titre": "Traduction",
+     "blocs": [
+      {
+       "puce": "Dialogues retraduits depuis le texte japonais, avec une police accentuée."
+      },
+      {
+       "puce": "Noms de lieux japonais : Rindo-Rindo, Métaphore, Altarone, Bastoke, Uranbator, Rudol…"
+      },
+      {
+       "puce": "Noms des magies alignés sur Shining in the Darkness (Soin, Purge, Hâte, Sceau…)."
+      },
+      {
+       "puce": "Cartons de chapitre avec les titres japonais traduits."
+      },
+      {
+       "puce": "Sous-titre de l'écran titre « L'Héritage des Dieux » redessiné."
+      }
+     ]
+    },
+    {
+     "titre": "Corrections du jeu d'origine",
+     "blocs": [
+      {
+       "puce": "Correctifs Muddle, Land Effect et Class Double Setting."
+      },
+      {
+       "puce": "Poison à dégâts fixes."
+      },
+      {
+       "puce": "Bouton C pour parler directement aux personnages."
+      }
+     ]
+    },
+    {
+     "titre": "Graphismes",
+     "blocs": [
+      {
+       "puce": "Croix de l'église et prêtre avec sa croix, comme dans la version japonaise."
+      }
+     ]
+    },
+    {
+     "titre": "Cartouche",
+     "blocs": [
+      {
+       "puce": "Tient sur 2 Mo, compatible Mega Drive d'origine."
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/shining-force-fr/00_titre.png",
+     "legende": "Écran titre avec le sous-titre redessiné"
+    },
+    {
+     "src": "images/shining-force-fr/01_intro.png",
+     "legende": "Introduction traduite"
+    },
+    {
+     "src": "images/shining-force-fr/02_intro_sceau.png",
+     "legende": "La légende du Dark Dragon"
+    },
+    {
+     "src": "images/shining-force-fr/03_intro_darkdragon.png",
+     "legende": "« Je reviendrai… dans mille ans… »"
+    },
+    {
+     "src": "images/shining-force-fr/05_simone.png",
+     "legende": "Simone ouvre le livre"
+    },
+    {
+     "src": "images/shining-force-fr/06_chapitre1.png",
+     "legende": "Carton du chapitre 1, titre japonais traduit"
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/shining-force-fr.bps",
+    "format": "bps",
+    "crc_source": "E0594ABE",
+    "taille_source": 1572864,
+    "crc_sortie": "A19703DD",
+    "taille_sortie": 2097152,
+    "taille_patch": 136520
+   },
+   "revision": 1,
+   "date_maj": "18/10/2026"
+  },
+  {
+   "ordre": 2,
+   "titre": "Shining Force FR 2.00",
+   "sous_titre": "Version améliorée (mécaniques GBA et Shining Force II)",
+   "plateforme": "Mega Drive",
+   "statut": "En cours",
+   "resume": "La version française enrichie : objets, ennemis et personnages de la version GBA, contre-attaques, nouveaux membres, promotions spéciales.",
+   "rom_attendue": "Shining Force (USA)",
+   "nom_sortie": "Shining Force FR 2.00.bin",
+   "format": "bps",
+   "couleur": "#3f7fd0",
+   "id": "shining-force-fr-200",
+   "notes": [
+    {
+     "titre": "",
+     "blocs": [
+      {
+       "texte": "Cette version part de la traduction française et ajoute les mécaniques de la version GBA (Resurrection of the Dark Dragon) et de Shining Force II. Les sauvegardes de la version classique ne sont pas compatibles."
+      }
+     ]
+    },
+    {
+     "titre": "Objets",
+     "blocs": [
+      {
+       "puce": "127 objets au lieu de 63 : 21 armes et 15 anneaux de la version GBA, 13 objets de Shining Force II."
+      },
+      {
+       "puce": "Armes tueuses (dégâts x1,5 contre leur type d'ennemi), Bâton venin, Paralyseur, Masse sacrée, Masse miracle."
+      },
+      {
+       "puce": "Objets fissurés gérés comme dans Shining Force II ; le forgeron les répare."
+      },
+      {
+       "puce": "Nouvelles armes et bagues vendues progressivement dans 18 magasins."
+      }
+     ]
+    },
+    {
+     "titre": "Combats",
+     "blocs": [
+      {
+       "puce": "Contre-attaques comme dans Shining Force II."
+      },
+      {
+       "puce": "Bonus de victoire du GBA : finir un combat en peu de tours rapporte de l'or ou une arme."
+      },
+      {
+       "puce": "Esquive avec bond en arrière ; fée démoniaque quand un ennemi se soigne."
+      },
+      {
+       "puce": "Difficulté au choix dans les nuages de Simone : Normal, Difficile, Expert, Infernal."
+      },
+      {
+       "puce": "Ennemis plus malins : ils achèvent les blessés et visent les soigneurs et les mages."
+      }
+     ]
+    },
+    {
+     "titre": "Personnages",
+     "blocs": [
+      {
+       "puce": "Stats de départ et progression de la version GBA pour les 30 personnages ; 71 ennemis repris du GBA."
+      },
+      {
+       "puce": "Nouveaux membres : Nova jouable, Zuika, Narsha et Mawlock (et ses 55 cartes)."
+      },
+      {
+       "puce": "Promotions spéciales de Shining Force II (Chevalier Pégase, Baron rouge, Théurge, Maître moine, Fusilier)."
+      }
+     ]
+    },
+    {
+     "titre": "Confort",
+     "blocs": [
+      {
+       "puce": "Liste des membres et fiche de statut comme dans Shining Force II (compteurs Tués / Morts)."
+      },
+      {
+       "puce": "Déplacements plus rapides en combat et hors combat ; scènes à leur vitesse d'origine."
+      },
+      {
+       "puce": "Dessins de la v103 repris (sprites de carte et de combat)."
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/shining-force-fr-200/01_titre.png",
+     "legende": "Écran titre de la version 2.00"
+    },
+    {
+     "src": "images/shining-force-fr-200/02_difficulte.png",
+     "legende": "Simone propose de choisir la difficulté"
+    },
+    {
+     "src": "images/shining-force-fr-200/03_chapitre1.png",
+     "legende": "Chapitre 1"
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/shining-force-fr-200.bps",
+    "format": "bps",
+    "crc_source": "E0594ABE",
+    "taille_source": 1572864,
+    "crc_sortie": "0078E057",
+    "taille_sortie": 2097152,
+    "taille_patch": 828424
+   },
+   "revision": 2,
+   "date_maj": "18/10/2026"
+  },
+  {
+   "ordre": 3,
+   "titre": "Shining Force II",
+   "sous_titre": "Le Sceau Antique",
+   "plateforme": "Mega Drive",
+   "statut": "Version de test",
+   "resume": "Shining Force II traduit depuis le japonais, avec le sous-titre d'origine, les noms japonais et plusieurs bugs corrigés.",
+   "rom_attendue": "Shining Force II (USA)",
+   "nom_sortie": "Shining Force II (FR).bin",
+   "format": "bps",
+   "couleur": "#d0b23f",
+   "id": "shining-force-2",
+   "notes": [
+    {
+     "titre": "Traduction",
+     "blocs": [
+      {
+       "puce": "Traduction faite depuis le texte japonais, insérée dans la ROM américaine."
+      },
+      {
+       "puce": "4 303 dialogues, compression d'origine et dictionnaire de mots ajouté."
+      },
+      {
+       "puce": "Noms japonais pour les personnages, objets, sorts et monstres."
+      },
+      {
+       "puce": "Classes en français jusqu'à 8 lettres (ÉPÉISTE, CAVALIER…), noms sur 8 lettres."
+      },
+      {
+       "puce": "Accents dans les menus et dans la police des dialogues."
+      },
+      {
+       "puce": "Écran titre : sous-titre japonais traduit « Le Sceau Antique » réintégré."
+      },
+      {
+       "puce": "Générique traduit, crédit « Traduction française : Player Time »."
+      }
+     ]
+    },
+    {
+     "titre": "Corrections et ajouts",
+     "blocs": [
+      {
+       "puce": "Bug américain des coffres impossibles à ouvrir en combat corrigé."
+      },
+      {
+       "puce": "Nouvelle difficulté : NORM. +0 %, DUR +15 %, SUPER +25 %, ARGH! +56 % sur l'attaque des ennemis."
+      },
+      {
+       "puce": "Ciblage de l'IA corrigé."
+      },
+      {
+       "puce": "Sound test rétabli comme au Japon (jeu terminé, puis Haut + Start sur la sorcière)."
+      },
+      {
+       "puce": "Région PAL pour une Mega Drive française."
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/shining-force-2/01_titre.png",
+     "legende": "Sous-titre japonais « Le Sceau Antique » réintégré"
+    },
+    {
+     "src": "images/shining-force-2/02_sorciere.png",
+     "legende": "La sorcière, traduite depuis le japonais"
+    },
+    {
+     "src": "images/shining-force-2/03_voeux.png",
+     "legende": "Choix de la sauvegarde"
+    }
+   ],
+   "patch": null,
+   "revision": 0,
+   "date_maj": ""
+  },
+  {
+   "ordre": 4,
+   "titre": "Shining in the Darkness",
+   "sous_titre": "",
+   "plateforme": "Mega Drive",
+   "statut": "Terminée",
+   "resume": "Le premier jeu de la série, traduit depuis la version japonaise, avec la police accentuée, les menus élargis et la croix de l'église restaurée.",
+   "rom_attendue": "Shining in the Darkness (USA, Europe)",
+   "nom_sortie": "Shining in the Darkness (FR).bin",
+   "format": "bps",
+   "couleur": "#b0423a",
+   "id": "shining-in-the-darkness",
+   "notes": [
+    {
+     "titre": "Traduction",
+     "blocs": [
+      {
+       "puce": "Les 1 290 dialogues traduits depuis la version japonaise « Shining and the Darkness »."
+      },
+      {
+       "puce": "Noms japonais conservés : Bilbo, Merli, Claire, Méphisto, Melvil…"
+      },
+      {
+       "puce": "Merlin est une femme dans la version japonaise : elle devient « Merli »."
+      },
+      {
+       "puce": "Police des dialogues avec accents, texte paginé pour tenir dans la fenêtre."
+      },
+      {
+       "puce": "Générique traduit, crédit « Traduction française : Player Time »."
+      }
+     ]
+    },
+    {
+     "titre": "Menus et graphismes",
+     "blocs": [
+      {
+       "puce": "Menus et cadres élargis, police des menus avec majuscules accentuées."
+      },
+      {
+       "puce": "« OR » au lieu de « GOLD »."
+      },
+      {
+       "puce": "Croix de l'église de la version japonaise restaurée."
+      },
+      {
+       "puce": "Écran titre : titre américain conservé, « Présenté par SEGA » et « Créé par Climax » traduits."
+      },
+      {
+       "puce": "Enseignes et noms remontés de 3 pixels pour que les lettres à jambage ne débordent plus."
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/shining-in-the-darkness/01_titre.png",
+     "legende": "L'introduction au château"
+    },
+    {
+     "src": "images/shining-in-the-darkness/02_debut.png",
+     "legende": "Le vieil homme et le choix de la sauvegarde"
+    },
+    {
+     "src": "images/shining-in-the-darkness/03_princesse.png",
+     "legende": "La mission confiée par le roi"
+    },
+    {
+     "src": "images/shining-in-the-darkness/04_carte.png",
+     "legende": "La carte du royaume"
+    },
+    {
+     "src": "images/shining-in-the-darkness/05_mephisto.png",
+     "legende": "Méphisto, nom japonais conservé"
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/shining-in-the-darkness.bps",
+    "format": "bps",
+    "crc_source": "4D2785BC",
+    "taille_source": 1048576,
+    "crc_sortie": "36DD56A3",
+    "taille_sortie": 1572864,
+    "taille_patch": 42019
+   },
+   "revision": 1,
+   "date_maj": "18/10/2026"
+  },
+  {
+   "ordre": 5,
+   "titre": "Shining Force CD",
+   "sous_titre": "",
+   "plateforme": "Mega CD",
+   "statut": "Version de test",
+   "resume": "Les deux livres de Shining Force CD et leurs suites, traduits depuis le japonais, avec menus élargis et police accentuée.",
+   "rom_attendue": "Shining Force CD (USA), image « redump » .bin/.cue ou .iso de la piste 1",
+   "nom_sortie": "Shining Force CD (FR).bin",
+   "format": "sfcd",
+   "couleur": "#7a4fc0",
+   "id": "shining-force-cd",
+   "notes": [
+    {
+     "titre": "",
+     "blocs": [
+      {
+       "texte": "Le patch s'applique sur l'image « redump » de la version américaine : le .bin unique avec toutes les pistes, le .bin de la piste 1 ou un .iso. Les pistes audio ne changent pas. Sélectionne aussi le .cue pour recevoir un .cue prêt à l'emploi."
+      }
+     ]
+    },
+    {
+     "titre": "Traduction",
+     "blocs": [
+      {
+       "puce": "Dialogues, narrations de l'intro et des fins, menus, objets, sorts, classes, ennemis et générique traduits depuis le japonais."
+      },
+      {
+       "puce": "Noms japonais conservés pour les personnages ; « Guardiana »."
+      },
+      {
+       "puce": "Police avec accents, écran de chargement traduit, image « End » remplacée par « Fin »."
+      },
+      {
+       "puce": "PV / PM au lieu de HP / MP ; cartons « Chapitre N », « Chapitre Final », « Chapitre Bonus »."
+      }
+     ]
+    },
+    {
+     "titre": "Présentation",
+     "blocs": [
+      {
+       "puce": "Cadre des commandes élargi à 8 lettres (ATTAQUE, ÉQUIPER, UTILISER…)."
+      },
+      {
+       "puce": "Panneaux de ville CAMP / SORTIE / BOUTIQUE redessinés."
+      },
+      {
+       "puce": "Classes abrégées automatiquement quand la ligne déborde."
+      }
+     ]
+    },
+    {
+     "titre": "Correction du jeu d'origine",
+     "blocs": [
+      {
+       "puce": "Défense des ennemis plafonnée à 200 en difficulté maximale (elle retombait à 0 au-delà)."
+      }
+     ]
+    }
+   ],
+   "images": [],
+   "patch": {
+    "fichier": "patchs/shining-force-cd.patch",
+    "format": "sfcd",
+    "taille_patch": 754267
+   },
+   "revision": 1,
+   "date_maj": "18/10/2026"
+  },
+  {
+   "ordre": 6,
+   "titre": "Shining Force Gaiden : Final Conflict",
+   "sous_titre": "Portage Mega Drive dans le moteur de Shining Force II",
+   "plateforme": "Mega Drive",
+   "statut": "En cours",
+   "resume": "L'épisode Game Gear resté au Japon, rejoué dans le moteur de Shining Force II et entièrement traduit en français. ROM d'essai.",
+   "rom_attendue": "Shining Force II (USA)",
+   "nom_sortie": "Shining Force Final Conflict (FR).bin",
+   "format": "bps",
+   "couleur": "#3fa36b",
+   "id": "final-conflict",
+   "notes": [
+    {
+     "titre": "",
+     "blocs": [
+      {
+       "texte": "ROM d'essai : le jeu se joue du début à la fin, mais certaines cartes et musiques sont encore provisoires."
+      }
+     ]
+    },
+    {
+     "titre": "Traduction",
+     "blocs": [
+      {
+       "puce": "Les 1 429 messages traduits depuis le japonais (prologue, dialogues, objets, sorts, monstres)."
+      },
+      {
+       "puce": "« Kain » comme dans Shining Force 1."
+      }
+     ]
+    },
+    {
+     "titre": "Le jeu dans le moteur de Shining Force II",
+     "blocs": [
+      {
+       "puce": "Les 22 combats, avec leurs scènes d'avant et d'après, le recrutement et la fin du jeu."
+      },
+      {
+       "puce": "Écran de camp de la Game Gear entre les combats : Q.G., sortie, boutique, sauvegarde."
+      },
+      {
+       "puce": "Personnages, objets, ennemis, résistances et coups critiques de Final Conflict."
+      },
+      {
+       "puce": "Fouille en combat : coffres et cases cachées, ninja et Kojirô à découvrir."
+      },
+      {
+       "puce": "Renforts ennemis qui apparaissent quand la Force atteint leur zone."
+      },
+      {
+       "puce": "Présentation, écran titre et femme au livre de la Game Gear."
+      }
+     ]
+    },
+    {
+     "titre": "Graphismes et musique",
+     "blocs": [
+      {
+       "puce": "Portraits, sprites et cartes repris du remake PC, ou dessinés."
+      },
+      {
+       "puce": "Musiques de Shining Force II choisies selon le rôle de chaque musique de Final Conflict."
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/final-conflict/01_titre.png",
+     "legende": "Écran titre de la Game Gear sur Mega Drive"
+    },
+    {
+     "src": "images/final-conflict/02_femme_au_livre.png",
+     "legende": "La femme au livre remplace la sorcière"
+    },
+    {
+     "src": "images/final-conflict/03_difficulte.png",
+     "legende": "Choix de la difficulté"
+    },
+    {
+     "src": "images/final-conflict/04_prologue.png",
+     "legende": "Le prologue"
+    },
+    {
+     "src": "images/final-conflict/05_adam.png",
+     "legende": "Adam, à Hassan"
+    },
+    {
+     "src": "images/final-conflict/06_hassan.png",
+     "legende": "Le début de l'aventure"
+    }
+   ],
+   "patch": null,
+   "revision": 0,
+   "date_maj": ""
+  }
+ ]
+}

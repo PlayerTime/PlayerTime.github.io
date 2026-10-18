@@ -1,0 +1,230 @@
+'use strict';
+
+const $ = (s, el = document) => el.querySelector(s);
+const el = (tag, attrs = {}, ...enfants) => {
+  const e = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === 'class') e.className = v;
+    else if (k === 'text') e.textContent = typo(v);
+    else if (k.startsWith('on')) e.addEventListener(k.slice(2), v);
+    else if (v !== false && v != null) e.setAttribute(k, v === true ? '' : v);
+  }
+  for (const c of enfants.flat()) if (c != null) e.append(c);
+  return e;
+};
+const typo = s => String(s ?? '').replace(/« /g, '«\u00a0').replace(/ ([»:;?!])/g, '\u00a0$1');
+const slug = s => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-');
+const ko = n => n < 1024 * 1024 ? `${Math.max(1, Math.round(n / 1024))} Ko` : `${(n / 1048576).toFixed(1).replace('.', ',')} Mo`;
+
+let DONNEES = null;
+
+async function charger() {
+  try {
+    // « no-store » : on récupère toujours la dernière version publiée des patchs
+    const r = await fetch('data/projets.json', { cache: 'no-store' });
+    DONNEES = await r.json();
+  } catch (e) {
+    $('#liste-vide').hidden = false;
+    $('#liste-vide').textContent = "Impossible de charger la liste des projets. Recharge la page dans un instant.";
+    return;
+  }
+  dessinerListe();
+  router();
+}
+
+function etiquettes(p) {
+  return el('div', { class: 'etiquettes' },
+    el('span', { class: 'etiquette', text: p.plateforme }),
+    el('span', { class: 'etiquette statut-' + slug(p.statut || ''), text: p.statut }),
+    p.date_maj ? el('span', { class: 'etiquette', text: 'Mis à jour le ' + p.date_maj }) : null);
+}
+
+function vignette(p) {
+  const img = p.images && p.images[0];
+  return el('div', { class: 'vignette' },
+    img ? el('img', { src: img.src, alt: '', loading: 'lazy', width: 512, height: 448 })
+        : el('div', { class: 'vignette-vide', style: `--teinte:${p.couleur || ''}`, text: p.titre }));
+}
+
+function dessinerListe() {
+  const g = $('#grille');
+  g.replaceChildren();
+  for (const p of DONNEES.projets) {
+    g.append(el('li', {},
+      el('a', { class: 'fenetre carte-jeu', href: '#/jeu/' + p.id },
+        vignette(p),
+        el('div', { class: 'carte-corps' },
+          el('h3', { text: p.titre }),
+          p.sous_titre ? el('p', { class: 'sous', text: p.sous_titre }) : null,
+          el('p', { class: 'resume', text: p.resume || '' }),
+          etiquettes(p)))));
+  }
+  $('#liste-vide').hidden = DONNEES.projets.length > 0;
+  $('#liste-vide').textContent = 'Aucun projet pour le moment.';
+}
+
+function router() {
+  if (!DONNEES) return;
+  const m = location.hash.match(/^#\/jeu\/([\w-]+)/);
+  const p = m && DONNEES.projets.find(x => x.id === m[1]);
+  $('#vue-liste').hidden = !!p;
+  $('#vue-jeu').hidden = !p;
+  if (p) {
+    dessinerJeu(p);
+    document.title = `${p.titre} – Player Time`;
+    window.scrollTo(0, 0);
+    $('#contenu').focus({ preventScroll: true });
+  } else {
+    document.title = DONNEES.titre || 'Traduction et amélioration de Player Time';
+  }
+}
+
+function galerie(p) {
+  const imgs = p.images || [];
+  if (!imgs.length) {
+    return el('div', { class: 'fenetre galerie-vide' },
+      el('p', { text: 'Les captures de ce projet arrivent bientôt.' }));
+  }
+  const grandeImg = el('img', { src: imgs[0].src, alt: imgs[0].legende || p.titre, width: 512, height: 448 });
+  const legende = el('p', { class: 'legende', text: imgs[0].legende || '' });
+  let courant = 0;
+  const grande = el('button', { type: 'button', class: 'grande', 'aria-label': 'Afficher en grand', onclick: () => ouvrir(imgs[courant]) }, grandeImg);
+  const minis = el('ul', { class: 'miniatures' });
+  imgs.forEach((im, i) => {
+    minis.append(el('li', {}, el('button', {
+      type: 'button', 'aria-current': i === 0 ? 'true' : 'false', 'aria-label': im.legende || `Capture ${i + 1}`,
+      onclick: e => {
+        courant = i;
+        grandeImg.src = im.src; grandeImg.alt = im.legende || p.titre; legende.textContent = im.legende || '';
+        minis.querySelectorAll('button').forEach(b => b.setAttribute('aria-current', 'false'));
+        e.currentTarget.setAttribute('aria-current', 'true');
+      }
+    }, el('img', { src: im.src, alt: '', loading: 'lazy' }))));
+  });
+  return el('div', { class: 'galerie' }, grande, legende, imgs.length > 1 ? minis : null);
+}
+
+function ouvrir(im) {
+  const d = $('#visionneuse');
+  $('img', d).src = im.src; $('img', d).alt = im.legende || '';
+  $('.legende-grande', d).textContent = im.legende || '';
+  d.showModal();
+}
+
+function notes(p) {
+  const bloc = el('section', { class: 'fenetre notes', 'aria-labelledby': 'titre-notes' },
+    el('h2', { id: 'titre-notes', text: 'Modifications apportées' }));
+  for (const partie of p.notes || []) {
+    if (partie.titre) bloc.append(el('h3', { text: partie.titre }));
+    let ul = null;
+    for (const b of partie.blocs) {
+      if (b.puce != null) {
+        if (!ul) { ul = el('ul'); bloc.append(ul); }
+        ul.append(el('li', { text: b.puce }));
+      } else {
+        ul = null;
+        bloc.append(el('p', { text: b.texte }));
+      }
+    }
+  }
+  return bloc;
+}
+
+function panneau(p) {
+  const info = p.patch;
+  const box = el('section', { class: 'fenetre panneau', 'aria-labelledby': 'titre-patch' },
+    el('h2', { id: 'titre-patch', text: 'Patcher la ROM' }));
+  if (!info) {
+    box.append(el('p', { text: 'Le patch de ce projet sera bientôt disponible ici.' }),
+      el('p', { class: 'attendue', text: `ROM à prévoir : ${p.rom_attendue}.` }));
+    return box;
+  }
+  const cd = info.format === 'sfcd';
+  const journal = el('ul', { class: 'journal', 'aria-live': 'polite' });
+  const barre = el('div', { class: 'barre', hidden: true }, el('div'));
+  const sorties = el('div', { class: 'telechargements' });
+  const input = el('input', { type: 'file', multiple: cd, accept: cd ? '.bin,.iso,.img,.cue' : '.bin,.md,.gen,.smd,.zip' });
+  const depot = el('label', { class: 'depot' },
+    input,
+    el('strong', { text: cd ? 'Choisir l’image du jeu (.bin et .cue)' : 'Choisir la ROM officielle' }),
+    el('span', { text: 'ou la glisser ici' }));
+
+  const log = (t, cls) => journal.append(el('li', { class: cls || '', text: t }));
+  const progres = v => { barre.hidden = false; barre.firstChild.style.width = v + '%'; };
+
+  async function traiter(fichiers) {
+    if (!fichiers.length) return;
+    journal.replaceChildren(); sorties.replaceChildren(); barre.hidden = true;
+    try {
+      log('Téléchargement du patch…');
+      const r = await fetch(info.fichier + '?r=' + p.revision, { cache: 'no-store' });
+      if (!r.ok) throw new Patcheur.ErreurPatch('Le patch est introuvable sur le site. Réessaie plus tard.');
+      const patch = new Uint8Array(await r.arrayBuffer());
+      let res;
+      if (cd) {
+        res = await Patcheur.patcherSFCD([...fichiers], patch, p.nom_sortie, log, progres);
+      } else {
+        res = await Patcheur.patcherCartouche(fichiers[0], patch, info, log);
+        res[0].nom = p.nom_sortie;
+      }
+      log('Ta ROM française est prête.', 'ok');
+      for (const f of res) {
+        const url = URL.createObjectURL(f.blob);
+        sorties.append(el('a', { class: 'bouton', href: url, download: f.nom, text: 'Télécharger ' + f.nom }));
+      }
+      sorties.querySelector('a').click();
+    } catch (e) {
+      console.error(e);
+      log(e instanceof Patcheur.ErreurPatch ? e.message : 'Erreur inattendue : ' + e.message, 'erreur');
+    }
+  }
+
+  input.addEventListener('change', () => traiter(input.files));
+  depot.addEventListener('dragover', e => { e.preventDefault(); depot.classList.add('survol'); });
+  depot.addEventListener('dragleave', () => depot.classList.remove('survol'));
+  depot.addEventListener('drop', e => { e.preventDefault(); depot.classList.remove('survol'); traiter(e.dataTransfer.files); });
+
+  box.append(
+    el('p', { text: cd
+      ? 'Sélectionne ton image de Shining Force CD (USA). Le patch vérifie le jeu puis crée la version française, que tu télécharges.'
+      : 'Sélectionne ta ROM officielle. Le patch la vérifie puis crée la version française, que tu télécharges.' }),
+    el('p', { class: 'attendue', text: `ROM attendue : ${p.rom_attendue}` + (info.crc_source ? ` (CRC32 ${info.crc_source}).` : '.') }),
+    depot, barre, journal, sorties,
+    el('p', { class: 'meta-patch', text:
+      `Patch ${p.date_maj ? 'du ' + p.date_maj : ''}${p.revision ? ', révision ' + p.revision : ''}, ${ko(info.taille_patch)}. ` +
+      'Le patch se fait dans ton navigateur : ta ROM ne quitte pas ton ordinateur.' }));
+  return box;
+}
+
+function dessinerJeu(p) {
+  const v = $('#vue-jeu');
+  v.replaceChildren(
+    el('a', { class: 'retour', href: '#/', text: '◂ Tous les projets' }),
+    el('div', { class: 'jeu-tete' },
+      el('h2', { class: 'jeu-titre', text: p.titre }),
+      p.sous_titre ? el('p', { class: 'jeu-sous', text: p.sous_titre }) : null,
+      etiquettes(p)),
+    el('div', { class: 'jeu-grille' }, galerie(p), panneau(p)),
+    notes(p));
+}
+
+/* titre écrit lettre par lettre, comme une réplique */
+function ecrireTitre() {
+  const h = $('#titre-site');
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const texte = h.textContent;
+  h.setAttribute('aria-label', texte);
+  const span = el('span', { class: 'ecrit', 'aria-hidden': 'true' });
+  const lettres = [...texte].map(c => el('span', { class: 'lettre', text: c }));
+  span.append(...lettres);
+  h.replaceChildren(span);
+  let i = 0;
+  const t = setInterval(() => { if (i >= lettres.length) return clearInterval(t); lettres[i++].classList.add('vue'); }, 32);
+}
+
+$('#visionneuse').addEventListener('click', e => {
+  if (e.target.matches('[data-fermer]') || e.target === e.currentTarget) e.currentTarget.close();
+});
+window.addEventListener('hashchange', router);
+ecrireTitre();
+charger();
