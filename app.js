@@ -17,6 +17,9 @@ const slug = s => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').repla
 const ko = n => n < 1024 * 1024 ? `${Math.max(1, Math.round(n / 1024))} Ko` : `${(n / 1048576).toFixed(1).replace('.', ',')} Mo`;
 
 let DONNEES = null;
+// préfixe des chemins : '' à l'accueil, '../../' sur la page d'un jeu (jeu/<id>/)
+const BASE = document.documentElement.dataset.base || '';
+const ACCUEIL = BASE || './';
 
 /* ---------- Statistiques (GoatCounter : gratuit, sans cookies) ---------- */
 const Stats = (() => {
@@ -70,8 +73,12 @@ async function remplirCompteur(span, p) {
 async function charger() {
   try {
     // « no-store » : on récupère toujours la dernière version publiée des patchs
-    const r = await fetch('data/projets.json', { cache: 'no-store' });
+    const r = await fetch(BASE + 'data/projets.json', { cache: 'no-store' });
     DONNEES = await r.json();
+    for (const p of DONNEES.projets) {
+      (p.images || []).forEach(im => { im.src = BASE + im.src; });
+      if (p.patch) p.patch.fichier = BASE + p.patch.fichier;
+    }
   } catch (e) {
     $('#liste-vide').hidden = false;
     $('#liste-vide').textContent = "Impossible de charger la liste des projets. Recharge la page dans un instant.";
@@ -119,7 +126,7 @@ function vignette(p) {
 
 function carte(p) {
   return el('li', {},
-    el('a', { class: 'fenetre carte-jeu', href: '#/jeu/' + p.id },
+    el('a', { class: 'fenetre carte-jeu', href: BASE + 'jeu/' + p.id + '/' },
       vignette(p),
       el('div', { class: 'carte-corps' },
         el('h3', { text: p.titre }),
@@ -151,19 +158,27 @@ function dessinerListe() {
 
 function router() {
   if (!DONNEES) return;
-  const m = location.hash.match(/^#\/jeu\/([\w-]+)/);
+  // anciens liens « #/jeu/<id> » : redirigés vers la vraie page du jeu
+  const ancien = location.hash.match(/^#\/jeu\/([\w-]+)/);
+  if (ancien) { location.replace(BASE + 'jeu/' + ancien[1] + '/'); return; }
+  const m = location.pathname.match(/\/jeu\/([\w-]+)\/?(index\.html)?$/);
   const p = m && DONNEES.projets.find(x => x.id === m[1]);
   $('#vue-liste').hidden = !!p;
   $('#vue-jeu').hidden = !p;
   Stats.vue(p ? '/jeu/' + p.id : '/', p ? p.titre : 'Accueil');
   if (p) {
     dessinerJeu(p);
-    document.title = `${p.titre} – Player Time`;
-    window.scrollTo(0, 0);
-    $('#contenu').focus({ preventScroll: true });
+    document.title = titrePage(p);
   } else {
-    document.title = DONNEES.titre || 'Traduction et amélioration de Player Time';
+    document.title = DONNEES.titre_page || document.title;
   }
+}
+
+function titrePage(p) {
+  const nom = p.titre + (p.sous_titre && p.sous_titre.length < 40 ? ' – ' + p.sous_titre : '');
+  return p.patch && p.patch.format === 'jeu'
+    ? `${p.titre} : jeu ${p.plateforme} gratuit | Player Time`
+    : `${nom} : patch de traduction française (${p.plateforme}) | Player Time`;
 }
 
 function galerie(p) {
@@ -321,7 +336,7 @@ function panneauJeu(p, box) {
 function dessinerJeu(p) {
   const v = $('#vue-jeu');
   v.replaceChildren(
-    el('a', { class: 'retour', href: '#/', text: '◂ Tous les projets' }),
+    el('a', { class: 'retour', href: ACCUEIL, text: '◂ Tous les projets' }),
     el('div', { class: 'jeu-tete' },
       el('h2', { class: 'jeu-titre', text: p.titre }),
       p.sous_titre ? el('p', { class: 'jeu-sous', text: p.sous_titre }) : null,

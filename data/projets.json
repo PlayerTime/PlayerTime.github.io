@@ -291,12 +291,12 @@
     "format": "bps",
     "crc_source": "E0594ABE",
     "taille_source": 1572864,
-    "crc_sortie": "B8AC7CB4",
+    "crc_sortie": "4923A8B4",
     "taille_sortie": 3145728,
-    "taille_patch": 922686
+    "taille_patch": 1156087
    },
-   "revision": 4,
-   "date_maj": "18/10/2026"
+   "revision": 5,
+   "date_maj": "24/10/2026"
   },
   {
    "ordre": 3,
@@ -644,5 +644,6 @@
    "revision": 0,
    "date_maj": ""
   }
- ]
+ ],
+ "titre_page": "Player Time – Traductions françaises de jeux Mega Drive et Mega CD"
 }
