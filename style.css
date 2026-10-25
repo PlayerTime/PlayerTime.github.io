@@ -269,3 +269,9 @@ body { padding-bottom: 70px; }
   .icone-svg, .icone-image { width: 56px; height: 56px; }
   .touche-lettre { min-width: 30px; }
 }
+
+/* Discord */
+.bouton-discord { background: #5865f2; color: #fff; box-shadow: 0 4px 0 #3a43a8; }
+.encart-discord { margin-top: 26px; }
+.encart-discord h2 { font: 600 1.3rem/1.2 var(--pixel); margin: 0 0 8px; color: var(--cadre); }
+.encart-discord p { margin: 0 0 12px; max-width: 70ch; }

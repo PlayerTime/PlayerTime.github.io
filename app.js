@@ -85,6 +85,7 @@ async function charger() {
     return;
   }
   Stats.init(DONNEES.compteur);
+  if (lienDiscord()) $('#zone-don').append(boutonDiscord('Rejoindre le Discord'), ' ');
   if (lienDon()) {
     $('#zone-don').append(boutonDon('Faire un don à Player Time'));
     const flottant = boutonDon('Faire un don');
@@ -380,6 +381,13 @@ function panneau(p) {
   return box;
 }
 
+/* ---------- Discord (lien_discord dans reglages_site.json) ---------- */
+const lienDiscord = () => DONNEES && /^https:\/\/(discord\.gg|discord\.com)\//.test(DONNEES.discord || '') ? DONNEES.discord : null;
+function boutonDiscord(texte) {
+  return el('a', { class: 'bouton bouton-discord', href: lienDiscord(), target: '_blank', rel: 'noopener', text: texte,
+    onclick: () => Stats.evenement('discord-clic', 'Clic sur le lien Discord') });
+}
+
 /* ---------- Don (lien_don dans config.json : PayPal, Ko-fi, Tipeee...) ---------- */
 const lienDon = () => DONNEES && /^https:\/\//.test(DONNEES.don || '') ? DONNEES.don : null;
 function boutonDon(texte) {
@@ -409,6 +417,14 @@ function panneauJeu(p, box) {
   return box;
 }
 
+function encartDiscord(p) {
+  if (!lienDiscord()) return null;
+  return el('section', { class: 'fenetre encart-discord' },
+    el('h2', { text: 'Une question, un bug ?' }),
+    el('p', { text: `Viens en parler sur le Discord de Player Time, en précisant « ${p.titre}${p.version ? ' ' + p.version : ''} ».` }),
+    boutonDiscord('Rejoindre le Discord'));
+}
+
 function dessinerJeu(p) {
   const v = $('#vue-jeu');
   v.replaceChildren(
@@ -418,7 +434,8 @@ function dessinerJeu(p) {
       p.sous_titre ? el('p', { class: 'jeu-sous', text: p.sous_titre }) : null,
       etiquettes(p)),
     el('div', { class: 'jeu-grille' }, galerie(p), panneau(p)),
-    notes(p));
+    notes(p),
+    encartDiscord(p));
 }
 
 /* titre écrit lettre par lettre, comme une réplique */

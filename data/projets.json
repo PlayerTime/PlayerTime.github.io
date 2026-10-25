@@ -2,6 +2,7 @@
  "titre": "Traduction et amélioration de Player Time",
  "compteur": "playertime",
  "don": "https://paypal.me/playertime90",
+ "discord": "https://discord.gg/Zk2uam8WBw",
  "projets": [
   {
    "ordre": 0,
@@ -1585,12 +1586,12 @@
    "sous_titre": "DuneRazor allégé pour la Mega Drive d'origine",
    "plateforme": "Mega Drive",
    "statut": "En cours",
-   "resume": "Dune FR enrichi des nouveautés de DuneRazor, sur le moteur d'origine pour tourner à pleine vitesse sur une vraie Mega Drive : Fremen et Corrino jouables, leurs Mentats, nouvelles cartes et réglages des unités.",
+   "resume": "Dune FR enrichi des nouveautés de DuneRazor, sur le moteur d'origine pour tourner à pleine vitesse sur une vraie Mega Drive : Fremen et Corrino jouables, leurs Mentats, nouvelles cartes, nouvelles unités et réglages des unités.",
    "couleur": "#3f7fbf",
    "rom_attendue": "Dune - The Battle for Arrakis (USA)",
    "nom_sortie": "DuneRazorOpti (FR).bin",
    "format": "bps",
-   "version": "V08",
+   "version": "V10",
    "date_version": "25/10/2026",
    "id": "dunerazoropti",
    "notes": [
@@ -1618,7 +1619,7 @@
        "puce": "Réglages des unités et des bâtiments du hack ; infanterie Fremen et Sardaukar."
       },
       {
-       "puce": "Nouvelle unité : le Quad missile des Ordos."
+       "puce": "Nouvelles unités : Quad missile, Ouragan, Tank laser et Aéroglisseur ; ver des sables des Fremen au Centre ixien."
       }
      ]
     },
@@ -1626,13 +1627,19 @@
      "titre": "Pas encore repris",
      "blocs": [
       {
-       "puce": "Les autres nouvelles unités, le ver des sables des Fremen, les niveaux de difficulté et le temps de jeu."
+       "puce": "Les niveaux de difficulté et le temps de jeu."
       }
      ]
     },
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "V10 (25/10/2026) : Le ver des sables des Fremen se sélectionne et se dirige soi-même sur le sable, et avale les unités ennemies qu'on lui désigne ; Il ne disparaît plus après son premier repas"
+      },
+      {
+       "puce": "V09 (25/10/2026) : Nouvelles unités à l'Usine lourde : l'Ouragan des Corrino, le Tank laser des Ordos et des Corrino, l'Aéroglisseur des Fremen ; Les Fremen peuvent produire des vers des sables au Centre ixien ; le ver sort sur le sable le plus proche"
+      },
       {
        "puce": "V08 (25/10/2026) : Nouvelle unité Ordos : le Quad missile, à l'Usine légère améliorée deux fois, avec un Avant-poste"
       },
@@ -1695,9 +1702,104 @@
     "format": "bps",
     "crc_source": "4DEA40BA",
     "taille_source": 1048576,
-    "crc_sortie": "EA0865CA",
+    "crc_sortie": "496835BE",
     "taille_sortie": 2097152,
-    "taille_patch": 200166
+    "taille_patch": 203721
+   },
+   "revision": 2,
+   "date_maj": "25/10/2026"
+  },
+  {
+   "ordre": 25,
+   "categorie": "Traductions et améliorations",
+   "titre": "Phantasy Star",
+   "sous_titre": "Traduction française",
+   "plateforme": "Master System",
+   "statut": "Version de test",
+   "resume": "Traduction française du premier Phantasy Star, faite depuis la version japonaise « Fukkokuban » avec son FM : dialogues, cinématiques, menus, objets, monstres et écran titre. Noms japonais d'origine : Alisa, Myau, Tylon et Lutz.",
+   "couleur": "#c040a0",
+   "rom_attendue": "Phantasy Star Fukkokuban (Japan)",
+   "nom_sortie": "Phantasy Star (FR).sms",
+   "format": "bps",
+   "version": "PSv01",
+   "date_version": "25/10/2026",
+   "id": "phantasy-star",
+   "notes": [
+    {
+     "titre": "",
+     "blocs": [
+      {
+       "texte": "Cette traduction part de « Phantasy Star Fukkokuban », la réédition japonaise sur cartouche Mega Drive du jeu Master System de 1987 : c'est la version japonaise, avec la musique en son FM."
+      },
+      {
+       "texte": "Le jeu est un jeu Master System : il se lance en .sms sur émulateur (Genesis Plus GX, Emulicious...), sur Mega SG, ou sur une Mega Drive avec une cartouche flash qui gère le mode Master System. Le son FM n'est entendu que sur émulateur ou console japonaise équipée."
+      }
+     ]
+    },
+    {
+     "titre": "Ce qui est traduit",
+     "blocs": [
+      {
+       "puce": "Tous les dialogues et toutes les cinématiques (introduction, rencontres des compagnons, fin)."
+      },
+      {
+       "puce": "Les menus, les sorts, les objets, les monstres et la fenêtre d'état."
+      },
+      {
+       "puce": "L'écran titre, la fenêtre de l'introduction et l'écran de saisie du nom."
+      }
+     ]
+    },
+    {
+     "titre": "Améliorations",
+     "blocs": [
+      {
+       "puce": "Fenêtres de dialogue de 4 lignes au lieu de 2, avec coupure automatique des mots."
+      },
+      {
+       "puce": "Nouvelle police avec lettres accentuées."
+      }
+     ]
+    },
+    {
+     "titre": "Historique des versions",
+     "blocs": [
+      {
+       "puce": "PSv01 (25/10/2026) : Première version : dialogues, cinématiques, menus, objets et monstres en français ; Écran titre, introduction et écran du nom traduits"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/phantasy-star/01_titre.png",
+     "legende": "L'écran titre : COMMENCER / CONTINUER"
+    },
+    {
+     "src": "images/phantasy-star/02_intro.png",
+     "legende": "L'arrivée à Camineet, au printemps 342"
+    },
+    {
+     "src": "images/phantasy-star/03_nero.png",
+     "legende": "Les dernières paroles de Nero à sa soeur"
+    },
+    {
+     "src": "images/phantasy-star/04_dialogue.png",
+     "legende": "Dialogues traduits depuis le japonais, fenêtre de 4 lignes"
+    },
+    {
+     "src": "images/phantasy-star/05_menu.png",
+     "legende": "Le menu principal et la fenêtre d'Alisa"
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/phantasy-star.bps",
+    "format": "bps",
+    "crc_source": "07301F83",
+    "taille_source": 524288,
+    "crc_sortie": "792A634E",
+    "taille_sortie": 1048576,
+    "taille_patch": 36641
    },
    "revision": 1,
    "date_maj": "25/10/2026"
