@@ -1052,7 +1052,28 @@
      ]
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "images/rent-a-hero/01_titre.png",
+     "legende": "Écran titre : le menu en français"
+    },
+    {
+     "src": "images/rent-a-hero/02_nom.png",
+     "legende": "Saisie du nom en lettres françaises, avec accents"
+    },
+    {
+     "src": "images/rent-a-hero/03_intro.png",
+     "legende": "L'introduction, traduite depuis le japonais"
+    },
+    {
+     "src": "images/rent-a-hero/04_fete.png",
+     "legende": "La fête d'emménagement : le discours du père"
+    },
+    {
+     "src": "images/rent-a-hero/05_dialogue.png",
+     "legende": "Les invités de la fête et leurs répliques"
+    }
+   ],
    "patch": {
     "fichier": "patchs/rent-a-hero.bps",
     "format": "bps",
@@ -1348,6 +1369,115 @@
     "crc_sortie": "46B4317E",
     "taille_sortie": 3145728,
     "taille_patch": 1317935
+   },
+   "revision": 1,
+   "date_maj": "25/10/2026"
+  },
+  {
+   "ordre": 21,
+   "categorie": "Traductions et améliorations",
+   "titre": "Blue Almanac (Star Odyssey)",
+   "sous_titre": "Traduction française",
+   "plateforme": "Mega Drive",
+   "statut": "Version de test",
+   "resume": "Traduction française complète du RPG de science-fiction Blue Almanac de Hot-B (sorti en Occident sous le nom Star Odyssey), faite depuis la version japonaise : dialogues, menus, objets, monstres, intro et générique. ROM « world » qui démarre sur toutes les Mega Drive.",
+   "couleur": "#c8962a",
+   "rom_attendue": "Blue Almanac (Japan)",
+   "nom_sortie": "Blue Almanac (FR).bin",
+   "format": "bps",
+   "version": "SOv01",
+   "date_version": "25/10/2026",
+   "id": "blue-almanac",
+   "notes": [
+    {
+     "titre": "",
+     "blocs": [
+      {
+       "texte": "Traduction faite à partir de la version japonaise. Il n'existe pas de version française officielle : les noms propres sont tirés du japonais."
+      },
+      {
+       "texte": "Le titre du jeu à l'écran reste « Blue Almanac » (logo d'origine)."
+      }
+     ]
+    },
+    {
+     "titre": "Ce qui est traduit",
+     "blocs": [
+      {
+       "puce": "Tous les dialogues, messages, boutiques, hôtels et combats."
+      },
+      {
+       "puce": "Menus, objets, monstres, écran de statut et écran de saisie du nom."
+      },
+      {
+       "puce": "L'intro (le livre de Yan) et les interludes de voyage entre les planètes."
+      },
+      {
+       "puce": "Écran titre et générique de fin, avec le crédit de la traduction française."
+      }
+     ]
+    },
+    {
+     "titre": "Améliorations",
+     "blocs": [
+      {
+       "puce": "ROM « world » : le jeu démarre sur toutes les Mega Drive (japonaise, américaine, européenne)."
+      },
+      {
+       "puce": "Nouvelle police avec minuscules et lettres accentuées, dans le style du jeu."
+      },
+      {
+       "puce": "Boîtes de dialogue de 8 lignes au lieu de 4."
+      }
+     ]
+    },
+    {
+     "titre": "Historique des versions",
+     "blocs": [
+      {
+       "puce": "SOv01 (25/10/2026) : Première version : tout le jeu en français (dialogues, menus, objets, monstres, intro, interludes, générique) ; ROM « world » pour toutes les Mega Drive"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/blue-almanac/01_titre.png",
+     "legende": "L'écran titre, avec le logo d'origine"
+    },
+    {
+     "src": "images/blue-almanac/02_intro.png",
+     "legende": "L'intro : le livre de Yan, raconté en français"
+    },
+    {
+     "src": "images/blue-almanac/03_intro_aury.png",
+     "legende": "L'intro : les graines stellaires de la planète Aury"
+    },
+    {
+     "src": "images/blue-almanac/04_menu.png",
+     "legende": "Le menu de départ"
+    },
+    {
+     "src": "images/blue-almanac/05_nom.png",
+     "legende": "Saisie du nom avec une grille de lettres françaises"
+    },
+    {
+     "src": "images/blue-almanac/06_dialogue.png",
+     "legende": "Dialogues traduits depuis le japonais, 8 lignes par boîte"
+    },
+    {
+     "src": "images/blue-almanac/07_menu_jeu.png",
+     "legende": "Le menu du jeu"
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/blue-almanac.bps",
+    "format": "bps",
+    "crc_source": "7222EBB3",
+    "taille_source": 1048576,
+    "crc_sortie": "C4E0ACC4",
+    "taille_sortie": 2097152,
+    "taille_patch": 124928
    },
    "revision": 1,
    "date_maj": "25/10/2026"
