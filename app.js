@@ -107,6 +107,7 @@ function etiquettes(p) {
   return el('div', { class: 'etiquettes' },
     el('span', { class: 'etiquette', text: p.plateforme }),
     el('span', { class: 'etiquette statut-' + slug(p.statut || ''), text: p.statut }),
+    p.version ? el('span', { class: 'etiquette etiquette-version', text: 'Version ' + p.version }) : null,
     p.date_maj ? el('span', { class: 'etiquette', text: 'Mis à jour le ' + p.date_maj }) : null,
     compteur(p));
 }
@@ -175,7 +176,8 @@ function router() {
 }
 
 function titrePage(p) {
-  const nom = p.titre + (p.sous_titre && p.sous_titre.length < 40 ? ' – ' + p.sous_titre : '');
+  const st = p.sous_titre || '';
+  const nom = p.titre + (st && st.length < 40 && !/traduction/i.test(st) ? ' – ' + st : '');
   return p.patch && p.patch.format === 'jeu'
     ? `${p.titre} : jeu ${p.plateforme} gratuit | Player Time`
     : `${nom} : patch de traduction française (${p.plateforme}) | Player Time`;
@@ -279,7 +281,7 @@ function panneau(p) {
       }
       sorties.querySelector('a').click();
       const merci = encartDon('Merci ! Si la traduction te plaît, tu peux soutenir mon travail.');
-      if (merci) sorties.append(merci);
+      if (merci) { sorties.append(merci); box.querySelectorAll('.encart-don-fixe').forEach(x => x.remove()); }
     } catch (e) {
       console.error(e);
       log(e instanceof Patcheur.ErreurPatch ? e.message : 'Erreur inattendue : ' + e.message, 'erreur');
@@ -297,7 +299,7 @@ function panneau(p) {
       : 'Sélectionne ta ROM officielle. Le patch la vérifie puis crée la version française, que tu télécharges.' }),
     el('p', { class: 'attendue', text: `ROM attendue : ${p.rom_attendue}` + (info.crc_source ? ` (CRC32 ${info.crc_source}).` : '.') }),
     depot, barre, journal, sorties,
-    encartDon('Ce patch est gratuit. Si tu veux soutenir mon travail, tu peux faire un don.'),
+    (() => { const e = encartDon('Ce patch est gratuit. Si tu veux soutenir mon travail, tu peux faire un don.'); if (e) e.classList.add('encart-don-fixe'); return e; })(),
     el('p', { class: 'meta-patch', text:
       `Patch ${p.date_maj ? 'du ' + p.date_maj : ''}${p.revision ? ', révision ' + p.revision : ''}, ${ko(info.taille_patch)}. ` +
       'Le patch se fait dans ton navigateur : ta ROM ne quitte pas ton ordinateur.' }));

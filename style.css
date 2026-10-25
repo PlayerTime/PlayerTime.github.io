@@ -235,3 +235,5 @@ dialog#visionneuse img { display: block; max-width: 100%; max-height: 78vh; marg
 }
 body { padding-bottom: 70px; }
 @media (max-width: 560px) { .don-flottant { right: 12px; bottom: 12px; padding: 10px 12px 11px; font-size: .95rem; } }
+
+.etiquette-version { color: var(--cadre); }

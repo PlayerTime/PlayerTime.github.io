@@ -643,6 +643,1038 @@
    "patch": null,
    "revision": 0,
    "date_maj": ""
+  },
+  {
+   "ordre": 10,
+   "categorie": "Traductions et améliorations",
+   "titre": "Alien Soldier",
+   "sous_titre": "Traduction française",
+   "plateforme": "Mega Drive",
+   "statut": "Version de test",
+   "resume": "Traduction française complète du shoot'em up de Treasure, à partir de la version japonaise : intro, menus, armes, dialogues des boss, scènes d'histoire et génériques. ROM « world » qui démarre sur toutes les Mega Drive.",
+   "couleur": "#e05030",
+   "rom_attendue": "Alien Soldier (Japan)",
+   "nom_sortie": "Alien Soldier (FR).bin",
+   "format": "bps",
+   "version": "ASv05",
+   "date_version": "24/10/2026",
+   "id": "alien-soldier",
+   "notes": [
+    {
+     "titre": "",
+     "blocs": [
+      {
+       "texte": "Traduction faite à partir de la version japonaise, dont le texte est plus complet que celui de la version occidentale. Le logo ALIEN SOLDIER est conservé."
+      }
+     ]
+    },
+    {
+     "titre": "Ce qui est traduit",
+     "blocs": [
+      {
+       "puce": "Introduction complète, écran titre, options et titres des 22 musiques du jukebox."
+      },
+      {
+       "puce": "Écran des codes, choix des armes, test des commandes, HUD (JOUEUR, ENNEMI, PAUSE, VIT)."
+      },
+      {
+       "puce": "Textes de niveau en sprites : ÉTAPE, PRÊT, COMBAT !, ÉTAPE FINIE, SANS BONUS, ALERTE !!"
+      },
+      {
+       "puce": "Les 33 répliques des boss (en japonais dans la ROM d'origine) et les 4 scènes d'histoire."
+      },
+      {
+       "puce": "Écran des résultats, résultats de fin et les deux génériques de fin."
+      },
+      {
+       "puce": "Lettres accentuées ajoutées à la police du jeu."
+      }
+     ]
+    },
+    {
+     "titre": "Améliorations",
+     "blocs": [
+      {
+       "puce": "ROM « world » : le verrou de région est retiré, le jeu démarre sur toutes les Mega Drive (japonaise, américaine, européenne)."
+      },
+      {
+       "puce": "Les codes du mode difficile étaient identiques à ceux du mode facile : ils sont corrigés."
+      },
+      {
+       "puce": "Le menu de debug caché est réactivé : A+B+C+START hors partie, puis PAUSE + A en jeu."
+      }
+     ]
+    },
+    {
+     "titre": "Laissé en anglais volontairement",
+     "blocs": [
+      {
+       "puce": "Le logo ALIEN SOLDIER, le grand logo GAME OVER, les noms des boss et les voix digitalisées."
+      }
+     ]
+    },
+    {
+     "titre": "Historique des versions",
+     "blocs": [
+      {
+       "puce": "ASv05 (24/10/2026) : Accès au menu de debug plus fiable : A+B+C+START accepté sur tous les écrans hors partie, touches tenues ensemble ou appuyées l'une après l'autre ; Le code d'activation n'est plus effacé en cours de partie"
+      },
+      {
+       "puce": "ASv04 (24/10/2026) : En-tête graphique du tableau des résultats redessiné (ÉTAPE, LIMITE, DÉFILEMENT, BOSS, TOTAL, CONTINUES) ; Étiquette du HUD SPD remplacée par VIT"
+      },
+      {
+       "puce": "ASv03 (24/10/2026) : Codes du mode difficile corrigés (ils étaient identiques à ceux du mode facile) ; Menu de debug caché réactivé et traduit"
+      },
+      {
+       "puce": "ASv02 (24/10/2026) : Textes de niveau en sprites traduits (ÉTAPE, PRÊT, COMBAT !, ALERTE !!...) ; Dialogues des boss et scènes d'histoire traduits depuis le japonais ; Génériques de fin traduits, avec un écran TRADUCTION FRANÇAISE / PLAYER TIME"
+      },
+      {
+       "puce": "ASv01 (24/10/2026) : Première version : ROM world, police accentuée, intro, titre, options, codes, armes et HUD traduits"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/alien-soldier/01_titre.png",
+     "legende": "Écran titre : slogans et menu en français"
+    },
+    {
+     "src": "images/alien-soldier/02_intro.png",
+     "legende": "L'introduction, retraduite depuis le japonais"
+    },
+    {
+     "src": "images/alien-soldier/03_options.png",
+     "legende": "Le menu des options"
+    },
+    {
+     "src": "images/alien-soldier/04_armes.png",
+     "legende": "Choix des armes"
+    },
+    {
+     "src": "images/alien-soldier/05_etape.png",
+     "legende": "Début d'étape, HUD traduit"
+    },
+    {
+     "src": "images/alien-soldier/06_resultats.png",
+     "legende": "Écran des résultats"
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/alien-soldier.bps",
+    "format": "bps",
+    "crc_source": "90FA1539",
+    "taille_source": 2097152,
+    "crc_sortie": "CC2E3DA4",
+    "taille_sortie": 2097152,
+    "taille_patch": 12267
+   },
+   "revision": 1,
+   "date_maj": "25/10/2026"
+  },
+  {
+   "ordre": 20,
+   "categorie": "Traductions et améliorations",
+   "titre": "Dune : La Bataille pour Arrakis",
+   "sous_titre": "Traduction française",
+   "plateforme": "Mega Drive",
+   "statut": "Version de test",
+   "resume": "Traduction française complète du jeu de stratégie de Westwood : Mentats, menus, panneau de construction, tutoriel, écrans de fin et voix françaises. ROM « world » qui démarre sur toutes les Mega Drive.",
+   "couleur": "#c8892e",
+   "rom_attendue": "Dune - The Battle for Arrakis (USA)",
+   "nom_sortie": "Dune - The Battle for Arrakis (FR).bin",
+   "format": "bps",
+   "version": "V10",
+   "date_version": "25/10/2026",
+   "id": "dune",
+   "notes": [
+    {
+     "titre": "",
+     "blocs": [
+      {
+       "texte": "Traduction faite à partir de la version américaine, avec le lexique des versions françaises de Dune II et Dune 2000 (Aile portante, Tank sonique, Dévastator, Spatioport...)."
+      }
+     ]
+    },
+    {
+     "titre": "Ce qui est traduit",
+     "blocs": [
+      {
+       "puce": "Les 111 messages des trois Mentats (Cyril et Ammon vouvoient, Radnor tutoie) et la présentation des Maisons."
+      },
+      {
+       "puce": "Écran titre, choix de la Maison, options, test sonore, mots de passe, écran des scores et classements."
+      },
+      {
+       "puce": "Panneau de construction : noms des unités et des bâtiments, boutons Sortir / Réparé / Annulé, Spatioport."
+      },
+      {
+       "puce": "Tutoriel complet, cadres et consignes compris, et la carte de conquête."
+      },
+      {
+       "puce": "Fin de partie et générique, avec les lettres accentuées."
+      },
+      {
+       "puce": "Voix digitalisées françaises."
+      }
+     ]
+    },
+    {
+     "titre": "Améliorations",
+     "blocs": [
+      {
+       "puce": "ROM « world » : le jeu démarre sur toutes les Mega Drive (japonaise, américaine, européenne, 50 et 60 Hz)."
+      }
+     ]
+    },
+    {
+     "titre": "Historique des versions",
+     "blocs": [
+      {
+       "puce": "V10 (25/10/2026) : La question de confirmation (Recommencer / Changer de Maison) n'est plus coupée : elle affiche « CONFIRMER ? »"
+      },
+      {
+       "puce": "V09 (24/10/2026) : Barres de l'écran des scores rétablies ; Noms du test sonore conformes aux voix françaises ; Petits défauts graphiques corrigés sur l'écran titre et le choix de la Maison"
+      },
+      {
+       "puce": "V08 (24/10/2026) : Écran DUNE de fin de partie traduit ; Lettres accentuées et © corrects dans le générique de fin"
+      },
+      {
+       "puce": "V07 (24/10/2026) : « Choisissez votre Maison » et plaque ATRÉIDES ; Sous-titre de l'écran titre recentré"
+      },
+      {
+       "puce": "V06 (24/10/2026) : Sous-titre « La Bataille pour Arrakis » sur l'écran titre ; Tous les cadres du tutoriel traduits"
+      },
+      {
+       "puce": "V05 (24/10/2026) : Boutons du Mentat OUI / NON et MISSION / CONSEIL ; Boutons du panneau Sortir / Réparé / Annulé"
+      },
+      {
+       "puce": "V04 (24/10/2026) : Noms des unités alignés sur le manuel français de Dune 2000"
+      },
+      {
+       "puce": "V03 (24/10/2026) : Écrans des scores, du mot de passe et des options traduits"
+      },
+      {
+       "puce": "V02 (24/10/2026) : « Starport » devient « Spatioport »"
+      },
+      {
+       "puce": "V01 (24/10/2026) : Première version : ROM world, polices accentuées, Mentats, menus, panneau, tutoriel et voix en français"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/dune/01_titre.png",
+     "legende": "Écran titre : « La Bataille pour Arrakis »"
+    },
+    {
+     "src": "images/dune/02_maisons.png",
+     "legende": "Choix de la Maison"
+    },
+    {
+     "src": "images/dune/03_mentat.png",
+     "legende": "Les Mentats parlent français"
+    },
+    {
+     "src": "images/dune/04_partie.png",
+     "legende": "Début de la première mission"
+    },
+    {
+     "src": "images/dune/05_panneau.png",
+     "legende": "Le panneau de construction traduit"
+    },
+    {
+     "src": "images/dune/06_victoire.png",
+     "legende": "Victoire !"
+    },
+    {
+     "src": "images/dune/07_motdepasse.png",
+     "legende": "Mot de passe de fin de mission"
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/dune.bps",
+    "format": "bps",
+    "crc_source": "4DEA40BA",
+    "taille_source": 1048576,
+    "crc_sortie": "B38F17B5",
+    "taille_sortie": 2097152,
+    "taille_patch": 148628
+   },
+   "revision": 1,
+   "date_maj": "25/10/2026"
+  },
+  {
+   "ordre": 20,
+   "categorie": "Traductions et améliorations",
+   "titre": "Nadia de la mer mystérieuse",
+   "sous_titre": "Traduction française",
+   "plateforme": "Mega Drive",
+   "statut": "Version de test",
+   "resume": "Traduction française complète du jeu d'aventure Fushigi no Umi no Nadia (« Nadia, le secret de l'eau bleue »), faite depuis la version japonaise : dialogues, menus, objets, écrans d'intro, logo et mots de passe. Noms de la VF du dessin animé et ROM « world » qui démarre sur toutes les Mega Drive.",
+   "couleur": "#2a7fd4",
+   "rom_attendue": "Fushigi no Umi no Nadia (Japan)",
+   "nom_sortie": "Nadia de la mer mysterieuse (FR).bin",
+   "format": "bps",
+   "version": "NADv05",
+   "date_version": "24/10/2026",
+   "id": "nadia",
+   "notes": [
+    {
+     "titre": "",
+     "blocs": [
+      {
+       "texte": "Traduction faite à partir de la version japonaise (le jeu n'est jamais sorti en Occident). Les noms des personnages reprennent ceux de la version française du dessin animé « Nadia, le secret de l'eau bleue » : Gladys, Titus, Caïus, Attila, Argon, Jean Roc de Baltique."
+      },
+      {
+       "texte": "Les paroles de la chanson de l'intro ne sont pas traduites : elles sont remplacées par des notes de musique."
+      }
+     ]
+    },
+    {
+     "titre": "Ce qui est traduit",
+     "blocs": [
+      {
+       "puce": "Tous les dialogues, les objets, les lieux et les messages du jeu."
+      },
+      {
+       "puce": "Menu titre, menus de commandes, menu son (titres des musiques) et écran des mots de passe."
+      },
+      {
+       "puce": "Écrans d'intro (« D'après Vingt mille lieues sous les mers de Jules Verne », « 1889 / Paris ») et prologue de la démo."
+      },
+      {
+       "puce": "Logo de présentation « Nadia de la mer mystérieuse » et titre des chapitres « LE SECRET DE L'EAU BLEUE »."
+      },
+      {
+       "puce": "Générique de fin, avec le crédit de la traduction française."
+      }
+     ]
+    },
+    {
+     "titre": "Améliorations",
+     "blocs": [
+      {
+       "puce": "ROM « world » : le jeu démarre sur toutes les Mega Drive (japonaise, américaine, européenne)."
+      },
+      {
+       "puce": "Nouvelle police avec majuscules, minuscules et lettres accentuées ; fenêtres de dialogue de 6 lignes."
+      },
+      {
+       "puce": "Fenêtres de menu élargies pour afficher les mots français en entier."
+      },
+      {
+       "puce": "Mots de passe sur une grille de lettres latines (les 5 codes de chapitre sont donnés dans le jeu)."
+      },
+      {
+       "puce": "Codes cachés réactivés sur l'écran « Code » : DEBUG (pas à pas des scènes), NODEBUG, PAUSE et LEURRE."
+      }
+     ]
+    },
+    {
+     "titre": "Historique des versions",
+     "blocs": [
+      {
+       "puce": "NADv05 (24/10/2026) : Le logo japonais de la démo est remplacé par « Nadia de la mer mystérieuse » ; La ligne de copyright de la démo est entièrement lisible"
+      },
+      {
+       "puce": "NADv04 (24/10/2026) : Le prologue de la démo (texte en kanji sur le cadre rouge) est traduit ; Fenêtre des objets plus large : les noms ne touchent plus le bord"
+      },
+      {
+       "puce": "NADv03 (24/10/2026) : Codes cachés ajoutés sur l'écran « Code » : DEBUG, NODEBUG, PAUSE et LEURRE ; Les mots de passe de chapitre fonctionnent aussi sans les espaces"
+      },
+      {
+       "puce": "NADv02 (24/10/2026) : Noms des personnages repris de la VF du dessin animé (Gladys, Titus, Caïus, Attila, Argon…) ; Le titre des chapitres « THE SECRET OF BLUE WATER » devient « LE SECRET DE L'EAU BLEUE »"
+      },
+      {
+       "puce": "NADv01 (24/10/2026) : Première version : tous les textes traduits depuis le japonais, police accentuée, ROM world ; Menu titre, menu son, écrans d'intro et grille des mots de passe en français"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/nadia/01_logo.png",
+     "legende": "Le logo de présentation : « Nadia de la mer mystérieuse »"
+    },
+    {
+     "src": "images/nadia/02_prologue.png",
+     "legende": "Le prologue de la démo, traduit sur le cadre d'origine"
+    },
+    {
+     "src": "images/nadia/03_intro.png",
+     "legende": "L'introduction : d'après « Vingt mille lieues sous les mers »"
+    },
+    {
+     "src": "images/nadia/04_dialogue.png",
+     "legende": "Dialogues traduits depuis le japonais, police accentuée"
+    },
+    {
+     "src": "images/nadia/05_nadia.png",
+     "legende": "La rencontre avec Nadia"
+    },
+    {
+     "src": "images/nadia/06_menus.png",
+     "legende": "Menus de commandes élargis pour les mots français"
+    },
+    {
+     "src": "images/nadia/07_code.png",
+     "legende": "L'écran des mots de passe, avec une grille de lettres"
+    },
+    {
+     "src": "images/nadia/08_chapitre.png",
+     "legende": "Écran de chapitre : LE SECRET DE L'EAU BLEUE"
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/nadia.bps",
+    "format": "bps",
+    "crc_source": "4762062A",
+    "taille_source": 1048576,
+    "crc_sortie": "F296A334",
+    "taille_sortie": 2097152,
+    "taille_patch": 154581
+   },
+   "revision": 1,
+   "date_maj": "25/10/2026"
+  },
+  {
+   "ordre": 20,
+   "categorie": "Traductions et améliorations",
+   "titre": "Rent A Hero",
+   "sous_titre": "Traduction française",
+   "plateforme": "Mega Drive",
+   "statut": "Version de test",
+   "resume": "Traduction française complète de l'aventure comique de Sega, faite à partir de la version japonaise : dialogues, menus, objets, sound test et générique, avec les jeux de mots adaptés en français. ROM « world » qui démarre sur toutes les Mega Drive.",
+   "couleur": "#2f7fd1",
+   "rom_attendue": "Rent A Hero (Japan)",
+   "nom_sortie": "Rent A Hero (FR).gen",
+   "format": "bps",
+   "version": "V12",
+   "date_version": "25/10/2026",
+   "id": "rent-a-hero",
+   "notes": [
+    {
+     "titre": "",
+     "blocs": [
+      {
+       "texte": "Traduction faite à partir de la version japonaise, le seul Rent A Hero sorti sur Mega Drive. Le logo RENT A HERO de l'écran titre est conservé."
+      },
+      {
+       "texte": "Le jeu est une comédie : les jeux de mots et les noms à double sens sont adaptés en français (Ultracadre, le commissaire Grisbi, Nialiv Chimie, Mlle Tomate et Poireau...)."
+      }
+     ]
+    },
+    {
+     "titre": "Ce qui est traduit",
+     "blocs": [
+      {
+       "puce": "Tous les dialogues, l'introduction, les scènes de l'histoire et les messages du jeu (plus de 2 000 répliques)."
+      },
+      {
+       "puce": "Menus, fiche du héros, banque, magasins, ordinateur, ascenseurs, sauvegarde et chargement."
+      },
+      {
+       "puce": "Les 41 objets, les armures et les armes."
+      },
+      {
+       "puce": "Écran de saisie du nom en lettres françaises, avec accents, et nom jusqu'à 10 lettres."
+      },
+      {
+       "puce": "Sound test (titres des 24 musiques) et générique de fin, avec un crédit TRAD. FRANÇAISE / PLAYER TIME."
+      },
+      {
+       "puce": "Étiquette VIE à la place de LIFE dans l'affichage du héros."
+      },
+      {
+       "puce": "Police du jeu refaite avec minuscules et lettres accentuées."
+      }
+     ]
+    },
+    {
+     "titre": "Améliorations",
+     "blocs": [
+      {
+       "puce": "ROM « world » : le jeu démarre sur toutes les Mega Drive (japonaise, américaine, européenne)."
+      },
+      {
+       "puce": "Fenêtres de menus élargies pour que les mots français s'affichent en entier."
+      },
+      {
+       "puce": "Le nom secret du jeu d'origine marche toujours (essayez « Kenji »)."
+      }
+     ]
+    },
+    {
+     "titre": "Laissé en anglais volontairement",
+     "blocs": [
+      {
+       "puce": "Le logo RENT A HERO, le nom du gang Dynamite Dogs (déjà en anglais dans la version japonaise) et les titres des musiques d'arcade Sega du sound test."
+      }
+     ]
+    },
+    {
+     "titre": "Historique des versions",
+     "blocs": [
+      {
+       "puce": "V12 (25/10/2026) : Les menus élargis se referment proprement : plus de morceau de menu qui reste affiché après la fermeture"
+      },
+      {
+       "puce": "V11 (25/10/2026) : Menus élargis corrigés : ils s'affichent en entier, sans morceau de décor par-dessus ; Fiche du héros : le lieu et le travail en cours s'affichent correctement ; Vitesse du texte : Vite / Lent lisibles en entier ; Banque : Dépôt / Tirer / Virer / Don ; ordinateur : Sauver / Boulot ; Tenue / Arme"
+      },
+      {
+       "puce": "V10 (25/10/2026) : Saisie du nom : la case END devient FIN ; Le nom du héros peut vraiment faire jusqu'à 10 lettres (il restait bloqué à 6)"
+      },
+      {
+       "puce": "V09 (24/10/2026) : Tout le texte du jeu est maintenant en français ; Générique de fin et sound test traduits ; Étiquette VIE à la place de LIFE ; Le commissaire Grisbi se présente dans sa propre fenêtre"
+      },
+      {
+       "puce": "V08 (24/10/2026) : Menus traduits : commandes, banque, magasins, ordinateur, ascenseurs, fiche du héros, sauvegarde ; Noms des objets, armures et armes en français ; Fenêtres des menus élargies pour les mots français"
+      },
+      {
+       "puce": "V07 (24/10/2026) : Correction : les scènes de l'histoire (comme la fête du début) affichaient du texte mélangé, elles sont maintenant en français ; Les noms de plus de 6 lettres s'affichent correctement à l'écran de sauvegarde"
+      },
+      {
+       "puce": "V06 (24/10/2026) : Toute la scène d'ouverture traduite : la fête d'emménagement, l'armure et l'arrivée de la SECA ; Texte mieux réparti dans les fenêtres"
+      },
+      {
+       "puce": "V05 (24/10/2026) : Nouvelles missions traduites (Mlle Tomate, livraisons, voyante...) ; Les choix oui/non et les événements fonctionnent avec le texte français"
+      },
+      {
+       "puce": "V04 (24/10/2026) : Premiers dialogues traduits ; L'argent s'affiche en Gôdo ; Nom du héros jusqu'à 10 lettres"
+      },
+      {
+       "puce": "V03 (24/10/2026) : Écran de saisie du nom en lettres françaises, avec accents"
+      },
+      {
+       "puce": "V02 (24/10/2026) : Police française avec minuscules et accents, introduction en français"
+      },
+      {
+       "puce": "V01 (24/10/2026) : Première version : ROM world qui démarre sur toutes les Mega Drive"
+      }
+     ]
+    }
+   ],
+   "images": [],
+   "patch": {
+    "fichier": "patchs/rent-a-hero.bps",
+    "format": "bps",
+    "crc_source": "2E515F82",
+    "taille_source": 1048576,
+    "crc_sortie": "44E8F261",
+    "taille_sortie": 2097152,
+    "taille_patch": 234963
+   },
+   "revision": 1,
+   "date_maj": "25/10/2026"
+  },
+  {
+   "ordre": 20,
+   "categorie": "Traductions et améliorations",
+   "titre": "Shining Force Résurrection",
+   "sous_titre": "Traduction française et version enrichie",
+   "plateforme": "Mega Drive",
+   "statut": "En cours",
+   "resume": "Shining Force entièrement traduit depuis le japonais, enrichi avec le contenu de la version GBA (Resurrection of the Dark Dragon) et les mécaniques de Shining Force II : nouveaux héros, cartes de Mawlock, combats, magies, Défis et New Game+. ROM de 3 Mo compatible avec une Mega Drive officielle.",
+   "couleur": "#c8902a",
+   "rom_attendue": "Shining Force (USA)",
+   "nom_sortie": "Shining Force Resurrection (FR).bin",
+   "format": "bps",
+   "version": "SFRv63",
+   "date_version": "24/10/2026",
+   "id": "shining-force-resurrection",
+   "notes": [
+    {
+     "titre": "",
+     "blocs": [
+      {
+       "texte": "Shining Force Résurrection reprend toute la traduction française de Shining Force (textes retraduits depuis la version japonaise, noms japonais des personnages et des lieux, menus et graphismes en français) et y ajoute le contenu et les mécaniques du remake GBA « Resurrection of the Dark Dragon » et de Shining Force II."
+      },
+      {
+       "texte": "Le patch s'applique à la ROM américaine (USA) ; la ROM obtenue fait 3 Mo et fonctionne sur une Mega Drive officielle."
+      }
+     ]
+    },
+    {
+     "titre": "Ce qui est traduit",
+     "blocs": [
+      {
+       "puce": "Tous les dialogues, retraduits depuis le japonais, avec les noms japonais (personnages, lieux, magies)."
+      },
+      {
+       "puce": "Menus, objets, classes, ennemis et magies en français, lettres accentuées dans les polices."
+      },
+      {
+       "puce": "Écran titre, cartons de chapitre, mot FIN et générique de fin en français."
+      }
+     ]
+    },
+    {
+     "titre": "Contenu de la version GBA",
+     "blocs": [
+      {
+       "puce": "Zuika, Narsha et Mawlock ; les 55 cartes de Mawlock et leurs modes (Effet, Copie, Mouvement, Résurrection)."
+      },
+      {
+       "puce": "127 objets (armes tueuses, masses, anneaux), statistiques des héros et des ennemis de la GBA, 10 nouveaux ennemis."
+      },
+      {
+       "puce": "Les combats ajoutés (Désert, Port, Sanctuaire), les épilogues, l'amitié et les histoires des héros au QG, les bonus de victoire."
+      },
+      {
+       "puce": "Magies NOVA et ÉLAN, cris des boss, musique des héros promus."
+      }
+     ]
+    },
+    {
+     "titre": "Mécaniques de Shining Force II",
+     "blocs": [
+      {
+       "puce": "Contre-attaques, esquive, promotions spéciales, fée démoniaque."
+      },
+      {
+       "puce": "Combats et déplacements plus rapides, scènes de combat de SF2, marche en diagonale hors combat."
+      },
+      {
+       "puce": "Magies de SF2 (RAFALE, DRAIN, KATON, RAIJIN et les invocations DAO, APOLLO, NEPTUN, ATLAS) et 13 objets de SF2."
+      },
+      {
+       "puce": "Liste des membres et fiche de statut comme dans SF2."
+      }
+     ]
+    },
+    {
+     "titre": "En plus",
+     "blocs": [
+      {
+       "puce": "Difficulté au choix (Normal, Difficile, Expert, Infernal), New Game+, combat des boss et Défis pour une partie finie."
+      },
+      {
+       "puce": "Nouveaux dessins (sprites, portraits, décors), eau et feu animés."
+      },
+      {
+       "puce": "Menu de test de combat sur l'écran titre : A+B+C+START."
+      }
+     ]
+    },
+    {
+     "titre": "Historique des versions",
+     "blocs": [
+      {
+       "puce": "SFRv63 (24/10/2026) : Décors des cartes redessinés (arbres, herbe, fleurs, remparts, toits du château) ; L'eau et le feu des cartes bougent aussi quand on se promène, plus seulement en combat"
+      },
+      {
+       "puce": "SFRv62 (24/10/2026) : Menu de test de combat : choix de la bague de chaque héros"
+      },
+      {
+       "puce": "SFRv61 (24/10/2026) : Menu de test de combat : choix de l'arme de chaque héros parmi celles qu'il peut équiper"
+      },
+      {
+       "puce": "SFRv60 (24/10/2026) : TRÉPAS : la Mort rit au moment où elle apparaît, comme dans la version GBA"
+      },
+      {
+       "puce": "SFRv59 (24/10/2026) : Nouveau mode des cartes de Mawlock, Résurrection : un héros tombé revient au combat là où il est tombé, en échange de PM"
+      },
+      {
+       "puce": "SFRv58 (24/10/2026) : Menu des cartes de Mawlock en combat comme sur GBA : on choisit le mode puis la carte, une carte jouée reste retournée, un cadre explique l'effet"
+      },
+      {
+       "puce": "SFRv57 (24/10/2026) : La carte jouée par Mawlock s'affiche en grand pendant la scène de combat, comme sur GBA"
+      },
+      {
+       "puce": "SFRv56 (24/10/2026) : Corrigé : le souffle d'un ennemi à distance bloquait le jeu ; le héros devenait invisible quand un ennemi l'attaquait de loin ; NOVA 4 et ÉLAN : l'écran blanchit comme sur GBA"
+      },
+      {
+       "puce": "SFRv55 (24/10/2026) : NOVA a une animation différente à chaque niveau (version GBA) ; ÉGIDE et ÉLAN s'affichent devant le héros"
+      },
+      {
+       "puce": "SFRv54 (24/10/2026) : Dieux invoqués comme dans Shining Force II : le héros sort de l'écran, le dieu frappe, puis le héros revient"
+      },
+      {
+       "puce": "SFRv53 (24/10/2026) : Corrigé : des scènes de combat restaient bloquées sur un écran noir face à certains ennemis"
+      },
+      {
+       "puce": "SFRv52 (24/10/2026) : Les scènes qui attendent le héros sur une case (Lowe au début du jeu) ne sont plus ratées en marchant vite ou en diagonale"
+      },
+      {
+       "puce": "SFRv51 (24/10/2026) : Marche en diagonale corrigée : le décor ne se casse plus après deux pas en diagonale"
+      },
+      {
+       "puce": "SFRv50 (24/10/2026) : Marche en diagonale hors combat, comme dans Shining Force II : le héros glisse le long des murs au lieu de buter sur les coins"
+      },
+      {
+       "puce": "SFRv49 (23/10/2026) : Musique des héros promus mieux équilibrée"
+      },
+      {
+       "puce": "SFRv48 (23/10/2026) : Amitié de la version GBA : points d'amitié gagnés en combat, histoires des héros racontées au QG et cartes d'amitié données à Mawlock"
+      },
+      {
+       "puce": "SFRv47 (22/10/2026) : Menu de test de combat : on peut tester un combat avec les règles des Défis"
+      },
+      {
+       "puce": "SFRv46 (22/10/2026) : Défis pour une partie finie : 4e nuage chez Simone, combats rejoués avec des ennemis plus forts, comme dans Shining Force II ; Les objets des coffres et des bonus de victoire vont au premier membre qui a de la place"
+      },
+      {
+       "puce": "SFRv45 (21/10/2026) : Les prêtres promus avec la Boule d'ardeur deviennent Maîtres moines (Lowe et Torasu, avec leurs couleurs)"
+      },
+      {
+       "puce": "SFRv44 (21/10/2026) : Menu de test de combat sur l'écran titre (A+B+C+START) : combat, héros, niveaux, difficulté, New Game+ et cartes de Mawlock"
+      },
+      {
+       "puce": "SFRv43 (19/10/2026) : Théurge : magies d'invocation (DAO, APOLLO, NEPTUN, ATLAS), comme le Sorcier de Shining Force II"
+      },
+      {
+       "puce": "SFRv42 (19/10/2026) : Musique des héros promus de la version GBA dans les scènes de combat"
+      },
+      {
+       "puce": "SFRv40 (19/10/2026) : Menu des cartes de Mawlock amélioré ; les cartes qui frappent tous les ennemis ne plantent plus"
+      },
+      {
+       "puce": "SFRv39 (19/10/2026) : Magies de la version GBA : NOVA (Max promu) et ÉLAN (Narsha) ; animations GBA de HÂTE et ÉGIDE"
+      },
+      {
+       "puce": "SFRv38 (19/10/2026) : 8 magies de Shining Force II : RAFALE, DRAIN, KATON, RAIJIN, DAO, APOLLO, NEPTUN, ATLAS, avec leurs animations"
+      },
+      {
+       "puce": "SFRv36 (19/10/2026) : Sous-titre de l'écran titre : « LA RÉSURRECTION DE DARK DRAGON » ; Ennemis plus agressifs en Expert et Infernal"
+      },
+      {
+       "puce": "SFRv35 (18/10/2026) : « Tour N » affiché à chaque tour ; niveaux des cartes de Mawlock (Effet, Copie, Mouvement)"
+      },
+      {
+       "puce": "SFRv34 (18/10/2026) : Scène de Mawlock pendant le trajet en chariot (chapitre 1)"
+      },
+      {
+       "puce": "SFRv33 (18/10/2026) : Les épilogues de la version GBA (Narsha et Zuika) en fin de chapitre"
+      },
+      {
+       "puce": "SFRv32 (18/10/2026) : Illustrations des 55 cartes de Mawlock dans son menu"
+      },
+      {
+       "puce": "SFRv31 (18/10/2026) : Eau, cascades et feu animés ; ciel en parallaxe sur certaines cartes"
+      },
+      {
+       "puce": "SFRv30 (18/10/2026) : Les 3 combats ajoutés de la version GBA : Désert, Port et Sanctuaire"
+      },
+      {
+       "puce": "SFRv27 (18/10/2026) : Les 10 ennemis de la version GBA (Scorpion géant, Kraken, Soul Eater...)"
+      },
+      {
+       "puce": "SFRv23 (18/10/2026) : Cris des boss repris de la version GBA"
+      },
+      {
+       "puce": "SFRv22 (18/10/2026) : Scènes de combat comme dans Shining Force II : entrée rapide, attaques à distance avec changement d'écran"
+      },
+      {
+       "puce": "SFRv21 (18/10/2026) : Nuages de Simone : difficulté, New Game+ et combat des boss pour une partie finie"
+      },
+      {
+       "puce": "SFRv20 (18/10/2026) : Les 55 cartes de Mawlock (GBA) : collection, effets, copie, mouvement"
+      },
+      {
+       "puce": "SFRv19 (17/10/2026) : Zuika, Narsha et Mawlock avec les valeurs de la version GBA ; 34 membres dans la Force"
+      },
+      {
+       "puce": "SFRv18 (17/10/2026) : Nova jouable (il rejoint au chapitre 1)"
+      },
+      {
+       "puce": "SFRv16 (17/10/2026) : Zuika, l'assassin insecte de la version GBA, rejoint la Force au chapitre 4"
+      },
+      {
+       "puce": "SFRv15 (17/10/2026) : Fée démoniaque quand un ennemi se soigne, comme dans Shining Force II"
+      },
+      {
+       "puce": "SFRv14 (17/10/2026) : Esquive comme dans Shining Force II (bond en arrière)"
+      },
+      {
+       "puce": "SFRv13 (17/10/2026) : Promotions spéciales comme dans Shining Force II (Chevalier Pégase, Baron rouge, Maître moine...)"
+      },
+      {
+       "puce": "SFRv12 (17/10/2026) : Nouveaux dessins : sprites de carte, sprites de combat des ennemis et portraits"
+      },
+      {
+       "puce": "SFRv08 (17/10/2026) : Liste des membres et fiche de statut comme dans Shining Force II"
+      },
+      {
+       "puce": "SFRv07 (17/10/2026) : Combats et déplacements plus rapides, comme dans Shining Force II"
+      },
+      {
+       "puce": "SFRv06 (16/10/2026) : Difficulté au choix (Normal, Difficile, Expert, Infernal) et ennemis plus malins"
+      },
+      {
+       "puce": "SFRv05 (16/10/2026) : Contre-attaques et bonus de victoire (gagner en N tours ou moins)"
+      },
+      {
+       "puce": "SFRv04 (16/10/2026) : Ennemis et héros avec les statistiques de la version GBA"
+      },
+      {
+       "puce": "SFRv01 (16/10/2026) : Première version : 127 objets au lieu de 63 (armes tueuses, masses et anneaux de la version GBA, objets de Shining Force II), nouveaux magasins"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/shining-force-resurrection/01_titre.png",
+     "legende": "Écran titre : « LA RÉSURRECTION DE DARK DRAGON »"
+    },
+    {
+     "src": "images/shining-force-resurrection/02_intro.png",
+     "legende": "L'introduction, retraduite depuis le japonais"
+    },
+    {
+     "src": "images/shining-force-resurrection/03_simone.png",
+     "legende": "Simone et son grand livre"
+    },
+    {
+     "src": "images/shining-force-resurrection/04_guardiana.png",
+     "legende": "Guardiana avec ses nouveaux décors"
+    },
+    {
+     "src": "images/shining-force-resurrection/05_bonus_victoire.png",
+     "legende": "Bonus de victoire de la version GBA"
+    },
+    {
+     "src": "images/shining-force-resurrection/06_combat.png",
+     "legende": "Premier combat"
+    },
+    {
+     "src": "images/shining-force-resurrection/07_test_combat.png",
+     "legende": "Menu de test de combat (A+B+C+START sur l'écran titre)"
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/shining-force-resurrection.bps",
+    "format": "bps",
+    "crc_source": "E0594ABE",
+    "taille_source": 1572864,
+    "crc_sortie": "46B4317E",
+    "taille_sortie": 3145728,
+    "taille_patch": 1317935
+   },
+   "revision": 1,
+   "date_maj": "25/10/2026"
+  },
+  {
+   "ordre": 21,
+   "categorie": "Traductions et améliorations",
+   "titre": "DuneRazor",
+   "sous_titre": "Traduction française du DuneHack Rebuild de Ti_",
+   "plateforme": "Mega Drive",
+   "statut": "Version de test",
+   "resume": "Le DuneHack Rebuild de Ti_ en français : deux nouvelles Maisons jouables (Fremen et Corrino), nouvelles unités, niveaux de difficulté. Prévu pour émulateur et Mega SG : sur une Mega Drive d'origine, préférer DuneRazorOpti.",
+   "couleur": "#8a3fb0",
+   "rom_attendue": "Dune - The Battle for Arrakis (USA)",
+   "nom_sortie": "DuneRazor (FR).bin",
+   "format": "bps",
+   "version": "V02",
+   "date_version": "25/10/2026",
+   "id": "dunerazor",
+   "notes": [
+    {
+     "titre": "",
+     "blocs": [
+      {
+       "texte": "DuneHack Rebuild R82b est un hack de Ti_ qui reconstruit Dune et ajoute de nombreuses nouveautés. Cette version le traduit en français en reprenant le travail de Dune FR (textes, polices, voix et graphismes)."
+      }
+     ]
+    },
+    {
+     "titre": "Ce qui est traduit",
+     "blocs": [
+      {
+       "puce": "Les 185 messages des Mentats, dont les campagnes Fremen (textes écrits pour les Fremen) et Corrino."
+      },
+      {
+       "puce": "Menus, options, niveaux de difficulté, mots de passe, scores et générique."
+      },
+      {
+       "puce": "Noms des unités et des bâtiments, y compris les nouveaux (Ouragan, Tank laser, Aéroglisseur, Orka...)."
+      }
+     ]
+    },
+    {
+     "titre": "Quelle console ?",
+     "blocs": [
+      {
+       "texte": "Le hack demande plus de puissance qu'une Mega Drive d'origine : il tourne bien sur émulateur et sur Mega SG, mais rame sur une Mega Drive d'origine. Pour une Mega Drive d'origine, utilisez DuneRazorOpti."
+      }
+     ]
+    },
+    {
+     "titre": "Historique des versions",
+     "blocs": [
+      {
+       "puce": "V02 (25/10/2026) : Campagne Fremen réécrite : la Mentat parle comme une femme du désert ; La question de confirmation affiche « CONFIRMER ? »"
+      },
+      {
+       "puce": "V01 (24/10/2026) : Première version française du DuneHack Rebuild"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/dunerazor/01_titre.png",
+     "legende": "Écran titre avec le choix du niveau"
+    },
+    {
+     "src": "images/dunerazor/02_maisons.png",
+     "legende": "Cinq Maisons au choix"
+    },
+    {
+     "src": "images/dunerazor/03_mentat_fremen.png",
+     "legende": "La Mentat des Fremen"
+    },
+    {
+     "src": "images/dunerazor/04_mentat_corrino.png",
+     "legende": "Le Mentat de la Maison Corrino"
+    },
+    {
+     "src": "images/dunerazor/05_partie_corrino.png",
+     "legende": "Une mission avec les Corrino"
+    },
+    {
+     "src": "images/dunerazor/06_panneau.png",
+     "legende": "Le panneau de construction"
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/dunerazor.bps",
+    "format": "bps",
+    "crc_source": "4DEA40BA",
+    "taille_source": 1048576,
+    "crc_sortie": "9162358A",
+    "taille_sortie": 2097152,
+    "taille_patch": 717741
+   },
+   "revision": 1,
+   "date_maj": "25/10/2026"
+  },
+  {
+   "ordre": 22,
+   "categorie": "Traductions et améliorations",
+   "titre": "DuneRazorOpti",
+   "sous_titre": "DuneRazor allégé pour la Mega Drive d'origine",
+   "plateforme": "Mega Drive",
+   "statut": "En cours",
+   "resume": "Dune FR enrichi des nouveautés de DuneRazor, sur le moteur d'origine pour tourner à pleine vitesse sur une vraie Mega Drive : Fremen et Corrino jouables, leurs Mentats, nouvelles cartes et réglages des unités.",
+   "couleur": "#3f7fbf",
+   "rom_attendue": "Dune - The Battle for Arrakis (USA)",
+   "nom_sortie": "DuneRazorOpti (FR).bin",
+   "format": "bps",
+   "version": "V08",
+   "date_version": "25/10/2026",
+   "id": "dunerazoropti",
+   "notes": [
+    {
+     "titre": "",
+     "blocs": [
+      {
+       "texte": "DuneRazor (le DuneHack Rebuild de Ti_) est trop gourmand pour une Mega Drive d'origine. DuneRazorOpti part du moteur d'origine de Dune FR, qui tourne à pleine vitesse sur console, et y ajoute une à une les nouveautés de DuneRazor qui ne la ralentissent pas."
+      }
+     ]
+    },
+    {
+     "titre": "Déjà repris de DuneRazor",
+     "blocs": [
+      {
+       "puce": "Fremen et Corrino jouables : 9 missions chacun, 18 nouvelles cartes, mots de passe, fin du jeu."
+      },
+      {
+       "puce": "Leurs Mentats, leurs couleurs et celles de la carte de conquête."
+      },
+      {
+       "puce": "Campagne Fremen écrite pour les Fremen."
+      },
+      {
+       "puce": "Réglages des unités et des bâtiments du hack ; infanterie Fremen et Sardaukar."
+      },
+      {
+       "puce": "Nouvelle unité : le Quad missile des Ordos."
+      }
+     ]
+    },
+    {
+     "titre": "Pas encore repris",
+     "blocs": [
+      {
+       "puce": "Les autres nouvelles unités, le ver des sables des Fremen, les niveaux de difficulté et le temps de jeu."
+      }
+     ]
+    },
+    {
+     "titre": "Historique des versions",
+     "blocs": [
+      {
+       "puce": "V08 (25/10/2026) : Nouvelle unité Ordos : le Quad missile, à l'Usine légère améliorée deux fois, avec un Avant-poste"
+      },
+      {
+       "puce": "V07 (25/10/2026) : Coûts, résistance et puissance des unités et des bâtiments comme dans DuneRazor ; Infanterie « Fremen » et « Sardaukar » pour les nouvelles Maisons"
+      },
+      {
+       "puce": "V06 (25/10/2026) : Campagne Fremen réécrite : la Mentat parle comme une femme du désert"
+      },
+      {
+       "puce": "V05 (25/10/2026) : Écran des Maisons corrigé après « Changer de Maison » en cours de partie ; La question de confirmation affiche « CONFIRMER ? »"
+      },
+      {
+       "puce": "V04 (25/10/2026) : Régions de la carte de conquête aux couleurs des Fremen (gris) et des Corrino (violet)"
+      },
+      {
+       "puce": "V03 (25/10/2026) : Mentats des Fremen et des Corrino repris de DuneRazor"
+      },
+      {
+       "puce": "V02 (25/10/2026) : Les Corrino sont violets, comme les Sardaukar"
+      },
+      {
+       "puce": "V01 (25/10/2026) : Première version : cinq Maisons, campagnes Fremen et Corrino, nouvelles cartes et mots de passe"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/dunerazoropti/01_titre.png",
+     "legende": "Écran titre"
+    },
+    {
+     "src": "images/dunerazoropti/02_maisons.png",
+     "legende": "Cinq Maisons au choix"
+    },
+    {
+     "src": "images/dunerazoropti/03_mentat_fremen.png",
+     "legende": "La Mentat des Fremen"
+    },
+    {
+     "src": "images/dunerazoropti/04_partie_fremen.png",
+     "legende": "Première mission des Fremen"
+    },
+    {
+     "src": "images/dunerazoropti/05_mentat_corrino.png",
+     "legende": "Le Mentat de la Maison Corrino"
+    },
+    {
+     "src": "images/dunerazoropti/06_partie_corrino.png",
+     "legende": "Les Corrino en violet"
+    },
+    {
+     "src": "images/dunerazoropti/07_conquete_corrino.png",
+     "legende": "La carte de conquête aux couleurs des Corrino"
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/dunerazoropti.bps",
+    "format": "bps",
+    "crc_source": "4DEA40BA",
+    "taille_source": 1048576,
+    "crc_sortie": "EA0865CA",
+    "taille_sortie": 2097152,
+    "taille_patch": 200166
+   },
+   "revision": 1,
+   "date_maj": "25/10/2026"
   }
  ],
  "titre_page": "Player Time – Traductions françaises de jeux Mega Drive et Mega CD"
