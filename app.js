@@ -127,7 +127,7 @@ function vignette(p) {
 }
 
 function carte(p) {
-  return el('li', { 'data-plateforme': p.plateforme || '' },
+  return el('li', { 'data-plateforme': p.plateforme || '', 'data-lettre': lettreDe(p.titre) },
     el('a', { class: 'fenetre carte-jeu', href: BASE + 'jeu/' + p.id + '/' },
       vignette(p),
       el('div', { class: 'carte-corps' },
@@ -159,28 +159,76 @@ function dessinerListe() {
   ongletsConsoles(zone);
 }
 
-/* Onglets par console : filtrent les cartes, les sections vides disparaissent */
+/* ---------- Choix par console (grandes vignettes) + choix par lettre ---------- */
+const ICONES = {
+  // dessins pixel originaux : cartouche 16 bits, cartouche 8 bits, CD (remplaçables par console-<nom>.png)
+  'Mega Drive': '<svg viewBox="0 0 32 32" shape-rendering="crispEdges"><path fill="#1b1b22" d="M6 4h20v2h2v20h-2v2H6v-2H4V6h2z"/><path fill="#2e2e3a" d="M8 6h16v12H8z"/><path fill="#e8c46a" d="M9 8h14v8H9z"/><path fill="#c0392b" d="M10 9h12v2H10z"/><path fill="#1d2f8f" d="M10 12h12v3H10z"/><path fill="#555566" d="M8 22h2v4H8zM12 22h2v4h-2zM16 22h2v4h-2zM20 22h2v4h-2z"/></svg>',
+  'Master System': '<svg viewBox="0 0 32 32" shape-rendering="crispEdges"><path fill="#1b1b22" d="M8 3h16v26H8z"/><path fill="#f2f2f2" d="M10 5h12v15H10z"/><path fill="#d0312d" d="M10 5h12v3H10z"/><path fill="#3a7bd5" d="M11 10h10v7H11z"/><path fill="#f2c94c" d="M13 12h6v3h-6z"/><path fill="#555566" d="M10 24h2v3h-2zM14 24h2v3h-2zM18 24h2v3h-2z"/></svg>',
+  'Mega CD': '<svg viewBox="0 0 32 32" shape-rendering="crispEdges"><path fill="#c9d3e6" d="M12 3h8v2h4v2h2v4h2v10h-2v4h-2v2h-4v2h-8v-2H8v-2H6v-4H4V11h2V7h2V5h4z"/><path fill="#9fb3d9" d="M12 5h8v2h4v4h2v4H6v-4h2V7h4z"/><path fill="#e8c46a" d="M8 17h16v2H8z"/><path fill="#7a4fc0" d="M8 19h16v2H8z"/><path fill="#1b1b22" d="M14 14h4v4h-4z"/><path fill="#f4f2ea" d="M15 15h2v2h-2z"/></svg>',
+  'Game Gear': '<svg viewBox="0 0 32 32" shape-rendering="crispEdges"><path fill="#1b1b22" d="M3 9h26v14H3z"/><path fill="#7fbf7f" d="M11 11h10v10H11z"/><path fill="#d0312d" d="M24 14h2v2h-2zM26 16h2v2h-2z"/><path fill="#888" d="M5 14h4v2H5zM6 13h2v4H6z"/></svg>',
+  'Toutes': '<svg viewBox="0 0 32 32" shape-rendering="crispEdges"><path fill="#e8c46a" d="M4 4h10v10H4zM18 4h10v10H18zM4 18h10v10H4zM18 18h10v10H18z"/><path fill="#1d2f8f" d="M6 6h6v6H6zM20 6h6v6h-6zM6 20h6v6H6zM20 20h6v6h-6z"/></svg>',
+};
+const sansAccent = t => (t || '').normalize('NFD').replace(/[̀-ͯ]/g, '');
+const lettreDe = titre => {
+  const c = sansAccent(titre).trim().charAt(0).toUpperCase();
+  return /[A-Z]/.test(c) ? c : '#';
+};
+function iconeConsole(nom) {
+  const fichier = (DONNEES.images_consoles || {})[nom];
+  if (fichier) return el('img', { src: BASE + fichier, alt: '', class: 'icone-image' });
+  const span = el('span', { class: 'icone-svg', 'aria-hidden': 'true' });
+  span.innerHTML = ICONES[nom] || ICONES['Toutes'];
+  return span;
+}
+
 function ongletsConsoles(zone) {
   const consoles = [...new Set(DONNEES.projets.map(p => p.plateforme).filter(Boolean))];
-  if (consoles.length < 2) return;
-  let choix = 'Toutes';
-  try { choix = sessionStorage.getItem('console') || 'Toutes'; } catch (e) { /* stockage indisponible */ }
-  if (choix !== 'Toutes' && !consoles.includes(choix)) choix = 'Toutes';
-  const nav = el('div', { class: 'onglets', role: 'group', 'aria-label': 'Filtrer par console' });
-  const appliquer = c => {
-    choix = c;
-    try { sessionStorage.setItem('console', c); } catch (e) { /* rien */ }
-    nav.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b.dataset.console === c ? 'true' : 'false'));
-    zone.querySelectorAll('li[data-plateforme]').forEach(li => { li.hidden = c !== 'Toutes' && li.dataset.plateforme !== c; });
+  let choix = { console: 'Toutes', lettre: 'Tout' };
+  try { choix = Object.assign(choix, JSON.parse(sessionStorage.getItem('filtre') || '{}')); } catch (e) { /* rien */ }
+  if (choix.console !== 'Toutes' && !consoles.includes(choix.console)) choix.console = 'Toutes';
+
+  const tuiles = el('div', { class: 'consoles', role: 'group', 'aria-label': 'Choisir une console' });
+  const lettres = el('div', { class: 'alphabet', role: 'group', 'aria-label': 'Choisir une lettre' });
+  const resultat = el('p', { class: 'resultat', 'aria-live': 'polite' });
+
+  const appliquer = () => {
+    try { sessionStorage.setItem('filtre', JSON.stringify(choix)); } catch (e) { /* rien */ }
+    tuiles.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b.dataset.console === choix.console ? 'true' : 'false'));
+    const dansConsole = p => choix.console === 'Toutes' || p.plateforme === choix.console;
+    // lettres disponibles pour la console choisie
+    const dispo = new Set(DONNEES.projets.filter(dansConsole).map(p => lettreDe(p.titre)));
+    if (choix.lettre !== 'Tout' && !dispo.has(choix.lettre)) choix.lettre = 'Tout';
+    lettres.querySelectorAll('button').forEach(b => {
+      const l = b.dataset.lettre;
+      b.disabled = l !== 'Tout' && !dispo.has(l);
+      b.setAttribute('aria-pressed', l === choix.lettre ? 'true' : 'false');
+    });
+    let n = 0;
+    zone.querySelectorAll('li[data-plateforme]').forEach(li => {
+      const ok = (choix.console === 'Toutes' || li.dataset.plateforme === choix.console) &&
+                 (choix.lettre === 'Tout' || li.dataset.lettre === choix.lettre);
+      li.hidden = !ok; if (ok) n++;
+    });
     zone.querySelectorAll('section').forEach(sec => { sec.hidden = !sec.querySelector('li[data-plateforme]:not([hidden])'); });
+    const quoi = choix.console === 'Toutes' ? 'toutes consoles' : choix.console;
+    resultat.textContent = `${n} jeu${n > 1 ? 'x' : ''} (${quoi}${choix.lettre !== 'Tout' ? ', lettre ' + choix.lettre : ''})`;
   };
+
   for (const c of ['Toutes', ...consoles]) {
-    const n = c === 'Toutes' ? DONNEES.projets.length : DONNEES.projets.filter(p => p.plateforme === c).length;
-    nav.append(el('button', { type: 'button', class: 'onglet', 'data-console': c, onclick: () => appliquer(c) },
-      c === 'Toutes' ? 'Toutes les consoles' : c, el('span', { class: 'nombre', text: String(n) })));
+    const nb = c === 'Toutes' ? DONNEES.projets.length : DONNEES.projets.filter(p => p.plateforme === c).length;
+    tuiles.append(el('button', { type: 'button', class: 'tuile-console', 'data-console': c,
+      onclick: () => { choix.console = c; choix.lettre = 'Tout'; appliquer(); } },
+      iconeConsole(c),
+      el('span', { class: 'nom-console', text: c === 'Toutes' ? 'Toutes les consoles' : c }),
+      el('span', { class: 'nombre', text: `${nb} jeu${nb > 1 ? 'x' : ''}` })));
   }
-  zone.prepend(nav);
-  appliquer(choix);
+  for (const l of ['Tout', ...'ABCDEFGHIJKLMNOPQRSTUVWXYZ', '#']) {
+    lettres.append(el('button', { type: 'button', class: 'touche-lettre', 'data-lettre': l,
+      'aria-label': l === 'Tout' ? 'Toutes les lettres' : l === '#' ? 'Chiffres et symboles' : 'Lettre ' + l,
+      onclick: () => { choix.lettre = l; appliquer(); } }, l === 'Tout' ? 'Tout' : l));
+  }
+  zone.prepend(el('div', { class: 'filtres' }, tuiles, lettres, resultat));
+  appliquer();
 }
 
 function router() {

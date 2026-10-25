@@ -804,8 +804,8 @@
    "rom_attendue": "Fushigi no Umi no Nadia (Japan)",
    "nom_sortie": "Nadia de la mer mysterieuse (FR).bin",
    "format": "bps",
-   "version": "NADv05",
-   "date_version": "24/10/2026",
+   "version": "NADv06",
+   "date_version": "25/10/2026",
    "id": "nadia",
    "notes": [
     {
@@ -815,7 +815,7 @@
        "texte": "Traduction faite à partir de la version japonaise (le jeu n'est jamais sorti en Occident). Les noms des personnages reprennent ceux de la version française du dessin animé « Nadia, le secret de l'eau bleue » : Gladys, Titus, Caïus, Attila, Argon, Jean Roc de Baltique."
       },
       {
-       "texte": "Les paroles de la chanson de l'intro ne sont pas traduites : elles sont remplacées par des notes de musique."
+       "texte": "Les paroles de la chanson de l'intro ne sont pas traduites (elles sont protégées par le droit d'auteur) : un texte français original, écrit dans l'ambiance du jeu, défile à leur place."
       }
      ]
     },
@@ -862,6 +862,9 @@
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "NADv06 (25/10/2026) : Pendant l'intro, un texte français original défile sur la musique à la place des notes de musique ; Chaque ligne de ce texte s'efface proprement avant la suivante"
+      },
       {
        "puce": "NADv05 (24/10/2026) : Le logo japonais de la démo est remplacé par « Nadia de la mer mystérieuse » ; La ligne de copyright de la démo est entièrement lisible"
       },
@@ -919,11 +922,11 @@
     "format": "bps",
     "crc_source": "4762062A",
     "taille_source": 1048576,
-    "crc_sortie": "F296A334",
+    "crc_sortie": "8F4B39CA",
     "taille_sortie": 2097152,
-    "taille_patch": 154581
+    "taille_patch": 154839
    },
-   "revision": 1,
+   "revision": 2,
    "date_maj": "25/10/2026"
   },
   {
@@ -938,7 +941,7 @@
    "rom_attendue": "Rent A Hero (Japan)",
    "nom_sortie": "Rent A Hero (FR).gen",
    "format": "bps",
-   "version": "V12",
+   "version": "V14",
    "date_version": "25/10/2026",
    "id": "rent-a-hero",
    "notes": [
@@ -1005,6 +1008,12 @@
      "titre": "Historique des versions",
      "blocs": [
       {
+       "puce": "V14 (25/10/2026) : Messages d'objets en bon français : « Taro utilise : Disquette. », « Taro jette : ... », « Taro obtient : ... », « Taro lit : ... » ; Prix au magasin et client des missions mieux présentés"
+      },
+      {
+       "puce": "V13 (25/10/2026) : Correction d'un bug qui bloquait certains événements : par exemple, la commande au téléphone pendant la fête n'aboutissait jamais ; Certaines répliques qui s'arrêtaient trop tôt s'affichent maintenant en entier"
+      },
+      {
        "puce": "V12 (25/10/2026) : Les menus élargis se referment proprement : plus de morceau de menu qui reste affiché après la fermeture"
       },
       {
@@ -1049,11 +1058,11 @@
     "format": "bps",
     "crc_source": "2E515F82",
     "taille_source": 1048576,
-    "crc_sortie": "44E8F261",
+    "crc_sortie": "32079619",
     "taille_sortie": 2097152,
-    "taille_patch": 234963
+    "taille_patch": 237260
    },
-   "revision": 1,
+   "revision": 2,
    "date_maj": "25/10/2026"
   },
   {
@@ -1743,5 +1752,6 @@
    "date_maj": "25/10/2026"
   }
  ],
+ "images_consoles": {},
  "titre_page": "Player Time – Traductions françaises de jeux Mega Drive, Master System et Mega CD"
 }
