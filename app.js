@@ -107,6 +107,7 @@ function etiquettes(p) {
   return el('div', { class: 'etiquettes' },
     el('span', { class: 'etiquette', text: p.plateforme }),
     el('span', { class: 'etiquette statut-' + slug(p.statut || ''), text: p.statut }),
+    p.credit ? el('span', { class: 'etiquette etiquette-credit', text: p.credit }) : null,
     p.version ? el('span', { class: 'etiquette etiquette-version', text: 'Version ' + p.version }) : null,
     p.date_maj ? el('span', { class: 'etiquette', text: 'Mis à jour le ' + p.date_maj }) : null,
     compteur(p));
@@ -126,7 +127,7 @@ function vignette(p) {
 }
 
 function carte(p) {
-  return el('li', {},
+  return el('li', { 'data-plateforme': p.plateforme || '' },
     el('a', { class: 'fenetre carte-jeu', href: BASE + 'jeu/' + p.id + '/' },
       vignette(p),
       el('div', { class: 'carte-corps' },
@@ -155,6 +156,31 @@ function dessinerListe() {
   }
   $('#liste-vide').hidden = DONNEES.projets.length > 0;
   $('#liste-vide').textContent = 'Aucun projet pour le moment.';
+  ongletsConsoles(zone);
+}
+
+/* Onglets par console : filtrent les cartes, les sections vides disparaissent */
+function ongletsConsoles(zone) {
+  const consoles = [...new Set(DONNEES.projets.map(p => p.plateforme).filter(Boolean))];
+  if (consoles.length < 2) return;
+  let choix = 'Toutes';
+  try { choix = sessionStorage.getItem('console') || 'Toutes'; } catch (e) { /* stockage indisponible */ }
+  if (choix !== 'Toutes' && !consoles.includes(choix)) choix = 'Toutes';
+  const nav = el('div', { class: 'onglets', role: 'group', 'aria-label': 'Filtrer par console' });
+  const appliquer = c => {
+    choix = c;
+    try { sessionStorage.setItem('console', c); } catch (e) { /* rien */ }
+    nav.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b.dataset.console === c ? 'true' : 'false'));
+    zone.querySelectorAll('li[data-plateforme]').forEach(li => { li.hidden = c !== 'Toutes' && li.dataset.plateforme !== c; });
+    zone.querySelectorAll('section').forEach(sec => { sec.hidden = !sec.querySelector('li[data-plateforme]:not([hidden])'); });
+  };
+  for (const c of ['Toutes', ...consoles]) {
+    const n = c === 'Toutes' ? DONNEES.projets.length : DONNEES.projets.filter(p => p.plateforme === c).length;
+    nav.append(el('button', { type: 'button', class: 'onglet', 'data-console': c, onclick: () => appliquer(c) },
+      c === 'Toutes' ? 'Toutes les consoles' : c, el('span', { class: 'nombre', text: String(n) })));
+  }
+  zone.prepend(nav);
+  appliquer(choix);
 }
 
 function router() {
@@ -248,7 +274,7 @@ function panneau(p) {
   const journal = el('ul', { class: 'journal', 'aria-live': 'polite' });
   const barre = el('div', { class: 'barre', hidden: true }, el('div'));
   const sorties = el('div', { class: 'telechargements' });
-  const input = el('input', { type: 'file', multiple: cd, accept: cd ? '.bin,.iso,.img,.cue' : '.bin,.md,.gen,.smd,.zip' });
+  const input = el('input', { type: 'file', multiple: cd, accept: cd ? '.bin,.iso,.img,.cue' : '.bin,.md,.gen,.smd,.sms,.gg,.32x,.sg,.zip' });
   const depot = el('label', { class: 'depot' },
     input,
     el('strong', { text: cd ? 'Choisir l’image du jeu (.bin et .cue)' : 'Choisir la ROM officielle' }),

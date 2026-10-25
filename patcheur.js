@@ -93,7 +93,7 @@ const Patcheur = (() => {
     let nom = file.name, data;
     if (nom.toLowerCase().endsWith('.zip')) {
       log("Lecture de l'archive .zip…");
-      const z = await lireZip(file, ['.bin', '.md', '.gen', '.smd', '.68k']);
+      const z = await lireZip(file, ['.bin', '.md', '.gen', '.smd', '.68k', '.sms', '.gg', '.32x', '.sg']);
       nom = z.nom; data = z.data;
     } else {
       data = new Uint8Array(await file.arrayBuffer());

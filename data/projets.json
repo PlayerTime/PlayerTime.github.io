@@ -1562,7 +1562,186 @@
    },
    "revision": 1,
    "date_maj": "25/10/2026"
+  },
+  {
+   "ordre": 201,
+   "categorie": "Traductions de Marcoz",
+   "titre": "Alex Kidd in Miracle World – Extended Edition",
+   "sous_titre": "Traduction française par Marcoz",
+   "plateforme": "Master System",
+   "statut": "Terminée",
+   "resume": "La version étendue d'Alex Kidd in Miracle World, traduite en français par Marcoz.",
+   "couleur": "#5aa0d8",
+   "credit": "Traduction : Marcoz",
+   "rom_attendue": "Alex Kidd in Miracle World (USA, Europe, Brazil) (Rev 1)",
+   "nom_sortie": "Alex Kidd in Miracle World – Extended Edition (FR).sms",
+   "format": "bps",
+   "id": "marcoz-alex-kidd-in-miracle-world-extended-edition",
+   "notes": [
+    {
+     "titre": "",
+     "blocs": [
+      {
+       "texte": "Traductions françaises réalisées par Marcoz, publiées ici avec son accord."
+      },
+      {
+       "texte": "Traduction française de Marcoz pour l'Extended Edition v1.3."
+      }
+     ]
+    },
+    {
+     "titre": "Comment ça marche",
+     "blocs": [
+      {
+       "puce": "Le site applique d'abord l'Extended Edition v1.3, puis la traduction française : il suffit de choisir la ROM d'origine du jeu."
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/marcoz-alex-kidd-in-miracle-world-extended-edition/01_titre.png",
+     "legende": "Écran titre de l'Extended Edition"
+    },
+    {
+     "src": "images/marcoz-alex-kidd-in-miracle-world-extended-edition/02_jeu.png",
+     "legende": "En jeu"
+    },
+    {
+     "src": "images/marcoz-alex-kidd-in-miracle-world-extended-edition/03_jeu.png",
+     "legende": "En jeu"
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/marcoz-alex-kidd-in-miracle-world-extended-edition.bps",
+    "format": "bps",
+    "crc_source": "AED9AAC4",
+    "taille_source": 131072,
+    "crc_sortie": "F87F1D03",
+    "taille_sortie": 524288,
+    "taille_patch": 148613
+   },
+   "revision": 1,
+   "date_maj": "25/10/2026"
+  },
+  {
+   "ordre": 202,
+   "categorie": "Traductions de Marcoz",
+   "titre": "Mickey Mouse : Land of Illusion",
+   "sous_titre": "Traduction française par Marcoz",
+   "plateforme": "Master System",
+   "statut": "Terminée",
+   "resume": "Mickey se réveille dans un étrange village : toute l'histoire de Land of Illusion en français, par Marcoz.",
+   "couleur": "#5aa0d8",
+   "credit": "Traduction : Marcoz",
+   "rom_attendue": "Mickey Mouse - Land of Illusion (USA, Europe)",
+   "nom_sortie": "Mickey Mouse - Land of Illusion (FR).sms",
+   "format": "bps",
+   "id": "marcoz-mickey-mouse-land-of-illusion",
+   "notes": [
+    {
+     "titre": "",
+     "blocs": [
+      {
+       "texte": "Traductions françaises réalisées par Marcoz, publiées ici avec son accord."
+      },
+      {
+       "texte": "Traduction française de Marcoz."
+      }
+     ]
+    },
+    {
+     "titre": "Ce qui est traduit",
+     "blocs": [
+      {
+       "puce": "L'introduction et les dialogues de l'histoire."
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/marcoz-mickey-mouse-land-of-illusion/01_titre.png",
+     "legende": "Écran titre"
+    },
+    {
+     "src": "images/marcoz-mickey-mouse-land-of-illusion/02_intro.png",
+     "legende": "L'introduction en français"
+    },
+    {
+     "src": "images/marcoz-mickey-mouse-land-of-illusion/03_reveil.png",
+     "legende": "Le réveil de Mickey"
+    },
+    {
+     "src": "images/marcoz-mickey-mouse-land-of-illusion/04_dialogue.png",
+     "legende": "Dialogue traduit"
+    },
+    {
+     "src": "images/marcoz-mickey-mouse-land-of-illusion/05_princesse.png",
+     "legende": "La princesse des montagnes du nord"
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/marcoz-mickey-mouse-land-of-illusion.bps",
+    "format": "bps",
+    "crc_source": "24E97200",
+    "taille_source": 524288,
+    "crc_sortie": "7A1BD947",
+    "taille_sortie": 524288,
+    "taille_patch": 6099
+   },
+   "revision": 1,
+   "date_maj": "25/10/2026"
+  },
+  {
+   "ordre": 203,
+   "categorie": "Traductions de Marcoz",
+   "titre": "The Immortal",
+   "sous_titre": "Traduction française par Marcoz",
+   "plateforme": "Mega Drive",
+   "statut": "Terminée",
+   "resume": "Le jeu d'aventure de Will Harvey traduit en français par Marcoz.",
+   "couleur": "#5aa0d8",
+   "credit": "Traduction : Marcoz",
+   "rom_attendue": "The Immortal (USA, Europe)",
+   "nom_sortie": "The Immortal (FR).md",
+   "format": "bps",
+   "id": "marcoz-the-immortal",
+   "notes": [
+    {
+     "titre": "",
+     "blocs": [
+      {
+       "texte": "Traductions françaises réalisées par Marcoz, publiées ici avec son accord."
+      },
+      {
+       "texte": "Traduction française de Marcoz."
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/marcoz-the-immortal/01_titre.png",
+     "legende": "Écran titre"
+    },
+    {
+     "src": "images/marcoz-the-immortal/02_nouvelle_partie.png",
+     "legende": "Les textes du jeu en français"
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/marcoz-the-immortal.bps",
+    "format": "bps",
+    "crc_source": "F653C508",
+    "taille_source": 1048576,
+    "crc_sortie": "0550AAE8",
+    "taille_sortie": 1064960,
+    "taille_patch": 17189
+   },
+   "revision": 1,
+   "date_maj": "25/10/2026"
   }
  ],
- "titre_page": "Player Time – Traductions françaises de jeux Mega Drive et Mega CD"
+ "titre_page": "Player Time – Traductions françaises de jeux Mega Drive, Master System et Mega CD"
 }

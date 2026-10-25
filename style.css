@@ -237,3 +237,15 @@ body { padding-bottom: 70px; }
 @media (max-width: 560px) { .don-flottant { right: 12px; bottom: 12px; padding: 10px 12px 11px; font-size: .95rem; } }
 
 .etiquette-version { color: var(--cadre); }
+
+/* onglets par console */
+.onglets { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 4px; }
+.onglet {
+  font: 600 1rem/1 var(--pixel); color: var(--texte-doux); background: #0b1460;
+  border: 2px solid #3c4aa0; border-radius: 4px; padding: 9px 12px 10px; cursor: pointer;
+  display: inline-flex; gap: 8px; align-items: center;
+}
+.onglet:hover { color: var(--texte); border-color: var(--cadre); }
+.onglet[aria-pressed="true"] { color: #1a1405; background: var(--cadre); border-color: var(--cadre); }
+.onglet .nombre { font-size: .8rem; opacity: .75; }
+.etiquette-credit { color: #9fd0ff; }
