@@ -187,172 +187,6 @@
    "date_maj": "18/10/2026"
   },
   {
-   "ordre": 3,
-   "titre": "Shining Force II",
-   "sous_titre": "Le Sceau Antique",
-   "plateforme": "Mega Drive",
-   "statut": "Version de test",
-   "resume": "Shining Force II traduit depuis le japonais, avec le sous-titre d'origine, les noms japonais et plusieurs bugs corrigés.",
-   "rom_attendue": "Shining Force II (USA)",
-   "nom_sortie": "Shining Force II (FR).bin",
-   "format": "bps",
-   "couleur": "#d0b23f",
-   "id": "shining-force-2",
-   "notes": [
-    {
-     "titre": "Traduction",
-     "blocs": [
-      {
-       "puce": "Traduction faite depuis le texte japonais, insérée dans la ROM américaine."
-      },
-      {
-       "puce": "4 303 dialogues, compression d'origine et dictionnaire de mots ajouté."
-      },
-      {
-       "puce": "Noms japonais pour les personnages, objets, sorts et monstres."
-      },
-      {
-       "puce": "Classes en français jusqu'à 8 lettres (ÉPÉISTE, CAVALIER…), noms sur 8 lettres."
-      },
-      {
-       "puce": "Accents dans les menus et dans la police des dialogues."
-      },
-      {
-       "puce": "Écran titre : sous-titre japonais traduit « Le Sceau Antique » réintégré."
-      },
-      {
-       "puce": "Générique traduit, crédit « Traduction française : Player Time »."
-      }
-     ]
-    },
-    {
-     "titre": "Corrections et ajouts",
-     "blocs": [
-      {
-       "puce": "Bug américain des coffres impossibles à ouvrir en combat corrigé."
-      },
-      {
-       "puce": "Nouvelle difficulté : NORM. +0 %, DUR +15 %, SUPER +25 %, ARGH! +56 % sur l'attaque des ennemis."
-      },
-      {
-       "puce": "Ciblage de l'IA corrigé."
-      },
-      {
-       "puce": "Sound test rétabli comme au Japon (jeu terminé, puis Haut + Start sur la sorcière)."
-      },
-      {
-       "puce": "Région PAL pour une Mega Drive française."
-      }
-     ]
-    }
-   ],
-   "images": [
-    {
-     "src": "images/shining-force-2/01_titre.png",
-     "legende": "Sous-titre japonais « Le Sceau Antique » réintégré"
-    },
-    {
-     "src": "images/shining-force-2/02_sorciere.png",
-     "legende": "La sorcière, traduite depuis le japonais"
-    },
-    {
-     "src": "images/shining-force-2/03_voeux.png",
-     "legende": "Choix de la sauvegarde"
-    }
-   ],
-   "patch": null,
-   "revision": 0,
-   "date_maj": ""
-  },
-  {
-   "ordre": 4,
-   "titre": "Shining in the Darkness",
-   "sous_titre": "",
-   "plateforme": "Mega Drive",
-   "statut": "Terminée",
-   "resume": "Le premier jeu de la série, traduit depuis la version japonaise, avec la police accentuée, les menus élargis et la croix de l'église restaurée.",
-   "rom_attendue": "Shining in the Darkness (USA, Europe)",
-   "nom_sortie": "Shining in the Darkness (FR).bin",
-   "format": "bps",
-   "couleur": "#b0423a",
-   "id": "shining-in-the-darkness",
-   "notes": [
-    {
-     "titre": "Traduction",
-     "blocs": [
-      {
-       "puce": "Les 1 290 dialogues traduits depuis la version japonaise « Shining and the Darkness »."
-      },
-      {
-       "puce": "Noms japonais conservés : Bilbo, Merli, Claire, Méphisto, Melvil…"
-      },
-      {
-       "puce": "Merlin est une femme dans la version japonaise : elle devient « Merli »."
-      },
-      {
-       "puce": "Police des dialogues avec accents, texte paginé pour tenir dans la fenêtre."
-      },
-      {
-       "puce": "Générique traduit, crédit « Traduction française : Player Time »."
-      }
-     ]
-    },
-    {
-     "titre": "Menus et graphismes",
-     "blocs": [
-      {
-       "puce": "Menus et cadres élargis, police des menus avec majuscules accentuées."
-      },
-      {
-       "puce": "« OR » au lieu de « GOLD »."
-      },
-      {
-       "puce": "Croix de l'église de la version japonaise restaurée."
-      },
-      {
-       "puce": "Écran titre : titre américain conservé, « Présenté par SEGA » et « Créé par Climax » traduits."
-      },
-      {
-       "puce": "Enseignes et noms remontés de 3 pixels pour que les lettres à jambage ne débordent plus."
-      }
-     ]
-    }
-   ],
-   "images": [
-    {
-     "src": "images/shining-in-the-darkness/01_titre.png",
-     "legende": "L'introduction au château"
-    },
-    {
-     "src": "images/shining-in-the-darkness/02_debut.png",
-     "legende": "Le vieil homme et le choix de la sauvegarde"
-    },
-    {
-     "src": "images/shining-in-the-darkness/03_princesse.png",
-     "legende": "La mission confiée par le roi"
-    },
-    {
-     "src": "images/shining-in-the-darkness/04_carte.png",
-     "legende": "La carte du royaume"
-    },
-    {
-     "src": "images/shining-in-the-darkness/05_mephisto.png",
-     "legende": "Méphisto, nom japonais conservé"
-    }
-   ],
-   "patch": {
-    "fichier": "patchs/shining-in-the-darkness.bps",
-    "format": "bps",
-    "crc_source": "4D2785BC",
-    "taille_source": 1048576,
-    "crc_sortie": "36DD56A3",
-    "taille_sortie": 1572864,
-    "taille_patch": 42019
-   },
-   "revision": 1,
-   "date_maj": "18/10/2026"
-  },
-  {
    "ordre": 5,
    "titre": "Shining Force CD",
    "sous_titre": "",
@@ -434,103 +268,6 @@
    },
    "revision": 1,
    "date_maj": "18/10/2026"
-  },
-  {
-   "ordre": 6,
-   "titre": "Shining Force Gaiden : Final Conflict",
-   "sous_titre": "Portage Mega Drive dans le moteur de Shining Force II",
-   "plateforme": "Mega Drive",
-   "statut": "En cours",
-   "resume": "L'épisode Game Gear resté au Japon, rejoué dans le moteur de Shining Force II et entièrement traduit en français. ROM d'essai.",
-   "rom_attendue": "Shining Force II (USA)",
-   "nom_sortie": "Shining Force Final Conflict (FR).bin",
-   "format": "bps",
-   "couleur": "#3fa36b",
-   "id": "final-conflict",
-   "notes": [
-    {
-     "titre": "",
-     "blocs": [
-      {
-       "texte": "ROM d'essai : le jeu se joue du début à la fin, mais certaines cartes et musiques sont encore provisoires."
-      }
-     ]
-    },
-    {
-     "titre": "Traduction",
-     "blocs": [
-      {
-       "puce": "Les 1 429 messages traduits depuis le japonais (prologue, dialogues, objets, sorts, monstres)."
-      },
-      {
-       "puce": "« Kain » comme dans Shining Force 1."
-      }
-     ]
-    },
-    {
-     "titre": "Le jeu dans le moteur de Shining Force II",
-     "blocs": [
-      {
-       "puce": "Les 22 combats, avec leurs scènes d'avant et d'après, le recrutement et la fin du jeu."
-      },
-      {
-       "puce": "Écran de camp de la Game Gear entre les combats : Q.G., sortie, boutique, sauvegarde."
-      },
-      {
-       "puce": "Personnages, objets, ennemis, résistances et coups critiques de Final Conflict."
-      },
-      {
-       "puce": "Fouille en combat : coffres et cases cachées, ninja et Kojirô à découvrir."
-      },
-      {
-       "puce": "Renforts ennemis qui apparaissent quand la Force atteint leur zone."
-      },
-      {
-       "puce": "Présentation, écran titre et femme au livre de la Game Gear."
-      }
-     ]
-    },
-    {
-     "titre": "Graphismes et musique",
-     "blocs": [
-      {
-       "puce": "Portraits, sprites et cartes repris du remake PC, ou dessinés."
-      },
-      {
-       "puce": "Musiques de Shining Force II choisies selon le rôle de chaque musique de Final Conflict."
-      }
-     ]
-    }
-   ],
-   "images": [
-    {
-     "src": "images/final-conflict/01_titre.png",
-     "legende": "Écran titre de la Game Gear sur Mega Drive"
-    },
-    {
-     "src": "images/final-conflict/02_femme_au_livre.png",
-     "legende": "La femme au livre remplace la sorcière"
-    },
-    {
-     "src": "images/final-conflict/03_difficulte.png",
-     "legende": "Choix de la difficulté"
-    },
-    {
-     "src": "images/final-conflict/04_prologue.png",
-     "legende": "Le prologue"
-    },
-    {
-     "src": "images/final-conflict/05_adam.png",
-     "legende": "Adam, à Hassan"
-    },
-    {
-     "src": "images/final-conflict/06_hassan.png",
-     "legende": "Le début de l'aventure"
-    }
-   ],
-   "patch": null,
-   "revision": 0,
-   "date_maj": ""
   },
   {
    "ordre": 10,
@@ -933,6 +670,139 @@
   {
    "ordre": 20,
    "categorie": "Traductions et améliorations",
+   "titre": "Phantasy Star II",
+   "sous_titre": "Traduction française",
+   "plateforme": "Mega Drive",
+   "statut": "En cours",
+   "resume": "Nouvelle traduction française complète de Phantasy Star II, faite depuis le texte japonais, avec les noms d'origine (Yushis, Rudger, Shilka...). Menus en français, icônes, course, options de difficulté, de couleurs et de musique et bugs d'origine corrigés.",
+   "couleur": "#3060c0",
+   "rom_attendue": "Phantasy Star II (USA, Europe) (Rev A)",
+   "nom_sortie": "Phantasy Star II (FR).bin",
+   "format": "bps",
+   "version": "PS2v05",
+   "date_version": "01/11/2026",
+   "id": "phantasy-star-2",
+   "notes": [
+    {
+     "titre": "Ce qui est traduit",
+     "blocs": [
+      {
+       "puce": "Tous les dialogues, retraduits depuis la version japonaise."
+      },
+      {
+       "puce": "Les noms japonais d'origine : Yushis, Nei, Rudger, Anne, Huey, Amia, Kains, Shilka, Motavia, Palma, Dezoris, Algol."
+      },
+      {
+       "puce": "Les menus, les profils des personnages, les objets, les monstres et le générique de fin."
+      },
+      {
+       "puce": "Des lettres accentuées dans les textes et les menus."
+      }
+     ]
+    },
+    {
+     "titre": "Améliorations",
+     "blocs": [
+      {
+       "puce": "Des noms de personnages sur 6 lettres au lieu de 4."
+      },
+      {
+       "puce": "Des icônes devant l'équipement (reprises de la v1.01) et devant les techniques, façon Phantasy Star IV."
+      },
+      {
+       "puce": "Maintenir B pour courir dans les villes et les donjons."
+      },
+      {
+       "puce": "En combat, le bouton A mène directement au choix des ordres."
+      },
+      {
+       "puce": "Des cadres de menus agrandis pour que le français tienne sans abréviations."
+      },
+      {
+       "puce": "Fonctionne sur toutes les Mega Drive (japonaise, américaine, européenne)."
+      },
+      {
+       "puce": "Au début de partie : gains d'expérience et de mésetas x1, x2 ou x4, couleurs classiques ou modernes, musique américaine ou japonaise (enregistrés dans la sauvegarde)."
+      },
+      {
+       "puce": "Une trentaine de bugs du jeu d'origine corrigés (calcul des dégâts, techniques, collisions...)."
+      }
+     ]
+    },
+    {
+     "titre": "Historique des versions",
+     "blocs": [
+      {
+       "puce": "PS2v05 (01/11/2026) : Après « Nouvelle partie » : choix de la difficulté (gains x1, x2, x4), des couleurs (classiques ou modernes) et de la musique (américaine ou japonaise) ; Couleurs modernes : bleu des menus retouché, repris de la v1.01 ; Musique japonaise d'origine disponible, choix enregistré dans la sauvegarde"
+      },
+      {
+       "puce": "PS2v04 (01/11/2026) : Gains d'EXP et de mésetas x1, x2 ou x4 au choix au début (remplace la partie facile) ; 32 bugs du jeu d'origine corrigés : dégâts, techniques, fuite face aux boss, collisions de Menobe, etc"
+      },
+      {
+       "puce": "PS2v03 (01/11/2026) : Maintenir B en marchant pour courir deux fois plus vite, sans souci d'affichage ni de collision"
+      },
+      {
+       "puce": "PS2v02 (01/11/2026) : Icônes devant les armes, armures et autres équipements ; Icônes devant les techniques (feu, vent, soin...), comme dans Phantasy Star IV ; Bouton A en combat : accès direct aux ordres de chaque personnage ; Noms des monstres plus complets, sur deux lignes en combat"
+      },
+      {
+       "puce": "PS2v01 (01/11/2026) : Première version de la nouvelle traduction, faite depuis le japonais ; Noms japonais d'origine et noms de personnages sur 6 lettres ; Menus, profils, objets, monstres et générique en français ; Choix entre partie normale et partie facile au début du jeu"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/phantasy-star-2/01_titre.png",
+     "legende": "L'écran titre."
+    },
+    {
+     "src": "images/phantasy-star-2/02_nouvelle_partie.png",
+     "legende": "Au début : difficulté (gains x1, x2 ou x4), couleurs et musique au choix."
+    },
+    {
+     "src": "images/phantasy-star-2/03_nom.png",
+     "legende": "Des noms de personnages sur 6 lettres."
+    },
+    {
+     "src": "images/phantasy-star-2/04_reve.png",
+     "legende": "Le rêve d'ouverture, traduit du japonais."
+    },
+    {
+     "src": "images/phantasy-star-2/05_menu.png",
+     "legende": "Des icônes pour reconnaître l'équipement d'un coup d'œil."
+    },
+    {
+     "src": "images/phantasy-star-2/06_combat.png",
+     "legende": "Les techniques avec leur icône, et les monstres nommés sur deux lignes."
+    },
+    {
+     "src": "images/phantasy-star-2/07_profil.png",
+     "legende": "Le profil de Nei."
+    },
+    {
+     "src": "images/phantasy-star-2/08_teleportation.png",
+     "legende": "Le service de téléportation."
+    },
+    {
+     "src": "images/phantasy-star-2/09_couleurs_modernes.png",
+     "legende": "Les couleurs modernes : le bleu des menus retouché."
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/phantasy-star-2.bps",
+    "format": "bps",
+    "crc_source": "904FA047",
+    "taille_source": 786432,
+    "crc_sortie": "9478EEFB",
+    "taille_sortie": 1048576,
+    "taille_patch": 76519
+   },
+   "revision": 1,
+   "date_maj": "01/11/2026"
+  },
+  {
+   "ordre": 20,
+   "categorie": "Traductions et améliorations",
    "titre": "Rent A Hero",
    "sous_titre": "Traduction française",
    "plateforme": "Mega Drive",
@@ -1099,8 +969,8 @@
    "rom_attendue": "Shining Force (USA)",
    "nom_sortie": "Shining Force Resurrection (FR).bin",
    "format": "bps",
-   "version": "SFRv63",
-   "date_version": "24/10/2026",
+   "version": "SFRv69",
+   "date_version": "01/11/2026",
    "id": "shining-force-resurrection",
    "notes": [
     {
@@ -1142,6 +1012,9 @@
       },
       {
        "puce": "Magies NOVA et ÉLAN, cris des boss, musique des héros promus."
+      },
+      {
+       "puce": "Les scènes propres à la GBA jouées sur la carte : arrivée de Narsha à la chute d'Elliott, scènes du château de Runefaust."
       }
      ]
     },
@@ -1173,12 +1046,33 @@
       },
       {
        "puce": "Menu de test de combat sur l'écran titre : A+B+C+START."
+      },
+      {
+       "puce": "Mode 2 joueurs : héros contre ennemis, chaque joueur sa manette (code pendant la présentation)."
       }
      ]
     },
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "SFRv69 (01/11/2026) : Combats du port et du sanctuaire (épilogues de Narsha) : nouvelles cartes redessinées ; Combat du désert : Narsha commence au pied de l'autel, comme dans la version GBA"
+      },
+      {
+       "puce": "SFRv68 (01/11/2026) : Combat du désert (épilogue de Narsha) : nouvelle carte redessinée, plus fidèle à la version GBA ; Les ennemis de ce combat sont remis à leur place GBA : le Mage noir et ses gardes sur l'autel, les autres au pied des pyramides"
+      },
+      {
+       "puce": "SFRv67 (30/10/2026) : Les scènes du jeu reçoivent les répliques de la version GBA : Narsha sur le navire avec Max et Mae, les héros face à Kain, Mishaela, Ramladu et Darksol, Narsha et le sage Mahato ; Avant Dark Dragon, chaque membre de l'équipe dit sa réplique de la GBA ; Épilogues de Narsha perdus : Zuika ou Mawlock vient la sauver, comme sur GBA ; Au QG, Narsha, Zuika et Mawlock ont une réplique différente selon la période du voyage"
+      },
+      {
+       "puce": "SFRv66 (30/10/2026) : À la chute d'Elliott, Narsha, Zuika et Mawlock arrivent sur la carte et parlent avec lui, Anri et Max avant de rejoindre la Force (scène de la version GBA) ; Cinq scènes du château de Runefaust ajoutées au début des chapitres 2 à 6 : Ramladu, Darksol, Balbazak, Kain, Mishaela et Mahato"
+      },
+      {
+       "puce": "SFRv65 (29/10/2026) : Mode 2 joueurs : chaque ennemi ne peut être choisi qu'une seule fois par le joueur 2"
+      },
+      {
+       "puce": "SFRv64 (29/10/2026) : Nouveau mode 2 joueurs : haut, bas, gauche, droite puis A+START pendant la présentation ; Le joueur 1 choisit le champ de bataille et jusqu'à 12 héros niveau 20 promus avec leur meilleure arme ; Le joueur 2 choisit jusqu'à 12 ennemis, chacun avec le profil exact d'un héros (Kain = Max, Mage noir = Tao...), et les joue à la manette 2"
+      },
       {
        "puce": "SFRv63 (24/10/2026) : Décors des cartes redessinés (arbres, herbe, fleurs, remparts, toits du château) ; L'eau et le feu des cartes bougent aussi quand on se promène, plus seulement en combat"
       },
@@ -1360,6 +1254,38 @@
     {
      "src": "images/shining-force-resurrection/07_test_combat.png",
      "legende": "Menu de test de combat (A+B+C+START sur l'écran titre)"
+    },
+    {
+     "src": "images/shining-force-resurrection/08_deux_joueurs_menu.png",
+     "legende": "Mode 2 joueurs : le joueur 2 choisit ses ennemis"
+    },
+    {
+     "src": "images/shining-force-resurrection/09_deux_joueurs_combat.png",
+     "legende": "Mode 2 joueurs : Elliott, joué à la manette 2, attaque Max"
+    },
+    {
+     "src": "images/shining-force-resurrection/10_elliott_narsha.png",
+     "legende": "Narsha arrive auprès d'Elliott (scène de la version GBA)"
+    },
+    {
+     "src": "images/shining-force-resurrection/11_chateau_runefaust.png",
+     "legende": "Au château de Runefaust, Darksol donne ses ordres"
+    },
+    {
+     "src": "images/shining-force-resurrection/12_navire_narsha.png",
+     "legende": "Sur le navire, Narsha se confie à Max (réplique de la version GBA)"
+    },
+    {
+     "src": "images/shining-force-resurrection/13_darksol_narsha.png",
+     "legende": "Narsha face à Darksol, dans le Château des Anciens"
+    },
+    {
+     "src": "images/shining-force-resurrection/14_desert_autel.png",
+     "legende": "Épilogue de Narsha : le Mage noir sur l'autel du désert, nouvelle carte"
+    },
+    {
+     "src": "images/shining-force-resurrection/15_port.png",
+     "legende": "Épilogue de Narsha : le combat du port, nouvelle carte"
     }
    ],
    "patch": {
@@ -1367,12 +1293,201 @@
     "format": "bps",
     "crc_source": "E0594ABE",
     "taille_source": 1572864,
-    "crc_sortie": "46B4317E",
+    "crc_sortie": "A726E893",
     "taille_sortie": 3145728,
-    "taille_patch": 1317935
+    "taille_patch": 1335851
+   },
+   "revision": 2,
+   "date_maj": "01/11/2026"
+  },
+  {
+   "ordre": 20,
+   "categorie": "Traductions et améliorations",
+   "titre": "Shining in the Darkness",
+   "sous_titre": "Traduction française",
+   "plateforme": "Mega Drive",
+   "statut": "Version de test",
+   "resume": "Traduction française complète du premier Shining, faite à partir de la version japonaise : dialogues, objets, monstres, magies, menus, enseignes et générique. Les noms japonais d'origine sont conservés.",
+   "couleur": "#6a3fa0",
+   "rom_attendue": "Shining in the Darkness (USA, Europe)",
+   "nom_sortie": "Shining in the Darkness (FR).bin",
+   "format": "bps",
+   "version": "SITDv22",
+   "date_version": "18/10/2026",
+   "id": "shining-in-the-darkness",
+   "notes": [
+    {
+     "titre": "",
+     "blocs": [
+      {
+       "texte": "Traduction faite à partir de la version japonaise (Shining and the Darkness), insérée dans la version américaine qui possède l'alphabet latin. Le titre Shining in the Darkness est conservé."
+      },
+      {
+       "texte": "Il faut la ROM américaine/européenne d'origine pour appliquer le patch. La ROM française fait 1,5 Mo."
+      }
+     ]
+    },
+    {
+     "titre": "Ce qui est traduit",
+     "blocs": [
+      {
+       "puce": "Les 1290 dialogues du jeu, retraduits depuis le japonais."
+      },
+      {
+       "puce": "Les objets, les monstres, les magies, les menus, les enseignes de la ville et les noms des personnages."
+      },
+      {
+       "puce": "L'écran d'ouverture (PRÉSENTÉ PAR SEGA, CRÉÉ PAR CLIMAX) et le générique de fin."
+      },
+      {
+       "puce": "La fenêtre de l'or (OR), la saisie du nom (ESP, EFF, FIN) et les directions."
+      },
+      {
+       "puce": "Lettres accentuées ajoutées dans la police des dialogues et dans celle des menus."
+      }
+     ]
+    },
+    {
+     "titre": "Choix de traduction",
+     "blocs": [
+      {
+       "puce": "Noms japonais conservés : Bilbo, Merli, Claire, Méphisto, Melvil..."
+      },
+      {
+       "puce": "Merlin, personnage féminin, s'appelle Merli."
+      },
+      {
+       "puce": "Magies : Soin, Purge, Rafale, Hâte, Ravage, Sceau, Revie, Trépas, Carte, Retour, Voile, Lent, Flamme, Hypnos, Givre, Foudre, Confus, Force, Sonde."
+      }
+     ]
+    },
+    {
+     "titre": "Améliorations",
+     "blocs": [
+      {
+       "puce": "L'église retrouve la croix de la version japonaise."
+      },
+      {
+       "puce": "Les messages longs attendent l'appui sur un bouton au lieu de défiler tout seuls."
+      },
+      {
+       "puce": "Les lettres g, p, q, j et y ne débordent plus sur les enseignes."
+      }
+     ]
+    },
+    {
+     "titre": "Historique des versions",
+     "blocs": [
+      {
+       "puce": "SITDv22 (18/10/2026) : Rangement du projet, aucun changement dans le jeu"
+      },
+      {
+       "puce": "SITDv21 (18/10/2026) : Crédit « Traduction française : Player Time » ajouté au générique de fin"
+      },
+      {
+       "puce": "SITDv20 (15/10/2026) : Nouveaux noms des magies, plus proches des noms japonais (Rafale, Ravage, Trépas, Retour, Hypnos, Foudre, Confus)"
+      },
+      {
+       "puce": "SITDv19 (11/10/2026) : Les enseignes et les étiquettes ne débordent plus avec les lettres g, p, q, j et y ; « Église » écrit avec son accent"
+      },
+      {
+       "puce": "SITDv18 (11/10/2026) : La boutique « Outils » devient l'« Herboriste »"
+      },
+      {
+       "puce": "SITDv17 (11/10/2026) : Les noms d'objets trop longs passent sur deux lignes (Étoile du matin, Armure de cuir...) ; É majuscule ajouté (Épée, Étoile, Éclair)"
+      },
+      {
+       "puce": "SITDv16 (11/10/2026) : Les lettres accentuées s'affichent correctement dans les menus (équipement, boutiques)"
+      },
+      {
+       "puce": "SITDv15 (10/10/2026) : Générique de fin : « Réalisateurs adjoints »"
+      },
+      {
+       "puce": "SITDv14 (10/10/2026) : Étiquettes des personnages : Patron, Patronne, PèreBilbo, MèreMerli et Cloche"
+      },
+      {
+       "puce": "SITDv13 (10/10/2026) : Merlin devient Merli partout dans le jeu"
+      },
+      {
+       "puce": "SITDv12 (10/10/2026) : La fenêtre de l'or affiche OR au lieu de GOLD"
+      },
+      {
+       "puce": "SITDv11 (10/10/2026) : Écran d'ouverture traduit : PRÉSENTÉ PAR SEGA et CRÉÉ PAR CLIMAX"
+      },
+      {
+       "puce": "SITDv10 (10/10/2026) : L'église retrouve la croix de la version japonaise"
+      },
+      {
+       "puce": "SITDv09 (10/10/2026) : Les messages de plus de trois lignes attendent l'appui sur un bouton"
+      },
+      {
+       "puce": "SITDv08 (10/10/2026) : Menus, cadres et graphismes de l'ancienne version française repris et améliorés"
+      },
+      {
+       "puce": "SITDv07 (10/10/2026) : Lettres accentuées dans les dialogues"
+      },
+      {
+       "puce": "SITDv06 (10/10/2026) : Noms japonais pour les personnages, les objets, les monstres et les magies, traduits en français"
+      },
+      {
+       "puce": "SITDv05 (10/10/2026) : Tous les dialogues traduits en français depuis le japonais"
+      },
+      {
+       "puce": "SITDv04 (10/10/2026) : Préparation : extraction du texte de la version japonaise"
+      },
+      {
+       "puce": "SITDv03 (10/10/2026) : Préparation : outil d'attribution des palettes"
+      },
+      {
+       "puce": "SITDv02 (10/10/2026) : Préparation : outil des graphismes"
+      },
+      {
+       "puce": "SITDv01 (10/10/2026) : Préparation : outil des textes"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/shining-in-the-darkness/01_titre.png",
+     "legende": "Le titre du jeu sur la salle du trône"
+    },
+    {
+     "src": "images/shining-in-the-darkness/02_vieux_sage.png",
+     "legende": "Le vieux sage présente les deux amis du héros, Bilbo et Merli"
+    },
+    {
+     "src": "images/shining-in-the-darkness/03_presente_par_sega.png",
+     "legende": "Le générique d'ouverture traduit : PRÉSENTÉ PAR SEGA"
+    },
+    {
+     "src": "images/shining-in-the-darkness/04_mephisto.png",
+     "legende": "Méphisto, le mage des ténèbres, garde son nom japonais"
+    },
+    {
+     "src": "images/shining-in-the-darkness/05_eglise.png",
+     "legende": "L'église retrouve sa croix de la version japonaise"
+    },
+    {
+     "src": "images/shining-in-the-darkness/06_herboriste.png",
+     "legende": "Les enseignes de la ville en français"
+    },
+    {
+     "src": "images/shining-in-the-darkness/07_boutique.png",
+     "legende": "Les achats en boutique, avec la fenêtre OR"
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/shining-in-the-darkness.bps",
+    "format": "bps",
+    "crc_source": "4D2785BC",
+    "taille_source": 1048576,
+    "crc_sortie": "36DD56A3",
+    "taille_sortie": 1572864,
+    "taille_patch": 42019
    },
    "revision": 1,
-   "date_maj": "25/10/2026"
+   "date_maj": "18/10/2026"
   },
   {
    "ordre": 21,
@@ -1484,127 +1599,31 @@
    "date_maj": "25/10/2026"
   },
   {
-   "ordre": 21,
-   "categorie": "Traductions et améliorations",
-   "titre": "DuneRazor",
-   "sous_titre": "Traduction française du DuneHack Rebuild de Ti_",
-   "plateforme": "Mega Drive",
-   "statut": "Version de test",
-   "resume": "Le DuneHack Rebuild de Ti_ en français : deux nouvelles Maisons jouables (Fremen et Corrino), nouvelles unités, niveaux de difficulté. Prévu pour émulateur et Mega SG : sur une Mega Drive d'origine, préférer DuneRazorOpti.",
-   "couleur": "#8a3fb0",
-   "rom_attendue": "Dune - The Battle for Arrakis (USA)",
-   "nom_sortie": "DuneRazor (FR).bin",
-   "format": "bps",
-   "version": "V02",
-   "date_version": "25/10/2026",
-   "id": "dunerazor",
-   "notes": [
-    {
-     "titre": "",
-     "blocs": [
-      {
-       "texte": "DuneHack Rebuild R82b est un hack de Ti_ qui reconstruit Dune et ajoute de nombreuses nouveautés. Cette version le traduit en français en reprenant le travail de Dune FR (textes, polices, voix et graphismes)."
-      }
-     ]
-    },
-    {
-     "titre": "Ce qui est traduit",
-     "blocs": [
-      {
-       "puce": "Les 185 messages des Mentats, dont les campagnes Fremen (textes écrits pour les Fremen) et Corrino."
-      },
-      {
-       "puce": "Menus, options, niveaux de difficulté, mots de passe, scores et générique."
-      },
-      {
-       "puce": "Noms des unités et des bâtiments, y compris les nouveaux (Ouragan, Tank laser, Aéroglisseur, Orka...)."
-      }
-     ]
-    },
-    {
-     "titre": "Quelle console ?",
-     "blocs": [
-      {
-       "texte": "Le hack demande plus de puissance qu'une Mega Drive d'origine : il tourne bien sur émulateur et sur Mega SG, mais rame sur une Mega Drive d'origine. Pour une Mega Drive d'origine, utilisez DuneRazorOpti."
-      }
-     ]
-    },
-    {
-     "titre": "Historique des versions",
-     "blocs": [
-      {
-       "puce": "V02 (25/10/2026) : Campagne Fremen réécrite : la Mentat parle comme une femme du désert ; La question de confirmation affiche « CONFIRMER ? »"
-      },
-      {
-       "puce": "V01 (24/10/2026) : Première version française du DuneHack Rebuild"
-      }
-     ]
-    }
-   ],
-   "images": [
-    {
-     "src": "images/dunerazor/01_titre.png",
-     "legende": "Écran titre avec le choix du niveau"
-    },
-    {
-     "src": "images/dunerazor/02_maisons.png",
-     "legende": "Cinq Maisons au choix"
-    },
-    {
-     "src": "images/dunerazor/03_mentat_fremen.png",
-     "legende": "La Mentat des Fremen"
-    },
-    {
-     "src": "images/dunerazor/04_mentat_corrino.png",
-     "legende": "Le Mentat de la Maison Corrino"
-    },
-    {
-     "src": "images/dunerazor/05_partie_corrino.png",
-     "legende": "Une mission avec les Corrino"
-    },
-    {
-     "src": "images/dunerazor/06_panneau.png",
-     "legende": "Le panneau de construction"
-    }
-   ],
-   "patch": {
-    "fichier": "patchs/dunerazor.bps",
-    "format": "bps",
-    "crc_source": "4DEA40BA",
-    "taille_source": 1048576,
-    "crc_sortie": "9162358A",
-    "taille_sortie": 2097152,
-    "taille_patch": 717741
-   },
-   "revision": 1,
-   "date_maj": "25/10/2026"
-  },
-  {
    "ordre": 22,
    "categorie": "Traductions et améliorations",
-   "titre": "DuneRazorOpti",
-   "sous_titre": "DuneRazor allégé pour la Mega Drive d'origine",
+   "titre": "Dune : La Chronique d'Arrakis",
+   "sous_titre": "Dune enrichi pour la Mega Drive d'origine",
    "plateforme": "Mega Drive",
    "statut": "En cours",
-   "resume": "Dune FR enrichi des nouveautés de DuneRazor, sur le moteur d'origine pour tourner à pleine vitesse sur une vraie Mega Drive : Fremen et Corrino jouables, leurs Mentats, nouvelles cartes, nouvelles unités et réglages des unités.",
+   "resume": "Dune FR enrichi des nouveautés du DuneHack Rebuild de Ti_, sur le moteur d'origine pour tourner à pleine vitesse sur une vraie Mega Drive : Fremen et Corrino jouables, nouvelles unités, et un mode Histoire de 39 missions qui raconte le livre en passant d'une Maison à l'autre.",
    "couleur": "#3f7fbf",
    "rom_attendue": "Dune - The Battle for Arrakis (USA)",
-   "nom_sortie": "DuneRazorOpti (FR).bin",
+   "nom_sortie": "Dune - La Chronique d'Arrakis (FR).bin",
    "format": "bps",
-   "version": "V10",
-   "date_version": "25/10/2026",
+   "version": "V91",
+   "date_version": "01/11/2026",
    "id": "dunerazoropti",
    "notes": [
     {
      "titre": "",
      "blocs": [
       {
-       "texte": "DuneRazor (le DuneHack Rebuild de Ti_) est trop gourmand pour une Mega Drive d'origine. DuneRazorOpti part du moteur d'origine de Dune FR, qui tourne à pleine vitesse sur console, et y ajoute une à une les nouveautés de DuneRazor qui ne la ralentissent pas."
+       "texte": "Le DuneHack Rebuild de Ti_ est trop gourmand pour une Mega Drive d'origine. Dune : La Chronique d'Arrakis part du moteur d'origine de Dune FR, qui tourne à pleine vitesse sur console, et y ajoute une à une les nouveautés du hack qui ne la ralentissent pas, puis ses propres campagnes et son mode Histoire."
       }
      ]
     },
     {
-     "titre": "Déjà repris de DuneRazor",
+     "titre": "Repris du DuneHack Rebuild de Ti_",
      "blocs": [
       {
        "puce": "Fremen et Corrino jouables : 9 missions chacun, 18 nouvelles cartes, mots de passe, fin du jeu."
@@ -1620,6 +1639,32 @@
       },
       {
        "puce": "Nouvelles unités : Quad missile, Ouragan, Tank laser et Aéroglisseur ; ver des sables des Fremen au Centre ixien."
+      },
+      {
+       "puce": "Niveaux de difficulté (Facile, Normal, Difficile, Muaddib), dans le menu titre sous Tutoriel."
+      },
+      {
+       "puce": "Missions avec chrono : le temps restant s'affiche à l'écran."
+      },
+      {
+       "puce": "Deux modes : JOUER (les campagnes classiques, Fremen et Corrino de Ti_ compris) et HISTOIRE, 39 missions qui suivent le livre de l'arrivée des Atréides jusqu'à la victoire de Muad'Dib."
+      },
+      {
+       "puce": "Sauvegarde automatique au début de chaque mission et ligne CONTINUER au menu titre."
+      },
+      {
+       "puce": "Manette 6 boutons : défilement rapide (Z), réparation express (X), attaque forcée (MODE), garde de zone et sélection gardée (X tenu), annulation de fabrication (Y + B)."
+      }
+     ]
+    },
+    {
+     "titre": "Nouveautés de La Chronique d'Arrakis",
+     "blocs": [
+      {
+       "puce": "Sélection de groupe : A maintenu pour tracer un cadre autour de plusieurs unités et leur donner le même ordre."
+      },
+      {
+       "puce": "2 joueurs sur une console en écran partagé (essai), et test du câble entre deux Mega Drive en préparation du mode à deux consoles."
       }
      ]
     },
@@ -1627,13 +1672,256 @@
      "titre": "Pas encore repris",
      "blocs": [
       {
-       "puce": "Les niveaux de difficulté et le temps de jeu."
+       "puce": "L'affichage du temps de jeu."
       }
      ]
     },
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "V91 (01/11/2026) : Mode 2 consoles (câble) : chaque joueur est averti par une voix sur sa console quand ses bâtiments ou ses unités sont attaqués (comme l'avertissement du solo, pas plus souvent)"
+      },
+      {
+       "puce": "V90 (01/11/2026) : Mode 2 consoles (câble) : les voix reviennent, comme en solo. Chaque joueur entend sur sa console ce qui le concerne (unité perdue, bâtiment détruit…), avec la voix de sa Maison, et les réponses de ses propres unités ; En écran partagé, les voix restent coupées"
+      },
+      {
+       "puce": "V89 (01/11/2026) : Mode 2 consoles (câble) : chaque joueur a son propre brouillard de guerre, comme en solo ; ce qu'il a exploré reste visible, même la base adverse ; Mode 2 consoles (câble) : plus de gel ni de perte de liaison quand on fait défiler la vue loin sur la carte ; Mode 2 consoles (câble) : la partie est un peu plus fluide"
+      },
+      {
+       "puce": "V88 (01/11/2026) : Mode 2 joueurs : une moissonneuse n'est plus attaquée par les unités de son propre camp ; Mode 2 joueurs : les deux joueurs sont toujours ennemis, même un joueur Atréides contre un joueur Fremen (alliés dans le reste du jeu)"
+      },
+      {
+       "puce": "V87 (01/11/2026) : Mode 2 consoles (câble) : en posant un bâtiment, le cadre est de nouveau vert là où on peut le poser et rouge là où on ne peut pas, sur les deux consoles, même en déplaçant le curseur sans appuyer ; Mode 2 consoles (câble) : une console n'affiche plus par erreur le cadre de pose de l'autre joueur"
+      },
+      {
+       "puce": "V86 (01/11/2026) : Mode 2 consoles (câble) : la partie est plus fluide sur les deux consoles, surtout quand les joueurs donnent des ordres (moins d'à-coups) ; Les deux consoles doivent avoir la même version du jeu"
+      },
+      {
+       "puce": "V85 (01/11/2026) : Mode Histoire : quand le Mentat annonce la victoire, la carte d'Arrakis montre déjà la zone conquise à sa nouvelle couleur ; Éditeur de missions : la carte d'Arrakis est entière et les couleurs de l'écran de victoire se règlent à part"
+      },
+      {
+       "puce": "V84 (01/11/2026) : Éditeur de missions : pour chaque mission (histoire et classique), on choisit les bâtiments et les unités que chaque Maison peut construire, le joueur comme l'ordinateur"
+      },
+      {
+       "puce": "V83 (01/11/2026) : Éditeur de missions : les mots de passe et les événements en cours de mission (messages, unités qui changent de camp, alliances) se modifient aussi ; Les événements en cours de mission sont possibles dans toutes les missions du mode classique"
+      },
+      {
+       "puce": "V82 (01/11/2026) : La ROM est prête pour l'éditeur de missions : cartes, unités, bâtiments, Maisons, textes du Mentat modifiables ; Mode histoire : chaque mission peut avoir son propre Mentat et sa propre musique (rien ne change tant qu'on ne les modifie pas)"
+      },
+      {
+       "puce": "V81 (31/10/2026) : Spatioport : les boutons Sortir, Réparer et Annuler s'affichent de nouveau ; plus de plantage en choisissant Annuler ; Les pièges à vent ont retrouvé leurs dômes orange (ils devenaient gris dans certaines missions)"
+      },
+      {
+       "puce": "V80 (31/10/2026) : 2 consoles : brouillard de guerre de nouveau arrondi, plus de faux impacts sur la carte ; 2 consoles : on peut de nouveau choisir l'unité dans la caserne et les usines ; le curseur de cible s'affiche après le choix d'une unité ; 2 consoles : plus de liaison perdue en appuyant sur START pendant la pose d'un bâtiment"
+      },
+      {
+       "puce": "V79 (31/10/2026) : 2 consoles : nouveau mode de liaison par ordres : seules les actions des joueurs passent par le câble, plus le curseur ni la caméra ; 2 consoles : plus de « gel » du curseur pendant les échanges ; argent, constructions et écran restent propres à chaque joueur ; 2 consoles : corrections de désynchronisations rares (déplacement de caméra, touches X/Z)"
+      },
+      {
+       "puce": "V78 (31/10/2026) : 2 consoles : le curseur et la caméra se déplacent aussi vite qu'en solo"
+      },
+      {
+       "puce": "V77 (31/10/2026) : 2 consoles : environ deux fois moins de données échangées par le câble, la partie est plus fluide"
+      },
+      {
+       "puce": "V76 (31/10/2026) : 2 consoles : correction d'une désynchronisation qui pouvait arrêter la partie après quelques ordres ; 2 consoles : les actions d'un joueur (sélection, achats, fenêtre de construction) n'ont plus d'effet sur l'affichage de l'autre console"
+      },
+      {
+       "puce": "V75 (31/10/2026) : 2 joueurs : chaque joueur a ses propres bâtiments disponibles (le Piège à vent de l'un ne débloque plus la Raffinerie de l'autre) ; 2 consoles : chaque console ne montre que ce que son joueur a découvert, y compris en faisant défiler la carte et sur la mini-carte ; 2 consoles : crédits, panneau de l'unité choisie et mini-carte comme en solo, propres à chaque joueur"
+      },
+      {
+       "puce": "V74 (31/10/2026) : Fremen : quand on sélectionne un véhicule, le panneau affiche maintenant la bonne image (et non plus celle d'un guerrier Fremen) ; Fremen : leurs unités sont grises, comme la lumière de leurs bâtiments (sauf dans les missions où les trois autres couleurs sont déjà prises)"
+      },
+      {
+       "puce": "V73 (31/10/2026) : 2 joueurs sur 2 consoles : chaque joueur a son propre brouillard de guerre et ne voit plus ce que l'autre a découvert"
+      },
+      {
+       "puce": "V72 (31/10/2026) : 2 joueurs sur une console : chaque joueur a son propre curseur (le joueur 2 ne prend plus la forme du curseur du joueur 1) ; 2 joueurs sur une console : le trait de séparation reste en place et les parasites disparaissent quand le joueur 2 déplace sa vue"
+      },
+      {
+       "puce": "V71 (31/10/2026) : « Retour au titre » ramène directement au menu titre, sans repasser par le logo SEGA ni l'introduction"
+      },
+      {
+       "puce": "V70 (31/10/2026) : Options en partie : « Changer de Maison » devient « Retour au titre » (on ne peut plus changer de Maison en plein mode Histoire)"
+      },
+      {
+       "puce": "V69 (31/10/2026) : Campagne Corrino : la carte d'Arrakis ne commence plus toute violette, l'Empire gagne du terrain de mission en mission ; Les bâtiments des Mercenaires ont de nouveau leur lumière (jaune) ; Les bâtiments des Fremen ont une lumière grise (quand une couleur est disponible dans la mission)"
+      },
+      {
+       "puce": "V68 (31/10/2026) : 2 joueurs sur 2 consoles : le brouillard de guerre est de retour ; 2 joueurs sur 2 consoles : les lumières des bâtiments sont à leur place ; 2 joueurs sur 2 consoles : plus de rangée d'explosions affichée au milieu de l'écran"
+      },
+      {
+       "puce": "V67 (31/10/2026) : Sélection de groupe : les points blancs restent collés aux unités quand on déplace le curseur ; Sélection de groupe : le groupe reste sélectionné après un ordre ; B annule la sélection"
+      },
+      {
+       "puce": "V66 (31/10/2026) : Correction : le Chantier de construction ne propose plus (avec le bouton B) un bâtiment qui n'est pas encore disponible, comme l'Avant-poste dès la première mission du mode Histoire"
+      },
+      {
+       "puce": "V65 (31/10/2026) : Le projet DuneRazorOpti devient « Dune : La Chronique d'Arrakis » ; 2 joueurs sur une console : les deux joueurs choisissent leur Maison en même temps sur le même écran (curseurs J1 et J2) ; 2 joueurs : plus de présentation du Mentat après le choix des Maisons ; 2 joueurs : la carte du choix de la zone garde les couleurs du désert, quelle que soit la Maison choisie ; Menu 2 joueurs simplifié : « 1 CONSOLE » et « 2 CONSOLES »"
+      },
+      {
+       "puce": "V64 (31/10/2026) : Correction : dans plusieurs missions du mode Histoire sans base au départ, les crédits tombaient à 0 au début de la partie (impossible de construire le Piège à vent et la Raffinerie). Ils sont maintenant conservés"
+      },
+      {
+       "puce": "V63 (30/10/2026) : Correction : les tanks garés devant l'Usine lourde s'affichent correctement"
+      },
+      {
+       "puce": "V62 (30/10/2026) : L'Usine lourde a son propre aspect (des tanks garés devant) et le WOR aussi (beige) ; Quand l'amélioration transforme l'Usine légère en Usine lourde, le bâtiment change d'aspect sous vos yeux ; L'écran d'amélioration affiche « AMÉLIORATION » au lieu de « UPGRADE »"
+      },
+      {
+       "puce": "V61 (30/10/2026) : Le Centre ixien a enfin son apparence sur la carte (il s'affichait comme un carré noir), ainsi que sa propre icône et sa propre image dans le menu de construction"
+      },
+      {
+       "puce": "V60 (30/10/2026) : Campagne Fremen refaite pour suivre le livre : de l'étranger accueilli au sietch jusqu'à Muad'Dib ; Des événements en pleine bataille : Gurney Halleck et ses soldats vous rejoignent, des Sardaukar débarquent, les Fedaykin arrivent, des contrebandiers changent de camp ; Missions 8 et 9 : les Atréides combattent à vos côtés, et les chevaucheurs de vers fondent sur l'Empereur ; Tous les textes de la campagne Fremen réécrits"
+      },
+      {
+       "puce": "V59 (30/10/2026) : Campagne des Mercenaires : l'employeur se bat maintenant à vos côtés à partir de la mission 6 ; Mission 7 : le Baron Harkonnen est votre allié... jusqu'à la 8e minute ; Mission 8 : un détachement Harkonnen mal payé déserte pour rejoindre la compagnie ; Mission finale : Atréides et Harkonnen forment une coalition avec vous contre l'Empereur, et les Fremen entrent en guerre ; Textes du lieutenant réécrits pour ces nouvelles missions"
+      },
+      {
+       "puce": "V58 (30/10/2026) : Campagne Sardaukar (mode classique) refaite pour suivre le livre : pillards Fremen, pacte avec le Baron, chute d'Arrakeen, sietch Fremen, trahison des Harkonnen alliés aux Ordos ; Dernière mission Sardaukar : Muad'Dib, les Atréides et un grand sietch Fremen avec Centre ixien, vers et Aéroglisseurs ; Tous les textes du Mentat Sardaukar réécrits pour cette nouvelle histoire ; Correction : la partie ne gèle plus quand beaucoup d'unités sont en jeu (grandes batailles, mode Duo)"
+      },
+      {
+       "puce": "V57 (30/10/2026) : Mercenaires : même nombre maximum d'unités que les Ordos en campagne, et 25 comme tout le monde en mode Duo"
+      },
+      {
+       "puce": "V56 (30/10/2026) : Conseils des Mentats mis à jour : sélection de groupe, atouts des Mercenaires (soldats renforcés, Spatioport sans limite, Atelier de réparation) ; Mode Histoire, étape 30 : le briefing et le conseil parlent des Mercenaires loués par les Ordos ; Correction d'un conseil erroné des Mercenaires (la Caserne ne demande pas d'Avant-poste)"
+      },
+      {
+       "puce": "V55 (30/10/2026) : Niveaux de difficulté bien plus marqués : crédits, nombre d'unités et vitesse de fabrication de l'ordinateur ennemi, dégâts subis et épice récoltée par le joueur changent selon le niveau ; Muad'Dib : les usines ennemies sortent toute leur gamme d'unités ; Le niveau choisi est gardé dans la sauvegarde ; Menus : plus de double flèche dans les sous-menus"
+      },
+      {
+       "puce": "V54 (30/10/2026) : Trois sauvegardes : une pour le mode classique, une pour le mode Histoire, une pour la Conquête d'Arrakis ; JOUER et HISTOIRE proposent Recommencer ou Continuer : Continuer affiche directement le mot de passe de la partie en cours ; Conquête d'Arrakis : Continuer reprend la carte avec les zones déjà gagnées, aussi par câble ; Correction : une partie à deux n'efface plus la sauvegarde du mode classique"
+      },
+      {
+       "puce": "V53 (30/10/2026) : Mode Duo : le joueur 2 ne peut plus sélectionner la Maison du joueur 1 sur l'écran des Maisons ; Fin des Sardaukar : la planète devient violette ; Mode Histoire : les briefings des étapes 31 et 37 annoncent les Mercenaires rachetés par le Baron ; Menu du Duo : « Conquête d'Arrakis » avec son accent"
+      },
+      {
+       "puce": "V52 (30/10/2026) : Fin des Fremen : la planète garde sa couleur de désert au lieu de devenir bleue"
+      },
+      {
+       "puce": "V51 (30/10/2026) : Campagne des Mercenaires : leurs territoires sont jaunes sur la carte d'Arrakis, et leur fin a sa planète jaune et un dernier mot du lieutenant ; Écran de fabrication : l'attaque et le blindage affichés comprennent les bonus (infanterie des Mercenaires, troupes d'élite Fremen) ; Correction : la Troupe d'élite des Mercenaires ne s'affiche plus « Fremen » et coûte de nouveau 270 ; Mode Histoire : après avoir lâché les Ordos, les Mercenaires se vendent au Baron et combattent aux côtés des Harkonnen (étapes 31 et 37)"
+      },
+      {
+       "puce": "V50 (30/10/2026) : Mode Duo : deux façons de jouer, Escarmouche (combat par combat, score affiché sur l'écran des Maisons, B pour quitter) et Conquête d'Arrakis ; Conquête d'Arrakis : chaque zone gagnée prend la couleur du vainqueur et ne se rejoue plus ; 9 zones à jouer, la 10e reste neutre. Celui qui a le plus de zones gagne ; Fin de la Conquête : la planète prend la couleur de la Maison gagnante, qui adresse un dernier mot à la Maison vaincue, dans son style ; Couleurs des zones : Fremen en gris, Mercenaires en jaune vif"
+      },
+      {
+       "puce": "V49 (30/10/2026) : Spatioport : le stock illimité est réservé aux Mercenaires ; les autres Maisons retrouvent un stock qui s'épuise, comme d'habitude"
+      },
+      {
+       "puce": "V48 (30/10/2026) : Le Spatioport ne s'épuise plus, pour toutes les Maisons et dans tous les modes ; Mercenaires : Atelier de réparation, et une infanterie qui frappe plus fort"
+      },
+      {
+       "puce": "V47 (30/10/2026) : Mercenaires : leur Spatioport ne s'épuise plus, en mode classique comme à 2 joueurs, et ils peuvent avoir plus d'unités ; Mode 2 joueurs : leurs achats au Spatioport sont moins chers que ceux des autres Maisons ; Leur infanterie (Caserne, WOR) est deux fois plus résistante"
+      },
+      {
+       "puce": "V46 (30/10/2026) : Mode 2 joueurs : toutes les Maisons peuvent à nouveau acheter au Spatioport (livraison immédiate, prix majorés) ; Les Mercenaires y ont leur propre catalogue, celui de leur dernière bataille : Tank sonique, Déviateur, Dévastator et chars lourds"
+      },
+      {
+       "puce": "V45 (30/10/2026) : Mode 2 joueurs : l'achat direct au Spatioport est réservé aux Mercenaires, leur avantage face aux Maisons qui ont des usines lourdes ; Ces unités livrées immédiatement coûtent 50 % de plus"
+      },
+      {
+       "puce": "V44 (30/10/2026) : Mode 2 joueurs : les Mercenaires sont jouables (choix caché, Bas depuis les Fremen ou les Corrino) ; Écran partagé : le Spatioport permet maintenant d'acheter des unités directement dans la petite fenêtre, sans arrêter la partie"
+      },
+      {
+       "puce": "V43 (30/10/2026) : Les Mercenaires sont des soldats de louage : pas de Palais ni d'Usine lourde, seulement l'infanterie, le Trike et le Quad ; Leurs chars s'achètent au Spatioport, disponible dès la première mission : à chaque mission, l'employeur y vend ses propres unités (Tank sonique, Déviateur, Dévastator...) ; Correction d'un plantage lors de la livraison d'une unité par une Aile portante"
+      },
+      {
+       "puce": "V42 (30/10/2026) : Les Mercenaires passent en jaune (unités, bâtiments et radar) ; Choix caché : sur l'écran des Maisons, appuyez sur Bas depuis les Fremen ou les Corrino pour jouer les Mercenaires ; Nouvelle campagne de 9 missions : la compagnie vend ses armes au plus offrant, puis se bat pour elle-même. Pas de Mentat : c'est votre lieutenant qui fait les briefings ; Mots de passe des missions des Mercenaires ; Correction : la fin du jeu obtenue avec le code DUNEFINALE ne bloque plus avec les Fremen, les Corrino et les Mercenaires"
+      },
+      {
+       "puce": "V41 (29/10/2026) : Mode Histoire : de nouveaux retournements en pleine mission, annoncés à l'écran : des gardes atreides rejoignent les Harkonnen, des Fremen rejoignent les contrebandiers ; Les Mercenaires font leur apparition : loués par les Ordos, ils changent de camp si les pertes deviennent trop lourdes"
+      },
+      {
+       "puce": "V40 (29/10/2026) : Mode Histoire : à la chute d'Arrakeen, la trahison du docteur Yueh fait passer une partie de la garde à l'ennemi, avec un message à l'écran ; On ne peut plus attaquer ses propres unités et bâtiments ni ceux de ses alliés"
+      },
+      {
+       "puce": "V39 (29/10/2026) : Mode Histoire : les Fremen n'ont plus de Palais dans la bataille contre le dernier Baron, comme partout ailleurs"
+      },
+      {
+       "puce": "V38 (29/10/2026) : Mode Histoire : pour sa dernière bataille, chaque Maison ennemie a toute son armée (Orka, Ouragan, escouades Fremen…) et plus de crédits"
+      },
+      {
+       "puce": "V37 (29/10/2026) : Mode Histoire : la carte d'Arrakis derrière le Mentat montre qui tient chaque territoire, et elle change au fil des victoires ; Les Sardaukar ont leur couleur violette, et les territoires libérés par les Fremen redeviennent du désert ; Une flèche montre où se déroule la prochaine mission"
+      },
+      {
+       "puce": "V36 (29/10/2026) : Mode Duo : le joueur 1 choisit la carte sur la carte d'Arrakis, parmi 10 zones (3 cartes moyennes et 7 grandes), puis l'animation de la carte lance la partie ; Le point de départ de chaque joueur est tiré au sort entre les deux bases de la carte ; Avec deux consoles reliées par câble, la console 1 choisit et la console 2 suit la flèche"
+      },
+      {
+       "puce": "V35 (29/10/2026) : La Mentat des Fremen a maintenant les yeux bleus d'Ibad, comme dans le livre, avec une lueur qui pulse doucement"
+      },
+      {
+       "puce": "V34 (29/10/2026) : Équilibrage des Maisons : Ouragan moins rapide entre les mains d'un joueur (l'ordinateur Sardaukar reste le boss final), plus de Trike ni de Tank laser pour les Sardaukar ; Le Saboteur détruit un bâtiment d'un coup, la Main de la mort des Harkonnen se recharge 4 fois plus vite et le Dévastator coûte 650 ; Les Fremen reçoivent le Quad missile ; l'Orni est réservé aux Atreides et aux Ordos"
+      },
+      {
+       "puce": "V33 (29/10/2026) : Les Fremen ne peuvent plus construire de Spatioport ; leur Centre ixien demande maintenant un WOR à la place"
+      },
+      {
+       "puce": "V32 (29/10/2026) : Fremen : l'escouade Fremen demande un WOR amélioré et un Centre ixien, mais sort avec 300 points de vie (prix 500) ; Les Fremen n'ont plus de Palais ni de Tank de siège / lance-missiles : leur force, c'est l'infanterie, les Vers et l'Aéroglisseur"
+      },
+      {
+       "puce": "V31 (29/10/2026) : Le Quad missile des Ordos peut enfin être construit : il est proposé à l'Usine lourde des Ordos dès qu'elle existe"
+      },
+      {
+       "puce": "V30 (29/10/2026) : Les Fremen peuvent construire le Centre ixien à partir de la mission 7 : il produit des vers des sables. Les autres Maisons ne l'ont pas ; Précision : l'Orka et la 2e amélioration de l'Usine avancée arrivent à la mission 9 (et non 8 comme annoncé en V28 et V29)"
+      },
+      {
+       "puce": "V29 (29/10/2026) : L'Usine avancée peut être améliorée une deuxième fois à partir de la mission 8 : c'est ce niveau qui débloque l'Orka, comme dans le hack ; Comme dans le jeu d'origine, les Harkonnen ne peuvent pas améliorer l'Usine avancée"
+      },
+      {
+       "puce": "V28 (29/10/2026) : Nouvelle unité du hack : l'Orka, un avion d'attaque construit à l'Usine avancée améliorée, pour toutes les Maisons, à partir de la mission 8 ; Plus solide que l'Orni (50 points de vie au lieu de 5) et deux fois plus de dégâts ; l'ordinateur peut aussi en construire"
+      },
+      {
+       "puce": "V27 (29/10/2026) : Encore un peu moins de ralentissements dans les grosses batailles : le solo gagne environ 5 % de plus qu'en V26 (environ 35 % de plus qu'en V25) ; Les règles et le comportement du jeu ne changent toujours pas"
+      },
+      {
+       "puce": "V26 (28/10/2026) : Moins de ralentissements dans les grosses batailles : environ 20 à 25 % plus rapide sur les missions les plus chargées ; Les règles et le comportement du jeu ne changent pas : seules des routines du jeu ont été réécrites pour aller plus vite ; Le gain profite aussi aux parties à 2 joueurs"
+      },
+      {
+       "puce": "V25 (28/10/2026) : 2 joueurs sur 2 consoles reliées par câble (à essayer) : chaque joueur choisit sa Maison sur sa console et a tout l'écran pour lui ; La partie ne s'arrête jamais pour l'autre joueur : on construit dans la petite fenêtre en bas de l'écran pendant que le jeu continue ; Si le câble est débranché, un message LIAISON PERDUE s'affiche et le jeu revient au menu titre ; Les voix sont coupées comme en écran partagé ; les bruitages restent"
+      },
+      {
+       "puce": "V24 (28/10/2026) : 2 joueurs sur une console : le menu de construction ne coupe plus la partie. Une petite fenêtre s'ouvre en bas de la moitié du joueur, la carte reste visible et le jeu continue pour les deux ; Un élément à la fois : icône, nom, prix, énergie et blindage pour un bâtiment, attaque et blindage pour une unité. Haut/Bas pour passer d'un élément à l'autre, A pour construire, B pour fermer ; Réparer, Annuler (crédits rendus), Amélioration et l'arme du Palais sont dans la liste ; des pastilles montrent l'avancement de la fabrication ; Les crédits de chaque joueur s'affichent dans sa fenêtre quand elle est ouverte ; En mode 2 joueurs, les voix sont coupées pour que personne ne soit induit en erreur ; les bruitages restent ; Corrigé : les bâtiments posés par le joueur 2 laissaient des morceaux de décor dans la vue du joueur 1 ; Corrigé : une Caserne commandée sans Avant-poste était annulée aussitôt"
+      },
+      {
+       "puce": "V23 (28/10/2026) : Nouveau : 2 joueurs sur une seule console en écran partagé (version d'essai). Menu titre, 2 JOUEURS, puis 1 CONSOLE ; Chaque joueur choisit sa Maison avec sa manette, puis la partie commence sur une grande carte : joueur contre joueur, sans ordinateur ; Écran coupé en deux : joueur 1 à gauche, joueur 2 à droite, chacun avec sa vue, son curseur, ses unités et ses constructions ; Dans ce mode, pas de brouillard ni de mini-carte ; le menu de construction met la partie en pause pour les deux joueurs ; À la fin, le gagnant est annoncé (J1 GAGNE ou J2 GAGNE)"
+      },
+      {
+       "puce": "V22 (28/10/2026) : Nouvelle ligne 2 JOUEURS au menu titre : un écran pour tester le câble qui relie deux Mega Drive (port manette 2), première étape du futur mode 2 joueurs ; L'écran montre si les deux consoles se trouvent, le nombre d'échanges et d'erreurs, et les boutons pressés sur la manette d'en face ; Le menu titre remonte d'une ligne pour faire de la place"
+      },
+      {
+       "puce": "V21 (27/10/2026) : Sélection de groupe : maintenez A sur la carte, le curseur devient un cadre blanc qu'on agrandit avec la croix ; En relâchant A, toutes vos unités dans le cadre sont sélectionnées (16 au plus), chacune marquée d'un petit point blanc ; Chaque ordre donné ensuite (déplacement, attaque, récolte...) part pour tout le groupe"
+      },
+      {
+       "puce": "V20 (27/10/2026) : Manette 6 boutons prise en charge, comme dans DuneRazor : Z pour faire défiler la carte très vite, X pour réparer le bâtiment sélectionné ; MODE tenu en donnant un ordre : attaque forcée. X tenu : garde de zone, et l'unité reste sélectionnée pour enchaîner les ordres ; Y + B sur un bâtiment qui fabrique : annule la fabrication et rembourse ; Avec une manette 3 boutons, rien ne change"
+      },
+      {
+       "puce": "V19 (27/10/2026) : Mode Histoire : 39 missions au lieu de 26, mieux réparties entre les cinq Maisons ; 13 nouvelles missions : commandos sans base, saboteurs Ordos, Déviateurs, première chevauchée d'un ver des sables, camp impérial à défendre, atomiques de la famille Atréides, alliance des contrebandiers avec les Fremen ; Chaque nouvelle mission a ses textes du Mentat et un mot de passe en rapport avec l'histoire"
+      },
+      {
+       "puce": "V18 (27/10/2026) : Mode Histoire, première mission : les Atréides débarquent sur Arrakis. Des Ailes portantes déposent le VCM et les premières troupes du Duc, il faut fonder sa base soi-même"
+      },
+      {
+       "puce": "V17 (27/10/2026) : Nouveau mode HISTOIRE : 26 missions qui racontent le livre en passant d'une Maison à l'autre, avec une seule fin tout au bout ; Chaque mission a son Mentat, ses textes et son mot de passe propre au mode Histoire ; Mode classique (JOUER) : les campagnes d'origine reviennent pour les Atréides, Harkonnen et Ordos ; Fremen et Corrino retrouvent les missions de Ti_ ; Textes Corrino corrigés pour correspondre aux vrais ennemis des missions ; Sauvegarde automatique au début de chaque mission, et nouvelle ligne CONTINUER au menu titre"
+      },
+      {
+       "puce": "V16 (27/10/2026) : Dernière mission Atreides plus intense : les Sardaukar et les Harkonnen envoient des renforts sans arrêt pendant les 10 minutes ; Le Palais ennemi lance la Main de la mort dès les premières minutes ; Les derniers fidèles du Duc arrivent en renfort à 3 et 6 minutes"
+      },
+      {
+       "puce": "V15 (26/10/2026) : Campagne Atreides réécrite : un premier épisode qui suit le livre, de l'arrivée sur Arrakis à la chute d'Arrakeen ; Nouveaux ennemis et objectifs selon les missions : saboteurs Harkonnen, Fremen de Stilgar à vos côtés, contrebandiers Ordos, Sardaukar déguisés en Harkonnen ; Nouveaux textes du Mentat pour toute la campagne Atreides ; Retour du chrono de mission de DuneRazor : la dernière mission Atreides demande de tenir 10 minutes, avec le temps restant affiché à l'écran ; Les renforts Sardaukar arrivent aussi avec des Ouragans à la place des Devastators"
+      },
+      {
+       "puce": "V14 (26/10/2026) : Choix du niveau de difficulté dans le menu titre, sous Tutoriel : Facile, Normal, Difficile ou Muaddib ; Plus le niveau est élevé, plus l'ordinateur gagne d'épice"
+      },
+      {
+       "puce": "V13 (25/10/2026) : Les Sardaukar et les Corrino utilisent l'Ouragan, leur unité propre, à la place du Devastator, y compris dans les dernières missions"
+      },
+      {
+       "puce": "V12 (25/10/2026) : Nouveaux mots de passe Fremen et Corrino, des mots qui ont un sens comme ceux du jeu d'origine (SIETCHTABR, IMPERIALES...)"
+      },
+      {
+       "puce": "V11 (25/10/2026) : Nouvelle campagne Fremen : guérilla sans base au début, ver des sables sous tes ordres, capture d'un Chantier harkonnen ; À partir de la mission 4, les Fremen arrivent avec un VCM et choisissent où fonder leur sietch ; Missions 8 et 9 en coop avec les Atreides, alliés des Fremen ; Textes de la Mentat Fremen adaptés à ces missions ; La mission 9 des Fremen ne bloque plus sur la carte de conquête"
+      },
       {
        "puce": "V10 (25/10/2026) : Le ver des sables des Fremen se sélectionne et se dirige soi-même sur le sable, et avale les unités ennemies qu'on lui désigne ; Il ne disparaît plus après son premier repas"
       },
@@ -1670,7 +1958,7 @@
    "images": [
     {
      "src": "images/dunerazoropti/01_titre.png",
-     "legende": "Écran titre"
+     "legende": "Écran titre : mode classique, mode Histoire, options et parties à deux"
     },
     {
      "src": "images/dunerazoropti/02_maisons.png",
@@ -1678,7 +1966,7 @@
     },
     {
      "src": "images/dunerazoropti/03_mentat_fremen.png",
-     "legende": "La Mentat des Fremen"
+     "legende": "La Mentat des Fremen et ses yeux bleus"
     },
     {
      "src": "images/dunerazoropti/04_partie_fremen.png",
@@ -1693,8 +1981,152 @@
      "legende": "Les Corrino en violet"
     },
     {
-     "src": "images/dunerazoropti/07_conquete_corrino.png",
-     "legende": "La carte de conquête aux couleurs des Corrino"
+     "src": "images/dunerazoropti/07_histoire.png",
+     "legende": "Le mode Histoire : la nuit d'Arrakeen vue par les Harkonnen"
+    },
+    {
+     "src": "images/dunerazoropti/08_chrono_atreides.png",
+     "legende": "Tenir 10 minutes dans Arrakeen"
+    },
+    {
+     "src": "images/dunerazoropti/09_selection_groupe.png",
+     "legende": "Sélection de groupe : A maintenu pour tracer le cadre"
+    },
+    {
+     "src": "images/dunerazoropti/10_ecran_partage.png",
+     "legende": "2 joueurs sur une console : écran partagé"
+    },
+    {
+     "src": "images/dunerazoropti/11_menu_construction_2j.png",
+     "legende": "2 joueurs : chacun construit dans sa petite fenêtre, sans arrêter la partie"
+    },
+    {
+     "src": "images/dunerazoropti/12_deux_consoles.png",
+     "legende": "2 joueurs sur 2 consoles reliées par câble : chacun son écran, la partie ne s'arrête jamais"
+    },
+    {
+     "src": "images/dunerazoropti/13_duo_carte.png",
+     "legende": "Mode Duo : choix de la carte sur la carte d’Arrakis"
+    },
+    {
+     "src": "images/dunerazoropti/14_histoire_carte.png",
+     "legende": "Mode Histoire : la carte d’Arrakis suit la guerre des Maisons"
+    },
+    {
+     "src": "images/dunerazoropti/15_trahison_yueh.png",
+     "legende": "Mode Histoire : la trahison du docteur Yueh"
+    },
+    {
+     "src": "images/dunerazoropti/16_mercenaires.png",
+     "legende": "Mode Histoire : les Mercenaires, désormais en jaune"
+    },
+    {
+     "src": "images/dunerazoropti/17_mercenaires_choix.png",
+     "legende": "Les Mercenaires, choix caché : pas de Mentat"
+    },
+    {
+     "src": "images/dunerazoropti/18_mercenaires_mission1.png",
+     "legende": "Première mission des Mercenaires"
+    },
+    {
+     "src": "images/dunerazoropti/19_duo_mercenaires.png",
+     "legende": "Mode Duo : les Mercenaires (à gauche) contre les Ordos"
+    },
+    {
+     "src": "images/dunerazoropti/20_menu_modes.png",
+     "legende": "Menu du Duo : Escarmouche ou Conquête d'Arrakis"
+    },
+    {
+     "src": "images/dunerazoropti/21_escarmouche_score.png",
+     "legende": "Escarmouche : le score des joueurs sur l'écran des Maisons"
+    },
+    {
+     "src": "images/dunerazoropti/22_conquete_carte.png",
+     "legende": "Conquête d'Arrakis : les zones prennent la couleur du vainqueur"
+    },
+    {
+     "src": "images/dunerazoropti/23_fin_duo_atreides.png",
+     "legende": "Fin de la Conquête : la Maison gagnante a le dernier mot"
+    },
+    {
+     "src": "images/dunerazoropti/24_mercenaires_carte.png",
+     "legende": "Campagne des Mercenaires : leurs territoires en jaune"
+    },
+    {
+     "src": "images/dunerazoropti/25_mercenaires_fin.png",
+     "legende": "Fin des Mercenaires : planète jaune et mot du lieutenant"
+    },
+    {
+     "src": "images/dunerazoropti/26_fremen_fin.png",
+     "legende": "Fin des Fremen : la planète garde la couleur du désert"
+    },
+    {
+     "src": "images/dunerazoropti/27_histoire_mercenaires.png",
+     "legende": "Mode Histoire : les Mercenaires se vendent au Baron"
+    },
+    {
+     "src": "images/dunerazoropti/28_recommencer_continuer.png",
+     "legende": "Chaque mode : Recommencer ou Continuer"
+    },
+    {
+     "src": "images/dunerazoropti/29_mot_de_passe_rempli.png",
+     "legende": "Continuer : le mot de passe de la partie en cours est déjà affiché"
+    },
+    {
+     "src": "images/dunerazoropti/30_conquete_continuer.png",
+     "legende": "Conquête d'Arrakis : reprendre la partie sauvegardée"
+    },
+    {
+     "src": "images/dunerazoropti/31_niveau_muaddib.png",
+     "legende": "Le niveau choisi est gardé d'une partie à l'autre"
+    },
+    {
+     "src": "images/dunerazoropti/32_sardaukar_muaddib.png",
+     "legende": "Sardaukar, dernière mission : Muad'Dib et le sietch Fremen"
+    },
+    {
+     "src": "images/dunerazoropti/33_sardaukar_pacte.png",
+     "legende": "Sardaukar, mission 4 : le pacte secret avec le Baron Harkonnen"
+    },
+    {
+     "src": "images/dunerazoropti/34_mercenaires_trahison.png",
+     "legende": "Mercenaires, mission 7 : le Baron trahit la compagnie"
+    },
+    {
+     "src": "images/dunerazoropti/35_mercenaires_deserteurs.png",
+     "legende": "Mercenaires, mission 8 : des Harkonnen désertent pour la solde"
+    },
+    {
+     "src": "images/dunerazoropti/36_fremen_gurney.png",
+     "legende": "Fremen, mission 4 : Gurney Halleck rejoint le sietch"
+    },
+    {
+     "src": "images/dunerazoropti/37_fremen_vers.png",
+     "legende": "Fremen, mission 9 : les chevaucheurs de vers attaquent l'Empereur"
+    },
+    {
+     "src": "images/dunerazoropti/38_centre_ixien.png",
+     "legende": "Le Centre ixien et ses sphères dorées, à côté de l'Usine avancée"
+    },
+    {
+     "src": "images/dunerazoropti/39_centre_ixien_menu.png",
+     "legende": "Le Centre ixien dans le menu de construction"
+    },
+    {
+     "src": "images/dunerazoropti/40_usines_wor.png",
+     "legende": "L'Usine lourde avec ses tanks, le WOR beige à côté de la Caserne"
+    },
+    {
+     "src": "images/dunerazoropti/41_usine_amelioree.png",
+     "legende": "Usine légère améliorée : elle devient Usine lourde"
+    },
+    {
+     "src": "images/dunerazoropti/42_usine_lourde.png",
+     "legende": "L'Usine lourde et ses tanks, le WOR beige et la Caserne"
+    },
+    {
+     "src": "images/dunerazoropti/43_choix_maisons_duo.png",
+     "legende": "À deux sur une console : chaque joueur choisit sa Maison en même temps."
     }
    ],
    "patch": {
@@ -1702,12 +2134,12 @@
     "format": "bps",
     "crc_source": "4DEA40BA",
     "taille_source": 1048576,
-    "crc_sortie": "496835BE",
+    "crc_sortie": "21CAA9F0",
     "taille_sortie": 2097152,
-    "taille_patch": 203721
+    "taille_patch": 584195
    },
-   "revision": 2,
-   "date_maj": "25/10/2026"
+   "revision": 3,
+   "date_maj": "01/11/2026"
   },
   {
    "ordre": 25,
@@ -1721,8 +2153,8 @@
    "rom_attendue": "Phantasy Star Fukkokuban (Japan)",
    "nom_sortie": "Phantasy Star (FR).sms",
    "format": "bps",
-   "version": "PSv01",
-   "date_version": "25/10/2026",
+   "version": "PSv06",
+   "date_version": "01/11/2026",
    "id": "phantasy-star",
    "notes": [
     {
@@ -1757,6 +2189,9 @@
        "puce": "Fenêtres de dialogue de 4 lignes au lieu de 2, avec coupure automatique des mots."
       },
       {
+       "puce": "Menus élargis pour afficher les mots français en entier (commandes, combat, objets, boutique, sorts)."
+      },
+      {
        "puce": "Nouvelle police avec lettres accentuées."
       }
      ]
@@ -1764,6 +2199,21 @@
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "PSv06 (01/11/2026) : Le sort de Myau qui augmente l'attaque d'un allié s'appelle maintenant FORCE ; Écran du nom : SUIV / PRÉC / FIN, comme dans le manuel japonais (avancer / reculer le curseur)"
+      },
+      {
+       "puce": "PSv05 (01/11/2026) : Accords au féminin quand on s'adresse à Alisa seule, au masculin pluriel quand on parle au groupe ; Messages de combat neutres quand ils peuvent concerner n'importe quel héros ou monstre"
+      },
+      {
+       "puce": "PSv04 (01/11/2026) : Relecture complète des dialogues, avec le japonais comme référence et la version anglaise pour lever les doutes ; Quelques passages corrigés (la tour de Gothic, le Polymère, l'échange de Myau, le prix « un milliard de mesetas ») ; Ponctuation à la française (espace avant ! ? :) et titre « seigneur Lassic » unifié"
+      },
+      {
+       "puce": "PSv03 (25/10/2026) : HP et MP deviennent PV et PM (fenêtres des héros, combat, fenêtre d'état) ; LV et EP deviennent NV (niveau) et XP (expérience)"
+      },
+      {
+       "puce": "PSv02 (25/10/2026) : Menus élargis : ÉTAT, MAGIE, OBJETS, FOUILLE, SAUVER et ATTAQUE, MAGIE, OBJETS, PARLER, FUIR ; Fenêtres UTILISER / ÉQUIPER / JETER et ACHAT / VENTE élargies ; Noms des sorts en entier (SOIN, FUITE, PAROLE, FOUDRE…) ; Fenêtre d'état entièrement traduite (MAX MP, MST)"
+      },
       {
        "puce": "PSv01 (25/10/2026) : Première version : dialogues, cinématiques, menus, objets et monstres en français ; Écran titre, introduction et écran du nom traduits"
       }
@@ -1789,7 +2239,11 @@
     },
     {
      "src": "images/phantasy-star/05_menu.png",
-     "legende": "Le menu principal et la fenêtre d'Alisa"
+     "legende": "Le menu principal élargi : ÉTAT, MAGIE, OBJETS, FOUILLE, SAUVER"
+    },
+    {
+     "src": "images/phantasy-star/06_etat.png",
+     "legende": "La fenêtre d'état et l'équipement"
     }
    ],
    "patch": {
@@ -1797,12 +2251,404 @@
     "format": "bps",
     "crc_source": "07301F83",
     "taille_source": 524288,
-    "crc_sortie": "792A634E",
+    "crc_sortie": "FD7202BB",
     "taille_sortie": 1048576,
-    "taille_patch": 36641
+    "taille_patch": 39523
+   },
+   "revision": 2,
+   "date_maj": "01/11/2026"
+  },
+  {
+   "ordre": 30,
+   "categorie": "Traductions et améliorations",
+   "titre": "Shining Force II",
+   "sous_titre": "Traduction française",
+   "plateforme": "Mega Drive",
+   "statut": "Terminée",
+   "resume": "Traduction française complète de Shining Force II, faite à partir du texte japonais et insérée dans la version américaine. Avec quelques corrections : bugs, difficulté, IA, sound test, et la ROM démarre sur une Mega Drive française.",
+   "couleur": "#3a6fd8",
+   "rom_attendue": "Shining Force II (USA)",
+   "nom_sortie": "Shining Force II (FR).bin",
+   "format": "bps",
+   "version": "SF2v17",
+   "date_version": "19/10/2026",
+   "id": "shining-force-2",
+   "notes": [
+    {
+     "titre": "",
+     "blocs": [
+      {
+       "texte": "Traduction faite à partir du texte japonais, insérée dans la ROM américaine (moteur et corrections américains). Le patch s'applique sur la ROM Shining Force II (USA)."
+      }
+     ]
+    },
+    {
+     "titre": "Ce qui est traduit",
+     "blocs": [
+      {
+       "puce": "Les 4 267 dialogues, retraduits depuis le japonais."
+      },
+      {
+       "puce": "Noms japonais pour les personnages, objets, sorts et monstres."
+      },
+      {
+       "puce": "Classes en français jusqu'à 8 lettres (ÉPÉISTE, CAVALIER...), noms sur 8 lettres."
+      },
+      {
+       "puce": "Menus, fiches et écrans du jeu, avec les accents."
+      },
+      {
+       "puce": "Écran titre : le sous-titre japonais « Le Sceau Antique » traduit."
+      },
+      {
+       "puce": "Générique de fin traduit, avec le crédit Traduction française : Player Time."
+      }
+     ]
+    },
+    {
+     "titre": "Corrections et ajouts",
+     "blocs": [
+      {
+       "puce": "Le jeu démarre sur une Mega Drive française (PAL)."
+      },
+      {
+       "puce": "Bug américain des coffres en combat corrigé."
+      },
+      {
+       "puce": "Nouvelle difficulté : NORM. +0 %, DUR +15 %, SUPER +25 %, ARGH! +56 % sur l'attaque des ennemis."
+      },
+      {
+       "puce": "IA des ennemis corrigée pour le choix des cibles."
+      },
+      {
+       "puce": "Sound test rétabli comme au Japon (jeu terminé, puis Haut + Start sur la sorcière)."
+      },
+      {
+       "puce": "Animation d'origine du sort ATTACK rétablie."
+      }
+     ]
+    },
+    {
+     "titre": "Historique des versions",
+     "blocs": [
+      {
+       "puce": "SF2v17 (19/10/2026) : Le sort ATTACK retrouve son animation d'origine (une étincelle qui tourne autour de l'allié), restée inutilisée dans la version occidentale"
+      },
+      {
+       "puce": "SF2v16 (16/10/2026) : Sound test rétabli comme dans la version japonaise (jeu terminé, puis Haut + Start sur la sorcière), avec les titres des musiques traduits"
+      },
+      {
+       "puce": "SF2v15 (16/10/2026) : Les ennemis choisissent mieux leur cible (correction de l'IA de la version américaine)"
+      },
+      {
+       "puce": "SF2v14 (16/10/2026) : Nouvelle difficulté : NORM. normale, DUR +15 %, SUPER +25 %, ARGH! +56 % sur l'attaque des ennemis"
+      },
+      {
+       "puce": "SF2v13 (16/10/2026) : Correction du bug américain qui empêchait d'ouvrir certains coffres en combat"
+      },
+      {
+       "puce": "SF2v12 (16/10/2026) : Le jeu démarre sur une Mega Drive française (PAL)"
+      },
+      {
+       "puce": "SF2v11 (16/10/2026) : Noms sur deux lignes ; liste des membres et fiche résumé adaptées aux noms et classes de 8 lettres"
+      },
+      {
+       "puce": "SF2v10 (16/10/2026) : Générique de fin traduit, avec le crédit Traduction française : Player Time"
+      },
+      {
+       "puce": "SF2v09 (16/10/2026) : Écran titre : le sous-titre japonais « Le Sceau Antique » est de retour"
+      },
+      {
+       "puce": "SF2v08 (16/10/2026) : Toute la traduction tient dans la cartouche de 2 Mo d'origine"
+      },
+      {
+       "puce": "SF2v07 (16/10/2026) : Police des dialogues avec les guillemets et les majuscules accentuées"
+      },
+      {
+       "puce": "SF2v06 (16/10/2026) : Accents dans les menus"
+      },
+      {
+       "puce": "SF2v05 (16/10/2026) : Menus et autres textes du jeu traduits"
+      },
+      {
+       "puce": "SF2v04 (16/10/2026) : Objets, sorts (SOIN, AURA, PURGE...) et monstres traduits"
+      },
+      {
+       "puce": "SF2v03 (16/10/2026) : Classes en français (ÉPÉISTE, CAVALIER...)"
+      },
+      {
+       "puce": "SF2v02 (16/10/2026) : Noms des personnages repris du japonais"
+      },
+      {
+       "puce": "SF2v01 (16/10/2026) : Tous les dialogues traduits depuis le japonais"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/shining-force-2/01_titre.png",
+     "legende": "L'écran titre, avec le sous-titre japonais « Le Sceau Antique » traduit"
+    },
+    {
+     "src": "images/shining-force-2/02_intro.png",
+     "legende": "L'introduction : les voleurs dans le sanctuaire"
+    },
+    {
+     "src": "images/shining-force-2/03_sorciere.png",
+     "legende": "La sorcière qui accueille le joueur"
+    },
+    {
+     "src": "images/shining-force-2/04_nom.png",
+     "legende": "Le choix du nom du héros"
+    },
+    {
+     "src": "images/shining-force-2/05_difficulte.png",
+     "legende": "Le choix de la difficulté"
+    },
+    {
+     "src": "images/shining-force-2/06_force.png",
+     "legende": "Le début de l'aventure, avec le menu de la Force"
+    },
+    {
+     "src": "images/shining-force-2/07_statut.png",
+     "legende": "La fiche d'un personnage, classes en français"
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/shining-force-2.bps",
+    "format": "bps",
+    "crc_source": "4815E075",
+    "taille_source": 2097152,
+    "crc_sortie": "AE779504",
+    "taille_sortie": 2097152,
+    "taille_patch": 100863
    },
    "revision": 1,
-   "date_maj": "25/10/2026"
+   "date_maj": "01/11/2026"
+  },
+  {
+   "ordre": 31,
+   "categorie": "Traductions et améliorations",
+   "titre": "Shining Force Gaiden : Final Conflict",
+   "sous_titre": "Traduction française et adaptation Mega Drive",
+   "plateforme": "Mega Drive",
+   "statut": "Version de test",
+   "resume": "Le dernier Shining Force de la Game Gear, sorti seulement au Japon, traduit en français et rejoué dans le moteur de Shining Force II sur Mega Drive. Version de test : le jeu se joue du début à la fin, certaines cartes et musiques sont encore provisoires.",
+   "couleur": "#8a3fc4",
+   "rom_attendue": "Shining Force II (USA)",
+   "nom_sortie": "Shining Force Final Conflict (FR).bin",
+   "format": "bps",
+   "version": "SFFCv31",
+   "date_version": "19/10/2026",
+   "id": "final-conflict",
+   "notes": [
+    {
+     "titre": "",
+     "blocs": [
+      {
+       "texte": "Final Conflict est sorti sur Game Gear, seulement au Japon. Cette version le fait revivre sur Mega Drive dans le moteur de Shining Force II, entièrement en français."
+      },
+      {
+       "texte": "Le patch s'applique sur la ROM Shining Force II (USA) : il contient tout le jeu Final Conflict."
+      },
+      {
+       "texte": "Version de test : le jeu se joue du début à la fin, mais certaines cartes et musiques sont encore provisoires. Le test des combats reste accessible (A + START sur l'écran titre)."
+      }
+     ]
+    },
+    {
+     "titre": "Traduction",
+     "blocs": [
+      {
+       "puce": "Les 1 429 messages traduits depuis le japonais (prologue, dialogues, objets, sorts, monstres)."
+      },
+      {
+       "puce": "« Kain » comme dans Shining Force 1."
+      }
+     ]
+    },
+    {
+     "titre": "Le jeu dans le moteur de Shining Force II",
+     "blocs": [
+      {
+       "puce": "Les 22 combats, avec leurs scènes d'avant et d'après, le recrutement et la fin du jeu."
+      },
+      {
+       "puce": "Écran de camp de la Game Gear entre les combats : Q.G., sortie, boutique, sauvegarde."
+      },
+      {
+       "puce": "Personnages, objets, ennemis, résistances et coups critiques de Final Conflict."
+      },
+      {
+       "puce": "Fouille en combat : coffres et cases cachées, ninja et Kojirô à découvrir."
+      },
+      {
+       "puce": "Renforts ennemis qui apparaissent quand la Force atteint leur zone."
+      },
+      {
+       "puce": "Présentation, écran titre, femme au livre et générique de fin de la Game Gear."
+      }
+     ]
+    },
+    {
+     "titre": "Graphismes et musique",
+     "blocs": [
+      {
+       "puce": "Portraits, sprites et cartes repris du remake PC, ou dessinés."
+      },
+      {
+       "puce": "Sprites de combat de la Force par Ivan_Cal (sfmods.com)."
+      },
+      {
+       "puce": "Musiques de Shining Force II choisies selon le rôle de chaque musique de Final Conflict."
+      }
+     ]
+    },
+    {
+     "titre": "Historique des versions",
+     "blocs": [
+      {
+       "puce": "SFFCv31 (18/10/2026) : Combats 19 et 22 sur des cartes provisoires, en attendant les cartes dessinées"
+      },
+      {
+       "puce": "SFFCv30 (18/10/2026) : Portraits, sprites et cartes de combat repris du remake PC"
+      },
+      {
+       "puce": "SFFCv29 (18/10/2026) : Nouveaux portraits dessinés, avec les yeux qui clignent et la bouche qui bouge"
+      },
+      {
+       "puce": "SFFCv28 (17/10/2026) : Sprites de carte et portraits de la Game Gear pour tous les personnages et monstres"
+      },
+      {
+       "puce": "SFFCv27 (17/10/2026) : Sprites de combat de la Force (planches d'Ivan_Cal, sfmods.com)"
+      },
+      {
+       "puce": "SFFCv26 (19/10/2026) : Le sort ATTACK retrouve son animation d'origine"
+      },
+      {
+       "puce": "SFFCv25 (18/10/2026) : Générique de fin de la Game Gear : 13 petites scènes avec les pages de l'équipe, puis l'écran THE END"
+      },
+      {
+       "puce": "SFFCv24 (18/10/2026) : La fin du jeu de Final Conflict"
+      },
+      {
+       "puce": "SFFCv23 (18/10/2026) : Nouvelle partie comme sur la Game Gear : nom du héros, scène d'Hassan, premier combat"
+      },
+      {
+       "puce": "SFFCv22 (18/10/2026) : La femme au livre accueille le joueur à la place de la sorcière"
+      },
+      {
+       "puce": "SFFCv21 (18/10/2026) : Présentation de Final Conflict : prologue, scène d'introduction et écran titre"
+      },
+      {
+       "puce": "SFFCv20 (18/10/2026) : Musiques et bruitages : ceux de Shining Force II qui correspondent le mieux"
+      },
+      {
+       "puce": "SFFCv19 (18/10/2026) : Effets des scènes : décors qui changent, éclairs, téléportations, bruitages"
+      },
+      {
+       "puce": "SFFCv18 (18/10/2026) : Chaque scène se joue dans le bon décor"
+      },
+      {
+       "puce": "SFFCv17 (17/10/2026) : Toutes les scènes d'avant et d'après les combats, avec les portraits"
+      },
+      {
+       "puce": "SFFCv16 (18/10/2026) : Sauvegarde au camp et reprise de la partie"
+      },
+      {
+       "puce": "SFFCv15 (18/10/2026) : Au Q.G., les membres disent leur réplique quand on change l'équipe"
+      },
+      {
+       "puce": "SFFCv14 (17/10/2026) : Écran de camp entre les combats : Q.G., boutique et sortie"
+      },
+      {
+       "puce": "SFFCv13 (18/10/2026) : Fouille en combat : coffres et cases cachées, le ninja et Kojirô à découvrir"
+      },
+      {
+       "puce": "SFFCv12 (18/10/2026) : Les personnages rejoignent la Force au fil de l'histoire"
+      },
+      {
+       "puce": "SFFCv11 (18/10/2026) : Renforts ennemis qui apparaissent quand la Force approche"
+      },
+      {
+       "puce": "SFFCv10 (17/10/2026) : Les 22 combats de Final Conflict sont jouables"
+      },
+      {
+       "puce": "SFFCv09 (18/10/2026) : Résistances, coups critiques, ripostes, or gagné et promotion dès le niveau 10, comme dans Final Conflict"
+      },
+      {
+       "puce": "SFFCv08 (17/10/2026) : Les 73 monstres de Final Conflict"
+      },
+      {
+       "puce": "SFFCv07 (17/10/2026) : Les objets de Final Conflict, dont le Briseur de chaos et le Sabre de Kojirô"
+      },
+      {
+       "puce": "SFFCv06 (17/10/2026) : La Force de Final Conflict : personnages, classes, niveaux, sorts et objets de départ"
+      },
+      {
+       "puce": "SFFCv05 (17/10/2026) : Test des combats : A + START sur l'écran titre"
+      },
+      {
+       "puce": "SFFCv04 (16/10/2026) : Kit pour dessiner les cartes des combats"
+      },
+      {
+       "puce": "SFFCv03 (16/10/2026) : Analyse de la version Game Gear (scènes, combats, statistiques, cartes)"
+      },
+      {
+       "puce": "SFFCv02 (16/10/2026) : Noms des personnages, classes, objets, sorts et monstres traduits"
+      },
+      {
+       "puce": "SFFCv01 (16/10/2026) : Les 1 429 messages traduits depuis le japonais"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/final-conflict/01_titre.png",
+     "legende": "L'écran titre de Final Conflict"
+    },
+    {
+     "src": "images/final-conflict/02_prologue.png",
+     "legende": "Le prologue, traduit depuis le japonais"
+    },
+    {
+     "src": "images/final-conflict/03_intro.png",
+     "legende": "La scène d'introduction : Lynx et Mishaela"
+    },
+    {
+     "src": "images/final-conflict/04_femme.png",
+     "legende": "La femme au livre qui accueille le joueur"
+    },
+    {
+     "src": "images/final-conflict/05_camp.png",
+     "legende": "L'écran de camp entre les combats"
+    },
+    {
+     "src": "images/final-conflict/06_combat.png",
+     "legende": "Un combat sur la carte du temple"
+    },
+    {
+     "src": "images/final-conflict/07_scene_combat.png",
+     "legende": "Une attaque en scène de combat"
+    },
+    {
+     "src": "images/final-conflict/08_generique.png",
+     "legende": "Le générique de fin de la Game Gear, avec les pages de l'équipe"
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/final-conflict.bps",
+    "format": "bps",
+    "crc_source": "4815E075",
+    "taille_source": 2097152,
+    "crc_sortie": "EE7460D9",
+    "taille_sortie": 2097152,
+    "taille_patch": 833215
+   },
+   "revision": 1,
+   "date_maj": "01/11/2026"
   },
   {
    "ordre": 201,
@@ -1982,6 +2828,227 @@
    },
    "revision": 1,
    "date_maj": "25/10/2026"
+  },
+  {
+   "ordre": 204,
+   "categorie": "Traductions de Marcoz",
+   "titre": "Mickey Mouse : Legend of Illusion",
+   "sous_titre": "Traduction française par Marcoz",
+   "plateforme": "Master System",
+   "statut": "Terminée",
+   "resume": "Mickey part chercher l'eau de vie pour sauver le royaume du roi Pete : l'aventure Master System traduite en français par Marcoz.",
+   "couleur": "#5aa0d8",
+   "credit": "Traduction : Marcoz",
+   "rom_attendue": "Mickey Mouse - Legend of Illusion (USA, Europe)",
+   "nom_sortie": "Mickey Mouse - Legend of Illusion (FR).sms",
+   "format": "bps",
+   "id": "marcoz-mickey-mouse-legend-of-illusion",
+   "notes": [
+    {
+     "titre": "",
+     "blocs": [
+      {
+       "texte": "Traductions françaises réalisées par Marcoz, publiées ici avec son accord."
+      },
+      {
+       "texte": "Traduction française de Marcoz."
+      }
+     ]
+    },
+    {
+     "titre": "Ce qui est traduit",
+     "blocs": [
+      {
+       "puce": "L'introduction et les dialogues de l'histoire."
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/marcoz-mickey-mouse-legend-of-illusion/01_intro.png",
+     "legende": "« Il était une souris… » : l'introduction en français"
+    },
+    {
+     "src": "images/marcoz-mickey-mouse-legend-of-illusion/02_roi_pete.png",
+     "legende": "Le royaume du roi Pete"
+    },
+    {
+     "src": "images/marcoz-mickey-mouse-legend-of-illusion/03_ombre.png",
+     "legende": "Une ombre s'abat sur le pays"
+    },
+    {
+     "src": "images/marcoz-mickey-mouse-legend-of-illusion/04_conseiller.png",
+     "legende": "Le conseiller du roi"
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/marcoz-mickey-mouse-legend-of-illusion.bps",
+    "format": "bps",
+    "crc_source": "6350E649",
+    "taille_source": 524288,
+    "crc_sortie": "A85F14D9",
+    "taille_sortie": 524288,
+    "taille_patch": 13043
+   },
+   "revision": 1,
+   "date_maj": "01/11/2026"
+  },
+  {
+   "ordre": 205,
+   "categorie": "Traductions de Marcoz",
+   "titre": "Mickey's Ultimate Challenge",
+   "sous_titre": "Traduction française par Marcoz",
+   "plateforme": "Mega Drive",
+   "statut": "Terminée",
+   "resume": "Mickey et Minnie au royaume de Haricotville : les dialogues de ce jeu d'énigmes traduits en français par Marcoz.",
+   "couleur": "#5aa0d8",
+   "credit": "Traduction : Marcoz",
+   "rom_attendue": "Mickey's Ultimate Challenge (USA)",
+   "nom_sortie": "Mickey's Ultimate Challenge (FR).md",
+   "format": "bps",
+   "id": "marcoz-mickey-s-ultimate-challenge",
+   "notes": [
+    {
+     "titre": "",
+     "blocs": [
+      {
+       "texte": "Traductions françaises réalisées par Marcoz, publiées ici avec son accord."
+      },
+      {
+       "texte": "Traduction française de Marcoz."
+      }
+     ]
+    },
+    {
+     "titre": "Ce qui est traduit",
+     "blocs": [
+      {
+       "puce": "L'introduction et les dialogues avec les personnages."
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/marcoz-mickey-s-ultimate-challenge/01_titre.png",
+     "legende": "Écran titre"
+    },
+    {
+     "src": "images/marcoz-mickey-s-ultimate-challenge/03_intro.png",
+     "legende": "L'introduction en français"
+    },
+    {
+     "src": "images/marcoz-mickey-s-ultimate-challenge/04_dialogue.png",
+     "legende": "Arrivée au royaume"
+    },
+    {
+     "src": "images/marcoz-mickey-s-ultimate-challenge/05_dialogue.png",
+     "legende": "Dialogue traduit"
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/marcoz-mickey-s-ultimate-challenge.bps",
+    "format": "bps",
+    "crc_source": "30B512EE",
+    "taille_source": 1048576,
+    "crc_sortie": "FE0343F9",
+    "taille_sortie": 1048576,
+    "taille_patch": 25502
+   },
+   "revision": 1,
+   "date_maj": "01/11/2026"
+  },
+  {
+   "ordre": 206,
+   "categorie": "Traductions de Marcoz",
+   "titre": "Road Rash",
+   "sous_titre": "Traduction française par Marcoz",
+   "plateforme": "Mega Drive",
+   "statut": "Terminée",
+   "resume": "La course de motos d'Electronic Arts en français : menus, 155 dialogues, garage, distances en km et puissances en ch, par Marcoz.",
+   "couleur": "#5aa0d8",
+   "credit": "Traduction : Marcoz",
+   "rom_attendue": "Road Rash (USA, Europe), CRC32 DEA53D19 (nommée « Road Rash (UE) [c] » dans les anciennes collections)",
+   "nom_sortie": "Road Rash (FR).gen",
+   "format": "bps",
+   "id": "marcoz-road-rash",
+   "notes": [
+    {
+     "titre": "",
+     "blocs": [
+      {
+       "texte": "Traductions françaises réalisées par Marcoz, publiées ici avec son accord."
+      },
+      {
+       "texte": "Traduction française de Marcoz."
+      }
+     ]
+    },
+    {
+     "titre": "Ce qui est traduit",
+     "blocs": [
+      {
+       "puce": "Menus et messages d'aide, messages de boutique et amendes."
+      },
+      {
+       "puce": "Les 155 dialogues entre les courses."
+      },
+      {
+       "puce": "Le garage : descriptions des 8 motos, PRIX, (VOTRE MOTO)."
+      },
+      {
+       "puce": "Menu joueur (NOM, MOT DE PASSE), écran de sélection (NIVEAU, Joueur A/B)."
+      },
+      {
+       "puce": "En course : PAUSE, SAISI, MOTO, places (1RE PLACE, 13E PLACE…), FINIE."
+      },
+      {
+       "puce": "Les crédits, avec « Appuyez sur Start »."
+      }
+     ]
+    },
+    {
+     "titre": "Unités",
+     "blocs": [
+      {
+       "puce": "Distances des courses en kilomètres, puissance des motos en chevaux et poids en kilos."
+      },
+      {
+       "puce": "Le compteur passe de 20, 60, 100 et 140 miles à 30, 100, 160 et 230 km/h."
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/marcoz-road-rash/01_titre.png",
+     "legende": "Écran titre"
+    },
+    {
+     "src": "images/marcoz-road-rash/02_menu.png",
+     "legende": "Le menu en français"
+    },
+    {
+     "src": "images/marcoz-road-rash/03_dialogue.png",
+     "legende": "Un des 155 dialogues entre les courses"
+    },
+    {
+     "src": "images/marcoz-road-rash/04_course.png",
+     "legende": "En course : compteur en km/h"
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/marcoz-road-rash.bps",
+    "format": "bps",
+    "crc_source": "DEA53D19",
+    "taille_source": 786432,
+    "crc_sortie": "0057C0C6",
+    "taille_sortie": 786976,
+    "taille_patch": 14285
+   },
+   "revision": 1,
+   "date_maj": "01/11/2026"
   }
  ],
  "images_consoles": {},
