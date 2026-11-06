@@ -398,6 +398,370 @@
    "date_maj": "25/10/2026"
   },
   {
+   "ordre": 10,
+   "categorie": "Traductions et améliorations",
+   "titre": "Ristar",
+   "sous_titre": "Traduction française",
+   "plateforme": "Mega Drive",
+   "statut": "Version de test",
+   "resume": "Ristar, la petite étoile de Sega, entièrement en français : histoire, menus, codes secrets, Sound Theater et cartons de début de monde redessinés.",
+   "couleur": "#f0a020",
+   "rom_attendue": "Ristar (USA, Europe)",
+   "nom_sortie": "Ristar (FR).bin",
+   "format": "bps",
+   "version": "RISv07",
+   "date_version": "06/11/2026",
+   "id": "ristar",
+   "notes": [
+    {
+     "titre": "La traduction",
+     "blocs": [
+      {
+       "texte": "Ristar n'a jamais eu de version française : la version européenne était en anglais, et la version japonaise ne contient pas de texte japonais."
+      },
+      {
+       "texte": "Tous les textes du jeu ont été traduits, et les cartons « Round / Planet » ont été redessinés en « Monde / Planète »."
+      },
+      {
+       "puce": "Fonctionne sur toutes les Mega Drive (japonaise, américaine, européenne), Mega Drive Mini et Mega SG."
+      },
+      {
+       "puce": "Textes en majuscules sans accents (la police du jeu n'en a pas)."
+      },
+      {
+       "puce": "Les mots de passe du jeu restent les mêmes (ILOVEU, DOFEEL, MUSEUM...)."
+      },
+      {
+       "puce": "Bonus : mot de passe DEX pour voler librement dans les niveaux (B + Start en jeu)."
+      },
+      {
+       "puce": "Bonus : mot de passe VOLT pour le ralenti (A + Start en jeu)."
+      }
+     ]
+    },
+    {
+     "titre": "Historique des versions",
+     "blocs": [
+      {
+       "puce": "RISv07 (06/11/2026) : Traduit : décompte des bonus en fin de monde (BONUS FIN DE MONDE, BONUS TRESOR, BONUS TECHNIQUE, BONUS SECRET, TOTAL) ; Vérification complète des textes restés en anglais"
+      },
+      {
+       "puce": "RISv06 (06/11/2026) : Traduits : bonus de hauteur (BONUS SOMMET), DEMO, RECORD et PIRE SCORE"
+      },
+      {
+       "puce": "RISv05 (06/11/2026) : Nouveau mot de passe VOLT : ralenti (fonction de test cachée). En jeu, maintenir A et appuyer sur Start pour l'allumer ou l'éteindre"
+      },
+      {
+       "puce": "RISv04 (06/11/2026) : Option VIES retirée (le jeu fixe les vies selon la difficulté) ; menu des options d'origine rétabli ; Apostrophes supprimées (mauvais affichage dans le Théâtre sonore)"
+      },
+      {
+       "puce": "RISv03 (06/11/2026) : Nouveau mot de passe DEX : déplacement libre (mode debug caché). En jeu, maintenir B et appuyer sur Start pour voler, Start pour revenir"
+      },
+      {
+       "puce": "RISv02 (06/11/2026) : Correction du bug « SON COUPE » du Théâtre sonore (l'oiseau tombe de nouveau) ; Option cachée « VIES 1/3/5/7 » réactivée dans les options ; Les 7 mots de passe japonais retirés de la version occidentale (CANDY, FEEL, AAAAAA, STAR, VALDI, MASTER, MACCHA) fonctionnent de nouveau"
+      },
+      {
+       "puce": "RISv01 (06/11/2026) : Première version : intro, menus, options, codes secrets, Sound Theater, choix du monde, zone bonus, boss, générique traduits ; Cartons de début de monde redessinés (MONDE / PLANETE) ; Crédit de traduction dans le générique de fin"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/ristar/01_carton_monde1.png",
+     "legende": "Le carton de début de monde, redessiné en français."
+    },
+    {
+     "src": "images/ristar/02_intro.png",
+     "legende": "L'histoire de l'introduction."
+    },
+    {
+     "src": "images/ristar/03_titre.png",
+     "legende": "L'écran titre."
+    },
+    {
+     "src": "images/ristar/04_options.png",
+     "legende": "Les options."
+    },
+    {
+     "src": "images/ristar/05_mot_de_passe.png",
+     "legende": "Les codes secrets et leurs messages."
+    },
+    {
+     "src": "images/ristar/06_sound_theater.png",
+     "legende": "Le Théâtre sonore et ses 30 musiques."
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/ristar.bps",
+    "format": "bps",
+    "crc_source": "6511AA61",
+    "taille_source": 2097152,
+    "crc_sortie": "B6485C7F",
+    "taille_sortie": 2097152,
+    "taille_patch": 15531
+   },
+   "revision": 1,
+   "date_maj": "06/11/2026"
+  },
+  {
+   "ordre": 11,
+   "categorie": "Traductions et améliorations",
+   "titre": "Ristar - The Shooting Star (version japonaise)",
+   "sous_titre": "Traduction française",
+   "plateforme": "Mega Drive",
+   "statut": "Version de test",
+   "resume": "La version japonaise de Ristar, avec ses différences (planètes Neer, Leatow..., trésors nommés, fin et générique propres), entièrement en français.",
+   "couleur": "#e07020",
+   "rom_attendue": "Ristar - The Shooting Star (Japan)",
+   "nom_sortie": "Ristar - The Shooting Star (FR).bin",
+   "format": "bps",
+   "version": "RISJv07",
+   "date_version": "06/11/2026",
+   "id": "ristar-japon",
+   "notes": [
+    {
+     "titre": "La traduction",
+     "blocs": [
+      {
+       "texte": "La version japonaise de Ristar est différente de la version occidentale : intro sans texte, noms des planètes (Neer, Leatow, Onaclove...), trésors des niveaux bonus nommés, fin et générique propres."
+      },
+      {
+       "texte": "Cette traduction part de la ROM japonaise et garde toutes ces différences. Une autre traduction existe pour la version US/Europe."
+      },
+      {
+       "puce": "Fonctionne sur toutes les Mega Drive, Mega Drive Mini et Mega SG."
+      },
+      {
+       "puce": "Textes en majuscules sans accents (la police du jeu n'en a pas)."
+      },
+      {
+       "puce": "Cartons de début de monde redessinés en « MONDE / PLANETE »."
+      },
+      {
+       "puce": "Bonus : mot de passe DEX pour voler librement dans les niveaux (B + Start en jeu)."
+      },
+      {
+       "puce": "Bonus : mot de passe VOLT pour le ralenti (A + Start en jeu)."
+      }
+     ]
+    },
+    {
+     "titre": "Historique des versions",
+     "blocs": [
+      {
+       "puce": "RISJv07 (06/11/2026) : Traduit : décompte des bonus en fin de monde ; Verrou de région retiré : démarre enfin sur toutes les consoles (les versions précédentes ne marchaient que sur console japonaise) ; Vérification complète des textes restés en anglais"
+      },
+      {
+       "puce": "RISJv06 (06/11/2026) : Traduits : bonus de hauteur (BONUS SOMMET), DEMO, RECORD et PIRE SCORE"
+      },
+      {
+       "puce": "RISJv05 (06/11/2026) : Nouveau mot de passe VOLT : ralenti (fonction de test cachée). En jeu, maintenir A et appuyer sur Start pour l'allumer ou l'éteindre"
+      },
+      {
+       "puce": "RISJv04 (06/11/2026) : Option VIES retirée (le jeu fixe les vies selon la difficulté) ; menu des options d'origine rétabli"
+      },
+      {
+       "puce": "RISJv03 (06/11/2026) : Nouveau mot de passe DEX : déplacement libre (mode debug caché). En jeu, maintenir B et appuyer sur Start pour voler, Start pour revenir"
+      },
+      {
+       "puce": "RISJv02 (06/11/2026) : Correction du bug « SON COUPE » du Théâtre sonore (l'oiseau tombe de nouveau) ; Option cachée « VIES 1/3/5/7 » réactivée dans les options"
+      },
+      {
+       "puce": "RISJv01 (06/11/2026) : Première version : menus, codes secrets, choix du monde, zone bonus et trésors, boss, fin du jeu, Sound Theater et générique traduits ; Cartons de début de monde redessinés (MONDE / PLANETE) ; Crédit de traduction dans le générique de fin"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/ristar-japon/01_carton_monde1.png",
+     "legende": "Le carton de début de monde, avec le nom japonais de la planète."
+    },
+    {
+     "src": "images/ristar-japon/02_titre.png",
+     "legende": "L'écran titre japonais."
+    },
+    {
+     "src": "images/ristar-japon/03_options.png",
+     "legende": "Les options."
+    },
+    {
+     "src": "images/ristar-japon/04_mot_de_passe.png",
+     "legende": "Les codes secrets et leurs messages."
+    },
+    {
+     "src": "images/ristar-japon/05_sound_theater.png",
+     "legende": "Le Théâtre sonore."
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/ristar-japon.bps",
+    "format": "bps",
+    "crc_source": "CE464F0E",
+    "taille_source": 2097152,
+    "crc_sortie": "655B043F",
+    "taille_sortie": 2097152,
+    "taille_patch": 15003
+   },
+   "revision": 1,
+   "date_maj": "06/11/2026"
+  },
+  {
+   "ordre": 15,
+   "categorie": "Traductions et améliorations",
+   "titre": "Langrisser II",
+   "sous_titre": "Traduction française",
+   "plateforme": "Mega Drive",
+   "statut": "Version de test",
+   "resume": "Traduction française du tactical-RPG Langrisser II, faite depuis la version japonaise. Dialogues, prologues, épilogues, scène de fin, menus, objets et saisie du nom : le jeu se joue de bout en bout en français, avec une police française fine pour loger le texte. ROM « world » qui démarre sur toutes les Mega Drive.",
+   "couleur": "#8a1c1c",
+   "rom_attendue": "Langrisser II (Japan) (Rev 1)",
+   "nom_sortie": "Langrisser II (FR).bin",
+   "format": "bps",
+   "version": "LAN2v06",
+   "date_version": "01/11/2026",
+   "id": "langrisser-2",
+   "notes": [
+    {
+     "titre": "Ce qui est traduit",
+     "blocs": [
+      {
+       "puce": "Tous les dialogues des scénarios (près de 3 000 répliques), traduits depuis le japonais"
+      },
+      {
+       "puce": "Les 31 prologues, les conditions de victoire, l'introduction et la scène de fin"
+      },
+      {
+       "puce": "Tous les épilogues et les visites après la fin"
+      },
+      {
+       "puce": "Menus de combat, de préparation, de placement, système, options et sauvegardes"
+      },
+      {
+       "puce": "Noms et descriptions des objets, boutique et équipement"
+      },
+      {
+       "puce": "Écran titre et saisie du nom en lettres latines"
+      },
+      {
+       "puce": "Noms des personnages, des classes, des troupes et des sorts"
+      }
+     ]
+    },
+    {
+     "titre": "Encore en japonais ou en anglais",
+     "blocs": [
+      {
+       "puce": "Le grand bandeau « SCENARIO 1 » du début de bataille (lettres dessinées)"
+      },
+      {
+       "texte": "Les noms sont transcrits du japonais (Erwin, Hein, Riana, Leon, Bozel…)."
+      },
+      {
+       "texte": "La ROM est « world » : elle démarre sur les Mega Drive japonaise, américaine et européenne, la Mega Drive Mini et la Mega SG."
+      }
+     ]
+    },
+    {
+     "titre": "Historique des versions",
+     "blocs": [
+      {
+       "puce": "LAN2v06 (01/11/2026) : Police des dialogues retouchée (Q, i, j, t, majuscules accentuées)"
+      },
+      {
+       "puce": "LAN2v05 (01/11/2026) : Barre d'état en français : N, PM, PV ; PM au lieu de MP dans les fenêtres d'unité ; Correction de l'écran des réglages couleur et touches ; Atelier de lettres (editeur_police.html) fourni avec les outils"
+      },
+      {
+       "puce": "LAN2v04 (01/11/2026) : Logo « Langrisser II » en lettres latines sur l'écran titre ; Bandeau « TOUR 1 » corrigé, barre d'état SCÉNARIO / TOUR ; Recrutement : FIN au lieu de END ; Fenêtre Voir troupes élargie : plus de noms coupés ; Réglages couleur et touches traduits"
+      },
+      {
+       "puce": "LAN2v03 (01/11/2026) : Noms et descriptions des 37 objets en français (boutique, équipement) ; Scène de fin traduite, et récapitulatif des tours (Scénario n, n tours, Total) ; En-têtes du placement (Commandants, Ordre de jeu), choix « Aucun » dans l'équipement ; Crédit « Traduction française / Player Time » sur l'écran titre ; Correction de l'écran de vente de la boutique"
+      },
+      {
+       "puce": "LAN2v02 (01/11/2026) : Menus en français : commandes de combat, ordres, préparation, placement, boutique, menu système, options, sauvegardes ; Écran titre (JOUER / CHARGER, APPUYEZ SUR START) et saisie du nom en lettres latines ; Les 31 prologues de scénario et l'écran des conditions de victoire traduits ; Introduction (tirade de Bernhardt) et noms des sorts traduits ; Bandeaux TOUR, PHASE ENNEMIE, JOUEUR / ENNEMI / PNJ"
+      },
+      {
+       "puce": "LAN2v01 (01/11/2026) : Première version de test : tous les dialogues et les épilogues en français ; Nouvelle police française fine (2 lettres par case) pour loger le texte ; Noms des personnages, des classes, des troupes et des objets en français ; ROM « world » pour toutes les Mega Drive"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/langrisser-2/01_titre.png",
+     "legende": "Écran titre avec le logo en lettres latines et le crédit de la traduction"
+    },
+    {
+     "src": "images/langrisser-2/02_saisie_nom.png",
+     "legende": "Saisie du nom avec lettres latines, minuscules et accents"
+    },
+    {
+     "src": "images/langrisser-2/03_prologue.png",
+     "legende": "Les prologues des scénarios, traduits depuis le japonais"
+    },
+    {
+     "src": "images/langrisser-2/04_commandes.png",
+     "legende": "Menu de commandes en combat : Déplacer, Attaquer, Magie, Soigner, Ordres"
+    },
+    {
+     "src": "images/langrisser-2/05_magie.png",
+     "legende": "Noms des sorts en français"
+    },
+    {
+     "src": "images/langrisser-2/06_objectifs.png",
+     "legende": "Conditions de victoire et de défaite du scénario"
+    },
+    {
+     "src": "images/langrisser-2/07_dialogue.png",
+     "legende": "Hein vient prévenir Erwin : dialogues traduits depuis le japonais"
+    },
+    {
+     "src": "images/langrisser-2/08_dialogue.png",
+     "legende": "Une police française fine : 32 lettres par ligne, accents compris"
+    },
+    {
+     "src": "images/langrisser-2/09_dialogue.png",
+     "legende": "Les noms des unités et des classes en français dans la barre d'état"
+    },
+    {
+     "src": "images/langrisser-2/10_preparation.png",
+     "legende": "Préparation de la bataille : noms des héros et des troupes"
+    },
+    {
+     "src": "images/langrisser-2/11_boutique.png",
+     "legende": "Boutique : noms et descriptions des objets en français"
+    },
+    {
+     "src": "images/langrisser-2/12_equipement.png",
+     "legende": "Équipement des commandants"
+    },
+    {
+     "src": "images/langrisser-2/13_fin.png",
+     "legende": "La scène de fin, traduite depuis le japonais"
+    },
+    {
+     "src": "images/langrisser-2/14_voir_troupes.png",
+     "legende": "Voir les troupes avant la bataille"
+    },
+    {
+     "src": "images/langrisser-2/15_options.png",
+     "legende": "Réglages des couleurs et des touches"
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/langrisser-2.bps",
+    "format": "bps",
+    "crc_source": "0CAA0593",
+    "taille_source": 2097152,
+    "crc_sortie": "6D23724F",
+    "taille_sortie": 2097152,
+    "taille_patch": 322418
+   },
+   "revision": 1,
+   "date_maj": "06/11/2026"
+  },
+  {
    "ordre": 20,
    "categorie": "Traductions et améliorations",
    "titre": "Dune : La Bataille pour Arrakis",
@@ -529,6 +893,110 @@
    },
    "revision": 1,
    "date_maj": "25/10/2026"
+  },
+  {
+   "ordre": 20,
+   "categorie": "Traductions et améliorations",
+   "titre": "Langrisser",
+   "sous_titre": "Traduction française",
+   "plateforme": "Mega Drive",
+   "statut": "Version de test",
+   "resume": "Traduction française complète du RPG tactique de NCS/Masaya, à partir de la version japonaise : dialogues, briefings, noms, objets, menus graphiques et logo. ROM « world » qui démarre sur toutes les Mega Drive.",
+   "couleur": "#a02030",
+   "rom_attendue": "Langrisser (Japan)",
+   "nom_sortie": "Langrisser (FR).bin",
+   "format": "bps",
+   "version": "LGRv02",
+   "date_version": "01/11/2026",
+   "id": "langrisser",
+   "notes": [
+    {
+     "titre": "Ce qui est traduit",
+     "blocs": [
+      {
+       "puce": "Tous les dialogues des 20 chapitres, les briefings et les conditions de victoire/défaite"
+      },
+      {
+       "puce": "Noms des personnages, classes, troupes, monstres, objets et sorts"
+      },
+      {
+       "puce": "Menus graphiques redessinés en français et logo de l'écran titre"
+      },
+      {
+       "puce": "Messages système, textes anglais de l'interface, épilogues et générique de fin"
+      },
+      {
+       "puce": "Police enrichie de toutes les lettres accentuées"
+      },
+      {
+       "texte": "Traduction faite directement depuis le japonais (version Mega Drive de 1991, jamais sortie en France)."
+      },
+      {
+       "texte": "La ROM est « world » : elle fonctionne sur les consoles japonaises, américaines et européennes, la Mega Drive Mini et la Mega SG."
+      }
+     ]
+    },
+    {
+     "titre": "Historique des versions",
+     "blocs": [
+      {
+       "puce": "LGRv02 (01/11/2026) : Nouveau logo « Langrisser » sur l'écran titre, centré dans son cadre ; Écran de combat en français : bonus de grade et de terrain, niveau, hors de portée"
+      },
+      {
+       "puce": "LGRv01 (01/11/2026) : Première version : jeu entièrement en français, menus et logo compris ; ROM « world » compatible avec toutes les Mega Drive"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/langrisser/01_titre.png",
+     "legende": "Écran titre avec le logo « Langrisser » de Player Time"
+    },
+    {
+     "src": "images/langrisser/02_briefing.png",
+     "legende": "Le prologue et les conditions de victoire"
+    },
+    {
+     "src": "images/langrisser/03_recrutement.png",
+     "legende": "Recrutement des troupes avant la bataille"
+    },
+    {
+     "src": "images/langrisser/04_deploiement.png",
+     "legende": "Placement des commandants"
+    },
+    {
+     "src": "images/langrisser/05_dialogue.png",
+     "legende": "Le roi Ilsack confie la fuite de son fils"
+    },
+    {
+     "src": "images/langrisser/06_dialogue2.png",
+     "legende": "Dialogues retraduits depuis le japonais"
+    },
+    {
+     "src": "images/langrisser/07_ordres.png",
+     "legende": "Le menu des ordres en bataille"
+    },
+    {
+     "src": "images/langrisser/08_menu.png",
+     "legende": "Le menu système"
+    },
+    {
+     "src": "images/langrisser/09_combat.png",
+     "legende": "L'écran de combat et ses bonus"
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/langrisser.bps",
+    "format": "bps",
+    "crc_source": "B6EA5016",
+    "taille_source": 524288,
+    "crc_sortie": "A8284061",
+    "taille_sortie": 1048576,
+    "taille_patch": 74752
+   },
+   "revision": 1,
+   "date_maj": "06/11/2026"
   },
   {
    "ordre": 20,
@@ -679,8 +1147,8 @@
    "rom_attendue": "Phantasy Star II (USA, Europe) (Rev A)",
    "nom_sortie": "Phantasy Star II (FR).bin",
    "format": "bps",
-   "version": "PS2v05",
-   "date_version": "01/11/2026",
+   "version": "PS2v12",
+   "date_version": "06/11/2026",
    "id": "phantasy-star-2",
    "notes": [
     {
@@ -725,6 +1193,9 @@
        "puce": "Au début de partie : gains d'expérience et de mésetas x1, x2 ou x4, couleurs classiques ou modernes, musique américaine ou japonaise (enregistrés dans la sauvegarde)."
       },
       {
+       "puce": "Dans les magasins, un cadre détaille l'objet choisi : nom complet traduit du japonais, attaque, défense, particularités et qui peut l'équiper parmi les personnages déjà rencontrés."
+      },
+      {
        "puce": "Une trentaine de bugs du jeu d'origine corrigés (calcul des dégâts, techniques, collisions...)."
       }
      ]
@@ -732,6 +1203,27 @@
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "PS2v12 (06/11/2026) : Nouvelle partie : choix de la vitesse de course avec B (x2 ou x4), enregistré dans la sauvegarde"
+      },
+      {
+       "puce": "PS2v11 (06/11/2026) : Magasins : B pendant le choix du personnage ramène à la liste des objets au lieu de quitter le magasin"
+      },
+      {
+       "puce": "PS2v10 (06/11/2026) : Noms courts des objets accordés à leur nom complet (Espadrilles, Disque des flammes, Vêtement de prisonnier)"
+      },
+      {
+       "puce": "PS2v09 (06/11/2026) : Magasins : « Peut l'équiper » ne cite que les personnages déjà rencontrés, pour ne rien dévoiler de la suite"
+      },
+      {
+       "puce": "PS2v08 (06/11/2026) : Magasins : en choisissant un objet, un cadre affiche son nom complet (traduit du japonais), son type, son attaque et sa défense ; Particularités indiquées : frappe de groupe, dégâts fixes des pistolets, nombre de tirs, paralysie, technique lancée en combat ; Qui peut équiper l'objet (avec les noms donnés aux personnages), ou l'effet des objets à utiliser"
+      },
+      {
+       "puce": "PS2v07 (05/11/2026) : Difficulté : un cadre sous le menu affiche les gains (x1, x2, x4) du choix sous le curseur ; Couleurs : aperçu immédiat du bleu classique ou moderne avant de valider ; Musique : on entend tout de suite la version américaine ou japonaise en déplaçant le curseur"
+      },
+      {
+       "puce": "PS2v06 (01/11/2026) : Correction d'un plantage dans le menu Équiper (équipement de Nei notamment) ; Combat : B pendant le choix du personnage d'« Ordre » ramène directement au menu Combattre/Tactique ; Combat : son de retour quand on annule le choix de la cible d'une technique ou d'un objet"
+      },
       {
        "puce": "PS2v05 (01/11/2026) : Après « Nouvelle partie » : choix de la difficulté (gains x1, x2, x4), des couleurs (classiques ou modernes) et de la musique (américaine ou japonaise) ; Couleurs modernes : bleu des menus retouché, repris de la v1.01 ; Musique japonaise d'origine disponible, choix enregistré dans la sauvegarde"
       },
@@ -757,7 +1249,7 @@
     },
     {
      "src": "images/phantasy-star-2/02_nouvelle_partie.png",
-     "legende": "Au début : difficulté (gains x1, x2 ou x4), couleurs et musique au choix."
+     "legende": "Au début : les gains de chaque difficulté s'affichent sous le menu ; couleurs et musique changent en direct."
     },
     {
      "src": "images/phantasy-star-2/03_nom.png",
@@ -786,6 +1278,14 @@
     {
      "src": "images/phantasy-star-2/09_couleurs_modernes.png",
      "legende": "Les couleurs modernes : le bleu des menus retouché."
+    },
+    {
+     "src": "images/phantasy-star-2/10_magasin_infos.png",
+     "legende": "Dans les magasins : nom complet, statistiques, et qui peut équiper l'objet parmi les personnages déjà rencontrés."
+    },
+    {
+     "src": "images/phantasy-star-2/11_option_course.png",
+     "legende": "Nouvelle partie : vitesse de course avec B, x2 ou x4."
     }
    ],
    "patch": {
@@ -793,12 +1293,12 @@
     "format": "bps",
     "crc_source": "904FA047",
     "taille_source": 786432,
-    "crc_sortie": "9478EEFB",
+    "crc_sortie": "4C445223",
     "taille_sortie": 1048576,
-    "taille_patch": 76519
+    "taille_patch": 89695
    },
-   "revision": 1,
-   "date_maj": "01/11/2026"
+   "revision": 2,
+   "date_maj": "06/11/2026"
   },
   {
    "ordre": 20,
@@ -969,8 +1469,8 @@
    "rom_attendue": "Shining Force (USA)",
    "nom_sortie": "Shining Force Resurrection (FR).bin",
    "format": "bps",
-   "version": "SFRv69",
-   "date_version": "01/11/2026",
+   "version": "SFRv79",
+   "date_version": "04/11/2026",
    "id": "shining-force-resurrection",
    "notes": [
     {
@@ -1055,6 +1555,36 @@
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "SFRv79 (04/11/2026) : Début du jeu : plus de plantage (écran noir) quand Lowe s'en va"
+      },
+      {
+       "puce": "SFRv78 (01/11/2026) : Maître moine : l'arme est déséquipée à la promotion ; Éditeur des héros : magies du Théurge modifiables"
+      },
+      {
+       "puce": "SFRv77 (01/11/2026) : Cartes d'amitié du chapitre 1 : données au QG après les deux premiers combats"
+      },
+      {
+       "puce": "SFRv76 (01/11/2026) : QG : les histoires commencent après deux combats et peuvent être réécoutées ; Éditeur des combats : réglage des bonus de victoire (tours, objet ou or)"
+      },
+      {
+       "puce": "SFRv75 (01/11/2026) : Modes Expert et Infernal : les ennemis se mettent d'abord en formation, puis attaquent ensemble"
+      },
+      {
+       "puce": "SFRv74 (01/11/2026) : Modes Expert et Infernal : les ennemis ne réfléchissent plus de longues secondes avant de jouer"
+      },
+      {
+       "puce": "SFRv73 (01/11/2026) : Les scènes qui se lancent en marchant (le roi à Guardiana...) se déclenchent aussi en tenant la manette"
+      },
+      {
+       "puce": "SFRv72 (01/11/2026) : Hache tambour : couleurs d'origine remises"
+      },
+      {
+       "puce": "SFRv71 (01/11/2026) : Nouvelles icônes pour plusieurs bagues ; Éditeur d'objets : les armes montrent leur vrai dessin de combat, et l'enregistrement n'abîme plus la ROM"
+      },
+      {
+       "puce": "SFRv70 (01/11/2026) : Correction : le jeu se figeait quand un combattant esquivait un coup (par exemple pendant la contre-attaque d'un Nain) ; Correction : après un tir à distance, l'archer reprend sa pose de repos au lieu de garder l'arc tendu"
+      },
       {
        "puce": "SFRv69 (01/11/2026) : Combats du port et du sanctuaire (épilogues de Narsha) : nouvelles cartes redessinées ; Combat du désert : Narsha commence au pied de l'autel, comme dans la version GBA"
       },
@@ -1286,6 +1816,38 @@
     {
      "src": "images/shining-force-resurrection/15_port.png",
      "legende": "Épilogue de Narsha : le combat du port, nouvelle carte"
+    },
+    {
+     "src": "images/shining-force-resurrection/16_hans_repos.png",
+     "legende": "Hans revient en pose de repos après son tir"
+    },
+    {
+     "src": "images/shining-force-resurrection/17_bagues.png",
+     "legende": "Les nouvelles icônes des bagues (en bas), retouchées par Player Time"
+    },
+    {
+     "src": "images/shining-force-resurrection/18_guardiana_roi.png",
+     "legende": "Guardiana : Varios et le roi accueillent Max"
+    },
+    {
+     "src": "images/shining-force-resurrection/19_expert_tour.png",
+     "legende": "Mode Expert : les ennemis jouent sans attendre"
+    },
+    {
+     "src": "images/shining-force-resurrection/20_expert_formation.png",
+     "legende": "Mode Expert : le Chevalier rune arrive entouré de ses soldats"
+    },
+    {
+     "src": "images/shining-force-resurrection/21_editeur_bonus.png",
+     "legende": "Éditeur des combats : le bonus de victoire de chaque combat"
+    },
+    {
+     "src": "images/shining-force-resurrection/22_editeur_theurge.png",
+     "legende": "Éditeur des héros : les magies du Théurge et leur niveau d'apprentissage"
+    },
+    {
+     "src": "images/shining-force-resurrection/23_depart_lowe.png",
+     "legende": "Début du jeu : Lowe part au château, la partie continue sans plantage"
     }
    ],
    "patch": {
@@ -1293,12 +1855,12 @@
     "format": "bps",
     "crc_source": "E0594ABE",
     "taille_source": 1572864,
-    "crc_sortie": "A726E893",
+    "crc_sortie": "BA62EB0D",
     "taille_sortie": 3145728,
-    "taille_patch": 1335851
+    "taille_patch": 1336344
    },
-   "revision": 2,
-   "date_maj": "01/11/2026"
+   "revision": 3,
+   "date_maj": "06/11/2026"
   },
   {
    "ordre": 20,
@@ -1599,6 +2161,135 @@
    "date_maj": "25/10/2026"
   },
   {
+   "ordre": 21,
+   "categorie": "Traductions et améliorations",
+   "titre": "Phantasy Star III",
+   "sous_titre": "Traduction française",
+   "plateforme": "Mega Drive",
+   "statut": "En cours",
+   "resume": "Traduction française complète de Phantasy Star III, faite depuis le texte japonais (Toki no Keishousha), avec les noms d'origine (Kein, Marina, Myu, Shiren...). Répliques censurées en version américaine rétablies, écran titre « Les Héritiers du Temps », icônes, gains x1/x2/x4 et couleurs modernes au choix.",
+   "couleur": "#2a4fa0",
+   "rom_attendue": "Phantasy Star III - Generations of Doom (USA, Europe)",
+   "nom_sortie": "Phantasy Star III (FR).bin",
+   "format": "bps",
+   "version": "PS3v04",
+   "date_version": "01/11/2026",
+   "id": "phantasy-star-3",
+   "notes": [
+    {
+     "titre": "Ce qui est traduit",
+     "blocs": [
+      {
+       "puce": "Tous les dialogues, traduits depuis le japonais, avec les noms japonais d'origine."
+      },
+      {
+       "puce": "Les répliques coupées ou réécrites par la version américaine sont rétablies."
+      },
+      {
+       "puce": "L'intro (la légende de Laya et Orakio) et la séquence de fin."
+      },
+      {
+       "puce": "Les menus, les combats, les boutiques et la sauvegarde."
+      },
+      {
+       "puce": "Les noms des objets, des monstres et des techniques."
+      },
+      {
+       "puce": "L'écran titre : « Les Héritiers du Temps », le titre japonais traduit."
+      },
+      {
+       "puce": "Le générique de la démo et de fin."
+      }
+     ]
+    },
+    {
+     "titre": "En plus",
+     "blocs": [
+      {
+       "puce": "Police avec accents."
+      },
+      {
+       "puce": "Icônes devant l'équipement et les techniques."
+      },
+      {
+       "puce": "Au début de la partie : gains d'EXP et de mésetas x1, x2 ou x4, couleurs des fenêtres classiques ou modernes (enregistrés dans la sauvegarde)."
+      },
+      {
+       "puce": "Correctifs de bugs du jeu d'origine."
+      },
+      {
+       "puce": "Maintenir B pour courir."
+      },
+      {
+       "puce": "Version compatible avec toutes les Mega Drive (japonaise, américaine, européenne, Mini, Mega SG)."
+      }
+     ]
+    },
+    {
+     "titre": "Historique des versions",
+     "blocs": [
+      {
+       "puce": "PS3v04 (01/11/2026) : Corrige le plantage en ouvrant le menu Objets (par exemple après avoir obtenu le couteau) ; Un texte trop long pour sa fenêtre est désormais coupé au lieu de faire planter le jeu ; Titres des sous-menus affichés en entier (« Techn. » au lieu de « Techns ») ; Libellés manquants rétablis dans les écrans État et Équip. ; « Quoi? » et « SUIV » traduits"
+      },
+      {
+       "puce": "PS3v03 (01/11/2026) : Le générique (démo et fin) est en français ; Crédit de traduction ajouté au générique de la démo"
+      },
+      {
+       "puce": "PS3v02 (01/11/2026) : Au début de la partie : gains d'EXP et de mésetas x1, x2 ou x4, et couleurs des fenêtres classiques ou modernes ; Icônes devant l'équipement et les techniques ; « PV » au lieu de « HP » ; Menu des objets : « Utiliser » en toutes lettres ; Les chansons du jeu sont traduites du japonais"
+      },
+      {
+       "puce": "PS3v01 (01/11/2026) : Première version : dialogues, intro, fin, menus et noms en français, traduits du japonais ; Répliques censurées en version américaine rétablies ; Nouvel écran titre « Les Héritiers du Temps » ; Correctifs de bugs et course en maintenant B"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/phantasy-star-3/01_titre.png",
+     "legende": "L'écran titre, avec son sous-titre « Les Héritiers du Temps »."
+    },
+    {
+     "src": "images/phantasy-star-3/02_gains.png",
+     "legende": "En début de partie : gains d'EXP et de mésetas x1, x2 ou x4."
+    },
+    {
+     "src": "images/phantasy-star-3/03_couleurs.png",
+     "legende": "Couleurs des fenêtres classiques ou modernes."
+    },
+    {
+     "src": "images/phantasy-star-3/04_ville.png",
+     "legende": "Le prince Kein dans la ville du château de Rik."
+    },
+    {
+     "src": "images/phantasy-star-3/05_objets.png",
+     "legende": "Le menu des objets, avec une icône devant chaque équipement."
+    },
+    {
+     "src": "images/phantasy-star-3/06_combat.png",
+     "legende": "Un combat."
+    },
+    {
+     "src": "images/phantasy-star-3/07_dialogue.png",
+     "legende": "Une fenêtre de message aux couleurs modernes."
+    },
+    {
+     "src": "images/phantasy-star-3/08_generique.png",
+     "legende": "Le générique, en français lui aussi."
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/phantasy-star-3.bps",
+    "format": "bps",
+    "crc_source": "C6B42B0F",
+    "taille_source": 786432,
+    "crc_sortie": "833DDA0A",
+    "taille_sortie": 1048576,
+    "taille_patch": 145589
+   },
+   "revision": 1,
+   "date_maj": "06/11/2026"
+  },
+  {
    "ordre": 22,
    "categorie": "Traductions et améliorations",
    "titre": "Dune : La Chronique d'Arrakis",
@@ -1610,7 +2301,7 @@
    "rom_attendue": "Dune - The Battle for Arrakis (USA)",
    "nom_sortie": "Dune - La Chronique d'Arrakis (FR).bin",
    "format": "bps",
-   "version": "V91",
+   "version": "V94",
    "date_version": "01/11/2026",
    "id": "dunerazoropti",
    "notes": [
@@ -1679,6 +2370,15 @@
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "V94 (01/11/2026) : Mode 2 joueurs sur deux consoles : la partie ne se bloque plus quand le Palais envoie ses renforts ; Mode 2 joueurs sur deux consoles : le brouillard se dégage comme en solo, autour des unités et des bâtiments, et aussi quand on pose une dalle ; le radar ne montre plus des morceaux de carte jamais visités ; Mode 2 joueurs sur deux consoles : l'alerte d'unité en approche ne sonne plus sans raison (usure des bâtiments, manque d'énergie)"
+      },
+      {
+       "puce": "V93 (01/11/2026) : Mode 2 joueurs sur deux consoles : le radar de chaque joueur reste juste quand l'autre joueur obtient ou perd le sien (plus de motif étrange ni de cadre de la mauvaise couleur sur la mini-carte)"
+      },
+      {
+       "puce": "V92 (01/11/2026) : Mode 2 joueurs : l'énergie compte de la même façon pour les deux joueurs (les bâtiments du joueur 2 sont alimentés ou non selon ses pièges à vent, comme ceux du joueur 1)"
+      },
       {
        "puce": "V91 (01/11/2026) : Mode 2 consoles (câble) : chaque joueur est averti par une voix sur sa console quand ses bâtiments ou ses unités sont attaqués (comme l'avertissement du solo, pas plus souvent)"
       },
@@ -2134,12 +2834,12 @@
     "format": "bps",
     "crc_source": "4DEA40BA",
     "taille_source": 1048576,
-    "crc_sortie": "21CAA9F0",
+    "crc_sortie": "311D5958",
     "taille_sortie": 2097152,
-    "taille_patch": 584195
+    "taille_patch": 584993
    },
-   "revision": 3,
-   "date_maj": "01/11/2026"
+   "revision": 4,
+   "date_maj": "06/11/2026"
   },
   {
    "ordre": 25,

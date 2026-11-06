@@ -167,6 +167,7 @@ const ICONES = {
   'Master System': '<svg viewBox="0 0 32 32" shape-rendering="crispEdges"><path fill="#1b1b22" d="M8 3h16v26H8z"/><path fill="#f2f2f2" d="M10 5h12v15H10z"/><path fill="#d0312d" d="M10 5h12v3H10z"/><path fill="#3a7bd5" d="M11 10h10v7H11z"/><path fill="#f2c94c" d="M13 12h6v3h-6z"/><path fill="#555566" d="M10 24h2v3h-2zM14 24h2v3h-2zM18 24h2v3h-2z"/></svg>',
   'Mega CD': '<svg viewBox="0 0 32 32" shape-rendering="crispEdges"><path fill="#c9d3e6" d="M12 3h8v2h4v2h2v4h2v10h-2v4h-2v2h-4v2h-8v-2H8v-2H6v-4H4V11h2V7h2V5h4z"/><path fill="#9fb3d9" d="M12 5h8v2h4v4h2v4H6v-4h2V7h4z"/><path fill="#e8c46a" d="M8 17h16v2H8z"/><path fill="#7a4fc0" d="M8 19h16v2H8z"/><path fill="#1b1b22" d="M14 14h4v4h-4z"/><path fill="#f4f2ea" d="M15 15h2v2h-2z"/></svg>',
   'Game Gear': '<svg viewBox="0 0 32 32" shape-rendering="crispEdges"><path fill="#1b1b22" d="M3 9h26v14H3z"/><path fill="#7fbf7f" d="M11 11h10v10H11z"/><path fill="#d0312d" d="M24 14h2v2h-2zM26 16h2v2h-2z"/><path fill="#888" d="M5 14h4v2H5zM6 13h2v4H6z"/></svg>',
+  'Windows': '<svg viewBox="0 0 32 32" shape-rendering="crispEdges"><path fill="#1b1b22" d="M3 5h26v18H3z"/><path fill="#1d2f8f" d="M5 7h22v14H5z"/><path fill="#e8c46a" d="M8 10h7v5H8z"/><path fill="#c0392b" d="M17 10h7v5h-7z"/><path fill="#f4f2ea" d="M8 17h16v2H8z"/><path fill="#555566" d="M13 23h6v3h-6zM9 26h14v2H9z"/></svg>',
   'Toutes': '<svg viewBox="0 0 32 32" shape-rendering="crispEdges"><path fill="#e8c46a" d="M4 4h10v10H4zM18 4h10v10H18zM4 18h10v10H4zM18 18h10v10H18z"/><path fill="#1d2f8f" d="M6 6h6v6H6zM20 6h6v6h-6zM6 20h6v6H6zM20 20h6v6h-6z"/></svg>',
 };
 const sansAccent = t => (t || '').normalize('NFD').replace(/[̀-ͯ]/g, '');
@@ -221,7 +222,7 @@ function ongletsConsoles(zone) {
       onclick: () => { choix.console = c; choix.lettre = 'Tout'; appliquer(); } },
       iconeConsole(c),
       el('span', { class: 'nom-console', text: c === 'Toutes' ? 'Toutes les consoles' : c }),
-      el('span', { class: 'nombre', text: `${nb} jeu${nb > 1 ? 'x' : ''}` })));
+      el('span', { class: 'nombre', text: c === 'Windows' ? `${nb} logiciel${nb > 1 ? 's' : ''}` : `${nb} jeu${nb > 1 ? 'x' : ''}` })));
   }
   for (const l of ['Tout', ...'ABCDEFGHIJKLMNOPQRSTUVWXYZ', '#']) {
     lettres.append(el('button', { type: 'button', class: 'touche-lettre', 'data-lettre': l,
@@ -253,6 +254,7 @@ function router() {
 function titrePage(p) {
   const st = p.sous_titre || '';
   const nom = p.titre + (st && st.length < 40 && !/traduction/i.test(st) ? ' – ' + st : '');
+  if (p.titre_page) return p.titre_page;
   return p.patch && p.patch.format === 'jeu'
     ? `${p.titre} : jeu ${p.plateforme} gratuit | Player Time`
     : `${nom} : patch de traduction française (${p.plateforme}) | Player Time`;
@@ -401,7 +403,7 @@ function encartDon(phrase) {
 
 function panneauJeu(p, box) {
   const info = p.patch;
-  $('h2', box).textContent = 'Télécharger le jeu';
+  $('h2', box).textContent = p.titre_panneau || 'Télécharger le jeu';
   const lien = el('a', { class: 'bouton', href: info.fichier + '?r=' + p.revision, download: p.nom_sortie,
     text: 'Télécharger ' + p.nom_sortie,
     onclick: () => {
@@ -411,7 +413,7 @@ function panneauJeu(p, box) {
   box.append(
     el('p', { text: p.texte_telechargement || 'Jeu gratuit : télécharge la ROM et lance-la dans un émulateur Mega Drive ou sur une cartouche flash.' }),
     el('div', { class: 'telechargements' }, lien),
-    encartDon('Le jeu est gratuit. Si tu veux m\u2019aider à le continuer, tu peux faire un don.'),
+    encartDon(p.texte_don || 'Le jeu est gratuit. Si tu veux m\u2019aider à le continuer, tu peux faire un don.'),
     el('p', { class: 'meta-patch', text:
       `Version ${p.date_maj ? 'du ' + p.date_maj : ''}${p.revision ? ', révision ' + p.revision : ''}, ${ko(info.taille_patch)}.` }));
   return box;
