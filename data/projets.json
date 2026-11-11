@@ -399,6 +399,117 @@
   },
   {
    "ordre": 10,
+   "categorie": "Mes jeux",
+   "titre": "Polywing",
+   "sous_titre": "Démo jouable",
+   "plateforme": "Mega Drive",
+   "statut": "En cours",
+   "resume": "Un shoot 3D en polygones pleins pour Mega Drive, écrit en assembleur et tenant dans 1 Mo. Cette démo propose les trois premiers niveaux : la planète verte, une zone bonus dans l'espace et les dunes.",
+   "couleur": "#f5a623",
+   "rom_attendue": "",
+   "nom_sortie": "Polywing (Demo).bin",
+   "format": "jeu",
+   "version": "Démo V01",
+   "date_version": "11/11/2026",
+   "id": "polywing",
+   "notes": [
+    {
+     "titre": "Le jeu",
+     "blocs": [
+      {
+       "texte": "Des machines tombent du ciel sur ta planète. Elles viennent d'un cœur de métal caché sous la lave d'une planète lointaine. Un seul vaisseau peut l'atteindre : le Polywing."
+      },
+      {
+       "texte": "Le jeu complet compte dix niveaux et six boss. La démo s'arrête après le Ver des sables."
+      }
+     ]
+    },
+    {
+     "titre": "Dans la démo",
+     "blocs": [
+      {
+       "puce": "L'introduction et trois niveaux : la planète verte, une zone bonus dans l'espace, les dunes"
+      },
+      {
+       "puce": "Deux boss : le Gardien et le Ver des sables"
+      },
+      {
+       "puce": "Tempête de sable, anneaux à enchaîner, bombes, bouclier, double tir"
+      },
+      {
+       "puce": "Trois continues par partie, record sauvegardé"
+      }
+     ]
+    },
+    {
+     "titre": "Commandes",
+     "blocs": [
+      {
+       "puce": "Croix : déplacer le vaisseau"
+      },
+      {
+       "puce": "A : tirer. A maintenu : viser et charger, puis relâcher pour lancer la bombe"
+      },
+      {
+       "puce": "B + gauche ou droite : voler sur la tranche. B + deux fois gauche ou droite : tonneau, qui renvoie les tirs"
+      },
+      {
+       "puce": "C + haut ou bas : accélérer ou freiner (garder C pour conserver la vitesse). C + deux fois haut : looping"
+      },
+      {
+       "puce": "Start : pause"
+      }
+     ]
+    },
+    {
+     "titre": "Historique des versions",
+     "blocs": [
+      {
+       "puce": "Démo V01 (11/11/2026) : Première démo publique : trois niveaux et deux boss"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/polywing/01_titre.png",
+     "legende": "L'écran titre de la démo"
+    },
+    {
+     "src": "images/polywing/02_planete_verte.png",
+     "legende": "Niveau 1 : la planète verte et ses anneaux"
+    },
+    {
+     "src": "images/polywing/03_gardien.png",
+     "legende": "Le Gardien, premier boss"
+    },
+    {
+     "src": "images/polywing/04_zone_bonus.png",
+     "legende": "Niveau 2 : la zone bonus dans l'espace"
+    },
+    {
+     "src": "images/polywing/05_hyper_vitesse.png",
+     "legende": "Hyper vitesse avant de plonger vers la planète"
+    },
+    {
+     "src": "images/polywing/06_tempete_de_sable.png",
+     "legende": "Niveau 3 : les dunes en pleine tempête de sable"
+    },
+    {
+     "src": "images/polywing/07_ver_des_sables.png",
+     "legende": "Le Ver des sables jaillit du sol"
+    }
+   ],
+   "patch": {
+    "fichier": "jeux/polywing.bin",
+    "format": "jeu",
+    "taille_patch": 1048576
+   },
+   "revision": 1,
+   "date_maj": "11/11/2026"
+  },
+  {
+   "ordre": 10,
    "categorie": "Traductions et améliorations",
    "titre": "Ristar",
    "sous_titre": "Traduction française",
@@ -2050,6 +2161,132 @@
    },
    "revision": 1,
    "date_maj": "18/10/2026"
+  },
+  {
+   "ordre": 20,
+   "categorie": "Traductions et améliorations",
+   "titre": "Spot Goes to Hollywood",
+   "sous_titre": "Traduction française",
+   "plateforme": "Mega Drive",
+   "statut": "Version de test",
+   "resume": "Traduction française du jeu de plates-formes en 3D isométrique d'Eurocom : menus, cartons de niveau, bilan, test son, fin et générique, en gardant les clins d'œil au cinéma. ROM « world » qui démarre sur toutes les Mega Drive.",
+   "couleur": "#d02828",
+   "rom_attendue": "Spot Goes to Hollywood (USA) (Rev 1)",
+   "nom_sortie": "Spot Goes to Hollywood (FR).bin",
+   "format": "bps",
+   "version": "SPOTv04",
+   "date_version": "07/11/2026",
+   "id": "spot-goes-to-hollywood",
+   "notes": [
+    {
+     "titre": "",
+     "blocs": [
+      {
+       "texte": "Traduction faite à partir de la version américaine. Les références au cinéma et les jeux de mots du jeu sont adaptés en français plutôt que traduits mot à mot."
+      }
+     ]
+    },
+    {
+     "titre": "Ce qui est traduit",
+     "blocs": [
+      {
+       "puce": "Menus, options et les 84 noms du test son."
+      },
+      {
+       "puce": "Cartons de début de niveau, bilan de fin de niveau et messages de fin de film."
+      },
+      {
+       "puce": "Logo du titre (« Spot va à Hollywood »), logo Eurocom et étiquettes des cartes des mondes."
+      },
+      {
+       "puce": "Écran titre, pause, mentions légales, enseigne lumineuse et façade du cinéma de fin et générique (avec le crédit de la traduction)."
+      },
+      {
+       "puce": "Messages cachés des programmeurs (les répliques des Monty Python sont gardées)."
+      },
+      {
+       "puce": "Lettres accentuées ajoutées aux polices du jeu."
+      }
+     ]
+    },
+    {
+     "titre": "Améliorations",
+     "blocs": [
+      {
+       "puce": "ROM « world » : le jeu démarre sur toutes les Mega Drive (japonaise, américaine, européenne)."
+      },
+      {
+       "puce": "Nouvelle difficulté « FOU » : il faut libérer tous les spots de chaque niveau, avec les réglages du mode difficile."
+      }
+     ]
+    },
+    {
+     "titre": "Historique des versions",
+     "blocs": [
+      {
+       "puce": "SPOTv04 (07/11/2026) : L'enseigne rouge du cinéma de fin affiche « Spot va à Hollywood » : le jeu est entièrement en français"
+      },
+      {
+       "puce": "SPOTv03 (07/11/2026) : Nouvelle difficulté « FOU » : libérer 100 % des spots pour sortir, le reste comme en difficile ; Les mots de passe retiennent le mode FOU"
+      },
+      {
+       "puce": "SPOTv02 (07/11/2026) : Le logo du titre devient « Spot va à Hollywood » ; Les étiquettes des cartes des mondes sont en français ; Le logo Eurocom affiche « PRÉSENTE »"
+      },
+      {
+       "puce": "SPOTv01 (07/11/2026) : Première version : menus, cartons de niveau, bilan, test son, pause, fin et générique en français ; Lettres accentuées ajoutées aux polices ; Le jeu démarre sur toutes les Mega Drive"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/spot-goes-to-hollywood/01_titre.png",
+     "legende": "Écran titre : « Spot va à Hollywood »"
+    },
+    {
+     "src": "images/spot-goes-to-hollywood/02_menu.png",
+     "legende": "Le menu principal"
+    },
+    {
+     "src": "images/spot-goes-to-hollywood/03_options.png",
+     "legende": "Les options, avec les lettres accentuées ajoutées"
+    },
+    {
+     "src": "images/spot-goes-to-hollywood/04_storyboard.png",
+     "legende": "Les cartes des mondes, étiquettes redessinées"
+    },
+    {
+     "src": "images/spot-goes-to-hollywood/05_carton.png",
+     "legende": "Carton de début de niveau"
+    },
+    {
+     "src": "images/spot-goes-to-hollywood/06_bilan.png",
+     "legende": "Le bilan de fin de niveau"
+    },
+    {
+     "src": "images/spot-goes-to-hollywood/07_fin_du_film.png",
+     "legende": "« Tu as terminé le film... pas ! » à la Wayne's World"
+    },
+    {
+     "src": "images/spot-goes-to-hollywood/08_generique.png",
+     "legende": "Le générique de fin"
+    },
+    {
+     "src": "images/spot-goes-to-hollywood/09_enseigne_fin.png",
+     "legende": "Le cinéma de fin : « Spot va à Hollywood »."
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/spot-goes-to-hollywood.bps",
+    "format": "bps",
+    "crc_source": "BDAD1CBC",
+    "taille_source": 3145728,
+    "crc_sortie": "70EA869E",
+    "taille_sortie": 4194304,
+    "taille_patch": 78275
+   },
+   "revision": 1,
+   "date_maj": "11/11/2026"
   },
   {
    "ordre": 21,
