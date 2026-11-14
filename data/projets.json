@@ -404,23 +404,23 @@
    "sous_titre": "Démo jouable",
    "plateforme": "Mega Drive",
    "statut": "En cours",
-   "resume": "Un shoot 3D en polygones pleins pour Mega Drive, écrit en assembleur et tenant dans 1 Mo. Cette démo propose les trois premiers niveaux : la planète verte, une zone bonus dans l'espace et les dunes.",
+   "resume": "Un shoot 3D en polygones pleins pour Mega Drive, écrit en assembleur et tenant dans 1 Mo. Cette démo propose les trois premiers niveaux : Verdalis, la planète verte, la zone bonus du Seuil dans l'espace et les dunes de Kharad.",
    "couleur": "#f5a623",
    "rom_attendue": "",
    "nom_sortie": "Polywing (Demo).bin",
    "format": "jeu",
-   "version": "Démo V02",
-   "date_version": "12/11/2026",
+   "version": "Démo V04",
+   "date_version": "14/11/2026",
    "id": "polywing",
    "notes": [
     {
      "titre": "Le jeu",
      "blocs": [
       {
-       "texte": "Des machines tombent du ciel sur ta planète. Elles viennent d'un cœur de métal caché sous la lave d'une planète lointaine. Un seul vaisseau peut l'atteindre : le Polywing."
+       "texte": "Des machines tombent du ciel sur Verdalis, ta planète. Elles viennent d'un cœur de métal caché sous la lave de Pyrhea, une planète lointaine du même système solaire. Un seul vaisseau peut l'atteindre : le Polywing."
       },
       {
-       "texte": "Le jeu complet compte dix niveaux et six boss. La démo s'arrête après le Ver des sables."
+       "texte": "Le jeu complet compte neuf niveaux et six boss. La démo s'arrête après le Ver des sables."
       }
      ]
     },
@@ -428,16 +428,22 @@
      "titre": "Dans la démo",
      "blocs": [
       {
-       "puce": "L'introduction et trois niveaux : la planète verte, une zone bonus dans l'espace, les dunes"
+       "puce": "L'introduction et trois niveaux : Verdalis, Le Seuil (zone bonus dans l'espace) et Kharad (les dunes)"
       },
       {
        "puce": "Deux boss : le Gardien et le Ver des sables"
       },
       {
-       "puce": "Tempête de sable, anneaux à enchaîner, bombes, bouclier, double tir"
+       "puce": "Plusieurs formations d'escadrille (en ligne, en croix, en colonne, en V)"
       },
       {
-       "puce": "Trois continues par partie, record sauvegardé"
+       "puce": "Anneaux à enchaîner, arches, bombes, bouclier, double tir qui dure tout le niveau"
+      },
+      {
+       "puce": "Tempête de sable qui réduit la visibilité, plus fréquente contre le Ver des sables"
+      },
+      {
+       "puce": "Continues avec compte à rebours, points de passage, record sauvegardé"
       }
      ]
     },
@@ -448,13 +454,19 @@
        "puce": "Croix : déplacer le vaisseau"
       },
       {
-       "puce": "A : tirer. A maintenu : viser et charger, puis relâcher pour lancer la bombe"
+       "puce": "A : tirer. A maintenu : visée puis salve sur les ennemis accrochés"
+      },
+      {
+       "puce": "Deux fois A maintenu : charger la bombe (la barre clignote quand elle est pleine), puis relâcher"
+      },
+      {
+       "puce": "C : freiner. Deux fois C : accélérer"
       },
       {
        "puce": "B + gauche ou droite : voler sur la tranche. B + deux fois gauche ou droite : tonneau, qui renvoie les tirs"
       },
       {
-       "puce": "C + haut ou bas : accélérer ou freiner (garder C pour conserver la vitesse). C + deux fois haut : looping"
+       "puce": "Manette 6 boutons : Z vitesse, Y bombe, X looping"
       },
       {
        "puce": "Start : pause"
@@ -464,6 +476,12 @@
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "Démo V04 (14/11/2026) : Nouveau soleil de l'espace, plus détaillé, qui bouillonne et rayonne ; Nouvelles formations d'ennemis qui arrivent ensemble : en ligne, en croix, en colonne ou en V ; Pendant une tempête de sable, le fond disparaît sous le sable ; la tempête revient plus souvent contre le Ver des sables ; Les 5 arches de suite donnent une bombe tout de suite ; Le double tir dure jusqu'à la fin du niveau (il disparaît si on perd) ; Écran Perdu : un compte à rebours propose de continuer ; à zéro, retour au titre ; Le record affiche le mode de difficulté"
+      },
+      {
+       "puce": "Démo V03 (14/11/2026) : Image du jeu plus haute : la vue 3D occupe presque tout l'écran, le tableau de bord est en bas ; Les niveaux ont un nom, affiché à leur début : Verdalis, Le Seuil, Kharad ; Décollage depuis une piste, au milieu des bâtiments de la base du héros, avec son petit jingle ; Sur Verdalis, le soleil descend pendant le niveau et la nuit tombe ; Dans l'espace, le soleil du système scintille ; il grossit à mesure qu'on s'en approche ; Le Ver des sables arrive en bosse sous le sable et jaillit ou replonge dans une gerbe de sable ; Plus de ciel rouge pendant les boss : chaque planète garde ses couleurs ; Vitesse affichée en carrés, barre de charge orange qui clignote quand la bombe est prête ; Un continue tous les 100 000 points, un point de passage chaque minute, et l'on reprend au boss si on meurt contre lui ; Une bombe toutes les 5 arches de suite, bouclier + 2 tous les 5 anneaux ; Le logo Player Time se voit maintenant en entier au démarrage"
+      },
       {
        "puce": "Démo V02 (12/11/2026) : Le logo Player Time et sa voix au démarrage (Start pour le passer) ; Introduction : le cœur de métal est montré dans sa salle, au fond du tunnel ; Les dunes ont leur propre ciel : deux soleils et des plateaux rocheux ; L'image du jeu prend toute la largeur de l'écran : plus de bandes à gauche et à droite ; Dans l'espace, la planète de destination grossit à mesure qu'on s'en approche ; Niveaux bien plus longs : environ 2 minutes chacun avant le boss ; Des arches à franchir : en passer quatre d'affilée fait apparaître un objet ; Frein sur C seul, accélération sur deux appuis rapides sur C ; manette 6 boutons : Z accélère, X fait le looping ; A tenu : visée et salve sur les ennemis accrochés ; deux appuis sur A tenu : la bombe (Y sur manette 6 boutons) ; Des escadrilles restent devant le vaisseau : les abattre toutes d'une même salve donne un combo ; Le décor s'incline avec le vaisseau dans les virages"
       },
@@ -479,28 +497,20 @@
      "legende": "L'écran titre"
     },
     {
-     "src": "images/polywing/02_planete_verte.png",
-     "legende": "Niveau 1 : la planète verte et ses anneaux"
+     "src": "images/polywing/02_verdalis.png",
+     "legende": "Niveau 1, Verdalis : décollage depuis la base du héros"
     },
     {
-     "src": "images/polywing/03_gardien.png",
-     "legende": "Le Gardien, premier boss"
+     "src": "images/polywing/03_crepuscule.png",
+     "legende": "Une escadrille d'ennemis arrive en formation, la nuit tombe sur Verdalis"
     },
     {
-     "src": "images/polywing/04_zone_bonus.png",
-     "legende": "Niveau 2 : la zone bonus dans l'espace"
+     "src": "images/polywing/04_gardien.png",
+     "legende": "À l'approche du Gardien, un chasseur fond sur le Polywing dans la nuit"
     },
     {
-     "src": "images/polywing/05_hyper_vitesse.png",
-     "legende": "Hyper vitesse avant de plonger vers la planète"
-    },
-    {
-     "src": "images/polywing/06_tempete_de_sable.png",
-     "legende": "Niveau 3 : les dunes et leurs arches"
-    },
-    {
-     "src": "images/polywing/07_ver_des_sables.png",
-     "legende": "Le Ver des sables jaillit du sol"
+     "src": "images/polywing/05_ver_des_sables.png",
+     "legende": "Le Ver des sables jaillit du sable à Kharad"
     }
    ],
    "patch": {
@@ -508,7 +518,7 @@
     "format": "jeu",
     "taille_patch": 1048576
    },
-   "revision": 2,
+   "revision": 3,
    "date_maj": "14/11/2026"
   },
   {
