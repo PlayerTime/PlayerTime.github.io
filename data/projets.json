@@ -281,8 +281,8 @@
    "rom_attendue": "Alien Soldier (Japan)",
    "nom_sortie": "Alien Soldier (FR).bin",
    "format": "bps",
-   "version": "ASv05",
-   "date_version": "24/10/2026",
+   "version": "ASv06",
+   "date_version": "14/11/2026",
    "id": "alien-soldier",
    "notes": [
     {
@@ -342,6 +342,9 @@
      "titre": "Historique des versions",
      "blocs": [
       {
+       "puce": "ASv06 (14/11/2026) : HUD : JOUEUR aligné sur FORCE et ENNEMI ; Test des commandes : tous les tirets alignés (CONTRE-FORCE était décalé) ; Écran CONTINUER : la ligne du bas ne se chevauche plus (ÉTAPE, NIVEAU, CRÉDIT)"
+      },
+      {
        "puce": "ASv05 (24/10/2026) : Accès au menu de debug plus fiable : A+B+C+START accepté sur tous les écrans hors partie, touches tenues ensemble ou appuyées l'une après l'autre ; Le code d'activation n'est plus effacé en cours de partie"
       },
       {
@@ -390,34 +393,34 @@
     "format": "bps",
     "crc_source": "90FA1539",
     "taille_source": 2097152,
-    "crc_sortie": "CC2E3DA4",
+    "crc_sortie": "C626A7B8",
     "taille_sortie": 2097152,
-    "taille_patch": 12267
+    "taille_patch": 12279
    },
-   "revision": 1,
-   "date_maj": "25/10/2026"
+   "revision": 2,
+   "date_maj": "15/11/2026"
   },
   {
    "ordre": 10,
    "categorie": "Mes jeux",
-   "titre": "Polywing",
+   "titre": "Prismwing",
    "sous_titre": "Démo jouable",
    "plateforme": "Mega Drive",
    "statut": "En cours",
    "resume": "Un shoot 3D en polygones pleins pour Mega Drive, écrit en assembleur et tenant dans 1 Mo. Cette démo propose les trois premiers niveaux : Verdalis, la planète verte, la zone bonus du Seuil dans l'espace et les dunes de Kharad.",
    "couleur": "#f5a623",
    "rom_attendue": "",
-   "nom_sortie": "Polywing (Demo).bin",
+   "nom_sortie": "Prismwing (Demo).bin",
    "format": "jeu",
-   "version": "Démo V04",
-   "date_version": "14/11/2026",
-   "id": "polywing",
+   "version": "Démo V05",
+   "date_version": "15/11/2026",
+   "id": "prismwing",
    "notes": [
     {
      "titre": "Le jeu",
      "blocs": [
       {
-       "texte": "Des machines tombent du ciel sur Verdalis, ta planète. Elles viennent d'un cœur de métal caché sous la lave de Pyrhea, une planète lointaine du même système solaire. Un seul vaisseau peut l'atteindre : le Polywing."
+       "texte": "Des machines tombent du ciel sur Verdalis, ta planète. Elles viennent d'un cœur de métal caché sous la lave de Pyrhea, une planète lointaine du même système solaire. Un seul vaisseau peut l'atteindre : le Prismwing."
       },
       {
        "texte": "Le jeu complet compte neuf niveaux et six boss. La démo s'arrête après le Ver des sables."
@@ -437,10 +440,13 @@
        "puce": "Plusieurs formations d'escadrille (en ligne, en croix, en colonne, en V)"
       },
       {
+       "puce": "Obstacles en tout genre : tours penchées ou couchées, colonnes, poutres qui tournent"
+      },
+      {
        "puce": "Anneaux à enchaîner, arches, bombes, bouclier, double tir qui dure tout le niveau"
       },
       {
-       "puce": "Tempête de sable qui réduit la visibilité, plus fréquente contre le Ver des sables"
+       "puce": "Tempête de sable qui réduit la visibilité dans les dunes de Kharad"
       },
       {
        "puce": "Continues avec compte à rebours, points de passage, record sauvegardé"
@@ -477,6 +483,9 @@
      "titre": "Historique des versions",
      "blocs": [
       {
+       "puce": "Démo V05 (15/11/2026) : Le jeu s'appelle maintenant Prismwing (il s'appelait Polywing) ; Les trois niveaux de la démo ont été entièrement retravaillés ; Nouveaux obstacles : tours et colonnes penchées, en l'air ou couchées, poutres inclinées ou qui tournent ; Plus de tempête de sable pendant le combat contre le Ver des sables ; Si un niveau se termine pendant une tempête, le décor et le ciel reviennent normalement ; Le viseur ne passe plus sur le texte de l'écran de fin de niveau"
+      },
+      {
        "puce": "Démo V04 (14/11/2026) : Nouveau soleil de l'espace, plus détaillé, qui bouillonne et rayonne ; Nouvelles formations d'ennemis qui arrivent ensemble : en ligne, en croix, en colonne ou en V ; Pendant une tempête de sable, le fond disparaît sous le sable ; la tempête revient plus souvent contre le Ver des sables ; Les 5 arches de suite donnent une bombe tout de suite ; Le double tir dure jusqu'à la fin du niveau (il disparaît si on perd) ; Écran Perdu : un compte à rebours propose de continuer ; à zéro, retour au titre ; Le record affiche le mode de difficulté"
       },
       {
@@ -493,33 +502,45 @@
    ],
    "images": [
     {
-     "src": "images/polywing/01_titre.png",
+     "src": "images/prismwing/01_titre.png",
      "legende": "L'écran titre"
     },
     {
-     "src": "images/polywing/02_verdalis.png",
+     "src": "images/prismwing/02_decollage.png",
      "legende": "Niveau 1, Verdalis : décollage depuis la base du héros"
     },
     {
-     "src": "images/polywing/03_crepuscule.png",
-     "legende": "Une escadrille d'ennemis arrive en formation, la nuit tombe sur Verdalis"
+     "src": "images/prismwing/03_anneau.png",
+     "legende": "Les anneaux à enchaîner au-dessus des plaines de Verdalis"
     },
     {
-     "src": "images/polywing/04_gardien.png",
-     "legende": "À l'approche du Gardien, un chasseur fond sur le Polywing dans la nuit"
+     "src": "images/prismwing/04_nuit_base.png",
+     "legende": "La nuit est tombée sur Verdalis"
     },
     {
-     "src": "images/polywing/05_ver_des_sables.png",
+     "src": "images/prismwing/05_gardien.png",
+     "legende": "Le combat contre le Gardien"
+    },
+    {
+     "src": "images/prismwing/06_seuil.png",
+     "legende": "Le Seuil, la zone bonus dans l'espace"
+    },
+    {
+     "src": "images/prismwing/07_arches_kharad.png",
+     "legende": "Les arches des dunes de Kharad"
+    },
+    {
+     "src": "images/prismwing/08_ver_des_sables.png",
      "legende": "Le Ver des sables jaillit du sable à Kharad"
     }
    ],
    "patch": {
-    "fichier": "jeux/polywing.bin",
+    "fichier": "jeux/prismwing.bin",
     "format": "jeu",
     "taille_patch": 1048576
    },
-   "revision": 3,
-   "date_maj": "14/11/2026"
+   "revision": 1,
+   "date_maj": "15/11/2026"
   },
   {
    "ordre": 10,
@@ -640,7 +661,7 @@
    "rom_attendue": "Ristar - The Shooting Star (Japan)",
    "nom_sortie": "Ristar - The Shooting Star (FR).bin",
    "format": "bps",
-   "version": "RISJv07",
+   "version": "RISJv08",
    "date_version": "06/11/2026",
    "id": "ristar-japon",
    "notes": [
@@ -673,6 +694,9 @@
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "RISJv08 (07/11/2026) : Écran titre : « the shooting star » traduit en « l'étoile filante » dans le lettrage d'origine"
+      },
       {
        "puce": "RISJv07 (06/11/2026) : Traduit : décompte des bonus en fin de monde ; Verrou de région retiré : démarre enfin sur toutes les consoles (les versions précédentes ne marchaient que sur console japonaise) ; Vérification complète des textes restés en anglais"
       },
@@ -724,12 +748,12 @@
     "format": "bps",
     "crc_source": "CE464F0E",
     "taille_source": 2097152,
-    "crc_sortie": "655B043F",
+    "crc_sortie": "ED487C82",
     "taille_sortie": 2097152,
-    "taille_patch": 15003
+    "taille_patch": 15392
    },
-   "revision": 1,
-   "date_maj": "06/11/2026"
+   "revision": 2,
+   "date_maj": "15/11/2026"
   },
   {
    "ordre": 15,
@@ -2187,8 +2211,8 @@
    "rom_attendue": "Spot Goes to Hollywood (USA) (Rev 1)",
    "nom_sortie": "Spot Goes to Hollywood (FR).bin",
    "format": "bps",
-   "version": "SPOTv04",
-   "date_version": "07/11/2026",
+   "version": "SPOTv05",
+   "date_version": "14/11/2026",
    "id": "spot-goes-to-hollywood",
    "notes": [
     {
@@ -2236,6 +2260,9 @@
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "SPOTv05 (14/11/2026) : Mode FOU corrigé : la sortie demande vraiment 100 % des spots (elle s'ouvrait dès 40 %)"
+      },
       {
        "puce": "SPOTv04 (07/11/2026) : L'enseigne rouge du cinéma de fin affiche « Spot va à Hollywood » : le jeu est entièrement en français"
       },
@@ -2294,12 +2321,114 @@
     "format": "bps",
     "crc_source": "BDAD1CBC",
     "taille_source": 3145728,
-    "crc_sortie": "70EA869E",
+    "crc_sortie": "68BC3A47",
     "taille_sortie": 4194304,
-    "taille_patch": 78275
+    "taille_patch": 78367
+   },
+   "revision": 2,
+   "date_maj": "15/11/2026"
+  },
+  {
+   "ordre": 20,
+   "categorie": "Traductions et améliorations",
+   "titre": "Twinkle Tale",
+   "sous_titre": "Traduction française",
+   "plateforme": "Mega Drive",
+   "statut": "Version de test",
+   "resume": "Traduction française complète du run and gun magique de 1992, sorti uniquement au Japon : introduction, livre du prologue, dialogues, menus et générique. ROM « world » qui démarre sur toutes les Mega Drive.",
+   "couleur": "#3a6fd8",
+   "rom_attendue": "Twinkle Tale (Japan)",
+   "nom_sortie": "Twinkle Tale (FR).bin",
+   "format": "bps",
+   "version": "TTv02",
+   "date_version": "15/11/2026",
+   "id": "twinkle-tale",
+   "notes": [
+    {
+     "titre": "",
+     "blocs": [
+      {
+       "texte": "Traduction faite à partir de la version japonaise, la seule sortie à l'époque. Le logo Twinkle Tale est conservé."
+      }
+     ]
+    },
+    {
+     "titre": "Ce qui est traduit",
+     "blocs": [
+      {
+       "puce": "Introduction, livre du prologue et noms des niveaux"
+      },
+      {
+       "puce": "Tous les dialogues et la fin"
+      },
+      {
+       "puce": "Écran titre, options et écran de continue"
+      },
+      {
+       "puce": "Générique de fin et écran « Fin »"
+      },
+      {
+       "puce": "Le sélecteur de niveau caché du jeu (Haut + Gauche + A + C puis START sur JOUER)"
+      }
+     ]
+    },
+    {
+     "titre": "Compatibilité",
+     "blocs": [
+      {
+       "texte": "ROM « world » : elle démarre sur les Mega Drive japonaises, américaines et européennes, la Mega Drive Mini et la Mega SG."
+      }
+     ]
+    },
+    {
+     "titre": "Historique des versions",
+     "blocs": [
+      {
+       "puce": "TTv02 (15/11/2026) : Dans le panneau de droite, le niveau des magies s'affiche « N1, N2, N3 » (Niveau) au lieu de « L1, L2, L3 »"
+      },
+      {
+       "puce": "TTv01 (15/11/2026) : Première version : tout le jeu en français ; Écran titre, options, continue et générique traduits ; Sélecteur de niveau caché accessible et traduit"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/twinkle-tale/01_titre.png",
+     "legende": "Écran titre en français (logo d'origine conservé)"
+    },
+    {
+     "src": "images/twinkle-tale/02_intro.png",
+     "legende": "L'introduction, traduite depuis le japonais"
+    },
+    {
+     "src": "images/twinkle-tale/03_livre.png",
+     "legende": "Le livre du prologue"
+    },
+    {
+     "src": "images/twinkle-tale/04_carte.png",
+     "legende": "Les noms des niveaux sur la carte"
+    },
+    {
+     "src": "images/twinkle-tale/05_options.png",
+     "legende": "Le menu des options"
+    },
+    {
+     "src": "images/twinkle-tale/06_dialogue.png",
+     "legende": "Les dialogues entre les niveaux"
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/twinkle-tale.bps",
+    "format": "bps",
+    "crc_source": "D757F924",
+    "taille_source": 1048576,
+    "crc_sortie": "DA16A7CD",
+    "taille_sortie": 2097152,
+    "taille_patch": 37575
    },
    "revision": 1,
-   "date_maj": "11/11/2026"
+   "date_maj": "15/11/2026"
   },
   {
    "ordre": 21,
@@ -2313,8 +2442,8 @@
    "rom_attendue": "Blue Almanac (Japan)",
    "nom_sortie": "Blue Almanac (FR).bin",
    "format": "bps",
-   "version": "SOv01",
-   "date_version": "25/10/2026",
+   "version": "SOv02",
+   "date_version": "14/11/2026",
    "id": "blue-almanac",
    "notes": [
     {
@@ -2363,6 +2492,9 @@
      "titre": "Historique des versions",
      "blocs": [
       {
+       "puce": "SOv02 (14/11/2026) : Intro : plus de parasites sur le texte quand on change de page (sur console) ; Intro : une coupure de mot maladroite corrigée"
+      },
+      {
        "puce": "SOv01 (25/10/2026) : Première version : tout le jeu en français (dialogues, menus, objets, monstres, intro, interludes, générique) ; ROM « world » pour toutes les Mega Drive"
       }
      ]
@@ -2403,12 +2535,12 @@
     "format": "bps",
     "crc_source": "7222EBB3",
     "taille_source": 1048576,
-    "crc_sortie": "C4E0ACC4",
+    "crc_sortie": "7921F08C",
     "taille_sortie": 2097152,
-    "taille_patch": 124928
+    "taille_patch": 124912
    },
-   "revision": 1,
-   "date_maj": "25/10/2026"
+   "revision": 2,
+   "date_maj": "15/11/2026"
   },
   {
    "ordre": 21,
@@ -4002,5 +4134,5 @@
   }
  ],
  "images_consoles": {},
- "titre_page": "Player Time – Traductions françaises de jeux Mega Drive, Master System et Mega CD"
+ "titre_page": "Player Time – Homebrew Mega Drive et traductions françaises (Mega Drive, Master System, Mega CD)"
 }
