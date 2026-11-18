@@ -402,6 +402,110 @@
   },
   {
    "ordre": 10,
+   "categorie": "Traductions et améliorations",
+   "titre": "Lunar - The Silver Star",
+   "sous_titre": "Traduction française",
+   "plateforme": "Mega CD",
+   "statut": "En cours",
+   "resume": "Le grand RPG de Game Arts sur Mega CD, traduit depuis la version japonaise. Dialogues, menus, sorts et objets sont en français ; les scènes doublées et les combats arrivent dans les prochaines versions.",
+   "couleur": "#3a5fb0",
+   "rom_attendue": "Lunar - The Silver Star (Japan) - piste 01",
+   "nom_sortie": "Lunar - The Silver Star (FR) (Track 01).bin",
+   "format": "bps",
+   "version": "LUNv02",
+   "date_version": "18/11/2026",
+   "id": "lunar-the-silver-star",
+   "notes": [
+    {
+     "titre": "Ce qui est traduit",
+     "blocs": [
+      {
+       "puce": "Tous les dialogues des villes, donjons et personnages"
+      },
+      {
+       "puce": "L'introduction"
+      },
+      {
+       "puce": "Les menus, le statut, les sorts et les objets"
+      },
+      {
+       "puce": "Noms japonais d'origine conservés (Arès, Naru, Galeon...)"
+      }
+     ]
+    },
+    {
+     "titre": "Pas encore traduit",
+     "blocs": [
+      {
+       "puce": "Sous-titres des scènes doublées"
+      },
+      {
+       "puce": "Noms des monstres et textes de combat (à vérifier)"
+      },
+      {
+       "puce": "Écran titre et générique"
+      },
+      {
+       "texte": "Le patch s'applique à la piste 01 du disque japonais avec l'outil fourni (patch_cd.py). Il faut un Mega CD japonais ou un émulateur réglé en Japon."
+      }
+     ]
+    },
+    {
+     "titre": "Historique des versions",
+     "blocs": [
+      {
+       "puce": "LUNv02 (18/11/2026) : Menus, écran de statut et réglages Auto en français ; Noms des sorts, techniques et objets traduits ; Les dialogues avec portrait ne dépassent plus du cadre"
+      },
+      {
+       "puce": "LUNv01 (18/11/2026) : Première version de test : tous les dialogues du jeu en français ; Nouvelle police française avec accents, plus de texte par ligne ; Introduction en français"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/lunar-the-silver-star/01_intro.png",
+     "legende": "L'introduction : la stèle de Burg"
+    },
+    {
+     "src": "images/lunar-the-silver-star/02_dyne.png",
+     "legende": "Premier dialogue dans la forêt de Burg"
+    },
+    {
+     "src": "images/lunar-the-silver-star/03_garcon.png",
+     "legende": "Le texte est deux fois plus dense qu'en japonais"
+    },
+    {
+     "src": "images/lunar-the-silver-star/04_ares.png",
+     "legende": "Arès, le héros"
+    },
+    {
+     "src": "images/lunar-the-silver-star/05_menu.png",
+     "legende": "Le menu en jeu"
+    },
+    {
+     "src": "images/lunar-the-silver-star/06_objets.png",
+     "legende": "Les objets"
+    },
+    {
+     "src": "images/lunar-the-silver-star/07_statut.png",
+     "legende": "L'écran de statut"
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/lunar-the-silver-star.bps",
+    "format": "bps",
+    "crc_source": "90AA9EEF",
+    "taille_source": 32989152,
+    "crc_sortie": "9DB61B74",
+    "taille_sortie": 32989152,
+    "taille_patch": 1134572
+   },
+   "revision": 1,
+   "date_maj": "18/11/2026"
+  },
+  {
+   "ordre": 10,
    "categorie": "Mes jeux",
    "titre": "Prismwing",
    "sous_titre": "Démo jouable",
@@ -2429,6 +2533,157 @@
    },
    "revision": 1,
    "date_maj": "15/11/2026"
+  },
+  {
+   "ordre": 20,
+   "categorie": "Traductions et améliorations",
+   "titre": "Wonder Boy V : Monster World III",
+   "sous_titre": "Traduction française",
+   "plateforme": "Mega Drive",
+   "statut": "Version de test",
+   "resume": "La version japonaise de Wonder Boy in Monster World, entièrement traduite en français depuis le japonais : dialogues, menus, écran titre et générique, avec une nouvelle police accentuée.",
+   "couleur": "#3060d0",
+   "rom_attendue": "Wonder Boy V - Monster World III (Japan)",
+   "nom_sortie": "Wonder Boy V - Monster World III (FR).bin",
+   "format": "bps",
+   "version": "MW3v10",
+   "date_version": "18/11/2026",
+   "id": "wonder-boy-v-monster-world-iii",
+   "notes": [
+    {
+     "titre": "Ce qui est traduit",
+     "blocs": [
+      {
+       "puce": "Tous les dialogues, traduits depuis le japonais."
+      },
+      {
+       "puce": "Les menus, les noms d'objets et le bandeau des objets obtenus."
+      },
+      {
+       "puce": "L'écran titre et le générique de fin."
+      },
+      {
+       "puce": "Une nouvelle police avec accents et minuscules, et des fenêtres de 5 lignes."
+      },
+      {
+       "puce": "Ajout : les caractéristiques et effets des objets en boutique et dans le menu d'équipement (absents de la version japonaise)."
+      },
+      {
+       "puce": "Ajout : un MODE DIFFICILE au choix sur l'écran titre, avec les règles et les combats de la version occidentale (fin de partie à la mort, seuil de mort plus sévère, Roi des démons et boss final plus durs)."
+      },
+      {
+       "texte": "Les noms des personnages et des lieux sont transcrits du japonais (Shion, Priscilla, Éléonora, Shappo, Alseido, Lilipat, Bargonia...)."
+      },
+      {
+       "texte": "La ROM fonctionne sur toutes les Mega Drive, y compris la Mega Drive Mini et la Mega SG."
+      }
+     ]
+    },
+    {
+     "titre": "Historique des versions",
+     "blocs": [
+      {
+       "puce": "MW3v10 (18/11/2026) : Boutiques : description des lances raccourcie (« Arme à deux mains. »)"
+      },
+      {
+       "puce": "MW3v09 (18/11/2026) : Menu d'équipement : le nom entier de l'objet choisi clignote, même pour les noms longs"
+      },
+      {
+       "puce": "MW3v08 (18/11/2026) : Écran titre : le choix MODE FACILE / MODE DIFFICILE est posé après NOUVELLE PARTIE ; Le mode choisi est enregistré dans la sauvegarde"
+      },
+      {
+       "puce": "MW3v07 (18/11/2026) : Boutiques : chaque paire de bottes indique son vrai effet (vitesse de marche, hauteur de saut) ; Boutiques : les Bottes de cuir et de grès n'affichent plus « Aucun bonus » ; Boutiques : les lances précisent qu'elles frappent plus loin"
+      },
+      {
+       "puce": "MW3v06 (18/11/2026) : Mode difficile : la tête de lapin du Roi des démons lâche des flammes, comme en version occidentale ; Mode difficile : boss final avec sol qui défile, scie et tirs qui visent Shion, comme en version occidentale ; Mode difficile : le téléporteur étoilé du château du Roi des démons fonctionne comme en version occidentale"
+      },
+      {
+       "puce": "MW3v05 (18/11/2026) : Correction reprise de la version occidentale : quand Shion est rapetissé, le menu affiche ses vraies caractéristiques du moment"
+      },
+      {
+       "puce": "MW3v04 (18/11/2026) : Nouveau : choix de la difficulté sur l'écran titre (NOUVELLE PARTIE ou MODE DIFFICILE) ; Mode difficile : à la mort, écran « Fin de partie » et retour au titre au lieu de l'auberge, comme dans la version occidentale ; Mode difficile : on meurt dès qu'il reste moins d'un quart de cœur, comme dans la version occidentale ; Le mode choisi est enregistré avec la sauvegarde"
+      },
+      {
+       "puce": "MW3v03 (18/11/2026) : En boutique, le marchand indique les caractéristiques (ATT/DÉF/VIT en étoiles) et l'effet de l'objet avant le prix ; Dans le menu d'équipement, les caractéristiques de chaque objet s'affichent au-dessus de son nom"
+      },
+      {
+       "puce": "MW3v02 (18/11/2026) : Noms des personnages et des lieux repris de la version japonaise : Éléonora, Shappo, Alseido, Lilipat, Bargonia, désert de Mâmu, Purapril Sheila, Champi-fantôme"
+      },
+      {
+       "puce": "MW3v01 (18/11/2026) : Première version : dialogues, menus, écran titre et générique en français ; Nouvelle police accentuée et fenêtres de dialogue de 5 lignes"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/wonder-boy-v-monster-world-iii/01_titre.png",
+     "legende": "L'écran titre, avec « MONSTER WORLD » à la place des katakana."
+    },
+    {
+     "src": "images/wonder-boy-v-monster-world-iii/02_menu_titre.png",
+     "legende": "Écran titre : nouvelle partie ou continuer."
+    },
+    {
+     "src": "images/wonder-boy-v-monster-world-iii/03_intro.png",
+     "legende": "L'introduction en français."
+    },
+    {
+     "src": "images/wonder-boy-v-monster-world-iii/04_dialogue.png",
+     "legende": "Des fenêtres de dialogue de 5 lignes."
+    },
+    {
+     "src": "images/wonder-boy-v-monster-world-iii/05_boutique.png",
+     "legende": "Les boutiques et leurs marchands."
+    },
+    {
+     "src": "images/wonder-boy-v-monster-world-iii/06_panneau.png",
+     "legende": "Les panneaux des villages."
+    },
+    {
+     "src": "images/wonder-boy-v-monster-world-iii/07_menu.png",
+     "legende": "Le menu d'équipement traduit."
+    },
+    {
+     "src": "images/wonder-boy-v-monster-world-iii/08_objets.png",
+     "legende": "Les objets-clés."
+    },
+    {
+     "src": "images/wonder-boy-v-monster-world-iii/09_equipement.png",
+     "legende": "Les caractéristiques de chaque équipement, au-dessus de son nom."
+    },
+    {
+     "src": "images/wonder-boy-v-monster-world-iii/10_boutique_stats.png",
+     "legende": "En boutique, le marchand donne les caractéristiques et l'effet de l'objet."
+    },
+    {
+     "src": "images/wonder-boy-v-monster-world-iii/11_fin_de_partie.png",
+     "legende": "En mode difficile, la mort mène à l'écran « Fin de partie », comme en version occidentale."
+    },
+    {
+     "src": "images/wonder-boy-v-monster-world-iii/12_bio_meka_scie.png",
+     "legende": "Mode difficile : le boss final avec la scie et le sol qui défile de la version occidentale."
+    },
+    {
+     "src": "images/wonder-boy-v-monster-world-iii/13_roi_demons_feu.png",
+     "legende": "Mode difficile : les flammes du Roi des démons."
+    },
+    {
+     "src": "images/wonder-boy-v-monster-world-iii/14_choix_difficulte.png",
+     "legende": "Après « Nouvelle partie » : mode facile (règles japonaises) ou mode difficile (règles occidentales)."
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/wonder-boy-v-monster-world-iii.bps",
+    "format": "bps",
+    "crc_source": "45A50F96",
+    "taille_source": 655360,
+    "crc_sortie": "5FBBFE2D",
+    "taille_sortie": 1048576,
+    "taille_patch": 44154
+   },
+   "revision": 1,
+   "date_maj": "18/11/2026"
   },
   {
    "ordre": 21,
