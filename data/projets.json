@@ -412,7 +412,7 @@
    "rom_attendue": "Lunar - The Silver Star (Japan) - piste 01",
    "nom_sortie": "Lunar - The Silver Star (FR) (Track 01).bin",
    "format": "bps",
-   "version": "LUNv02",
+   "version": "LUNv05",
    "date_version": "18/11/2026",
    "id": "lunar-the-silver-star",
    "notes": [
@@ -451,8 +451,31 @@
      ]
     },
     {
+     "titre": "Bonus : menu de débogage",
+     "blocs": [
+      {
+       "puce": "Sur l'écran titre, maintenir A puis appuyer sur START"
+      },
+      {
+       "puce": "En jeu, START sur la carte ouvre le menu des développeurs (téléportation, équipe, valeurs...)"
+      },
+      {
+       "puce": "Toujours en mode débogage : B maintenu en marchant pour traverser les murs"
+      }
+     ]
+    },
+    {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "LUNv05 (18/11/2026) : Mode débogage : B maintenu pour traverser les murs"
+      },
+      {
+       "puce": "LUNv04 (18/11/2026) : Bonus : menu de débogage caché accessible (A + START sur l'écran titre) et traduit ; Quelques répliques et la liste des lieux de téléportation en français"
+      },
+      {
+       "puce": "LUNv03 (18/11/2026) : Noms des lieux de l'écran de sauvegarde en français ; Messages de combat et de menu plus complets"
+      },
       {
        "puce": "LUNv02 (18/11/2026) : Menus, écran de statut et réglages Auto en français ; Noms des sorts, techniques et objets traduits ; Les dialogues avec portrait ne dépassent plus du cadre"
       },
@@ -490,6 +513,14 @@
     {
      "src": "images/lunar-the-silver-star/07_statut.png",
      "legende": "L'écran de statut"
+    },
+    {
+     "src": "images/lunar-the-silver-star/08_debug_titre.png",
+     "legende": "Bonus : mode débogage activé sur l'écran titre (A + START)"
+    },
+    {
+     "src": "images/lunar-the-silver-star/09_debug_menu.png",
+     "legende": "Le menu de débogage caché, en français"
     }
    ],
    "patch": {
@@ -497,11 +528,11 @@
     "format": "bps",
     "crc_source": "90AA9EEF",
     "taille_source": 32989152,
-    "crc_sortie": "9DB61B74",
+    "crc_sortie": "0BEEB516",
     "taille_sortie": 32989152,
-    "taille_patch": 1134572
+    "taille_patch": 1136531
    },
-   "revision": 1,
+   "revision": 2,
    "date_maj": "18/11/2026"
   },
   {
@@ -2546,7 +2577,7 @@
    "rom_attendue": "Wonder Boy V - Monster World III (Japan)",
    "nom_sortie": "Wonder Boy V - Monster World III (FR).bin",
    "format": "bps",
-   "version": "MW3v10",
+   "version": "MW3v15",
    "date_version": "18/11/2026",
    "id": "wonder-boy-v-monster-world-iii",
    "notes": [
@@ -2572,6 +2603,9 @@
        "puce": "Ajout : un MODE DIFFICILE au choix sur l'écran titre, avec les règles et les combats de la version occidentale (fin de partie à la mort, seuil de mort plus sévère, Roi des démons et boss final plus durs)."
       },
       {
+       "puce": "Ajout : un MODE DEBUG (maintenir A et appuyer sur START à l'écran titre, puis A dans le menu pause) : équipement, objets, magie, cœurs, or, invincibilité, caméra libre, téléportation."
+      },
+      {
        "texte": "Les noms des personnages et des lieux sont transcrits du japonais (Shion, Priscilla, Éléonora, Shappo, Alseido, Lilipat, Bargonia...)."
       },
       {
@@ -2582,6 +2616,21 @@
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "MW3v15 (18/11/2026) : Mode debug : on peut quitter la caméra libre par le menu pause (START)"
+      },
+      {
+       "puce": "MW3v14 (18/11/2026) : Mode debug : un reset l'éteint, avec la caméra libre et l'invincibilité"
+      },
+      {
+       "puce": "MW3v13 (18/11/2026) : Mode debug : la caméra libre se déplace avec la croix pour explorer la salle, sans bugs d'affichage"
+      },
+      {
+       "puce": "MW3v12 (18/11/2026) : Correction d'un plantage du mode debug (option « Cœurs max ») ; Le mode debug donne désormais 14 cœurs, le maximum du jeu"
+      },
+      {
+       "puce": "MW3v11 (18/11/2026) : Nouveau : mode debug (A + START à l'écran titre) ; Menu de debug dans le menu pause (A sur l'écran CHOIX) : équipement, objets, magie, cœurs, or, invincibilité, caméra libre, téléportation, choix du mode"
+      },
       {
        "puce": "MW3v10 (18/11/2026) : Boutiques : description des lances raccourcie (« Arme à deux mains. »)"
       },
@@ -2671,6 +2720,10 @@
     {
      "src": "images/wonder-boy-v-monster-world-iii/14_choix_difficulte.png",
      "legende": "Après « Nouvelle partie » : mode facile (règles japonaises) ou mode difficile (règles occidentales)."
+    },
+    {
+     "src": "images/wonder-boy-v-monster-world-iii/15_menu_debug.png",
+     "legende": "Le mode debug ajouté à la VF (A + START à l'écran titre, puis A dans le menu pause)."
     }
    ],
    "patch": {
@@ -2678,11 +2731,11 @@
     "format": "bps",
     "crc_source": "45A50F96",
     "taille_source": 655360,
-    "crc_sortie": "5FBBFE2D",
+    "crc_sortie": "F36DF5AC",
     "taille_sortie": 1048576,
-    "taille_patch": 44154
+    "taille_patch": 46027
    },
-   "revision": 1,
+   "revision": 2,
    "date_maj": "18/11/2026"
   },
   {
