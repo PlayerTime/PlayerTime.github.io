@@ -111,7 +111,19 @@ function etiquettes(p) {
     p.credit ? el('span', { class: 'etiquette etiquette-credit', text: p.credit }) : null,
     p.version ? el('span', { class: 'etiquette etiquette-version', text: 'Version ' + p.version }) : null,
     p.date_maj ? el('span', { class: 'etiquette', text: 'Mis à jour le ' + p.date_maj }) : null,
-    compteur(p));
+    compteur(p),
+    barre(p));
+}
+/* barre d'avancement (avancement.json → « avancement » de 0 à 100) */
+function barre(p) {
+  if (typeof p.avancement !== 'number') return null;
+  const a = Math.max(0, Math.min(100, Math.round(p.avancement)));
+  const t = el('span', { class: 'avancement-texte', text: 'Avancement ' });
+  t.append(el('b', { text: a + ' %' }));
+  return el('div', { class: 'avancement', role: 'progressbar', 'aria-label': 'Avancement du projet',
+                     'aria-valuemin': '0', 'aria-valuemax': '100', 'aria-valuenow': String(a) },
+    t,
+    el('span', { class: 'avancement-piste' }, el('span', { class: 'avancement-plein', style: 'width:' + a + '%' })));
 }
 function compteur(p) {
   if (!Stats.actif() || !p.patch) return null;

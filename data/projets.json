@@ -10,7 +10,7 @@
    "titre": "Gem Assault",
    "sous_titre": "Mon jeu Mega Drive, gratuit",
    "plateforme": "Mega Drive",
-   "statut": "Version en cours",
+   "statut": "En cours",
    "resume": "Un jeu de gemmes en duel, créé avec SecondBASIC. Version pas encore finie, à télécharger gratuitement.",
    "nom_sortie": "Gem Assault.bin",
    "format": "jeu",
@@ -58,6 +58,7 @@
      ]
     }
    ],
+   "avancement": 80,
    "images": [
     {
      "src": "images/gem-assault/01_titre.png",
@@ -89,7 +90,7 @@
    "titre": "Shining Force",
    "sous_titre": "L'Héritage des Dieux",
    "plateforme": "Mega Drive",
-   "statut": "Terminée",
+   "statut": "Version de test",
    "resume": "La traduction française complète du premier Shining Force, refaite depuis le texte japonais, avec les corrections du jeu d'origine.",
    "rom_attendue": "Shining Force (USA)",
    "nom_sortie": "Shining Force (FR).bin",
@@ -148,6 +149,7 @@
      ]
     }
    ],
+   "avancement": 95,
    "images": [
     {
      "src": "images/shining-force-fr/00_titre.png",
@@ -247,6 +249,7 @@
      ]
     }
    ],
+   "avancement": 90,
    "images": [
     {
      "src": "images/shining-force-cd/01_titre.png",
@@ -362,6 +365,7 @@
      ]
     }
    ],
+   "avancement": 90,
    "images": [
     {
      "src": "images/alien-soldier/01_titre.png",
@@ -485,6 +489,7 @@
      ]
     }
    ],
+   "avancement": 60,
    "images": [
     {
      "src": "images/lunar-the-silver-star/01_intro.png",
@@ -541,7 +546,7 @@
    "titre": "Prismwing",
    "sous_titre": "Démo jouable",
    "plateforme": "Mega Drive",
-   "statut": "En cours",
+   "statut": "Version de test",
    "resume": "Un shoot 3D en polygones pleins pour Mega Drive, écrit en assembleur et tenant dans 1 Mo. Cette démo propose les trois premiers niveaux : Verdalis, la planète verte, la zone bonus du Seuil dans l'espace et les dunes de Kharad.",
    "couleur": "#f5a623",
    "rom_attendue": "",
@@ -635,6 +640,7 @@
      ]
     }
    ],
+   "avancement": 95,
    "images": [
     {
      "src": "images/prismwing/01_titre.png",
@@ -746,6 +752,7 @@
      ]
     }
    ],
+   "avancement": 90,
    "images": [
     {
      "src": "images/ristar/01_carton_monde1.png",
@@ -856,6 +863,7 @@
      ]
     }
    ],
+   "avancement": 90,
    "images": [
     {
      "src": "images/ristar-japon/01_carton_monde1.png",
@@ -970,6 +978,7 @@
      ]
     }
    ],
+   "avancement": 90,
    "images": [
     {
      "src": "images/langrisser-2/01_titre.png",
@@ -1135,6 +1144,7 @@
      ]
     }
    ],
+   "avancement": 95,
    "images": [
     {
      "src": "images/dune/01_titre.png",
@@ -1231,6 +1241,7 @@
      ]
     }
    ],
+   "avancement": 85,
    "images": [
     {
      "src": "images/langrisser/01_titre.png",
@@ -1372,6 +1383,7 @@
      ]
     }
    ],
+   "avancement": 90,
    "images": [
     {
      "src": "images/nadia/01_logo.png",
@@ -1424,7 +1436,7 @@
    "titre": "Phantasy Star II",
    "sous_titre": "Traduction française",
    "plateforme": "Mega Drive",
-   "statut": "En cours",
+   "statut": "Version de test",
    "resume": "Nouvelle traduction française complète de Phantasy Star II, faite depuis le texte japonais, avec les noms d'origine (Yushis, Rudger, Shilka...). Menus en français, icônes, course, options de difficulté, de couleurs et de musique et bugs d'origine corrigés.",
    "couleur": "#3060c0",
    "rom_attendue": "Phantasy Star II (USA, Europe) (Rev A)",
@@ -1525,6 +1537,7 @@
      ]
     }
    ],
+   "avancement": 90,
    "images": [
     {
      "src": "images/phantasy-star-2/01_titre.png",
@@ -1706,6 +1719,7 @@
      ]
     }
    ],
+   "avancement": 90,
    "images": [
     {
      "src": "images/rent-a-hero/01_titre.png",
@@ -2039,6 +2053,7 @@
      ]
     }
    ],
+   "avancement": 65,
    "images": [
     {
      "src": "images/shining-force-resurrection/01_titre.png",
@@ -2292,6 +2307,7 @@
      ]
     }
    ],
+   "avancement": 95,
    "images": [
     {
      "src": "images/shining-in-the-darkness/01_titre.png",
@@ -2413,6 +2429,7 @@
      ]
     }
    ],
+   "avancement": 90,
    "images": [
     {
      "src": "images/spot-goes-to-hollywood/01_titre.png",
@@ -2527,6 +2544,7 @@
      ]
     }
    ],
+   "avancement": 90,
    "images": [
     {
      "src": "images/twinkle-tale/01_titre.png",
@@ -2664,6 +2682,7 @@
      ]
     }
    ],
+   "avancement": 90,
    "images": [
     {
      "src": "images/wonder-boy-v-monster-world-iii/01_titre.png",
@@ -2808,6 +2827,7 @@
      ]
     }
    ],
+   "avancement": 90,
    "images": [
     {
      "src": "images/blue-almanac/01_titre.png",
@@ -2856,7 +2876,7 @@
    "titre": "Phantasy Star III",
    "sous_titre": "Traduction française",
    "plateforme": "Mega Drive",
-   "statut": "En cours",
+   "statut": "Version de test",
    "resume": "Traduction française complète de Phantasy Star III, faite depuis le texte japonais (Toki no Keishousha), avec les noms d'origine (Kein, Marina, Myu, Shiren...). Répliques censurées en version américaine rétablies, écran titre « Les Héritiers du Temps », icônes, gains x1/x2/x4 et couleurs modernes au choix.",
    "couleur": "#2a4fa0",
    "rom_attendue": "Phantasy Star III - Generations of Doom (USA, Europe)",
@@ -2933,6 +2953,7 @@
      ]
     }
    ],
+   "avancement": 90,
    "images": [
     {
      "src": "images/phantasy-star-3/01_titre.png",
@@ -3345,6 +3366,7 @@
      ]
     }
    ],
+   "avancement": 60,
    "images": [
     {
      "src": "images/dunerazoropti/01_titre.png",
@@ -3610,6 +3632,7 @@
      ]
     }
    ],
+   "avancement": 90,
    "images": [
     {
      "src": "images/phantasy-star/01_titre.png",
@@ -3654,7 +3677,7 @@
    "titre": "Shining Force II",
    "sous_titre": "Traduction française",
    "plateforme": "Mega Drive",
-   "statut": "Terminée",
+   "statut": "Version de test",
    "resume": "Traduction française complète de Shining Force II, faite à partir du texte japonais et insérée dans la version américaine. Avec quelques corrections : bugs, difficulté, IA, sound test, et la ROM démarre sur une Mega Drive française.",
    "couleur": "#3a6fd8",
    "rom_attendue": "Shining Force II (USA)",
@@ -3775,6 +3798,7 @@
      ]
     }
    ],
+   "avancement": 90,
    "images": [
     {
      "src": "images/shining-force-2/01_titre.png",
@@ -4197,6 +4221,7 @@
      ]
     }
    ],
+   "avancement": 100,
    "images": [
     {
      "src": "images/marcoz-the-immortal/01_titre.png",
