@@ -278,14 +278,14 @@
    "titre": "Alien Soldier",
    "sous_titre": "Traduction française",
    "plateforme": "Mega Drive",
-   "statut": "Version de test",
+   "statut": "Terminée",
    "resume": "Traduction française complète du shoot'em up de Treasure, à partir de la version japonaise : intro, menus, armes, dialogues des boss, scènes d'histoire et génériques. ROM « world » qui démarre sur toutes les Mega Drive.",
    "couleur": "#e05030",
    "rom_attendue": "Alien Soldier (Japan)",
    "nom_sortie": "Alien Soldier (FR).bin",
    "format": "bps",
-   "version": "ASv06",
-   "date_version": "14/11/2026",
+   "version": "ASv19",
+   "date_version": "20/11/2026",
    "id": "alien-soldier",
    "notes": [
     {
@@ -329,7 +329,7 @@
        "puce": "Les codes du mode difficile étaient identiques à ceux du mode facile : ils sont corrigés."
       },
       {
-       "puce": "Le menu de debug caché est réactivé : A+B+C+START hors partie, puis PAUSE + A en jeu."
+       "puce": "Le menu de debug caché est réactivé : A+START hors partie, puis PAUSE + A en jeu ; le joueur devient aussi invincible."
       }
      ]
     },
@@ -344,6 +344,45 @@
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "ASv19 (20/11/2026) : La bulle HELP de l'étape de la jungle devient AIDE"
+      },
+      {
+       "puce": "ASv18 (20/11/2026) : Correction des petits traits bleus qui apparaissaient dans le fond de l'écran des armes"
+      },
+      {
+       "puce": "ASv17 (20/11/2026) : Cédille du Ç reliée à la lettre"
+      },
+      {
+       "puce": "ASv16 (20/11/2026) : Ç à la taille d'un C normal"
+      },
+      {
+       "puce": "ASv15 (20/11/2026) : Ç presque à la taille d'un C normal"
+      },
+      {
+       "puce": "ASv14 (20/11/2026) : Ê à la taille d'un E normal"
+      },
+      {
+       "puce": "ASv13 (20/11/2026) : Accents de É et È décalés sur le côté pour mieux les distinguer"
+      },
+      {
+       "puce": "ASv12 (20/11/2026) : Accents de É et È plus lisibles"
+      },
+      {
+       "puce": "ASv11 (20/11/2026) : É, È et Ë à la taille d'un E normal, avec un accent plus fin"
+      },
+      {
+       "puce": "ASv10 (20/11/2026) : Lettres É, È, Ê, Ë redessinées : accent plus fin, la lettre n'est plus écrasée"
+      },
+      {
+       "puce": "ASv09 (20/11/2026) : HUD : JOUEUR et ENNEMI à la même taille que FORCE ; Le dessin PUSH BUTTON devient APPUYEZ VITE"
+      },
+      {
+       "puce": "ASv08 (20/11/2026) : Avec le code de debug actif, le joueur devient invincible (le chronomètre de l'étape reste actif)"
+      },
+      {
+       "puce": "ASv07 (20/11/2026) : Le code du menu de debug devient A+START (tenus ensemble, hors partie), puis PAUSE + A en jeu"
+      },
       {
        "puce": "ASv06 (14/11/2026) : HUD : JOUEUR aligné sur FORCE et ENNEMI ; Test des commandes : tous les tirets alignés (CONTRE-FORCE était décalé) ; Écran CONTINUER : la ligne du bas ne se chevauche plus (ÉTAPE, NIVEAU, CRÉDIT)"
       },
@@ -365,31 +404,27 @@
      ]
     }
    ],
-   "avancement": 90,
+   "avancement": 100,
    "images": [
     {
-     "src": "images/alien-soldier/01_titre.png",
+     "src": "images/alien-soldier/01_final_01_titre.png",
      "legende": "Écran titre : slogans et menu en français"
     },
     {
-     "src": "images/alien-soldier/02_intro.png",
+     "src": "images/alien-soldier/02_final_02_intro.png",
      "legende": "L'introduction, retraduite depuis le japonais"
     },
     {
-     "src": "images/alien-soldier/03_options.png",
-     "legende": "Le menu des options"
+     "src": "images/alien-soldier/03_final_03_intro_suite.png",
+     "legende": "Le groupe terroriste Scarlet entre en scène"
     },
     {
-     "src": "images/alien-soldier/04_armes.png",
+     "src": "images/alien-soldier/04_final_04_armes.png",
      "legende": "Choix des armes"
     },
     {
-     "src": "images/alien-soldier/05_etape.png",
-     "legende": "Début d'étape, HUD traduit"
-    },
-    {
-     "src": "images/alien-soldier/06_resultats.png",
-     "legende": "Écran des résultats"
+     "src": "images/alien-soldier/05_final_05_options.png",
+     "legende": "Le menu des options, avec le jukebox et le test des voix"
     }
    ],
    "patch": {
@@ -397,12 +432,145 @@
     "format": "bps",
     "crc_source": "90FA1539",
     "taille_source": 2097152,
-    "crc_sortie": "C626A7B8",
+    "crc_sortie": "FEC9DBDA",
     "taille_sortie": 2097152,
-    "taille_patch": 12279
+    "taille_patch": 20344
    },
-   "revision": 2,
-   "date_maj": "15/11/2026"
+   "revision": 3,
+   "date_maj": "20/11/2026"
+  },
+  {
+   "ordre": 10,
+   "categorie": "Traductions et améliorations",
+   "titre": "Buck Rogers : Countdown to Doomsday",
+   "sous_titre": "Traduction française",
+   "plateforme": "Mega Drive",
+   "statut": "Version de test",
+   "resume": "Le jeu de rôle de SSI dans l'univers de Buck Rogers XXVc, entièrement en français : dialogues, menus, combats, objets et intro. Rejoignez la NEO et empêchez la RAM d'utiliser le laser Apocalypse contre la Terre.",
+   "couleur": "#c0201a",
+   "rom_attendue": "Buck Rogers - Countdown to Doomsday (USA, Europe)",
+   "nom_sortie": "Buck Rogers - Countdown to Doomsday (FR).bin",
+   "format": "bps",
+   "version": "BRv03",
+   "date_version": "20/11/2026",
+   "id": "buck-rogers-countdown-to-doomsday",
+   "notes": [
+    {
+     "titre": "Ce qui est traduit",
+     "blocs": [
+      {
+       "puce": "Tous les dialogues, descriptions et choix de l'aventure"
+      },
+      {
+       "puce": "Les menus, la fiche de personnage, les compétences et les objets"
+      },
+      {
+       "puce": "Les combats au sol et dans l'espace, les noms des ennemis"
+      },
+      {
+       "puce": "L'écran SSI, l'intro, l'écran titre, les icônes et le générique de fin"
+      },
+      {
+       "puce": "Lettres accentuées ajoutées à la police"
+      }
+     ]
+    },
+    {
+     "titre": "À savoir",
+     "blocs": [
+      {
+       "puce": "Fonctionne sur toutes les Mega Drive (japonaise, américaine, européenne), Mega Drive Mini et Mega SG"
+      },
+      {
+       "puce": "Sauvegarde sur pile compatible avec les parties de la version anglaise"
+      },
+      {
+       "puce": "Restent en anglais : le titre du jeu, les mentions légales, les noms propres et les noms des vaisseaux"
+      }
+     ]
+    },
+    {
+     "titre": "Bonus : le mode debug",
+     "blocs": [
+      {
+       "puce": "Sur l'écran titre, maintenir A + START : « DEBUGMODE ON » s'affiche"
+      },
+      {
+       "puce": "« Commencer l'aventure » mène alors à la salle de debug des développeurs"
+      },
+      {
+       "puce": "Une icône « bombe » apparaît aussi dans le menu Start"
+      }
+     ]
+    },
+    {
+     "titre": "Historique des versions",
+     "blocs": [
+      {
+       "puce": "BRv03 (20/11/2026) : Bonus : le mode debug caché des développeurs est débloqué (A + START sur l'écran titre) ; Salle de debug : aller dans n'importe quelle zone, arène, trésors, expérience, sound test, visionneuses de graphismes"
+      },
+      {
+       "puce": "BRv02 (20/11/2026) : L'écran SSI affiche « PRÉSENTE » ; Les icônes EXIT et END deviennent FIN ; L'en-tête du générique de fin est en français"
+      },
+      {
+       "puce": "BRv01 (20/11/2026) : Première version : tout le jeu est traduit en français ; Intro et générique de fin en français, avec le crédit de la traduction"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/buck-rogers-countdown-to-doomsday/01_titre.png",
+     "legende": "L'écran titre"
+    },
+    {
+     "src": "images/buck-rogers-countdown-to-doomsday/02_intro_laser.png",
+     "legende": "L'intro : le laser Apocalypse est actif"
+    },
+    {
+     "src": "images/buck-rogers-countdown-to-doomsday/03_intro_cible.png",
+     "legende": "Cible ? La Terre..."
+    },
+    {
+     "src": "images/buck-rogers-countdown-to-doomsday/04_dialogue.png",
+     "legende": "Le briefing de la NEO"
+    },
+    {
+     "src": "images/buck-rogers-countdown-to-doomsday/05_bataille.png",
+     "legende": "L'attaque du spatioport de Chicagorg"
+    },
+    {
+     "src": "images/buck-rogers-countdown-to-doomsday/06_combat.png",
+     "legende": "Un combat contre les Terrines"
+    },
+    {
+     "src": "images/buck-rogers-countdown-to-doomsday/07_fiche.png",
+     "legende": "La fiche de personnage"
+    },
+    {
+     "src": "images/buck-rogers-countdown-to-doomsday/08_ssi.png",
+     "legende": "SSI présente..."
+    },
+    {
+     "src": "images/buck-rogers-countdown-to-doomsday/09_debugmode.png",
+     "legende": "Bonus : A + START sur l'écran titre"
+    },
+    {
+     "src": "images/buck-rogers-countdown-to-doomsday/10_salle_debug.png",
+     "legende": "La salle de debug des développeurs"
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/buck-rogers-countdown-to-doomsday.bps",
+    "format": "bps",
+    "crc_source": "44E3BFFF",
+    "taille_source": 1048576,
+    "crc_sortie": "A2BDE483",
+    "taille_sortie": 2097152,
+    "taille_patch": 141416
+   },
+   "revision": 1,
+   "date_maj": "20/11/2026"
   },
   {
    "ordre": 10,
@@ -416,8 +584,8 @@
    "rom_attendue": "Lunar - The Silver Star (Japan) - piste 01",
    "nom_sortie": "Lunar - The Silver Star (FR) (Track 01).bin",
    "format": "bps",
-   "version": "LUNv05",
-   "date_version": "18/11/2026",
+   "version": "LUNv07",
+   "date_version": "19/11/2026",
    "id": "lunar-the-silver-star",
    "notes": [
     {
@@ -433,6 +601,9 @@
        "puce": "Les menus, le statut, les sorts et les objets"
       },
       {
+       "puce": "Les combats et les sous-titres des scènes parlées"
+      },
+      {
        "puce": "Noms japonais d'origine conservés (Arès, Naru, Galeon...)"
       }
      ]
@@ -441,10 +612,7 @@
      "titre": "Pas encore traduit",
      "blocs": [
       {
-       "puce": "Sous-titres des scènes doublées"
-      },
-      {
-       "puce": "Noms des monstres et textes de combat (à vérifier)"
+       "puce": "Noms des monstres"
       },
       {
        "puce": "Écran titre et générique"
@@ -471,6 +639,12 @@
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "LUNv07 (19/11/2026) : Sous-titres des scènes parlées (portraits animés) en français ; Fichier des sous-titres modifiable pour retoucher les phrases"
+      },
+      {
+       "puce": "LUNv06 (19/11/2026) : Combats en français : boutons, répliques de Naru, annonces des boss ; Menu Sauver / Charger / Ordre / Jeter corrigé"
+      },
       {
        "puce": "LUNv05 (18/11/2026) : Mode débogage : B maintenu pour traverser les murs"
       },
@@ -504,27 +678,35 @@
      "legende": "Le texte est deux fois plus dense qu'en japonais"
     },
     {
-     "src": "images/lunar-the-silver-star/04_ares.png",
+     "src": "images/lunar-the-silver-star/04_scene_galeon.png",
+     "legende": "Scène parlée : sous-titres dessinés en français"
+    },
+    {
+     "src": "images/lunar-the-silver-star/05_scene_luna.png",
+     "legende": "Luna, au début de l'aventure"
+    },
+    {
+     "src": "images/lunar-the-silver-star/06_ares.png",
      "legende": "Arès, le héros"
     },
     {
-     "src": "images/lunar-the-silver-star/05_menu.png",
+     "src": "images/lunar-the-silver-star/07_menu.png",
      "legende": "Le menu en jeu"
     },
     {
-     "src": "images/lunar-the-silver-star/06_objets.png",
+     "src": "images/lunar-the-silver-star/08_objets.png",
      "legende": "Les objets"
     },
     {
-     "src": "images/lunar-the-silver-star/07_statut.png",
+     "src": "images/lunar-the-silver-star/09_statut.png",
      "legende": "L'écran de statut"
     },
     {
-     "src": "images/lunar-the-silver-star/08_debug_titre.png",
+     "src": "images/lunar-the-silver-star/10_debug_titre.png",
      "legende": "Bonus : mode débogage activé sur l'écran titre (A + START)"
     },
     {
-     "src": "images/lunar-the-silver-star/09_debug_menu.png",
+     "src": "images/lunar-the-silver-star/11_debug_menu.png",
      "legende": "Le menu de débogage caché, en français"
     }
    ],
@@ -533,12 +715,12 @@
     "format": "bps",
     "crc_source": "90AA9EEF",
     "taille_source": 32989152,
-    "crc_sortie": "0BEEB516",
+    "crc_sortie": "6687FAF7",
     "taille_sortie": 32989152,
-    "taille_patch": 1136531
+    "taille_patch": 1673119
    },
-   "revision": 2,
-   "date_maj": "18/11/2026"
+   "revision": 3,
+   "date_maj": "20/11/2026"
   },
   {
    "ordre": 10,
@@ -2356,14 +2538,14 @@
    "titre": "Spot Goes to Hollywood",
    "sous_titre": "Traduction française",
    "plateforme": "Mega Drive",
-   "statut": "Version de test",
+   "statut": "Terminée",
    "resume": "Traduction française du jeu de plates-formes en 3D isométrique d'Eurocom : menus, cartons de niveau, bilan, test son, fin et générique, en gardant les clins d'œil au cinéma. ROM « world » qui démarre sur toutes les Mega Drive.",
    "couleur": "#d02828",
    "rom_attendue": "Spot Goes to Hollywood (USA) (Rev 1)",
    "nom_sortie": "Spot Goes to Hollywood (FR).bin",
    "format": "bps",
-   "version": "SPOTv05",
-   "date_version": "14/11/2026",
+   "version": "SPOTv08",
+   "date_version": "20/11/2026",
    "id": "spot-goes-to-hollywood",
    "notes": [
     {
@@ -2404,13 +2586,25 @@
        "puce": "ROM « world » : le jeu démarre sur toutes les Mega Drive (japonaise, américaine, européenne)."
       },
       {
-       "puce": "Nouvelle difficulté « FOU » : il faut libérer tous les spots de chaque niveau, avec les réglages du mode difficile."
+       "puce": "Option « 100% SPOTS » (ajout de la VF) : il faut libérer tous les spots de chaque niveau, quelle que soit la difficulté."
+      },
+      {
+       "puce": "Mode debug (A+START à l'écran titre) : choix du niveau, invincibilité, grand saut et fin de niveau instantanée."
       }
      ]
     },
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "SPOTv08 (20/11/2026) : Mode debug : START puis A permet aussi de passer le niveau du wagonnet"
+      },
+      {
+       "puce": "SPOTv07 (20/11/2026) : Mode debug : sur l'écran titre, maintenir A et appuyer sur START. On peut alors choisir son niveau (les 16, y compris les cachés), Spot est invincible et saute plus haut, et START puis A en jeu termine le niveau"
+      },
+      {
+       "puce": "SPOTv06 (20/11/2026) : Le mode FOU devient une option « 100% SPOTS » utilisable avec toutes les difficultés (par exemple : tous les spots à libérer avec des ennemis faciles) ; Le fond bleu du menu et des cartons de niveau affiche « Spot va à Hollywood »"
+      },
       {
        "puce": "SPOTv05 (14/11/2026) : Mode FOU corrigé : la sortie demande vraiment 100 % des spots (elle s'ouvrait dès 40 %)"
       },
@@ -2429,43 +2623,31 @@
      ]
     }
    ],
-   "avancement": 90,
+   "avancement": 100,
    "images": [
     {
-     "src": "images/spot-goes-to-hollywood/01_titre.png",
+     "src": "images/spot-goes-to-hollywood/01_final_01_titre.png",
      "legende": "Écran titre : « Spot va à Hollywood »"
     },
     {
-     "src": "images/spot-goes-to-hollywood/02_menu.png",
-     "legende": "Le menu principal"
+     "src": "images/spot-goes-to-hollywood/02_final_02_options.png",
+     "legende": "Le menu des options, avec les lettres accentuées ajoutées"
     },
     {
-     "src": "images/spot-goes-to-hollywood/03_options.png",
-     "legende": "Les options, avec les lettres accentuées ajoutées"
+     "src": "images/spot-goes-to-hollywood/03_final_03_menu_son.png",
+     "legende": "Le menu son"
     },
     {
-     "src": "images/spot-goes-to-hollywood/04_storyboard.png",
+     "src": "images/spot-goes-to-hollywood/04_final_04_storyboard.png",
      "legende": "Les cartes des mondes, étiquettes redessinées"
     },
     {
-     "src": "images/spot-goes-to-hollywood/05_carton.png",
-     "legende": "Carton de début de niveau"
+     "src": "images/spot-goes-to-hollywood/05_final_05_carton.png",
+     "legende": "Carton de début de niveau : « Le wagonnet »"
     },
     {
-     "src": "images/spot-goes-to-hollywood/06_bilan.png",
+     "src": "images/spot-goes-to-hollywood/06_final_06_bilan.png",
      "legende": "Le bilan de fin de niveau"
-    },
-    {
-     "src": "images/spot-goes-to-hollywood/07_fin_du_film.png",
-     "legende": "« Tu as terminé le film... pas ! » à la Wayne's World"
-    },
-    {
-     "src": "images/spot-goes-to-hollywood/08_generique.png",
-     "legende": "Le générique de fin"
-    },
-    {
-     "src": "images/spot-goes-to-hollywood/09_enseigne_fin.png",
-     "legende": "Le cinéma de fin : « Spot va à Hollywood »."
     }
    ],
    "patch": {
@@ -2473,12 +2655,12 @@
     "format": "bps",
     "crc_source": "BDAD1CBC",
     "taille_source": 3145728,
-    "crc_sortie": "68BC3A47",
+    "crc_sortie": "CD993F71",
     "taille_sortie": 4194304,
-    "taille_patch": 78367
+    "taille_patch": 98491
    },
-   "revision": 2,
-   "date_maj": "15/11/2026"
+   "revision": 3,
+   "date_maj": "20/11/2026"
   },
   {
    "ordre": 20,
@@ -2486,14 +2668,14 @@
    "titre": "Twinkle Tale",
    "sous_titre": "Traduction française",
    "plateforme": "Mega Drive",
-   "statut": "Version de test",
+   "statut": "Terminée",
    "resume": "Traduction française complète du run and gun magique de 1992, sorti uniquement au Japon : introduction, livre du prologue, dialogues, menus et générique. ROM « world » qui démarre sur toutes les Mega Drive.",
    "couleur": "#3a6fd8",
    "rom_attendue": "Twinkle Tale (Japan)",
    "nom_sortie": "Twinkle Tale (FR).bin",
    "format": "bps",
-   "version": "TTv02",
-   "date_version": "15/11/2026",
+   "version": "TTv04",
+   "date_version": "20/11/2026",
    "id": "twinkle-tale",
    "notes": [
     {
@@ -2518,9 +2700,20 @@
       },
       {
        "puce": "Générique de fin et écran « Fin »"
+      }
+     ]
+    },
+    {
+     "titre": "Bonus",
+     "blocs": [
+      {
+       "puce": "Mode debug : sur l'écran titre, maintenir A et appuyer sur START (« DEBUG MODE ON » s'affiche). Au lancement d'une partie, choix du niveau, et Saria est invincible."
       },
       {
-       "puce": "Le sélecteur de niveau caché du jeu (Haut + Gauche + A + C puis START sur JOUER)"
+       "puce": "Difficulté « Très dur » débloquée dans les options (elle existait dans le jeu mais n'était pas accessible)."
+      },
+      {
+       "puce": "Le sélecteur de niveau d'origine marche toujours : Haut + Gauche + A + C puis START pendant le livre."
       }
      ]
     },
@@ -2536,6 +2729,12 @@
      "titre": "Historique des versions",
      "blocs": [
       {
+       "puce": "TTv04 (20/11/2026) : Nouveau code du mode debug : sur l'écran titre, maintenir A et appuyer sur START"
+      },
+      {
+       "puce": "TTv03 (20/11/2026) : Nouveau mode debug : sur l'écran titre, maintenir A + B + C (« DEBUG MODE ON » s'affiche) ; En mode debug : choix du niveau au lancement de la partie et Saria invincible ; La difficulté cachée « Très dur » est maintenant disponible dans les options (tirs de Saria deux fois moins puissants)"
+      },
+      {
        "puce": "TTv02 (15/11/2026) : Dans le panneau de droite, le niveau des magies s'affiche « N1, N2, N3 » (Niveau) au lieu de « L1, L2, L3 »"
       },
       {
@@ -2544,31 +2743,31 @@
      ]
     }
    ],
-   "avancement": 90,
+   "avancement": 100,
    "images": [
     {
-     "src": "images/twinkle-tale/01_titre.png",
+     "src": "images/twinkle-tale/01_final_01_titre.png",
      "legende": "Écran titre en français (logo d'origine conservé)"
     },
     {
-     "src": "images/twinkle-tale/02_intro.png",
+     "src": "images/twinkle-tale/02_final_02_intro.png",
      "legende": "L'introduction, traduite depuis le japonais"
     },
     {
-     "src": "images/twinkle-tale/03_livre.png",
+     "src": "images/twinkle-tale/03_final_03_livre.png",
      "legende": "Le livre du prologue"
     },
     {
-     "src": "images/twinkle-tale/04_carte.png",
+     "src": "images/twinkle-tale/04_final_04_carte.png",
      "legende": "Les noms des niveaux sur la carte"
     },
     {
-     "src": "images/twinkle-tale/05_options.png",
-     "legende": "Le menu des options"
+     "src": "images/twinkle-tale/05_final_05_jeu.png",
+     "legende": "En plein niveau"
     },
     {
-     "src": "images/twinkle-tale/06_dialogue.png",
-     "legende": "Les dialogues entre les niveaux"
+     "src": "images/twinkle-tale/06_final_06_dialogue.png",
+     "legende": "Les dialogues pendant les combats de boss"
     }
    ],
    "patch": {
@@ -2576,12 +2775,12 @@
     "format": "bps",
     "crc_source": "D757F924",
     "taille_source": 1048576,
-    "crc_sortie": "DA16A7CD",
+    "crc_sortie": "296DE7BF",
     "taille_sortie": 2097152,
-    "taille_patch": 37575
+    "taille_patch": 38160
    },
-   "revision": 1,
-   "date_maj": "15/11/2026"
+   "revision": 2,
+   "date_maj": "20/11/2026"
   },
   {
    "ordre": 20,
@@ -2769,8 +2968,8 @@
    "rom_attendue": "Blue Almanac (Japan)",
    "nom_sortie": "Blue Almanac (FR).bin",
    "format": "bps",
-   "version": "SOv02",
-   "date_version": "14/11/2026",
+   "version": "SOv04",
+   "date_version": "20/11/2026",
    "id": "blue-almanac",
    "notes": [
     {
@@ -2816,8 +3015,28 @@
      ]
     },
     {
+     "titre": "Codes secrets",
+     "blocs": [
+      {
+       "puce": "Mode debug (ajouté par Player Time) : à l'écran titre, tenir A et appuyer sur START. L'équipe devient invincible jusqu'au reset."
+      },
+      {
+       "puce": "Sound test : à l'écran du nom, tenir A+B+C et appuyer sur START."
+      },
+      {
+       "puce": "Voir la fin : taper « ABA », curseur sur « I », appuyer A puis B puis C en les gardant enfoncés, puis START."
+      }
+     ]
+    },
+    {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "SOv04 (20/11/2026) : Nouveau mode debug : A+START à l'écran titre rend l'équipe invincible (« DEBUGMODE ON »)"
+      },
+      {
+       "puce": "SOv03 (20/11/2026) : Noms des compagnons traduits (ils restaient en japonais) ; Sound test traduit ; Phrase de fin corrigée"
+      },
       {
        "puce": "SOv02 (14/11/2026) : Intro : plus de parasites sur le texte quand on change de page (sur console) ; Intro : une coupure de mot maladroite corrigée"
       },
@@ -2863,12 +3082,12 @@
     "format": "bps",
     "crc_source": "7222EBB3",
     "taille_source": 1048576,
-    "crc_sortie": "7921F08C",
+    "crc_sortie": "B40E31DC",
     "taille_sortie": 2097152,
-    "taille_patch": 124912
+    "taille_patch": 125420
    },
-   "revision": 2,
-   "date_maj": "15/11/2026"
+   "revision": 3,
+   "date_maj": "20/11/2026"
   },
   {
    "ordre": 21,
