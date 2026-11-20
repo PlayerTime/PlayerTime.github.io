@@ -584,8 +584,8 @@
    "rom_attendue": "Lunar - The Silver Star (Japan) - piste 01",
    "nom_sortie": "Lunar - The Silver Star (FR) (Track 01).bin",
    "format": "bps",
-   "version": "LUNv07",
-   "date_version": "19/11/2026",
+   "version": "LUNv08",
+   "date_version": "20/11/2026",
    "id": "lunar-the-silver-star",
    "notes": [
     {
@@ -595,13 +595,13 @@
        "puce": "Tous les dialogues des villes, donjons et personnages"
       },
       {
-       "puce": "L'introduction"
+       "puce": "L'introduction, l'écran titre et l'écran d'accueil"
       },
       {
-       "puce": "Les menus, le statut, les sorts et les objets"
+       "puce": "Les menus, le statut, les sorts, les objets et les monstres"
       },
       {
-       "puce": "Les combats et les sous-titres des scènes parlées"
+       "puce": "Les combats, les sous-titres des scènes parlées, le blackjack"
       },
       {
        "puce": "Noms japonais d'origine conservés (Arès, Naru, Galeon...)"
@@ -612,10 +612,7 @@
      "titre": "Pas encore traduit",
      "blocs": [
       {
-       "puce": "Noms des monstres"
-      },
-      {
-       "puce": "Écran titre et générique"
+       "puce": "Générique de fin"
       },
       {
        "texte": "Le patch s'applique à la piste 01 du disque japonais avec l'outil fourni (patch_cd.py). Il faut un Mega CD japonais ou un émulateur réglé en Japon."
@@ -639,6 +636,9 @@
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "LUNv08 (20/11/2026) : Écran titre et écran d'accueil en français ; Noms des monstres traduits ; Menu de terrain : noms et états en lettres latines ; Blackjack du casino et machine volante traduits ; Sous-titres de la première scène parlée corrigés ; Lettres m et w plus lisibles dans les dialogues"
+      },
       {
        "puce": "LUNv07 (19/11/2026) : Sous-titres des scènes parlées (portraits animés) en français ; Fichier des sous-titres modifiable pour retoucher les phrases"
       },
@@ -666,48 +666,60 @@
    "avancement": 60,
    "images": [
     {
-     "src": "images/lunar-the-silver-star/01_intro.png",
+     "src": "images/lunar-the-silver-star/01_titre_fr.png",
+     "legende": "L'écran titre : Lunar, l'Étoile d'argent"
+    },
+    {
+     "src": "images/lunar-the-silver-star/02_accueil.png",
+     "legende": "« Bienvenue dans le monde de LUNAR »"
+    },
+    {
+     "src": "images/lunar-the-silver-star/03_intro.png",
      "legende": "L'introduction : la stèle de Burg"
     },
     {
-     "src": "images/lunar-the-silver-star/02_dyne.png",
+     "src": "images/lunar-the-silver-star/04_dyne.png",
      "legende": "Premier dialogue dans la forêt de Burg"
     },
     {
-     "src": "images/lunar-the-silver-star/03_garcon.png",
+     "src": "images/lunar-the-silver-star/05_garcon.png",
      "legende": "Le texte est deux fois plus dense qu'en japonais"
     },
     {
-     "src": "images/lunar-the-silver-star/04_scene_galeon.png",
+     "src": "images/lunar-the-silver-star/06_scene_galeon.png",
      "legende": "Scène parlée : sous-titres dessinés en français"
     },
     {
-     "src": "images/lunar-the-silver-star/05_scene_luna.png",
+     "src": "images/lunar-the-silver-star/07_scene_luna.png",
      "legende": "Luna, au début de l'aventure"
     },
     {
-     "src": "images/lunar-the-silver-star/06_ares.png",
+     "src": "images/lunar-the-silver-star/08_ares.png",
      "legende": "Arès, le héros"
     },
     {
-     "src": "images/lunar-the-silver-star/07_menu.png",
+     "src": "images/lunar-the-silver-star/09_menu.png",
      "legende": "Le menu en jeu"
     },
     {
-     "src": "images/lunar-the-silver-star/08_objets.png",
+     "src": "images/lunar-the-silver-star/10_objets.png",
      "legende": "Les objets"
     },
     {
-     "src": "images/lunar-the-silver-star/09_statut.png",
+     "src": "images/lunar-the-silver-star/11_statut.png",
      "legende": "L'écran de statut"
     },
     {
-     "src": "images/lunar-the-silver-star/10_debug_titre.png",
+     "src": "images/lunar-the-silver-star/12_debug_titre.png",
      "legende": "Bonus : mode débogage activé sur l'écran titre (A + START)"
     },
     {
-     "src": "images/lunar-the-silver-star/11_debug_menu.png",
+     "src": "images/lunar-the-silver-star/13_debug_menu.png",
      "legende": "Le menu de débogage caché, en français"
+    },
+    {
+     "src": "images/lunar-the-silver-star/14_menu_ares.png",
+     "legende": "Le menu de terrain : noms en lettres latines"
     }
    ],
    "patch": {
@@ -715,11 +727,11 @@
     "format": "bps",
     "crc_source": "90AA9EEF",
     "taille_source": 32989152,
-    "crc_sortie": "6687FAF7",
+    "crc_sortie": "E91B5E76",
     "taille_sortie": 32989152,
-    "taille_patch": 1673119
+    "taille_patch": 1705291
    },
-   "revision": 3,
+   "revision": 4,
    "date_maj": "20/11/2026"
   },
   {
@@ -1624,8 +1636,8 @@
    "rom_attendue": "Phantasy Star II (USA, Europe) (Rev A)",
    "nom_sortie": "Phantasy Star II (FR).bin",
    "format": "bps",
-   "version": "PS2v12",
-   "date_version": "06/11/2026",
+   "version": "PS2v16",
+   "date_version": "20/11/2026",
    "id": "phantasy-star-2",
    "notes": [
     {
@@ -1673,6 +1685,9 @@
        "puce": "Dans les magasins, un cadre détaille l'objet choisi : nom complet traduit du japonais, attaque, défense, particularités et qui peut l'équiper parmi les personnages déjà rencontrés."
       },
       {
+       "puce": "Un bestiaire dans le menu : les monstres déjà vaincus, avec leur image animée et leurs statistiques."
+      },
+      {
        "puce": "Une trentaine de bugs du jeu d'origine corrigés (calcul des dégâts, techniques, collisions...)."
       }
      ]
@@ -1680,6 +1695,18 @@
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "PS2v16 (20/11/2026) : Bestiaire : type du monstre (biomonstre ou robot), sa technique et sa fréquence, facilité de fuite"
+      },
+      {
+       "puce": "PS2v15 (20/11/2026) : Bestiaire dans le menu : monstres vaincus, image animée, PV, attaque, défense, agilité, EXP et mésetas. Enregistré dans la sauvegarde"
+      },
+      {
+       "puce": "PS2v14 (20/11/2026) : Mode debug : combats normaux (victoire au premier coup retirée)"
+      },
+      {
+       "puce": "PS2v13 (20/11/2026) : Mode debug pour les tests : A + START sur l'écran titre, puis traverser les murs, argent et soins, victoire au premier coup"
+      },
       {
        "puce": "PS2v12 (06/11/2026) : Nouvelle partie : choix de la vitesse de course avec B (x2 ou x4), enregistré dans la sauvegarde"
       },
@@ -1764,6 +1791,10 @@
     {
      "src": "images/phantasy-star-2/11_option_course.png",
      "legende": "Nouvelle partie : vitesse de course avec B, x2 ou x4."
+    },
+    {
+     "src": "images/phantasy-star-2/12_bestiaire.png",
+     "legende": "Le bestiaire : image du monstre, statistiques, type, technique et facilité de fuite."
     }
    ],
    "patch": {
@@ -1771,12 +1802,12 @@
     "format": "bps",
     "crc_source": "904FA047",
     "taille_source": 786432,
-    "crc_sortie": "4C445223",
+    "crc_sortie": "9935B20B",
     "taille_sortie": 1048576,
-    "taille_patch": 89695
+    "taille_patch": 103894
    },
-   "revision": 2,
-   "date_maj": "06/11/2026"
+   "revision": 3,
+   "date_maj": "20/11/2026"
   },
   {
    "ordre": 20,
@@ -2794,7 +2825,7 @@
    "rom_attendue": "Wonder Boy V - Monster World III (Japan)",
    "nom_sortie": "Wonder Boy V - Monster World III (FR).bin",
    "format": "bps",
-   "version": "MW3v15",
+   "version": "MW3v17",
    "date_version": "18/11/2026",
    "id": "wonder-boy-v-monster-world-iii",
    "notes": [
@@ -2833,6 +2864,12 @@
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "MW3v17 (20/11/2026) : Panneaux du décor en français : « GITE » pour l'auberge, « SORTIE » à la place de « EXIT »"
+      },
+      {
+       "puce": "MW3v16 (20/11/2026) : Traduction des messages de l'ocarina (ils s'affichaient en caractères incohérents)"
+      },
       {
        "puce": "MW3v15 (18/11/2026) : Mode debug : on peut quitter la caméra libre par le menu pause (START)"
       },
@@ -2949,12 +2986,12 @@
     "format": "bps",
     "crc_source": "45A50F96",
     "taille_source": 655360,
-    "crc_sortie": "F36DF5AC",
+    "crc_sortie": "6DB94D54",
     "taille_sortie": 1048576,
-    "taille_patch": 46027
+    "taille_patch": 48158
    },
-   "revision": 2,
-   "date_maj": "18/11/2026"
+   "revision": 3,
+   "date_maj": "20/11/2026"
   },
   {
    "ordre": 21,
@@ -3101,8 +3138,8 @@
    "rom_attendue": "Phantasy Star III - Generations of Doom (USA, Europe)",
    "nom_sortie": "Phantasy Star III (FR).bin",
    "format": "bps",
-   "version": "PS3v04",
-   "date_version": "01/11/2026",
+   "version": "PS3v06",
+   "date_version": "20/11/2026",
    "id": "phantasy-star-3",
    "notes": [
     {
@@ -3151,12 +3188,24 @@
       },
       {
        "puce": "Version compatible avec toutes les Mega Drive (japonaise, américaine, européenne, Mini, Mega SG)."
+      },
+      {
+       "puce": "Mode debug caché ajouté (A + START sur l'écran titre) : mésetas infinies, victoire immédiate, passe-muraille."
+      },
+      {
+       "puce": "Bestiaire (START sur la carte) : image, statistiques, technique et résistances de chaque monstre vaincu."
       }
      ]
     },
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "PS3v06 (20/11/2026) : Corrige un plantage à chaque montée de niveau (présent depuis la PS3v02) ; Nouveau bestiaire : START sur la carte affiche les monstres vaincus avec leur image, leurs statistiques, leur technique et leurs résistances ; Sur la carte, START n'est plus la pause (elle reste disponible en combat) ; La ROM fait maintenant 2 Mo"
+      },
+      {
+       "puce": "PS3v05 (20/11/2026) : Mode debug : maintenir A + START sur l'écran titre (« DEBUGMODE ON ») ; En mode debug : mésetas infinies, victoire immédiate avec START en combat, traverser les murs en maintenant B ; Sans le mode debug, le jeu est inchangé"
+      },
       {
        "puce": "PS3v04 (01/11/2026) : Corrige le plantage en ouvrant le menu Objets (par exemple après avoir obtenu le couteau) ; Un texte trop long pour sa fenêtre est désormais coupé au lieu de faire planter le jeu ; Titres des sous-menus affichés en entier (« Techn. » au lieu de « Techns ») ; Libellés manquants rétablis dans les écrans État et Équip. ; « Quoi? » et « SUIV » traduits"
       },
@@ -3205,6 +3254,10 @@
     {
      "src": "images/phantasy-star-3/08_generique.png",
      "legende": "Le générique, en français lui aussi."
+    },
+    {
+     "src": "images/phantasy-star-3/09_bestiaire.png",
+     "legende": "Le bestiaire (START sur la carte) : image, statistiques et résistances de chaque monstre vaincu."
     }
    ],
    "patch": {
@@ -3212,12 +3265,12 @@
     "format": "bps",
     "crc_source": "C6B42B0F",
     "taille_source": 786432,
-    "crc_sortie": "833DDA0A",
-    "taille_sortie": 1048576,
-    "taille_patch": 145589
+    "crc_sortie": "C97491FB",
+    "taille_sortie": 2097152,
+    "taille_patch": 435622
    },
-   "revision": 1,
-   "date_maj": "06/11/2026"
+   "revision": 2,
+   "date_maj": "20/11/2026"
   },
   {
    "ordre": 22,
