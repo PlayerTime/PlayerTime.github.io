@@ -518,6 +518,7 @@
      ]
     }
    ],
+   "avancement": 90,
    "images": [
     {
      "src": "images/buck-rogers-countdown-to-doomsday/01_titre.png",
@@ -991,7 +992,7 @@
    "titre": "Super Hydlide",
    "sous_titre": "Traduction française",
    "plateforme": "Mega Drive",
-   "statut": "Version de test",
+   "statut": "En cours",
    "resume": "Le RPG d'action de T&E Soft entièrement traduit du japonais, avec un jeu plus rapide et plus fluide, un bestiaire, un sort rapide sur le bouton C et quatre nouvelles classes de héros.",
    "couleur": "#3a6ea5",
    "rom_attendue": "Super Hydlide (Japan)",
@@ -1131,6 +1132,7 @@
      ]
     }
    ],
+   "avancement": 90,
    "images": [
     {
      "src": "images/super-hydlide/01_titre.png",
@@ -1930,7 +1932,7 @@
      ]
     }
    ],
-   "avancement": 90,
+   "avancement": 92,
    "images": [
     {
      "src": "images/phantasy-star-2/01_titre.png",
@@ -2116,7 +2118,7 @@
      ]
     }
    ],
-   "avancement": 90,
+   "avancement": 92,
    "images": [
     {
      "src": "images/rent-a-hero/01_titre.png",
@@ -3405,7 +3407,7 @@
      ]
     }
    ],
-   "avancement": 90,
+   "avancement": 93,
    "images": [
     {
      "src": "images/phantasy-star-3/01_titre.png",
@@ -4190,6 +4192,7 @@
      ]
     }
    ],
+   "avancement": 88,
    "images": [
     {
      "src": "images/alisia-dragoon/01_final_01_titre.png",
@@ -4648,6 +4651,7 @@
      ]
     }
    ],
+   "avancement": 100,
    "images": [
     {
      "src": "images/marcoz-alex-kidd-in-miracle-world-extended-edition/01_titre.png",
@@ -4709,6 +4713,7 @@
      ]
     }
    ],
+   "avancement": 100,
    "images": [
     {
      "src": "images/marcoz-mickey-mouse-land-of-illusion/01_titre.png",
@@ -4828,6 +4833,7 @@
      ]
     }
    ],
+   "avancement": 100,
    "images": [
     {
      "src": "images/marcoz-mickey-mouse-legend-of-illusion/01_intro.png",
@@ -4893,6 +4899,7 @@
      ]
     }
    ],
+   "avancement": 100,
    "images": [
     {
      "src": "images/marcoz-mickey-s-ultimate-challenge/01_titre.png",
@@ -4984,6 +4991,7 @@
      ]
     }
    ],
+   "avancement": 100,
    "images": [
     {
      "src": "images/marcoz-road-rash/01_titre.png",
