@@ -2891,8 +2891,8 @@
    "rom_attendue": "Twinkle Tale (Japan)",
    "nom_sortie": "Twinkle Tale (FR).bin",
    "format": "bps",
-   "version": "TTv04",
-   "date_version": "20/11/2026",
+   "version": "TTv05",
+   "date_version": "21/11/2026",
    "id": "twinkle-tale",
    "notes": [
     {
@@ -2931,6 +2931,12 @@
       },
       {
        "puce": "Le sélecteur de niveau d'origine marche toujours : Haut + Gauche + A + C puis START pendant le livre."
+      },
+      {
+       "puce": "Couleurs améliorées (travail de Pyron) au choix au démarrage, juste après les logos."
+      },
+      {
+       "puce": "Manette 6 boutons : option « Visée fixe (XYZ) » (patch de support 6 boutons trouvé sur Romhacking.net)."
       }
      ]
     },
@@ -2945,6 +2951,9 @@
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "TTv05 (21/11/2026) : Au démarrage, après les logos : choix des couleurs « D'origine » ou « Améliorées » (couleurs de Pyron, plus vives) ; Manette 6 boutons : nouvelle option « Visée fixe (XYZ) » dans les options, pour garder la direction de Saria avec X, Y ou Z"
+      },
       {
        "puce": "TTv04 (20/11/2026) : Nouveau code du mode debug : sur l'écran titre, maintenir A et appuyer sur START"
       },
@@ -2992,12 +3001,12 @@
     "format": "bps",
     "crc_source": "D757F924",
     "taille_source": 1048576,
-    "crc_sortie": "296DE7BF",
+    "crc_sortie": "C0964591",
     "taille_sortie": 2097152,
-    "taille_patch": 38160
+    "taille_patch": 41343
    },
-   "revision": 2,
-   "date_maj": "20/11/2026"
+   "revision": 3,
+   "date_maj": "21/11/2026"
   },
   {
    "ordre": 20,
