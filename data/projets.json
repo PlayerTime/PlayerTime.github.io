@@ -986,6 +986,190 @@
    "date_maj": "06/11/2026"
   },
   {
+   "ordre": 10,
+   "categorie": "Traductions et améliorations",
+   "titre": "Super Hydlide",
+   "sous_titre": "Traduction française",
+   "plateforme": "Mega Drive",
+   "statut": "Version de test",
+   "resume": "Le RPG d'action de T&E Soft entièrement traduit du japonais, avec un jeu plus rapide et plus fluide, un bestiaire, un sort rapide sur le bouton C et quatre nouvelles classes de héros.",
+   "couleur": "#3a6ea5",
+   "rom_attendue": "Super Hydlide (Japan)",
+   "nom_sortie": "Super Hydlide (FR).bin",
+   "format": "bps",
+   "version": "SHv29",
+   "date_version": "21/11/2026",
+   "id": "super-hydlide",
+   "notes": [
+    {
+     "titre": "Ce qui est traduit",
+     "blocs": [
+      {
+       "puce": "Tous les menus, messages, objets, monstres, sorts et dialogues, traduits depuis la version japonaise."
+      },
+      {
+       "puce": "L'intro, la fin du jeu, l'écran titre et les titres de la salle de musique."
+      },
+      {
+       "puce": "Une police dessinée pour la traduction, avec tous les accents."
+      },
+      {
+       "puce": "Version world : démarre sur les Mega Drive japonaise, américaine et européenne. Sauvegarde sur pile reconnue."
+      }
+     ]
+    },
+    {
+     "titre": "Ce qui est amélioré",
+     "blocs": [
+      {
+       "puce": "Changements d'écran rapides et déplacement fluide des personnages."
+      },
+      {
+       "puce": "Menus par-dessus la carte, panneau à 6 jauges (dont Cœur et Charge), effet et poids des objets en boutique."
+      },
+      {
+       "puce": "START ouvre le menu ; C lance le sort de son choix."
+      },
+      {
+       "puce": "Un bestiaire des monstres battus, un mode facile et 4 nouvelles classes : Écuyer, Camelot, Sorcier et Élu."
+      },
+      {
+       "puce": "Un mode debug caché : maintenir A et appuyer sur START à l'écran titre."
+      }
+     ]
+    },
+    {
+     "titre": "Historique des versions",
+     "blocs": [
+      {
+       "puce": "SHv29 (21/11/2026) : Nouvelle police plus lisible, accents bien placés ; Les milliers s'écrivent à la française : 1.500"
+      },
+      {
+       "puce": "SHv28 (20/11/2026) : Textes qui touchaient ou dépassaient le cadre corrigés (dialogues, Manoir du Mage, réveil à l'auberge)"
+      },
+      {
+       "puce": "SHv27 (20/11/2026) : Boutique : case du bas allégée"
+      },
+      {
+       "puce": "SHv26 (20/11/2026) : Boutique : le poids de l'objet s'affiche à côté de « Charge »"
+      },
+      {
+       "puce": "SHv25 (20/11/2026) : Titres de la salle de musique traduits"
+      },
+      {
+       "puce": "SHv24 (20/11/2026) : Description de chaque classe à la création du héros"
+      },
+      {
+       "puce": "SHv23 (20/11/2026) : Fiche du héros : « 30/30 » de nouveau affiché avec la barre"
+      },
+      {
+       "puce": "SHv22 (20/11/2026) : Chaque nouvelle classe a sa propre magie et ses propres prix au Manoir du Mage"
+      },
+      {
+       "puce": "SHv21 (20/11/2026) : START ouvre le menu, C lance le sort choisi ; 4 nouvelles classes : Écuyer, Camelot, Sorcier et Élu"
+      },
+      {
+       "puce": "SHv20 (20/11/2026) : Bestiaire : un monstre n'est décrit qu'une fois battu"
+      },
+      {
+       "puce": "SHv19 (20/11/2026) : Nouveau : bestiaire dans le menu, avec sprite, stats et butin"
+      },
+      {
+       "puce": "SHv18 (20/11/2026) : Corrections d'affichage en sortant de l'auberge et au premier pas après un changement d'écran"
+      },
+      {
+       "puce": "SHv17 (20/11/2026) : Bords de l'écran propres après un glissement"
+      },
+      {
+       "puce": "SHv16 (20/11/2026) : Inventaire plus aéré ; écran « Fin » en français"
+      },
+      {
+       "puce": "SHv15 (20/11/2026) : Intro et fin du jeu traduites"
+      },
+      {
+       "puce": "SHv14 (20/11/2026) : Listes des boutiques plus aérées"
+      },
+      {
+       "puce": "SHv13 (20/11/2026) : Glissement d'un écran à l'autre 2 fois plus rapide"
+      },
+      {
+       "puce": "SHv12 (20/11/2026) : Le héros suit exactement le décor pendant le glissement"
+      },
+      {
+       "puce": "SHv11 (20/11/2026) : Correction : héros invisible en lançant une partie"
+      },
+      {
+       "puce": "SHv10 (20/11/2026) : Le Moine devient « Abbé » au niveau 5"
+      },
+      {
+       "puce": "SHv09 (20/11/2026) : Le mode facile est expliqué lors du choix"
+      },
+      {
+       "puce": "SHv08 (20/11/2026) : Nouveau : mode facile (Cœur plus indulgent)"
+      },
+      {
+       "puce": "SHv07 (20/11/2026) : Déplacement fluide des personnages ; La case STATUT prévient quand on tue un gentil monstre"
+      },
+      {
+       "puce": "SHv06 (20/11/2026) : Changement de zone presque instantané"
+      },
+      {
+       "puce": "SHv05 (20/11/2026) : Changement d'écran 2 fois plus rapide"
+      },
+      {
+       "puce": "SHv04 (20/11/2026) : Menus par-dessus la carte ; poids et effet des objets affichés"
+      },
+      {
+       "puce": "SHv03 (20/11/2026) : Panneau à 6 jauges, avec Cœur et Charge"
+      },
+      {
+       "puce": "SHv02 (20/11/2026) : Mode debug caché (A + START à l'écran titre)"
+      },
+      {
+       "puce": "SHv01 (20/11/2026) : Première version française complète"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/super-hydlide/01_titre.png",
+     "legende": "L'écran titre en français."
+    },
+    {
+     "src": "images/super-hydlide/02_choix_classe.png",
+     "legende": "Création du héros : chaque classe est décrite (ici le Sorcier, une des 4 nouvelles classes)."
+    },
+    {
+     "src": "images/super-hydlide/03_boutique.png",
+     "legende": "Boutique : effet sur la Défense et poids de l'objet affichés sur le panneau."
+    },
+    {
+     "src": "images/super-hydlide/04_fiche_heros.png",
+     "legende": "La fiche du héros, toutes les stats en français."
+    },
+    {
+     "src": "images/super-hydlide/05_bestiaire.png",
+     "legende": "Le bestiaire : sprite, stats et butin de chaque monstre battu."
+    },
+    {
+     "src": "images/super-hydlide/06_auberge.png",
+     "legende": "Une nuit à l'auberge."
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/super-hydlide.bps",
+    "format": "bps",
+    "crc_source": "599BE386",
+    "taille_source": 524288,
+    "crc_sortie": "8D87ED8B",
+    "taille_sortie": 1048576,
+    "taille_patch": 150857
+   },
+   "revision": 1,
+   "date_maj": "21/11/2026"
+  },
+  {
    "ordre": 11,
    "categorie": "Traductions et améliorations",
    "titre": "Ristar - The Shooting Star (version japonaise)",
@@ -3942,6 +4126,27 @@
    },
    "revision": 2,
    "date_maj": "01/11/2026"
+  },
+  {
+   "ordre": 30,
+   "categorie": "Traductions et améliorations",
+   "titre": "Alisia Dragoon",
+   "sous_titre": "Traduction française",
+   "plateforme": "Mega Drive",
+   "statut": "Version de test",
+   "resume": "Traduction française d'Alisia Dragoon faite depuis la version japonaise : la prophétie de l'introduction, les scènes d'Ornah, les menus, la barre d'état, le classement final et le générique. ROM « world » qui démarre sur toutes les Mega Drive.",
+   "couleur": "#c0302a",
+   "rom_attendue": "Alisia Dragoon (Japan)",
+   "nom_sortie": "Alisia Dragoon (FR).bin",
+   "format": "bps",
+   "version": "ADv03",
+   "date_version": "21/11/2026",
+   "id": "alisia-dragoon",
+   "notes": [],
+   "images": [],
+   "patch": null,
+   "revision": 0,
+   "date_maj": ""
   },
   {
    "ordre": 30,
