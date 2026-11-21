@@ -86,12 +86,12 @@ async function charger() {
   }
   Stats.init(DONNEES.compteur);
   if (lienDiscord()) $('#zone-don').append(boutonDiscord('Rejoindre le Discord'), ' ');
-  if (lienDon()) {
-    $('#zone-don').append(boutonDon('Faire un don à Player Time'));
-    const flottant = boutonDon('Faire un don');
-    flottant.classList.add('don-flottant');
-    document.body.append(flottant);
-  }
+  if (lienDon()) $('#zone-don').append(boutonDon('Faire un don à Player Time'));
+  // boutons qui suivent l'écran en bas à droite : Discord au-dessus, don en dessous
+  const flottants = el('div', { class: 'boutons-flottants' });
+  if (lienDiscord()) flottants.append(boutonDiscord('Discord'));
+  if (lienDon()) flottants.append(boutonDon('Faire un don'));
+  if (flottants.children.length) document.body.append(flottants);
   dessinerListe();
   router();
   if (Stats.actif()) {
@@ -140,7 +140,7 @@ function vignette(p) {
 }
 
 function carte(p) {
-  return el('li', { 'data-plateforme': p.plateforme || '', 'data-lettre': lettreDe(p.titre) },
+  return el('li', { 'data-plateforme': p.plateforme || '', 'data-lettre': lettreDe(p.titre), 'data-id': p.id },
     el('a', { class: 'fenetre carte-jeu', href: BASE + 'jeu/' + p.id + '/' },
       vignette(p),
       el('div', { class: 'carte-corps' },
@@ -163,10 +163,15 @@ function dessinerListe() {
   let i = 0;
   for (const [nom, liste] of groupes) {
     const id = 'groupe-' + (i++);
-    zone.append(el('section', { 'aria-labelledby': id },
-      el('h2', { id, class: 'titre-section', text: nom }),
-      el('ul', { class: 'grille' }, liste.map(carte))));
+    const ul = el('ul', { class: 'grille' }, liste.map(carte));
+    ul.querySelectorAll('li[data-plateforme]').forEach(li => { li._maison = ul; });
+    zone.append(el('section', { 'aria-labelledby': id, class: 'groupe-categorie' },
+      el('h2', { id, class: 'titre-section', text: nom }), ul));
   }
+  // vue « récents » : une seule liste, du plus récemment ajouté ou mis à jour au plus ancien
+  zone.append(el('section', { 'aria-labelledby': 'groupe-recents', class: 'groupe-recents', hidden: '' },
+    el('h2', { id: 'groupe-recents', class: 'titre-section', text: 'Derniers ajouts et mises à jour' }),
+    el('ul', { class: 'grille', id: 'liste-recents' })));
   $('#liste-vide').hidden = DONNEES.projets.length > 0;
   $('#liste-vide').textContent = 'Aucun projet pour le moment.';
   ongletsConsoles(zone);
@@ -182,6 +187,9 @@ const ICONES = {
   'Windows': '<svg viewBox="0 0 32 32" shape-rendering="crispEdges"><path fill="#1b1b22" d="M3 5h26v18H3z"/><path fill="#1d2f8f" d="M5 7h22v14H5z"/><path fill="#e8c46a" d="M8 10h7v5H8z"/><path fill="#c0392b" d="M17 10h7v5h-7z"/><path fill="#f4f2ea" d="M8 17h16v2H8z"/><path fill="#555566" d="M13 23h6v3h-6zM9 26h14v2H9z"/></svg>',
   'Toutes': '<svg viewBox="0 0 32 32" shape-rendering="crispEdges"><path fill="#e8c46a" d="M4 4h10v10H4zM18 4h10v10H18zM4 18h10v10H4zM18 18h10v10H18z"/><path fill="#1d2f8f" d="M6 6h6v6H6zM20 6h6v6h-6zM6 20h6v6H6zM20 20h6v6h-6z"/></svg>',
 };
+/* date de dernier ajout ou de dernière mise à jour d'un jeu, pour le tri « Récents » (jj/mm/aaaa -> aaaammjj) */
+const cleDate = d => { const m = /^(\d{2})\/(\d{2})\/(\d{4})$/.exec(d || ''); return m ? m[3] + m[2] + m[1] : ''; };
+const dateRecente = p => [cleDate(p.date_maj), cleDate(p.date_version)].sort().pop() || '';
 const sansAccent = t => (t || '').normalize('NFD').replace(/[̀-ͯ]/g, '');
 const lettreDe = titre => {
   const c = sansAccent(titre).trim().charAt(0).toUpperCase();
@@ -197,16 +205,39 @@ function iconeConsole(nom) {
 
 function ongletsConsoles(zone) {
   const consoles = [...new Set(DONNEES.projets.map(p => p.plateforme).filter(Boolean))];
-  let choix = { console: 'Toutes', lettre: 'Tout' };
+  let choix = { console: 'Toutes', lettre: 'Tout', tri: 'categorie' };
   try { choix = Object.assign(choix, JSON.parse(sessionStorage.getItem('filtre') || '{}')); } catch (e) { /* rien */ }
   if (choix.console !== 'Toutes' && !consoles.includes(choix.console)) choix.console = 'Toutes';
 
   const tuiles = el('div', { class: 'consoles', role: 'group', 'aria-label': 'Choisir une console' });
   const lettres = el('div', { class: 'alphabet', role: 'group', 'aria-label': 'Choisir une lettre' });
   const resultat = el('p', { class: 'resultat', 'aria-live': 'polite' });
+  const tri = el('div', { class: 'tri', role: 'group', 'aria-label': 'Trier les jeux' },
+    el('span', { class: 'tri-titre', text: 'Trier :' }),
+    el('button', { type: 'button', class: 'touche-tri', 'data-tri': 'categorie', onclick: () => { choix.tri = 'categorie'; appliquer(); } }, 'Par catégorie'),
+    el('button', { type: 'button', class: 'touche-tri', 'data-tri': 'recents', onclick: () => { choix.tri = 'recents'; appliquer(); } }, 'Ajouts et mises à jour récents'));
+  const ranger = () => {
+    // les cartes sont déplacées (pas recopiées) entre les listes par catégorie et la liste « récents »
+    const toutes = [...zone.querySelectorAll('li[data-plateforme]')];
+    const recents = zone.querySelector('#liste-recents');
+    if (choix.tri === 'recents') {
+      const date = li => dateRecente(DONNEES.projets.find(p => p.id === li.dataset.id) || {});
+      toutes.sort((a, b) => date(b).localeCompare(date(a)) || a.textContent.localeCompare(b.textContent, 'fr'));
+      toutes.forEach(li => recents.append(li));
+    } else {
+      toutes.forEach(li => li._maison && li._maison.append(li));
+      zone.querySelectorAll('.groupe-categorie ul').forEach(ul => {
+        [...ul.children].sort((a, b) => (+a.dataset.rang) - (+b.dataset.rang)).forEach(li => ul.append(li));
+      });
+    }
+    zone.querySelector('.groupe-recents').dataset.actif = choix.tri === 'recents' ? '1' : '';
+    zone.querySelectorAll('.groupe-categorie').forEach(sec => { sec.dataset.actif = choix.tri === 'recents' ? '' : '1'; });
+    tri.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b.dataset.tri === choix.tri ? 'true' : 'false'));
+  };
 
   const appliquer = () => {
     try { sessionStorage.setItem('filtre', JSON.stringify(choix)); } catch (e) { /* rien */ }
+    ranger();
     tuiles.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b.dataset.console === choix.console ? 'true' : 'false'));
     const dansConsole = p => choix.console === 'Toutes' || p.plateforme === choix.console;
     // lettres disponibles pour la console choisie
@@ -223,7 +254,7 @@ function ongletsConsoles(zone) {
                  (choix.lettre === 'Tout' || li.dataset.lettre === choix.lettre);
       li.hidden = !ok; if (ok) n++;
     });
-    zone.querySelectorAll('section').forEach(sec => { sec.hidden = !sec.querySelector('li[data-plateforme]:not([hidden])'); });
+    zone.querySelectorAll('section').forEach(sec => { sec.hidden = !sec.dataset.actif || !sec.querySelector('li[data-plateforme]:not([hidden])'); });
     const quoi = choix.console === 'Toutes' ? 'toutes consoles' : choix.console;
     resultat.textContent = `${n} jeu${n > 1 ? 'x' : ''} (${quoi}${choix.lettre !== 'Tout' ? ', lettre ' + choix.lettre : ''})`;
   };
@@ -241,7 +272,9 @@ function ongletsConsoles(zone) {
       'aria-label': l === 'Tout' ? 'Toutes les lettres' : l === '#' ? 'Chiffres et symboles' : 'Lettre ' + l,
       onclick: () => { choix.lettre = l; appliquer(); } }, l === 'Tout' ? 'Tout' : l));
   }
-  zone.prepend(el('div', { class: 'filtres' }, tuiles, lettres, resultat));
+  // rang d'origine de chaque carte, pour revenir à l'ordre « par catégorie »
+  zone.querySelectorAll('li[data-plateforme]').forEach((li, k) => { li.dataset.rang = k; });
+  zone.prepend(el('div', { class: 'filtres' }, tuiles, lettres, tri, resultat));
   appliquer();
 }
 
@@ -391,8 +424,27 @@ function panneau(p) {
     (() => { const e = encartDon('Ce patch est gratuit. Si tu veux soutenir mon travail, tu peux faire un don.'); if (e) e.classList.add('encart-don-fixe'); return e; })(),
     el('p', { class: 'meta-patch', text:
       `Patch ${p.date_maj ? 'du ' + p.date_maj : ''}${p.revision ? ', révision ' + p.revision : ''}, ${ko(info.taille_patch)}. ` +
-      'Le patch se fait dans ton navigateur : ta ROM ne quitte pas ton ordinateur.' }));
+      'Le patch se fait dans ton navigateur : ta ROM ne quitte pas ton ordinateur.' }),
+    cd ? null : blocBps(p, info));
   return box;
+}
+
+/* ---------- Téléchargement du patch .bps, pour patcher soi-même ---------- */
+function blocBps(p, info) {
+  if (info.format !== 'bps') return null;
+  const nom = (p.nom_sortie || p.id).replace(/\.[^.]+$/, '') + '.bps';
+  return el('div', { class: 'bloc-bps' },
+    el('h3', { text: 'Ou télécharger le patch' }),
+    el('p', { text: 'Pour patcher toi-même avec Floating IPS (Flips), Beat, ou directement dans RetroArch, '
+      + 'MiSTer ou une cartouche flash qui accepte les patchs. Format BPS : il vérifie que ta ROM est la bonne.' }),
+    el('p', { class: 'attendue', text: `À appliquer sur : ${p.rom_attendue}` + (info.crc_source ? ` (CRC32 ${info.crc_source})` : '') + '.' }),
+    el('a', { class: 'bouton bouton-secondaire', href: info.fichier + '?r=' + p.revision, download: nom,
+      text: `Télécharger ${nom} (${ko(info.taille_patch)})`,
+      onclick: () => {
+        // compté avec les patchs faits en ligne : le compteur de la page reste le total des téléchargements
+        Stats.evenement(cheminCompteur(p), 'Patch BPS : ' + p.titre);
+        setTimeout(() => document.querySelectorAll(`.etiquette-compteur[data-id="${p.id}"]`).forEach(sp => remplirCompteur(sp, p)), 300);
+      } }));
 }
 
 /* ---------- Discord (lien_discord dans reglages_site.json) ---------- */

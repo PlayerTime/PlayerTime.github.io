@@ -230,12 +230,19 @@ dialog#visionneuse img { display: block; max-width: 100%; max-height: 78vh; marg
 .encart-don p { margin: 0 0 10px; color: var(--texte-doux); font-size: .95rem; }
 .telechargements .encart-don { align-self: stretch; }
 
-.don-flottant {
+/* boutons qui suivent l'écran : Discord au-dessus, don en dessous */
+.boutons-flottants {
   position: fixed; right: 16px; bottom: 16px; z-index: 20;
-  box-shadow: 0 4px 0 #8f2a3d, 0 6px 18px #0008;
+  display: flex; flex-direction: column; align-items: stretch; gap: 10px;
 }
-body { padding-bottom: 70px; }
-@media (max-width: 560px) { .don-flottant { right: 12px; bottom: 12px; padding: 10px 12px 11px; font-size: .95rem; } }
+.boutons-flottants .bouton { text-align: center; }
+.boutons-flottants .bouton-don { box-shadow: 0 4px 0 #8f2a3d, 0 6px 18px #0008; }
+.boutons-flottants .bouton-discord { box-shadow: 0 4px 0 #3a43a8, 0 6px 18px #0008; }
+body { padding-bottom: 120px; }
+@media (max-width: 560px) {
+  .boutons-flottants { right: 12px; bottom: 12px; gap: 8px; }
+  .boutons-flottants .bouton { padding: 10px 12px 11px; font-size: .95rem; }
+}
 
 .etiquette-version { color: var(--cadre); }
 
@@ -291,3 +298,19 @@ body { padding-bottom: 70px; }
   background: repeating-linear-gradient(90deg, var(--ok) 0 6px, transparent 6px 8px);
 }
 .jeu-tete .avancement { max-width: 420px; }
+
+/* ---------- Tri : par catégorie / récents ---------- */
+.tri { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 12px; }
+.tri-titre { font: 600 .95rem/1 var(--pixel); color: var(--texte-doux); }
+.touche-tri {
+  font: 600 .9rem/1 var(--pixel); padding: 9px 14px; min-height: 40px; cursor: pointer;
+  color: var(--texte); background: #0b1460; border: 2px solid #3c4aa0; border-radius: 3px;
+}
+.touche-tri:hover { border-color: var(--cadre); }
+.touche-tri[aria-pressed="true"] { background: var(--cadre); color: #1a1405; border-color: var(--cadre); }
+
+/* patch .bps à télécharger */
+.bloc-bps { margin-top: 22px; padding-top: 16px; border-top: 2px dashed #3c4aa0; }
+.bloc-bps h3 { font: 600 1.15rem/1.2 var(--pixel); color: var(--cadre); margin: 0 0 8px; }
+.bloc-bps p { margin: 0 0 10px; }
+.bouton-secondaire { background: #2b3a9e; color: var(--texte); box-shadow: 0 4px 0 #18226a; }
