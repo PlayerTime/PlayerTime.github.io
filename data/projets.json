@@ -4142,11 +4142,83 @@
    "version": "ADv03",
    "date_version": "21/11/2026",
    "id": "alisia-dragoon",
-   "notes": [],
-   "images": [],
-   "patch": null,
-   "revision": 0,
-   "date_maj": ""
+   "notes": [
+    {
+     "titre": "Ce qui est traduit",
+     "blocs": [
+      {
+       "texte": "Le texte vient de la version japonaise : la prophétie qui défile au début et les scènes où Ornah, le bras droit de Baldour, nargue Alisia."
+      },
+      {
+       "texte": "Tout ce qui était écrit en anglais dans le jeu est aussi en français."
+      },
+      {
+       "puce": "Nouvelle police française à empattements pour l'introduction et les scènes"
+      },
+      {
+       "puce": "Menus, options et barre d'état"
+      },
+      {
+       "puce": "Cartes NIVEAU, FINI !, CONTINUER"
+      },
+      {
+       "puce": "Classement final avec 20 rangs en français"
+      },
+      {
+       "puce": "Générique de fin traduit, et « FIN »"
+      },
+      {
+       "puce": "ROM « world » : Mega Drive japonaise, américaine, européenne, Mini et Mega SG"
+      },
+      {
+       "puce": "Bonus : mode debug caché (A + START sur le menu du titre) : invincibilité, choix du niveau et passage de zone avec la manette 2"
+      }
+     ]
+    },
+    {
+     "titre": "Historique des versions",
+     "blocs": [
+      {
+       "puce": "ADv03 (21/11/2026) : Mode debug : Alisia devient invincible"
+      },
+      {
+       "puce": "ADv02 (21/11/2026) : L'écran GAME OVER s'affiche de nouveau correctement ; « FIN » refait sans toucher aux lettres du GAME OVER ; Mode debug des développeurs : A + START sur le menu du titre (DEBUGMODE ON)"
+      },
+      {
+       "puce": "ADv01 (21/11/2026) : Première version complète, traduite depuis le japonais ; Introduction et scènes d'Ornah en français avec une police accentuée ; Menus, options, barre d'état, classement et générique en français ; Fonctionne sur toutes les Mega Drive (version world)"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/alisia-dragoon/01_final_01_titre.png",
+     "legende": "L'écran titre : « APPUYEZ SUR START »"
+    },
+    {
+     "src": "images/alisia-dragoon/02_final_02_intro.png",
+     "legende": "La prophétie de l'introduction, traduite du japonais"
+    },
+    {
+     "src": "images/alisia-dragoon/03_final_03_options.png",
+     "legende": "L'écran des options en français"
+    },
+    {
+     "src": "images/alisia-dragoon/04_final_04_jeu.png",
+     "legende": "En plein niveau : la barre d'état avec PV et NIV."
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/alisia-dragoon.bps",
+    "format": "bps",
+    "crc_source": "4D476722",
+    "taille_source": 1048576,
+    "crc_sortie": "4D9AAE79",
+    "taille_sortie": 2097152,
+    "taille_patch": 23962
+   },
+   "revision": 1,
+   "date_maj": "21/11/2026"
   },
   {
    "ordre": 30,
