@@ -267,10 +267,10 @@
    "patch": {
     "fichier": "patchs/shining-force-cd.patch",
     "format": "sfcd",
-    "taille_patch": 754267
+    "taille_patch": 760765
    },
-   "revision": 1,
-   "date_maj": "18/10/2026"
+   "revision": 2,
+   "date_maj": "22/11/2026"
   },
   {
    "ordre": 10,
