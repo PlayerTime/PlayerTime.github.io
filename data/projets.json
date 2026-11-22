@@ -249,7 +249,7 @@
      ]
     }
    ],
-   "avancement": 90,
+   "avancement": 92,
    "images": [
     {
      "src": "images/shining-force-cd/01_titre.png",
@@ -884,7 +884,7 @@
    "titre": "Ristar",
    "sous_titre": "Traduction française",
    "plateforme": "Mega Drive",
-   "statut": "Version de test",
+   "statut": "Terminée",
    "resume": "Ristar, la petite étoile de Sega, entièrement en français : histoire, menus, codes secrets, Sound Theater et cartons de début de monde redessinés.",
    "couleur": "#f0a020",
    "rom_attendue": "Ristar (USA, Europe)",
@@ -947,7 +947,7 @@
      ]
     }
    ],
-   "avancement": 90,
+   "avancement": 100,
    "images": [
     {
      "src": "images/ristar/01_carton_monde1.png",
@@ -1177,7 +1177,7 @@
    "titre": "Ristar - The Shooting Star (version japonaise)",
    "sous_titre": "Traduction française",
    "plateforme": "Mega Drive",
-   "statut": "Version de test",
+   "statut": "Terminée",
    "resume": "La version japonaise de Ristar, avec ses différences (planètes Neer, Leatow..., trésors nommés, fin et générique propres), entièrement en français.",
    "couleur": "#e07020",
    "rom_attendue": "Ristar - The Shooting Star (Japan)",
@@ -1243,7 +1243,7 @@
      ]
     }
    ],
-   "avancement": 90,
+   "avancement": 100,
    "images": [
     {
      "src": "images/ristar-japon/01_carton_monde1.png",
