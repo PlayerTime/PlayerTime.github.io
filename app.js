@@ -140,7 +140,7 @@ function vignette(p) {
 }
 
 function carte(p) {
-  return el('li', { 'data-plateforme': p.plateforme || '', 'data-lettre': lettreDe(p.titre), 'data-id': p.id },
+  return el('li', { 'data-plateforme': p.plateforme || '', 'data-lettre': lettreDe(p.titre), 'data-id': p.id, 'data-fini': estFini(p) ? '1' : '' },
     el('a', { class: 'fenetre carte-jeu', href: BASE + 'jeu/' + p.id + '/' },
       vignette(p),
       el('div', { class: 'carte-corps' },
@@ -189,6 +189,7 @@ const ICONES = {
 };
 /* date de dernier ajout ou de dernière mise à jour d'un jeu, pour le tri « Récents » (jj/mm/aaaa -> aaaammjj) */
 const cleDate = d => { const m = /^(\d{2})\/(\d{2})\/(\d{4})$/.exec(d || ''); return m ? m[3] + m[2] + m[1] : ''; };
+const estFini = p => typeof p.avancement === 'number' && p.avancement >= 100;
 const dateRecente = p => [cleDate(p.date_maj), cleDate(p.date_version)].sort().pop() || '';
 const sansAccent = t => (t || '').normalize('NFD').replace(/[̀-ͯ]/g, '');
 const lettreDe = titre => {
@@ -205,7 +206,7 @@ function iconeConsole(nom) {
 
 function ongletsConsoles(zone) {
   const consoles = [...new Set(DONNEES.projets.map(p => p.plateforme).filter(Boolean))];
-  let choix = { console: 'Toutes', lettre: 'Tout', tri: 'categorie' };
+  let choix = { console: 'Toutes', lettre: 'Tout', tri: 'categorie', fini: false };
   try { choix = Object.assign(choix, JSON.parse(sessionStorage.getItem('filtre') || '{}')); } catch (e) { /* rien */ }
   if (choix.console !== 'Toutes' && !consoles.includes(choix.console)) choix.console = 'Toutes';
 
@@ -216,6 +217,11 @@ function ongletsConsoles(zone) {
     el('span', { class: 'tri-titre', text: 'Trier :' }),
     el('button', { type: 'button', class: 'touche-tri', 'data-tri': 'categorie', onclick: () => { choix.tri = 'categorie'; appliquer(); } }, 'Par catégorie'),
     el('button', { type: 'button', class: 'touche-tri', 'data-tri': 'recents', onclick: () => { choix.tri = 'recents'; appliquer(); } }, 'Ajouts et mises à jour récents'));
+  // filtre « terminés » : seulement les jeux dont la barre d'avancement est à 100 %
+  const nbFinis = DONNEES.projets.filter(estFini).length;
+  const toucheFini = nbFinis ? el('button', { type: 'button', class: 'touche-tri touche-fini',
+    onclick: () => { choix.fini = !choix.fini; appliquer(); } }, `✔ Terminés à 100 % (${nbFinis})`) : null;
+  if (toucheFini) tri.append(el('span', { class: 'tri-separateur', 'aria-hidden': 'true' }), toucheFini);
   const ranger = () => {
     // les cartes sont déplacées (pas recopiées) entre les listes par catégorie et la liste « récents »
     const toutes = [...zone.querySelectorAll('li[data-plateforme]')];
@@ -239,7 +245,9 @@ function ongletsConsoles(zone) {
     try { sessionStorage.setItem('filtre', JSON.stringify(choix)); } catch (e) { /* rien */ }
     ranger();
     tuiles.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b.dataset.console === choix.console ? 'true' : 'false'));
-    const dansConsole = p => choix.console === 'Toutes' || p.plateforme === choix.console;
+    if (choix.fini && !nbFinis) choix.fini = false;
+    if (toucheFini) toucheFini.setAttribute('aria-pressed', choix.fini ? 'true' : 'false');
+    const dansConsole = p => (choix.console === 'Toutes' || p.plateforme === choix.console) && (!choix.fini || estFini(p));
     // lettres disponibles pour la console choisie
     const dispo = new Set(DONNEES.projets.filter(dansConsole).map(p => lettreDe(p.titre)));
     if (choix.lettre !== 'Tout' && !dispo.has(choix.lettre)) choix.lettre = 'Tout';
@@ -251,12 +259,13 @@ function ongletsConsoles(zone) {
     let n = 0;
     zone.querySelectorAll('li[data-plateforme]').forEach(li => {
       const ok = (choix.console === 'Toutes' || li.dataset.plateforme === choix.console) &&
-                 (choix.lettre === 'Tout' || li.dataset.lettre === choix.lettre);
+                 (choix.lettre === 'Tout' || li.dataset.lettre === choix.lettre) &&
+                 (!choix.fini || li.dataset.fini === '1');
       li.hidden = !ok; if (ok) n++;
     });
     zone.querySelectorAll('section').forEach(sec => { sec.hidden = !sec.dataset.actif || !sec.querySelector('li[data-plateforme]:not([hidden])'); });
     const quoi = choix.console === 'Toutes' ? 'toutes consoles' : choix.console;
-    resultat.textContent = `${n} jeu${n > 1 ? 'x' : ''} (${quoi}${choix.lettre !== 'Tout' ? ', lettre ' + choix.lettre : ''})`;
+    resultat.textContent = `${n} jeu${n > 1 ? 'x' : ''}${choix.fini ? ' terminé' + (n > 1 ? 's' : '') + ' à 100 %' : ''} (${quoi}${choix.lettre !== 'Tout' ? ', lettre ' + choix.lettre : ''})`;
   };
 
   for (const c of ['Toutes', ...consoles]) {

@@ -3020,7 +3020,7 @@
    "rom_attendue": "Wonder Boy V - Monster World III (Japan)",
    "nom_sortie": "Wonder Boy V - Monster World III (FR).bin",
    "format": "bps",
-   "version": "MW3v17",
+   "version": "MW3v18",
    "date_version": "18/11/2026",
    "id": "wonder-boy-v-monster-world-iii",
    "notes": [
@@ -3059,6 +3059,9 @@
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "MW3v18 (22/11/2026) : Panneau « GITE » nettoyé (petits points au-dessus des lettres)"
+      },
       {
        "puce": "MW3v17 (20/11/2026) : Panneaux du décor en français : « GITE » pour l'auberge, « SORTIE » à la place de « EXIT »"
       },
@@ -3181,12 +3184,12 @@
     "format": "bps",
     "crc_source": "45A50F96",
     "taille_source": 655360,
-    "crc_sortie": "6DB94D54",
+    "crc_sortie": "DB88C885",
     "taille_sortie": 1048576,
     "taille_patch": 48158
    },
-   "revision": 3,
-   "date_maj": "20/11/2026"
+   "revision": 4,
+   "date_maj": "22/11/2026"
   },
   {
    "ordre": 21,

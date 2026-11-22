@@ -314,3 +314,7 @@ body { padding-bottom: 120px; }
 .bloc-bps h3 { font: 600 1.15rem/1.2 var(--pixel); color: var(--cadre); margin: 0 0 8px; }
 .bloc-bps p { margin: 0 0 10px; }
 .bouton-secondaire { background: #2b3a9e; color: var(--texte); box-shadow: 0 4px 0 #18226a; }
+
+.tri-separateur { width: 2px; height: 26px; background: #3c4aa0; margin: 0 4px; }
+.touche-fini[aria-pressed="true"] { background: #4fbf6a; border-color: #4fbf6a; color: #0b2a12; }
+@media (max-width: 560px) { .tri-separateur { display: none; } }
