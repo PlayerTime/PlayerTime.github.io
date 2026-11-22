@@ -4403,6 +4403,95 @@
    "date_maj": "01/11/2026"
   },
   {
+   "ordre": 30,
+   "categorie": "Traductions et améliorations",
+   "titre": "Surging Aura",
+   "sous_titre": "Traduction française",
+   "plateforme": "Mega Drive",
+   "statut": "Version de test",
+   "resume": "Traduction française complète du jeu de rôle Surging Aura (Sega, 1995, dessins de Mutsumi Inomata), resté au Japon, faite depuis la version japonaise : histoire, dialogues, objets, sortilèges, menus et générique. Police accentuée de 30 lettres par ligne et ROM « world » qui démarre sur toutes les Mega Drive.",
+   "couleur": "#6a2fd0",
+   "rom_attendue": "Surging Aura (Japan)",
+   "nom_sortie": "Surging Aura (FR).bin",
+   "format": "bps",
+   "version": "SAv03",
+   "date_version": "22/11/2026",
+   "id": "surging-aura",
+   "notes": [
+    {
+     "titre": "Ce qui est traduit",
+     "blocs": [
+      {
+       "puce": "Tous les textes du jeu : histoire, dialogues, boutiques, auberges, objets et descriptions, sortilèges, lieux, monstres, combats"
+      },
+      {
+       "puce": "Police française 8x16 avec accents, 30 lettres par ligne"
+      },
+      {
+       "puce": "Écran titre, étiquettes des commandes, écran de statut (Niv, PV, PM)"
+      },
+      {
+       "puce": "Générique de fin, avec le crédit de la traduction"
+      },
+      {
+       "texte": "Version de test : merci de signaler sur le Discord tout texte qui dépasse d'une fenêtre ou toute faute."
+      }
+     ]
+    },
+    {
+     "titre": "Historique des versions",
+     "blocs": [
+      {
+       "puce": "SAv03 (22/11/2026) : Incantations des sortilèges écrites en lettres latines ; Noms des objets et des lieux identiques dans les menus et les dialogues ; Plus de point d'exclamation ou d'interrogation isolé en début de ligne"
+      },
+      {
+       "puce": "SAv02 (22/11/2026) : Écran de statut : PV et PM à la place de HP et MP ; PV / PM aussi dans tous les textes du jeu"
+      },
+      {
+       "puce": "SAv01 (22/11/2026) : Première version complète de la traduction française ; Démarre sur toutes les Mega Drive (japonaise, US, européenne, Mini, Mega SG) ; Écran titre, commandes et générique en français"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/surging-aura/01_titre.png",
+     "legende": "L'écran titre : « APPUYEZ SUR START »"
+    },
+    {
+     "src": "images/surging-aura/02_intro.png",
+     "legende": "L'introduction : le Grimoire des Ténèbres"
+    },
+    {
+     "src": "images/surging-aura/03_guerre_sainte.png",
+     "legende": "La Guerre sainte d'Azla et la défaite de Rufide"
+    },
+    {
+     "src": "images/surging-aura/04_pasfalda.png",
+     "legende": "Le royaume de Pasfalda fête ses 20 ans"
+    },
+    {
+     "src": "images/surging-aura/05_seira.png",
+     "legende": "Seira réveille le prince Muu"
+    },
+    {
+     "src": "images/surging-aura/06_statut.png",
+     "legende": "L'écran de statut en français : Niv, PV, PM"
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/surging-aura.bps",
+    "format": "bps",
+    "crc_source": "65AC1D2B",
+    "taille_source": 2097152,
+    "crc_sortie": "00C9C625",
+    "taille_sortie": 2097152,
+    "taille_patch": 122227
+   },
+   "revision": 1,
+   "date_maj": "22/11/2026"
+  },
+  {
    "ordre": 31,
    "categorie": "Traductions et améliorations",
    "titre": "Shining Force Gaiden : Final Conflict",
