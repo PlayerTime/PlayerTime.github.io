@@ -4453,6 +4453,7 @@
      ]
     }
    ],
+   "avancement": 89,
    "images": [
     {
      "src": "images/surging-aura/01_titre.png",
@@ -4497,7 +4498,7 @@
    "titre": "Shining Force Gaiden : Final Conflict",
    "sous_titre": "Traduction française et adaptation Mega Drive",
    "plateforme": "Mega Drive",
-   "statut": "Version de test",
+   "statut": "En cours",
    "resume": "Le dernier Shining Force de la Game Gear, sorti seulement au Japon, traduit en français et rejoué dans le moteur de Shining Force II sur Mega Drive. Version de test : le jeu se joue du début à la fin, certaines cartes et musiques sont encore provisoires.",
    "couleur": "#8a3fc4",
    "rom_attendue": "Shining Force II (USA)",
@@ -4668,6 +4669,7 @@
      ]
     }
    ],
+   "avancement": 15,
    "images": [
     {
      "src": "images/final-conflict/01_titre.png",
