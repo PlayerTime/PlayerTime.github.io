@@ -286,6 +286,9 @@
    "format": "bps",
    "version": "ASv19",
    "date_version": "20/11/2026",
+   "nouveautes": [
+    "La bulle HELP de l'étape de la jungle devient AIDE."
+   ],
    "id": "alien-soldier",
    "notes": [
     {
@@ -453,6 +456,10 @@
    "format": "bps",
    "version": "BRv03",
    "date_version": "20/11/2026",
+   "nouveautes": [
+    "Bonus : le mode debug caché des développeurs est débloqué (A + START sur l'écran titre)",
+    "Salle de debug : aller dans n'importe quelle zone, arène, trésors, expérience, sound test, visionneuses de graphismes"
+   ],
    "id": "buck-rogers-countdown-to-doomsday",
    "notes": [
     {
@@ -587,6 +594,14 @@
    "format": "bps",
    "version": "LUNv08",
    "date_version": "20/11/2026",
+   "nouveautes": [
+    "Écran titre et écran d'accueil en français",
+    "Noms des monstres traduits",
+    "Menu de terrain : noms et états en lettres latines",
+    "Blackjack du casino et machine volante traduits",
+    "Sous-titres de la première scène parlée corrigés",
+    "Lettres m et w plus lisibles dans les dialogues"
+   ],
    "id": "lunar-the-silver-star",
    "notes": [
     {
@@ -749,6 +764,14 @@
    "format": "jeu",
    "version": "Démo V05",
    "date_version": "15/11/2026",
+   "nouveautes": [
+    "Le jeu s'appelle maintenant Prismwing (il s'appelait Polywing)",
+    "Les trois niveaux de la démo ont été entièrement retravaillés",
+    "Nouveaux obstacles : tours et colonnes penchées, en l'air ou couchées, poutres inclinées ou qui tournent",
+    "Plus de tempête de sable pendant le combat contre le Ver des sables",
+    "Si un niveau se termine pendant une tempête, le décor et le ciel reviennent normalement",
+    "Le viseur ne passe plus sur le texte de l'écran de fin de niveau"
+   ],
    "id": "prismwing",
    "notes": [
     {
@@ -892,6 +915,10 @@
    "format": "bps",
    "version": "RISv07",
    "date_version": "06/11/2026",
+   "nouveautes": [
+    "Traduit : décompte des bonus en fin de monde (BONUS FIN DE MONDE, BONUS TRESOR, BONUS TECHNIQUE, BONUS SECRET, TOTAL).",
+    "Vérification complète des textes restés en anglais."
+   ],
    "id": "ristar",
    "notes": [
     {
@@ -1000,6 +1027,10 @@
    "format": "bps",
    "version": "SHv29",
    "date_version": "21/11/2026",
+   "nouveautes": [
+    "Nouvelle police plus lisible, accents bien placés.",
+    "Les milliers s'écrivent à la française : 1.500."
+   ],
    "id": "super-hydlide",
    "notes": [
     {
@@ -1185,6 +1216,9 @@
    "format": "bps",
    "version": "RISJv08",
    "date_version": "06/11/2026",
+   "nouveautes": [
+    "Écran titre : « the shooting star » traduit en « l'étoile filante » dans le lettrage d'origine."
+   ],
    "id": "ristar-japon",
    "notes": [
     {
@@ -1292,6 +1326,9 @@
    "format": "bps",
    "version": "LAN2v06",
    "date_version": "01/11/2026",
+   "nouveautes": [
+    "Police des dialogues retouchée (Q, i, j, t, majuscules accentuées)"
+   ],
    "id": "langrisser-2",
    "notes": [
     {
@@ -1447,6 +1484,9 @@
    "format": "bps",
    "version": "V10",
    "date_version": "25/10/2026",
+   "nouveautes": [
+    "La question de confirmation (Recommencer / Changer de Maison) n'est plus coupée : elle affiche « CONFIRMER ? »."
+   ],
    "id": "dune",
    "notes": [
     {
@@ -1581,6 +1621,10 @@
    "format": "bps",
    "version": "LGRv02",
    "date_version": "01/11/2026",
+   "nouveautes": [
+    "Nouveau logo « Langrisser » sur l'écran titre, centré dans son cadre",
+    "Écran de combat en français : bonus de grade et de terrain, niveau, hors de portée"
+   ],
    "id": "langrisser",
    "notes": [
     {
@@ -1686,6 +1730,10 @@
    "format": "bps",
    "version": "NADv06",
    "date_version": "25/10/2026",
+   "nouveautes": [
+    "Pendant l'intro, un texte français original défile sur la musique à la place des notes de musique.",
+    "Chaque ligne de ce texte s'efface proprement avant la suivante."
+   ],
    "id": "nadia",
    "notes": [
     {
@@ -1824,6 +1872,9 @@
    "format": "bps",
    "version": "PS2v16",
    "date_version": "20/11/2026",
+   "nouveautes": [
+    "Bestiaire : type du monstre (biomonstre ou robot), sa technique et sa fréquence, facilité de fuite."
+   ],
    "id": "phantasy-star-2",
    "notes": [
     {
@@ -2009,6 +2060,10 @@
    "format": "bps",
    "version": "V14",
    "date_version": "25/10/2026",
+   "nouveautes": [
+    "Messages d'objets en bon français : « Taro utilise : Disquette. », « Taro jette : ... », « Taro obtient : ... », « Taro lit : ... ».",
+    "Prix au magasin et client des missions mieux présentés."
+   ],
    "id": "rent-a-hero",
    "notes": [
     {
@@ -2167,6 +2222,9 @@
    "format": "bps",
    "version": "SFRv79",
    "date_version": "04/11/2026",
+   "nouveautes": [
+    "Début du jeu : plus de plantage (écran noir) quand Lowe s'en va."
+   ],
    "id": "shining-force-resurrection",
    "notes": [
     {
@@ -2571,8 +2629,11 @@
    "rom_attendue": "Shining in the Darkness (USA, Europe)",
    "nom_sortie": "Shining in the Darkness (FR).bin",
    "format": "bps",
-   "version": "SITDv22",
-   "date_version": "18/10/2026",
+   "version": "SITDv65",
+   "date_version": "23/11/2026",
+   "nouveautes": [
+    "Fin du générique traduite : REMERCIEMENTS, PRODUCTEUR EXÉCUTIF et CRÉÉ PAR CLIMAX."
+   ],
    "id": "shining-in-the-darkness",
    "notes": [
     {
@@ -2631,12 +2692,144 @@
       },
       {
        "puce": "Les lettres g, p, q, j et y ne débordent plus sur les enseignes."
+      },
+      {
+       "puce": "Nouveau : une mini-carte du labyrinthe, à droite de la vue, qui se dessine au fil des pas et se cache pendant les combats et les menus. Le vieux sage la propose en début de partie. Avec elle, la magie Carte montre tout l'étage déjà découvert."
       }
      ]
     },
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "SITDv65 (23/11/2026) : Fin du générique traduite : REMERCIEMENTS, PRODUCTEUR EXÉCUTIF et CRÉÉ PAR CLIMAX"
+      },
+      {
+       "puce": "SITDv64 (23/11/2026) : Générique de fin : postes corrigés d'après les kanji des décors (effets spéciaux et sonores, sous-titres)"
+      },
+      {
+       "puce": "SITDv63 (23/11/2026) : Magie Carte : le couloir parcouru « dehors » entre deux portes (et les zones sans accès) ne compte plus, le 100 % est atteignable"
+      },
+      {
+       "puce": "SITDv62 (23/11/2026) : Un étage parcouru à 100 % révèle toute sa carte : murs derrière les coffres, angles et salles derrière les portes"
+      },
+      {
+       "puce": "SITDv61 (23/11/2026) : Magie Carte : chaque carte affiche le nom de son lieu (labyrinthe ou grotte), et des flèches ◄ ► indiquent qu'on peut passer aux autres étages"
+      },
+      {
+       "puce": "SITDv60 (23/11/2026) : Magie Carte : le pourcentage ne compte plus les coffres, fontaines et portes, où l'on ne peut pas marcher"
+      },
+      {
+       "puce": "SITDv59 (23/11/2026) : Magie Carte : pourcentage de l'étage découvert, et gauche/droite pour consulter les cartes des autres étages déjà visités"
+      },
+      {
+       "puce": "SITDv58 (23/11/2026) : Mini-carte : les trous au plafond (où la Corde permet de remonter) sont marqués par un anneau orange"
+      },
+      {
+       "puce": "SITDv57 (22/11/2026) : Boutiques : les effets spéciaux affichés correspondent maintenant exactement à ce que fait le jeu"
+      },
+      {
+       "puce": "SITDv56 (22/11/2026) : Boutiques : effets complets pour tous les objets, dont la folie causée par la Lame illusoire et le Tamayoshi"
+      },
+      {
+       "puce": "SITDv55 (22/11/2026) : Boutiques : le cadre affiche aussi les effets spéciaux (résistances, objet maudit, sort en combat, objet fragile)"
+      },
+      {
+       "puce": "SITDv54 (22/11/2026) : Boutiques : un cadre affiche l'attaque, la défense, les bonus spéciaux et qui peut équiper l'objet sous le curseur"
+      },
+      {
+       "puce": "SITDv53 (22/11/2026) : Boutiques : le prix est accompagné du bonus d'attaque ou de défense et des personnages qui peuvent équiper l'objet"
+      },
+      {
+       "puce": "SITDv52 (22/11/2026) : Bestiaire complet : les 126 monstres ont maintenant leur image, y compris les deux formes de Méphisto"
+      },
+      {
+       "puce": "SITDv51 (22/11/2026) : Bestiaire : le Bloc vivant a maintenant son image"
+      },
+      {
+       "puce": "SITDv50 (22/11/2026) : Bestiaire : la Sentinelle a maintenant son image"
+      },
+      {
+       "puce": "SITDv49 (22/11/2026) : Bestiaire : le Trou noir a maintenant son image"
+      },
+      {
+       "puce": "SITDv48 (22/11/2026) : Mini-carte : les trous n'apparaissent plus à l'avance, seulement une fois qu'on est tombé dedans"
+      },
+      {
+       "puce": "SITDv47 (22/11/2026) : Mini-carte : les trous sont affichés en orange quand on passe à côté, et la carte ne laisse plus de morceaux pendant la chute dans un trou"
+      },
+      {
+       "puce": "SITDv46 (22/11/2026) : Le cadre du nom d'objet n'est plus abîmé quand on annule un « donner » vers un équipier qui a les mains pleines"
+      },
+      {
+       "puce": "SITDv45 (22/11/2026) : La Fausse Claire a maintenant son image dans le bestiaire"
+      },
+      {
+       "puce": "SITDv44 (22/11/2026) : Le bord de la fenêtre du nom d'objet n'est plus cassé à côté de « Plastron de fer » et de quelques autres objets"
+      },
+      {
+       "puce": "SITDv43 (22/11/2026) : Le Spectre-trésor a maintenant son image dans le bestiaire"
+      },
+      {
+       "puce": "SITDv42 (22/11/2026) : Le Kelpie a maintenant son image dans le bestiaire"
+      },
+      {
+       "puce": "SITDv41 (22/11/2026) : La Bête-mur a son image dans le bestiaire, avec le mur dont elle sort"
+      },
+      {
+       "puce": "SITDv40 (22/11/2026) : La magie Retour fonctionne de nouveau dans le labyrinthe (elle restait sans effet depuis l'ajout de la mini-carte)"
+      },
+      {
+       "puce": "SITDv39 (22/11/2026) : La boule du Dragon-tortue ne se voit plus à travers le noir à droite de la vue, et le Dragon-tortue a son image dans le bestiaire"
+      },
+      {
+       "puce": "SITDv38 (22/11/2026) : Le Cube cyclope a maintenant son image dans le bestiaire"
+      },
+      {
+       "puce": "SITDv37 (22/11/2026) : Le Chao a maintenant son image dans le bestiaire"
+      },
+      {
+       "puce": "SITDv36 (22/11/2026) : Nouveau : un bestiaire s'ouvre avec START, dans le labyrinthe comme en ville ; Chaque monstre vaincu y a sa fiche : image, PV, PM, attaque, défense, agilité, expérience, or, objet laissé et sa chance, chance de fuite, dégâts des éléments, sensibilité aux sorts, sorts et attaques ; Les monstres jamais vaincus restent « ??? ». Les anciennes sauvegardes commencent avec un bestiaire vide"
+      },
+      {
+       "puce": "SITDv35 (22/11/2026) : La mini-carte devient carrée (12 x 12 cases) et se cache quand on ouvre le menu ; Avec la mini-carte, la magie Carte affiche tout l'étage déjà découvert sur le parchemin"
+      },
+      {
+       "puce": "SITDv34 (22/11/2026) : Le sol vert piégé apparaît en vert sur la mini-carte, et la carte ne se déforme plus quand on marche dessus"
+      },
+      {
+       "puce": "SITDv33 (22/11/2026) : Les portes, les grilles et les sorties apparaissent en rouge sur la mini-carte"
+      },
+      {
+       "puce": "SITDv32 (22/11/2026) : Mini-carte : la flèche du héros et des morceaux de couloir ne disparaissent plus dans les zones très découpées"
+      },
+      {
+       "puce": "SITDv31 (22/11/2026) : Les escaliers apparaissent en bleu sur la mini-carte"
+      },
+      {
+       "puce": "SITDv30 (22/11/2026) : Mode debug : l'or reste au maximum (9 999 999), même après un achat"
+      },
+      {
+       "puce": "SITDv29 (22/11/2026) : La mini-carte se cache quand un boss s'avance vers le héros (elle était coupée en deux)"
+      },
+      {
+       "puce": "SITDv28 (22/11/2026) : Mini-carte : plus de petits points rouges qui apparaissaient un instant en avançant"
+      },
+      {
+       "puce": "SITDv27 (22/11/2026) : Mini-carte : elle ne vire plus au bleu quand on fonce tout droit dans certains couloirs"
+      },
+      {
+       "puce": "SITDv26 (22/11/2026) : Les coffres pas encore ouverts apparaissent en jaune sur la mini-carte"
+      },
+      {
+       "puce": "SITDv25 (22/11/2026) : Mini-carte corrigée : plus de parasites sur le côté pendant un pas en avant, et le coffre s'affiche bien, même pendant un combat ; Mode debug : tenir B dans le labyrinthe empêche les combats aléatoires"
+      },
+      {
+       "puce": "SITDv24 (22/11/2026) : Mode debug caché : tenir A + START pendant la première phrase du vieux sage. Il répond « DEBUGMODE ON » et l'expérience gagnée en combat est multipliée par 10 jusqu'à l'extinction de la console"
+      },
+      {
+       "puce": "SITDv23 (22/11/2026) : Mini-carte du labyrinthe, proposée par le vieux sage en début de partie : elle se dessine au fil des pas et se cache pendant les combats"
+      },
       {
        "puce": "SITDv22 (18/10/2026) : Rangement du projet, aucun changement dans le jeu"
       },
@@ -2735,6 +2928,102 @@
     {
      "src": "images/shining-in-the-darkness/07_boutique.png",
      "legende": "Les achats en boutique, avec la fenêtre OR"
+    },
+    {
+     "src": "images/shining-in-the-darkness/08_minicarte.png",
+     "legende": "La mini-carte du labyrinthe se dessine au fil des pas, coffres en jaune, escaliers en bleu, portes en rouge, sol piégé en vert"
+    },
+    {
+     "src": "images/shining-in-the-darkness/09_question_carte.png",
+     "legende": "Le vieux sage propose la mini-carte en début de partie"
+    },
+    {
+     "src": "images/shining-in-the-darkness/10_carte_complete.png",
+     "legende": "La magie Carte montre tout l'étage découvert"
+    },
+    {
+     "src": "images/shining-in-the-darkness/11_bestiaire_liste.png",
+     "legende": "Le bestiaire, ouvert avec START : les monstres déjà vaincus, les autres restent « ??? »"
+    },
+    {
+     "src": "images/shining-in-the-darkness/12_bestiaire_fiche.png",
+     "legende": "La fiche d'un monstre : image, stats, expérience, or, objet, fuite, éléments, sorts subis et attaques"
+    },
+    {
+     "src": "images/shining-in-the-darkness/13_bestiaire_chao.png",
+     "legende": "La fiche du Chao dans le bestiaire"
+    },
+    {
+     "src": "images/shining-in-the-darkness/14_bestiaire_cube_cyclope.png",
+     "legende": "La fiche du Cube cyclope dans le bestiaire"
+    },
+    {
+     "src": "images/shining-in-the-darkness/15_bestiaire_dragon_tortue.png",
+     "legende": "La fiche du Dragon-tortue dans le bestiaire"
+    },
+    {
+     "src": "images/shining-in-the-darkness/16_bestiaire_bete_mur.png",
+     "legende": "La fiche de la Bête-mur, avec son mur"
+    },
+    {
+     "src": "images/shining-in-the-darkness/17_bestiaire_kelpie.png",
+     "legende": "La fiche du Kelpie dans le bestiaire"
+    },
+    {
+     "src": "images/shining-in-the-darkness/18_bestiaire_spectre_tresor.png",
+     "legende": "La fiche du Spectre-trésor dans le bestiaire"
+    },
+    {
+     "src": "images/shining-in-the-darkness/19_bestiaire_fausse_claire.png",
+     "legende": "La fiche de la Fausse Claire dans le bestiaire"
+    },
+    {
+     "src": "images/shining-in-the-darkness/20_minicarte_trou.png",
+     "legende": "Mini-carte : un trou (orange) à côté d'un coffre"
+    },
+    {
+     "src": "images/shining-in-the-darkness/21_bestiaire_trou_noir.png",
+     "legende": "Bestiaire : fiche du Trou noir"
+    },
+    {
+     "src": "images/shining-in-the-darkness/22_bestiaire_sentinelle.png",
+     "legende": "Bestiaire : fiche de la Sentinelle"
+    },
+    {
+     "src": "images/shining-in-the-darkness/23_bestiaire_bloc_vivant.png",
+     "legende": "Bestiaire : fiche du Bloc vivant"
+    },
+    {
+     "src": "images/shining-in-the-darkness/24_bestiaire_mephisto.png",
+     "legende": "Bestiaire : Méphisto, seconde forme"
+    },
+    {
+     "src": "images/shining-in-the-darkness/25_boutique_infos.png",
+     "legende": "Boutique d'armures : bonus et équipiers"
+    },
+    {
+     "src": "images/shining-in-the-darkness/26_boutique_cadre.png",
+     "legende": "Boutique d'armes : cadre des caractéristiques"
+    },
+    {
+     "src": "images/shining-in-the-darkness/27_boutique_cadre.png",
+     "legende": "Boutique d'armes : cadre des caractéristiques"
+    },
+    {
+     "src": "images/shining-in-the-darkness/28_carte_etages.png",
+     "legende": "Magie Carte : consultation d'un autre étage avec son pourcentage"
+    },
+    {
+     "src": "images/shining-in-the-darkness/29_carte_grottes.png",
+     "legende": "Magie Carte : la grotte de la Force consultée depuis le labyrinthe"
+    },
+    {
+     "src": "images/shining-in-the-darkness/30_carte_100.png",
+     "legende": "Magie Carte : étage parcouru à 100 %, carte entièrement révélée"
+    },
+    {
+     "src": "images/shining-in-the-darkness/31_generique_fin.png",
+     "legende": "Fin du générique : producteur exécutif et studio, en français"
     }
    ],
    "patch": {
@@ -2742,12 +3031,12 @@
     "format": "bps",
     "crc_source": "4D2785BC",
     "taille_source": 1048576,
-    "crc_sortie": "36DD56A3",
+    "crc_sortie": "7C293DBD",
     "taille_sortie": 1572864,
-    "taille_patch": 42019
+    "taille_patch": 290916
    },
-   "revision": 1,
-   "date_maj": "18/10/2026"
+   "revision": 2,
+   "date_maj": "23/11/2026"
   },
   {
    "ordre": 20,
@@ -2763,6 +3052,9 @@
    "format": "bps",
    "version": "SPOTv08",
    "date_version": "20/11/2026",
+   "nouveautes": [
+    "Mode debug : START puis A permet aussi de passer le niveau du wagonnet."
+   ],
    "id": "spot-goes-to-hollywood",
    "notes": [
     {
@@ -2893,6 +3185,10 @@
    "format": "bps",
    "version": "TTv05",
    "date_version": "21/11/2026",
+   "nouveautes": [
+    "Au démarrage, après les logos : choix des couleurs « D'origine » ou « Améliorées » (couleurs de Pyron, plus vives)",
+    "Manette 6 boutons : nouvelle option « Visée fixe (XYZ) » dans les options, pour garder la direction de Saria avec X, Y ou Z"
+   ],
    "id": "twinkle-tale",
    "notes": [
     {
@@ -3020,8 +3316,11 @@
    "rom_attendue": "Wonder Boy V - Monster World III (Japan)",
    "nom_sortie": "Wonder Boy V - Monster World III (FR).bin",
    "format": "bps",
-   "version": "MW3v18",
-   "date_version": "18/11/2026",
+   "version": "MW3v27",
+   "date_version": "23/11/2026",
+   "nouveautes": [
+    "Bestiaire : titre « Résistance aux magies » en jaune."
+   ],
    "id": "wonder-boy-v-monster-world-iii",
    "notes": [
     {
@@ -3059,6 +3358,33 @@
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "MW3v27 (23/11/2026) : Bestiaire : titre « Résistance aux magies » en jaune"
+      },
+      {
+       "puce": "MW3v26 (23/11/2026) : Bestiaire : résistance aux magies indiquée clairement, nom du monstre en haut à côté de son numéro"
+      },
+      {
+       "puce": "MW3v25 (23/11/2026) : Bestiaire : la défense indique son effet sur toutes les armes (épées et lances)"
+      },
+      {
+       "puce": "MW3v24 (23/11/2026) : Bestiaire : défense de chaque monstre et effet des magies d'attaque sur lui (normal, réduit ou sans effet)"
+      },
+      {
+       "puce": "MW3v23 (23/11/2026) : Bestiaire remis en page : numéro de chaque monstre, portraits à leur taille réelle, PV montrés avec la jauge bleue du jeu, force suivie d'un petit cœur"
+      },
+      {
+       "puce": "MW3v22 (23/11/2026) : Bestiaire : la force des monstres est affichée avec sa valeur exacte (ex. 1,31 cœur) au lieu d'un arrondi"
+      },
+      {
+       "puce": "MW3v21 (23/11/2026) : Le bestiaire s'ouvre sur son propre écran, avec le portrait de chaque monstre (46 sur 50) à côté de sa fiche ; Quelques noms de monstres corrigés : Alevin, Gros poisson, Yéti des glaces"
+      },
+      {
+       "puce": "MW3v20 (23/11/2026) : Correction : les monstres d'une espèce déjà vaincue ne mouraient plus (bug de la MW3v19)"
+      },
+      {
+       "puce": "MW3v19 (23/11/2026) : Nouveau : un bestiaire dans le menu pause, qui se remplit au fil des monstres vaincus (nom, zone, points de vie, force, butin)"
+      },
       {
        "puce": "MW3v18 (22/11/2026) : Panneau « GITE » nettoyé (petits points au-dessus des lettres)"
       },
@@ -3177,6 +3503,10 @@
     {
      "src": "images/wonder-boy-v-monster-world-iii/15_menu_debug.png",
      "legende": "Le mode debug ajouté à la VF (A + START à l'écran titre, puis A dans le menu pause)."
+    },
+    {
+     "src": "images/wonder-boy-v-monster-world-iii/16_bestiaire.png",
+     "legende": "Le bestiaire : portrait et fiche de chaque monstre vaincu"
     }
    ],
    "patch": {
@@ -3184,12 +3514,12 @@
     "format": "bps",
     "crc_source": "45A50F96",
     "taille_source": 655360,
-    "crc_sortie": "DB88C885",
+    "crc_sortie": "604B6F24",
     "taille_sortie": 1048576,
-    "taille_patch": 48158
+    "taille_patch": 110304
    },
-   "revision": 4,
-   "date_maj": "22/11/2026"
+   "revision": 5,
+   "date_maj": "23/11/2026"
   },
   {
    "ordre": 21,
@@ -3205,6 +3535,9 @@
    "format": "bps",
    "version": "SOv04",
    "date_version": "20/11/2026",
+   "nouveautes": [
+    "Nouveau mode debug : A+START à l'écran titre rend l'équipe invincible (« DEBUGMODE ON »)."
+   ],
    "id": "blue-almanac",
    "notes": [
     {
@@ -3338,6 +3671,12 @@
    "format": "bps",
    "version": "PS3v06",
    "date_version": "20/11/2026",
+   "nouveautes": [
+    "Corrige un plantage à chaque montée de niveau (présent depuis la PS3v02).",
+    "Nouveau bestiaire : START sur la carte affiche les monstres vaincus avec leur image, leurs statistiques, leur technique et leurs résistances.",
+    "Sur la carte, START n'est plus la pause (elle reste disponible en combat).",
+    "La ROM fait maintenant 2 Mo."
+   ],
    "id": "phantasy-star-3",
    "notes": [
     {
@@ -3484,6 +3823,11 @@
    "format": "bps",
    "version": "V94",
    "date_version": "01/11/2026",
+   "nouveautes": [
+    "Mode 2 joueurs sur deux consoles : la partie ne se bloque plus quand le Palais envoie ses renforts.",
+    "Mode 2 joueurs sur deux consoles : le brouillard se dégage comme en solo, autour des unités et des bâtiments, et aussi quand on pose une dalle ; le radar ne montre plus des morceaux de carte jamais visités.",
+    "Mode 2 joueurs sur deux consoles : l'alerte d'unité en approche ne sonne plus sans raison (usure des bâtiments, manque d'énergie)."
+   ],
    "id": "dunerazoropti",
    "notes": [
     {
@@ -4037,6 +4381,10 @@
    "format": "bps",
    "version": "PSv06",
    "date_version": "01/11/2026",
+   "nouveautes": [
+    "Le sort de Myau qui augmente l'attaque d'un allié s'appelle maintenant FORCE.",
+    "Écran du nom : SUIV / PRÉC / FIN, comme dans le manuel japonais (avancer / reculer le curseur)."
+   ],
    "id": "phantasy-star",
    "notes": [
     {
@@ -4153,8 +4501,12 @@
    "rom_attendue": "Alisia Dragoon (Japan)",
    "nom_sortie": "Alisia Dragoon (FR).bin",
    "format": "bps",
-   "version": "ADv03",
-   "date_version": "21/11/2026",
+   "version": "ADv04",
+   "date_version": "22/11/2026",
+   "nouveautes": [
+    "Fin de niveau : « NIVEAU 1 FINI ! » et « VERS LE SUIVANT !! » ne se chevauchent plus",
+    "Choix du familier : « SELECT » devient « CHOIX »"
+   ],
    "id": "alisia-dragoon",
    "notes": [
     {
@@ -4193,6 +4545,9 @@
      "titre": "Historique des versions",
      "blocs": [
       {
+       "puce": "ADv04 (22/11/2026) : Fin de niveau : « NIVEAU 1 FINI ! » et « VERS LE SUIVANT !! » ne se chevauchent plus ; Choix du familier : « SELECT » devient « CHOIX »"
+      },
+      {
        "puce": "ADv03 (21/11/2026) : Mode debug : Alisia devient invincible"
       },
       {
@@ -4207,20 +4562,40 @@
    "avancement": 88,
    "images": [
     {
-     "src": "images/alisia-dragoon/01_final_01_titre.png",
+     "src": "images/alisia-dragoon/01_titre.png",
      "legende": "L'écran titre : « APPUYEZ SUR START »"
     },
     {
-     "src": "images/alisia-dragoon/02_final_02_intro.png",
+     "src": "images/alisia-dragoon/02_intro.png",
      "legende": "La prophétie de l'introduction, traduite du japonais"
     },
     {
-     "src": "images/alisia-dragoon/03_final_03_options.png",
+     "src": "images/alisia-dragoon/03_menu.png",
+     "legende": "Le menu : JOUER / OPTIONS"
+    },
+    {
+     "src": "images/alisia-dragoon/04_options.png",
      "legende": "L'écran des options en français"
     },
     {
-     "src": "images/alisia-dragoon/04_final_04_jeu.png",
-     "legende": "En plein niveau : la barre d'état avec PV et NIV."
+     "src": "images/alisia-dragoon/05_niveau.png",
+     "legende": "La carte « NIVEAU 1 »"
+    },
+    {
+     "src": "images/alisia-dragoon/06_jeu.png",
+     "legende": "La barre d'état : PV et NIV."
+    },
+    {
+     "src": "images/alisia-dragoon/07_classement.png",
+     "legende": "Le classement final et ses rangs en français"
+    },
+    {
+     "src": "images/alisia-dragoon/08_generique.png",
+     "legende": "Le générique de fin, avec le crédit de la traduction"
+    },
+    {
+     "src": "images/alisia-dragoon/09_fin.png",
+     "legende": "FIN"
     }
    ],
    "patch": {
@@ -4228,12 +4603,12 @@
     "format": "bps",
     "crc_source": "4D476722",
     "taille_source": 1048576,
-    "crc_sortie": "4D9AAE79",
+    "crc_sortie": "931F659A",
     "taille_sortie": 2097152,
-    "taille_patch": 23962
+    "taille_patch": 24348
    },
-   "revision": 1,
-   "date_maj": "21/11/2026"
+   "revision": 2,
+   "date_maj": "23/11/2026"
   },
   {
    "ordre": 30,
@@ -4249,6 +4624,9 @@
    "format": "bps",
    "version": "SF2v17",
    "date_version": "19/10/2026",
+   "nouveautes": [
+    "Le sort ATTACK retrouve son animation d'origine (une étincelle qui tourne autour de l'allié), restée inutilisée dans la version occidentale."
+   ],
    "id": "shining-force-2",
    "notes": [
     {
@@ -4417,8 +4795,13 @@
    "rom_attendue": "Surging Aura (Japan)",
    "nom_sortie": "Surging Aura (FR).bin",
    "format": "bps",
-   "version": "SAv03",
+   "version": "SAv06",
    "date_version": "22/11/2026",
+   "nouveautes": [
+    "Mode debug : tenir A et appuyer sur START sur l’écran titre (« DEBUGMODE ON »)",
+    "En mode debug : ennemis vaincus en un coup et 999999 G",
+    "Sans ce code, le jeu reste identique"
+   ],
    "id": "surging-aura",
    "notes": [
     {
@@ -4431,7 +4814,7 @@
        "puce": "Police française 8x16 avec accents, 30 lettres par ligne"
       },
       {
-       "puce": "Écran titre, étiquettes des commandes, écran de statut (Niv, PV, PM)"
+       "puce": "Écran titre, étiquettes des commandes, écrans de statut, boutiques et combats"
       },
       {
        "puce": "Générique de fin, avec le crédit de la traduction"
@@ -4444,6 +4827,15 @@
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "SAv06 (22/11/2026) : Mode debug : tenir A et appuyer sur START sur l’écran titre (« DEBUGMODE ON ») ; En mode debug : ennemis vaincus en un coup et 999999 G ; Sans ce code, le jeu reste identique"
+      },
+      {
+       "puce": "SAv05 (22/11/2026) : Écran CONTINUER en français (Nv / PV / PM) ; Générique de fin : « ÉQUIPE » à la place de « STAFF » ; Cadres des commandes (ATTAQUE, MAGIE, OBJETS…) nettoyés : plus de morceaux de lettres japonaises sur le liseré"
+      },
+      {
+       "puce": "SAv04 (22/11/2026) : Écran de statut détaillé en français (Attaque, Défense, Adresse, Esquive, Vitesse...) ; Boutiques en français : Armurerie, Objets, Magie, Soins ; Achat / Vente / Sortir ; Combats : étiquettes sous le portrait et « RATÉ » en français"
+      },
       {
        "puce": "SAv03 (22/11/2026) : Incantations des sortilèges écrites en lettres latines ; Noms des objets et des lieux identiques dans les menus et les dialogues ; Plus de point d'exclamation ou d'interrogation isolé en début de ligne"
       },
@@ -4481,6 +4873,14 @@
     {
      "src": "images/surging-aura/06_statut.png",
      "legende": "L'écran de statut en français : Niv, PV, PM"
+    },
+    {
+     "src": "images/surging-aura/07_combat.png",
+     "legende": "En combat : les étiquettes sont en français"
+    },
+    {
+     "src": "images/surging-aura/08_continuer.png",
+     "legende": "Choix de la sauvegarde (CONTINUER)"
     }
    ],
    "patch": {
@@ -4488,12 +4888,12 @@
     "format": "bps",
     "crc_source": "65AC1D2B",
     "taille_source": 2097152,
-    "crc_sortie": "00C9C625",
+    "crc_sortie": "45FF50B2",
     "taille_sortie": 2097152,
-    "taille_patch": 122227
+    "taille_patch": 131618
    },
-   "revision": 1,
-   "date_maj": "22/11/2026"
+   "revision": 2,
+   "date_maj": "23/11/2026"
   },
   {
    "ordre": 31,
@@ -4509,6 +4909,9 @@
    "format": "bps",
    "version": "SFFCv31",
    "date_version": "19/10/2026",
+   "nouveautes": [
+    "Combats 19 et 22 sur des cartes provisoires, en attendant les cartes dessinées."
+   ],
    "id": "final-conflict",
    "notes": [
     {
