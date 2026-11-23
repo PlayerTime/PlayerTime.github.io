@@ -189,90 +189,6 @@
    "date_maj": "18/10/2026"
   },
   {
-   "ordre": 5,
-   "titre": "Shining Force CD",
-   "sous_titre": "",
-   "plateforme": "Mega CD",
-   "statut": "Version de test",
-   "resume": "Les deux livres de Shining Force CD et leurs suites, traduits depuis le japonais, avec menus élargis et police accentuée.",
-   "rom_attendue": "Shining Force CD (USA), image « redump » .bin/.cue ou .iso de la piste 1",
-   "nom_sortie": "Shining Force CD (FR).bin",
-   "format": "sfcd",
-   "couleur": "#7a4fc0",
-   "id": "shining-force-cd",
-   "notes": [
-    {
-     "titre": "",
-     "blocs": [
-      {
-       "texte": "Le patch s'applique sur l'image « redump » de la version américaine : le .bin unique avec toutes les pistes, le .bin de la piste 1 ou un .iso. Les pistes audio ne changent pas. Sélectionne aussi le .cue pour recevoir un .cue prêt à l'emploi."
-      }
-     ]
-    },
-    {
-     "titre": "Traduction",
-     "blocs": [
-      {
-       "puce": "Dialogues, narrations de l'intro et des fins, menus, objets, sorts, classes, ennemis et générique traduits depuis le japonais."
-      },
-      {
-       "puce": "Noms japonais conservés pour les personnages ; « Guardiana »."
-      },
-      {
-       "puce": "Police avec accents, écran de chargement traduit, image « End » remplacée par « Fin »."
-      },
-      {
-       "puce": "PV / PM au lieu de HP / MP ; cartons « Chapitre N », « Chapitre Final », « Chapitre Bonus »."
-      }
-     ]
-    },
-    {
-     "titre": "Présentation",
-     "blocs": [
-      {
-       "puce": "Cadre des commandes élargi à 8 lettres (ATTAQUE, ÉQUIPER, UTILISER…)."
-      },
-      {
-       "puce": "Panneaux de ville CAMP / SORTIE / BOUTIQUE redessinés."
-      },
-      {
-       "puce": "Classes abrégées automatiquement quand la ligne déborde."
-      }
-     ]
-    },
-    {
-     "titre": "Correction du jeu d'origine",
-     "blocs": [
-      {
-       "puce": "Défense des ennemis plafonnée à 200 en difficulté maximale (elle retombait à 0 au-delà)."
-      }
-     ]
-    }
-   ],
-   "avancement": 92,
-   "images": [
-    {
-     "src": "images/shining-force-cd/01_titre.png",
-     "legende": "Écran titre traduit : « Appuyez sur Start », « Présenté par Sonic »"
-    },
-    {
-     "src": "images/shining-force-cd/02_dialogue.png",
-     "legende": "Dialogue traduit depuis le japonais, police accentuée"
-    },
-    {
-     "src": "images/shining-force-cd/03_combat.png",
-     "legende": "Combat : PV / PM, classes et messages en français"
-    }
-   ],
-   "patch": {
-    "fichier": "patchs/shining-force-cd.patch",
-    "format": "sfcd",
-    "taille_patch": 760765
-   },
-   "revision": 2,
-   "date_maj": "22/11/2026"
-  },
-  {
    "ordre": 10,
    "categorie": "Traductions et améliorations",
    "titre": "Alien Soldier",
@@ -1016,6 +932,115 @@
   {
    "ordre": 10,
    "categorie": "Traductions et améliorations",
+   "titre": "Sailor Moon",
+   "sous_titre": "Traduction française",
+   "plateforme": "Mega Drive",
+   "statut": "Version de test",
+   "resume": "Traduction française complète du beat'em up Sailor Moon sur Mega Drive, à partir de la version japonaise : dialogues, histoire, fins, écran titre et tous les menus, avec les noms du dessin animé français. ROM « world » qui démarre sur toutes les Mega Drive.",
+   "couleur": "#e050b0",
+   "rom_attendue": "Bishoujo Senshi Sailor Moon (Japan)",
+   "nom_sortie": "Sailor Moon (FR).bin",
+   "format": "bps",
+   "version": "SMv02",
+   "date_version": "23/11/2026",
+   "nouveautes": [
+    "Mode debug : A + START sur l'écran titre affiche DEBUGMODE ON, la guerrière ne perd plus de vie."
+   ],
+   "id": "sailor-moon",
+   "notes": [
+    {
+     "titre": "",
+     "blocs": [
+      {
+       "texte": "Traduction faite depuis la version japonaise (le jeu n'est jamais sorti en Europe). Les noms sont ceux du dessin animé français : Bunny, Molly, Raya, Marcy, Mathilda, Bourdu, l'Homme Masqué, la Reine Béryl…"
+      }
+     ]
+    },
+    {
+     "titre": "Ce qui est traduit",
+     "blocs": [
+      {
+       "puce": "Tous les dialogues : 74 scènes avec les héroïnes, Luna, Artémis, les boss et l'Homme Masqué."
+      },
+      {
+       "puce": "L'histoire d'ouverture (elle passe si on attend sur l'écran titre) et les 5 fins."
+      },
+      {
+       "puce": "Écran titre (logo SAILOR MOON), choix de la guerrière, cartons des 5 niveaux, options, résultats, CONTINUER ? et PERDU !."
+      },
+      {
+       "puce": "Police française accentuée, plus fine que les caractères japonais : environ deux fois plus de texte par bulle."
+      }
+     ]
+    },
+    {
+     "titre": "Améliorations",
+     "blocs": [
+      {
+       "puce": "ROM « world » : le verrou de région est retiré, le jeu démarre sur toutes les Mega Drive."
+      },
+      {
+       "puce": "Mode debug : A + START (tenus ensemble) sur l'écran titre affiche DEBUGMODE ON ; la guerrière devient invincible. Le jeu normal n'est pas changé."
+      }
+     ]
+    },
+    {
+     "titre": "Historique des versions",
+     "blocs": [
+      {
+       "puce": "SMv02 (23/11/2026) : Mode debug : A + START sur l'écran titre affiche DEBUGMODE ON, la guerrière ne perd plus de vie"
+      },
+      {
+       "puce": "SMv01 (23/11/2026) : Première version : dialogues, histoire, fins, écran titre et tous les menus en français ; ROM world : démarre sur toutes les Mega Drive"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/sailor-moon/01_titre.png",
+     "legende": "Écran titre redessiné en français"
+    },
+    {
+     "src": "images/sailor-moon/02_choix.png",
+     "legende": "Choix de la guerrière"
+    },
+    {
+     "src": "images/sailor-moon/03_carton.png",
+     "legende": "Carton de début de niveau"
+    },
+    {
+     "src": "images/sailor-moon/04_dialogue.png",
+     "legende": "Dialogues en jeu avec une police accentuée"
+    },
+    {
+     "src": "images/sailor-moon/05_histoire.png",
+     "legende": "L'histoire d'ouverture : le retour de la Reine Béryl"
+    },
+    {
+     "src": "images/sailor-moon/06_options.png",
+     "legende": "Les options"
+    },
+    {
+     "src": "images/sailor-moon/07_resultats.png",
+     "legende": "Les résultats de fin de niveau"
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/sailor-moon.bps",
+    "format": "bps",
+    "crc_source": "5E246938",
+    "taille_source": 2097152,
+    "crc_sortie": "EEC7E798",
+    "taille_sortie": 3145728,
+    "taille_patch": 298076
+   },
+   "revision": 1,
+   "date_maj": "24/11/2026"
+  },
+  {
+   "ordre": 10,
+   "categorie": "Traductions et améliorations",
    "titre": "Super Hydlide",
    "sous_titre": "Traduction française",
    "plateforme": "Mega Drive",
@@ -1201,6 +1226,133 @@
    },
    "revision": 1,
    "date_maj": "21/11/2026"
+  },
+  {
+   "ordre": 10,
+   "categorie": "Traductions et améliorations",
+   "titre": "The Hybrid Front",
+   "sous_titre": "Traduction française",
+   "plateforme": "Mega Drive",
+   "statut": "En cours",
+   "resume": "Traduction française du jeu de stratégie de Sega (1994, Japon uniquement), depuis le japonais : toute l'histoire et les dialogues, les listes de l'interface, les menus de préparation, la barre d'état et les commandes de combat. Les fiches techniques détaillées des engins restent en japonais.",
+   "couleur": "#c8a040",
+   "rom_attendue": "The Hybrid Front (Japan)",
+   "nom_sortie": "Hybrid Front, The (FR).bin",
+   "format": "bps",
+   "version": "HFv04",
+   "date_version": "24/11/2026",
+   "nouveautes": [
+    "Écran « Fiches » des engins en français (noms complets, catégories, armement, déplacement)",
+    "Libellés et colonnes de la fiche technique traduits"
+   ],
+   "id": "hybrid-front",
+   "notes": [
+    {
+     "titre": "Ce qui est traduit",
+     "blocs": [
+      {
+       "puce": "Prologue, entractes et briefings des 26 scénarios"
+      },
+      {
+       "puce": "Conditions de victoire et de défaite"
+      },
+      {
+       "puce": "Tous les dialogues des combats (près de 2 000 répliques)"
+      },
+      {
+       "puce": "Fiches des personnages et chronologie du menu INDEX"
+      },
+      {
+       "puce": "Police française avec accents, retour à la ligne entre les mots"
+      },
+      {
+       "puce": "ROM « world » : démarre sur toutes les Mega Drive"
+      },
+      {
+       "puce": "Interface : noms des unités, pilotes, armes, types, terrains et camps"
+      },
+      {
+       "puce": "Menus de préparation, barre d'état et commandes de combat"
+      },
+      {
+       "puce": "Fiches techniques des engins (écran « Fiches »)"
+      }
+     ]
+    },
+    {
+     "titre": "Reste à faire",
+     "blocs": [
+      {
+       "puce": "Âge et sexe sur les fiches de personnages"
+      },
+      {
+       "puce": "Quelques écrans de combat rares à vérifier"
+      }
+     ]
+    },
+    {
+     "titre": "Historique des versions",
+     "blocs": [
+      {
+       "puce": "HFv04 (24/11/2026) : Écran « Fiches » des engins en français (noms complets, catégories, armement, déplacement) ; Libellés et colonnes de la fiche technique traduits"
+      },
+      {
+       "puce": "HFv03 (24/11/2026) : Menus de l'écran de préparation en français ; Libellés des statistiques et de la barre d'état traduits ; Commandes de combat (TIRER, BOUGE, OK, ANNUL…) en français"
+      },
+      {
+       "puce": "HFv02 (23/11/2026) : Noms des unités, pilotes et armes en français ; Types d'unités, rôles et terrains traduits ; Nom des camps dans la barre d'état"
+      },
+      {
+       "puce": "HFv01 (23/11/2026) : Première version : toute l'histoire et les dialogues en français ; Police avec accents ; Démarre sur toutes les Mega Drive (y compris américaines)"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/hybrid-front/01_scenario1.png",
+     "legende": "Scénario 1 : Du sang sur la route de la Soie !"
+    },
+    {
+     "src": "images/hybrid-front/02_prologue.png",
+     "legende": "Le prologue : XXVIe siècle, la Terre ravagée"
+    },
+    {
+     "src": "images/hybrid-front/03_briefing.png",
+     "legende": "Le récit avant chaque bataille"
+    },
+    {
+     "src": "images/hybrid-front/04_fiche_personnage.png",
+     "legende": "Fiches des personnages (menu INDEX)"
+    },
+    {
+     "src": "images/hybrid-front/05_choix_pilote.png",
+     "legende": "Préparation : menus, unités, pilotes et armes en français"
+    },
+    {
+     "src": "images/hybrid-front/06_carte.png",
+     "legende": "Sur la carte : barre d'état et commandes en français"
+    },
+    {
+     "src": "images/hybrid-front/07_preparation.png",
+     "legende": "Choix du pilote et statistiques"
+    },
+    {
+     "src": "images/hybrid-front/08_fiche_technique.png",
+     "legende": "La fiche technique des engins"
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/hybrid-front.bps",
+    "format": "bps",
+    "crc_source": "A1F1CFE7",
+    "taille_source": 2097152,
+    "crc_sortie": "738AAA97",
+    "taille_sortie": 2097152,
+    "taille_patch": 250872
+   },
+   "revision": 1,
+   "date_maj": "24/11/2026"
   },
   {
    "ordre": 11,
@@ -2211,6 +2363,218 @@
   {
    "ordre": 20,
    "categorie": "Traductions et améliorations",
+   "titre": "Shining Force CD",
+   "sous_titre": "Traduction française",
+   "plateforme": "Mega CD",
+   "statut": "Version de test",
+   "resume": "Traduction française complète du tactical-RPG de Sonic! Software Planning sur Mega CD, retraduite depuis la version japonaise : dialogues, narration, menus, objets, sorts, classes, ennemis et génériques, avec une police accentuée.",
+   "couleur": "#3a5fc8",
+   "rom_attendue": "Shining Force CD (USA) - image redump .bin/.cue",
+   "nom_sortie": "Shining Force CD (FR).bin",
+   "format": "sfcd",
+   "version": "SFCDv24",
+   "date_version": "22/11/2026",
+   "nouveautes": [
+    "Version world : patchs supplémentaires pour Mega-CD européen et japonais (même traduction, le disque démarre sur les consoles de chaque région)."
+   ],
+   "id": "shining-force-cd",
+   "notes": [
+    {
+     "titre": "",
+     "blocs": [
+      {
+       "texte": "Traduction faite à partir de la version japonaise, appliquée sur la version américaine du jeu (image redump .bin/.cue)."
+      },
+      {
+       "texte": "Le patch s'applique avec le patcher fourni (Patcher_SFCD), qui vérifie la rom d'origine et crée le fichier .cue."
+      }
+     ]
+    },
+    {
+     "titre": "Ce qui est traduit",
+     "blocs": [
+      {
+       "puce": "Tous les dialogues, la narration de l'introduction et des fins des quatre livres."
+      },
+      {
+       "puce": "Menus, écrans de statut, de boutique et de sauvegarde, messages système."
+      },
+      {
+       "puce": "Noms des objets, des sorts, des classes et des ennemis ; noms japonais conservés pour les personnages."
+      },
+      {
+       "puce": "Écran titre, cartons « Chapitre », panneaux CAMP / SORTIE / BOUTIQUE, image « Fin »."
+      },
+      {
+       "puce": "Génériques de fin, avec un écran TRADUCTION FRANÇAISE / PLAYER TIME."
+      },
+      {
+       "puce": "Police enrichie des lettres accentuées ; PV / PM à la place de HP / MP."
+      }
+     ]
+    },
+    {
+     "titre": "Améliorations",
+     "blocs": [
+      {
+       "puce": "Cadres de menus élargis et textes ajustés pour qu'aucun mot ne déborde."
+      },
+      {
+       "puce": "Classes abrégées automatiquement quand la place manque (écran de sauvegarde, écran des objets)."
+      },
+      {
+       "puce": "Correction d'un bug du jeu d'origine : la Défense de certains ennemis pouvait retomber à 0 avec le bonus de difficulté."
+      }
+     ]
+    },
+    {
+     "titre": "Bon à savoir",
+     "blocs": [
+      {
+       "puce": "Les noms des héros sont enregistrés au début de la partie : une sauvegarde commencée avec une ancienne version garde les noms en majuscules."
+      },
+      {
+       "puce": "Trois patchs : USA (Sega CD), Europe (Mega-CD) et Japon (Mega-CD), tous à appliquer sur l'image redump américaine."
+      }
+     ]
+    },
+    {
+     "titre": "Historique des versions",
+     "blocs": [
+      {
+       "puce": "SFCDv24 (22/11/2026) : Version world : patchs supplémentaires pour Mega-CD européen et japonais (même traduction, le disque démarre sur les consoles de chaque région)"
+      },
+      {
+       "puce": "SFCDv23 (22/11/2026) : Correction d'un blocage au QG : on peut de nouveau parler à ses équipiers et les équiper"
+      },
+      {
+       "puce": "SFCDv22 (18/10/2026) : Correction d'un bug du jeu d'origine : en difficulté maximale, la Défense de certains ennemis pouvait tomber à 0"
+      },
+      {
+       "puce": "SFCDv21 (18/10/2026) : Écran des objets : le niveau ne déborde plus du cadre, la classe s'abrège quand la place manque"
+      },
+      {
+       "puce": "SFCDv20 (17/10/2026) : Nouveau patcher avec fenêtre : choix du dossier, de la rom et du patch, création du fichier .cue"
+      },
+      {
+       "puce": "SFCDv19 (17/10/2026) : Écran de sauvegarde : la classe est abrégée pour tenir dans le cadre"
+      },
+      {
+       "puce": "SFCDv18 (17/10/2026) : Panneau BOUTIQUE redessiné pour tenir à la place de l'ancien SHOP"
+      },
+      {
+       "puce": "SFCDv17 (17/10/2026) : Héros, classes et ennemis écrits en majuscule suivie de minuscules"
+      },
+      {
+       "puce": "SFCDv16 (17/10/2026) : Image « End » remplacée par « Fin »"
+      },
+      {
+       "puce": "SFCDv15 (17/10/2026) : Écran titre traduit : APPUYEZ SUR START, PRESENTE PAR SONIC"
+      },
+      {
+       "puce": "SFCDv14 (17/10/2026) : HP et MP remplacés par PV et PM"
+      },
+      {
+       "puce": "SFCDv13 (17/10/2026) : Panneaux de ville traduits : CAMP, SORTIE, BOUTIQUE"
+      },
+      {
+       "puce": "SFCDv12 (17/10/2026) : Noms des sorts revus"
+      },
+      {
+       "puce": "SFCDv11 (17/10/2026) : Colonne « Équipé » et restes d'affichage corrigés"
+      },
+      {
+       "puce": "SFCDv10 (17/10/2026) : Les accents ne disparaissent plus après un combat"
+      },
+      {
+       "puce": "SFCDv09 (17/10/2026) : Cartons de chapitre traduits : Chapitre N, Chapitre Final, Chapitre Bonus"
+      },
+      {
+       "puce": "SFCDv08 (17/10/2026) : Nom de ville corrigé : Guardiana"
+      },
+      {
+       "puce": "SFCDv07 (17/10/2026) : Cadre des commandes agrandi : ATTAQUE, ATTENTE, ÉQUIPER, UTILISER en entier"
+      },
+      {
+       "puce": "SFCDv06 (17/10/2026) : Débordements de cadres corrigés (objets, QUITTER, VITESSE…)"
+      },
+      {
+       "puce": "SFCDv05 (17/10/2026) : Police française avec lettres accentuées"
+      },
+      {
+       "puce": "SFCDv04 (17/10/2026) : Génériques de fin traduits, avec l'écran TRADUCTION FRANÇAISE / PLAYER TIME"
+      },
+      {
+       "puce": "SFCDv03 (17/10/2026) : Menus et écrans du jeu traduits"
+      },
+      {
+       "puce": "SFCDv02 (17/10/2026) : Noms des personnages, classes, ennemis, objets et sorts traduits"
+      },
+      {
+       "puce": "SFCDv01 (17/10/2026) : Première version : dialogues et narration traduits depuis le japonais"
+      }
+     ]
+    }
+   ],
+   "avancement": 92,
+   "images": [
+    {
+     "src": "images/shining-force-cd/01_titre.png",
+     "legende": "Écran titre en français"
+    },
+    {
+     "src": "images/shining-force-cd/02_intro.png",
+     "legende": "L'introduction, retraduite depuis le japonais"
+    },
+    {
+     "src": "images/shining-force-cd/03_bibliothecaire.png",
+     "legende": "La bibliothécaire qui raconte l'histoire"
+    },
+    {
+     "src": "images/shining-force-cd/04_choix_livre.png",
+     "legende": "Choix du livre à lire"
+    },
+    {
+     "src": "images/shining-force-cd/05_dialogue_chateau.png",
+     "legende": "Dialogues au château"
+    },
+    {
+     "src": "images/shining-force-cd/06_dialogue.png",
+     "legende": "Portraits et dialogues traduits"
+    },
+    {
+     "src": "images/shining-force-cd/07_combat.png",
+     "legende": "Le premier combat, sur le bateau"
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/shining-force-cd.patch",
+    "format": "sfcd",
+    "taille_patch": 760765,
+    "variantes": [
+     {
+      "console": "Sega CD américain",
+      "fichier": "patchs/shining-force-cd.patch",
+      "taille_patch": 760765
+     },
+     {
+      "console": "Mega-CD européen",
+      "fichier": "patchs/shining-force-cd-2.patch",
+      "taille_patch": 1186362
+     },
+     {
+      "console": "Mega-CD japonais",
+      "fichier": "patchs/shining-force-cd-3.patch",
+      "taille_patch": 1185218
+     }
+    ]
+   },
+   "revision": 3,
+   "date_maj": "24/11/2026"
+  },
+  {
+   "ordre": 20,
+   "categorie": "Traductions et améliorations",
    "titre": "Shining Force Résurrection",
    "sous_titre": "Traduction française et version enrichie",
    "plateforme": "Mega Drive",
@@ -2629,10 +2993,10 @@
    "rom_attendue": "Shining in the Darkness (USA, Europe)",
    "nom_sortie": "Shining in the Darkness (FR).bin",
    "format": "bps",
-   "version": "SITDv65",
-   "date_version": "23/11/2026",
+   "version": "SITDv83",
+   "date_version": "24/11/2026",
    "nouveautes": [
-    "Fin du générique traduite : REMERCIEMENTS, PRODUCTEUR EXÉCUTIF et CRÉÉ PAR CLIMAX."
+    "Bestiaire : les Cisailles indiquent leurs cases piège (étages 3 et 4)."
    ],
    "id": "shining-in-the-darkness",
    "notes": [
@@ -2701,6 +3065,60 @@
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "SITDv83 (24/11/2026) : Bestiaire : les Cisailles indiquent leurs cases piège (étages 3 et 4)"
+      },
+      {
+       "puce": "SITDv82 (24/11/2026) : Bestiaire : le labyrinthe ultime n'apparaît plus dans les lieux de rencontre (pas de spoiler)"
+      },
+      {
+       "puce": "SITDv81 (24/11/2026) : Bestiaire : les monstres des cases piège (Boule chrome, Kelpie…) indiquent les étages et le nombre de cases, au lieu de « Rencontre unique »"
+      },
+      {
+       "puce": "SITDv80 (23/11/2026) : Forge du marchand : phrases corrigées (plus de caractères bizarres à la place du type d'objet)"
+      },
+      {
+       "puce": "SITDv79 (23/11/2026) : Le cercle magique vers l'étage 2 est maintenant indiqué sur les cartes (en bleu, comme un escalier)"
+      },
+      {
+       "puce": "SITDv78 (23/11/2026) : Correction d'un plantage en revenant en ville (versions 74 à 77)"
+      },
+      {
+       "puce": "SITDv77 (23/11/2026) : Les cartes ne dévoilent plus à l'avance les murs-pièges qui tombent du plafond"
+      },
+      {
+       "puce": "SITDv76 (23/11/2026) : Carte : le sol vert n'apparaît qu'une fois parcouru ; les couloirs verts pas encore visités sont signalés en beige"
+      },
+      {
+       "puce": "SITDv75 (23/11/2026) : Magie Carte plus claire : texte puis pourcentage avec gauche/droite tout de suite ; les cases qui restent à explorer apparaissent en beige"
+      },
+      {
+       "puce": "SITDv74 (23/11/2026) : Outils : l'éditeur permet de renommer les monstres (y compris des noms propres au labyrinthe ultime) et de modifier les armes et objets"
+      },
+      {
+       "puce": "SITDv73 (23/11/2026) : Labyrinthe ultime rééquilibré : chaque monstre garde son caractère mais au-dessus des plus forts monstres du dernier étage ; boss plus résistants"
+      },
+      {
+       "puce": "SITDv72 (23/11/2026) : Correction : l'escalier secret et les gouttes d'eau des gardiens s'affichent correctement de loin (plus de glitch graphique)"
+      },
+      {
+       "puce": "SITDv71 (23/11/2026) : L'escalier secret qui mène au Labyrinthe ultime se trouve maintenant au bout du petit cul-de-sac à gauche du départ du 1er étage"
+      },
+      {
+       "puce": "SITDv70 (23/11/2026) : Le Labyrinthe ultime compte maintenant 17 boss à réaffronter, dont la Sirène, le Chao, Spriggan, Coupe-tête et Hooligan, plus une Bête-mur cachée qu'il faut révéler avec l'Orbe de vérité"
+      },
+      {
+       "puce": "SITDv69 (23/11/2026) : Le Labyrinthe ultime accueille 8 boss du jeu, plus forts, à affronter de nouveau : Dragon-tortue, Archelon, Sentinelle, Talos, Boule chrome, Blobbeur, Crabe-sabre et Kelpie"
+      },
+      {
+       "puce": "SITDv68 (23/11/2026) : Nouvelle aventure bonus après la fin : un bilan donne le pourcentage de carte explorée et de bestiaire ; à 100 % partout, un escalier secret du 1er étage mène au Labyrinthe ultime (2 niveaux, monstres plus forts, certains accrochés au plafond, coffres de mithril et de blocs sombres)"
+      },
+      {
+       "puce": "SITDv67 (23/11/2026) : Bestiaire : une 2e page par monstre indique ses lieux de rencontre (bouton A sur la fiche)"
+      },
+      {
+       "puce": "SITDv66 (23/11/2026) : Bestiaire : pourcentage de monstres vaincus et sauvegarde immédiate (Méphisto compris). Les « (s) » des textes sont remplacés par de vrais pluriels"
+      },
       {
        "puce": "SITDv65 (23/11/2026) : Fin du générique traduite : REMERCIEMENTS, PRODUCTEUR EXÉCUTIF et CRÉÉ PAR CLIMAX"
       },
@@ -3024,6 +3442,46 @@
     {
      "src": "images/shining-in-the-darkness/31_generique_fin.png",
      "legende": "Fin du générique : producteur exécutif et studio, en français"
+    },
+    {
+     "src": "images/shining-in-the-darkness/32_bestiaire_pourcentage.png",
+     "legende": "Bestiaire : pourcentage des monstres vaincus"
+    },
+    {
+     "src": "images/shining-in-the-darkness/33_bestiaire_lieux.png",
+     "legende": "Bestiaire : lieux de rencontre d'un monstre"
+    },
+    {
+     "src": "images/shining-in-the-darkness/34_bilan_fin.png",
+     "legende": "Le bilan affiché après le générique de fin"
+    },
+    {
+     "src": "images/shining-in-the-darkness/35_gardien.png",
+     "legende": "Un gardien du Labyrinthe ultime : le Dragon-tortue"
+    },
+    {
+     "src": "images/shining-in-the-darkness/36_sirene.png",
+     "legende": "La Sirène, gardienne du Labyrinthe ultime"
+    },
+    {
+     "src": "images/shining-in-the-darkness/37_objets_de_loin.png",
+     "legende": "Les gouttes d'eau de la Sirène, vues de loin"
+    },
+    {
+     "src": "images/shining-in-the-darkness/38_labyrinthe_reequilibre.png",
+     "legende": "Les Hommes-lézards du labyrinthe ultime, rééquilibrés"
+    },
+    {
+     "src": "images/shining-in-the-darkness/39_carte_a_explorer.png",
+     "legende": "Magie Carte : en beige, les cases qui restent à explorer"
+    },
+    {
+     "src": "images/shining-in-the-darkness/40_sol_vert_a_explorer.png",
+     "legende": "Carte : couloir vert pas encore parcouru (entrées en beige)"
+    },
+    {
+     "src": "images/shining-in-the-darkness/41_cercle_etage2.png",
+     "legende": "Le cercle magique vers l'étage 2, en bleu sur les cartes"
     }
    ],
    "patch": {
@@ -3031,12 +3489,12 @@
     "format": "bps",
     "crc_source": "4D2785BC",
     "taille_source": 1048576,
-    "crc_sortie": "7C293DBD",
-    "taille_sortie": 1572864,
-    "taille_patch": 290916
+    "crc_sortie": "C0F3A3A8",
+    "taille_sortie": 2097152,
+    "taille_patch": 371425
    },
-   "revision": 2,
-   "date_maj": "23/11/2026"
+   "revision": 3,
+   "date_maj": "24/11/2026"
   },
   {
    "ordre": 20,

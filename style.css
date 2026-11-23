@@ -318,3 +318,9 @@ body { padding-bottom: 120px; }
 .tri-separateur { width: 2px; height: 26px; background: #3c4aa0; margin: 0 4px; }
 .touche-fini[aria-pressed="true"] { background: #4fbf6a; border-color: #4fbf6a; color: #0b2a12; }
 @media (max-width: 560px) { .tri-separateur { display: none; } }
+
+/* Mega CD : choix de la console */
+.choix-console { border: 2px solid #3c4aa0; border-radius: 4px; padding: 10px 14px 12px; margin: 0 0 14px; }
+.choix-console legend { font: 600 1rem/1 var(--pixel); color: var(--cadre); padding: 0 6px; }
+.choix-console label { display: flex; align-items: center; gap: 8px; padding: 6px 0; cursor: pointer; }
+.choix-console input { width: 18px; height: 18px; accent-color: var(--cadre); }

@@ -78,6 +78,7 @@ async function charger() {
     for (const p of DONNEES.projets) {
       (p.images || []).forEach(im => { im.src = BASE + im.src; });
       if (p.patch) p.patch.fichier = BASE + p.patch.fichier;
+      if (p.patch && Array.isArray(p.patch.variantes)) p.patch.variantes.forEach(v => { v.fichier = BASE + v.fichier; });
     }
   } catch (e) {
     $('#liste-vide').hidden = false;
@@ -376,13 +377,22 @@ function panneau(p) {
   }
   if (info.format === 'jeu') return panneauJeu(p, box);
   const cd = info.format === 'sfcd';
+  // Mega CD : un patch par console (le jeu traduit est le même, seul le démarrage change)
+  const variantes = cd && Array.isArray(info.variantes) && info.variantes.length > 1 ? info.variantes : null;
+  let variante = variantes ? variantes[0] : null;
+  const choixConsole = variantes ? el('fieldset', { class: 'choix-console' },
+    el('legend', { text: '1. Ta console' }),
+    ...variantes.map((v, k) => el('label', {},
+      el('input', { type: 'radio', name: 'console-' + p.id, value: String(k), checked: k === 0 ? '' : null,
+        onchange: () => { variante = variantes[k]; } }),
+      ' ' + v.console))) : null;
   const journal = el('ul', { class: 'journal', 'aria-live': 'polite' });
   const barre = el('div', { class: 'barre', hidden: true }, el('div'));
   const sorties = el('div', { class: 'telechargements' });
   const input = el('input', { type: 'file', multiple: cd, accept: cd ? '.bin,.iso,.img,.cue' : '.bin,.md,.gen,.smd,.sms,.gg,.32x,.sg,.zip' });
   const depot = el('label', { class: 'depot' },
     input,
-    el('strong', { text: cd ? 'Choisir l’image du jeu (.bin et .cue)' : 'Choisir la ROM officielle' }),
+    el('strong', { text: cd ? (variantes ? '2. Choisir l’image du jeu (.bin et .cue)' : 'Choisir l’image du jeu (.bin et .cue)') : 'Choisir la ROM officielle' }),
     el('span', { text: 'ou la glisser ici' }));
 
   const log = (t, cls) => journal.append(el('li', { class: cls || '', text: t }));
@@ -393,7 +403,8 @@ function panneau(p) {
     journal.replaceChildren(); sorties.replaceChildren(); barre.hidden = true;
     try {
       log('Téléchargement du patch…');
-      const r = await fetch(info.fichier + '?r=' + p.revision, { cache: 'no-store' });
+      const r = await fetch((variante ? variante.fichier : info.fichier) + '?r=' + p.revision, { cache: 'no-store' });
+      if (variante) log('Patch pour : ' + variante.console);
       if (!r.ok) throw new Patcheur.ErreurPatch('Le patch est introuvable sur le site. Réessaie plus tard.');
       const patch = new Uint8Array(await r.arrayBuffer());
       let res;
@@ -427,9 +438,10 @@ function panneau(p) {
   box.append(
     el('p', { text: cd
       ? 'Sélectionne ton image de Shining Force CD (USA). Le patch vérifie le jeu puis crée la version française, que tu télécharges.'
+        + (variantes ? ' Choisis d’abord la console sur laquelle tu vas jouer : le jeu traduit est le même, seul le démarrage du disque change.' : '')
       : 'Sélectionne ta ROM officielle. Le patch la vérifie puis crée la version française, que tu télécharges.' }),
     el('p', { class: 'attendue', text: `ROM attendue : ${p.rom_attendue}` + (info.crc_source ? ` (CRC32 ${info.crc_source}).` : '.') }),
-    depot, barre, journal, sorties,
+    choixConsole, depot, barre, journal, sorties,
     (() => { const e = encartDon('Ce patch est gratuit. Si tu veux soutenir mon travail, tu peux faire un don.'); if (e) e.classList.add('encart-don-fixe'); return e; })(),
     el('p', { class: 'meta-patch', text:
       `Patch ${p.date_maj ? 'du ' + p.date_maj : ''}${p.revision ? ', révision ' + p.revision : ''}, ${ko(info.taille_patch)}. ` +
