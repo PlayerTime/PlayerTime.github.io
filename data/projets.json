@@ -499,6 +499,221 @@
   {
    "ordre": 10,
    "categorie": "Traductions et améliorations",
+   "titre": "Dynamite Headdy",
+   "sous_titre": "Traduction française",
+   "plateforme": "Mega Drive",
+   "statut": "En cours",
+   "resume": "Traduction française de la version japonaise du jeu de plates-formes de Treasure, avec tous les dialogues supprimés dans la version occidentale : boss, alliés et vraie fin. ROM « world » qui démarre sur toutes les Mega Drive.",
+   "couleur": "#f0a020",
+   "rom_attendue": "Dynamite Headdy (Japan)",
+   "nom_sortie": "Dynamite Headdy (FR).bin",
+   "format": "bps",
+   "version": "DHv02",
+   "date_version": "25/11/2026",
+   "nouveautes": [
+    "Écran titre : APPUYEZ SUR START",
+    "Les noms des scènes sont en français",
+    "GAME OVER devient FIN DE PARTIE"
+   ],
+   "id": "dynamite-headdy",
+   "notes": [
+    {
+     "titre": "Ce qui est traduit",
+     "blocs": [
+      {
+       "puce": "Les 51 dialogues de la version japonaise (boss, HeadCase, HangMan, Beau, Fingy, vraie fin)"
+      },
+      {
+       "puce": "Les questions des tutoriels et leurs choix"
+      },
+      {
+       "puce": "L'écran titre, le menu des options et le choix de scène"
+      },
+      {
+       "puce": "Les cartons des noms de scènes et l'écran de fin de partie"
+      }
+     ]
+    },
+    {
+     "titre": "Encore en anglais",
+     "blocs": [
+      {
+       "puce": "Défilé des personnages de l'intro, panneaux dans les niveaux"
+      },
+      {
+       "puce": "Écrans de score, bonus, continue et générique, icône kanji de la tête Bouddha"
+      },
+      {
+       "texte": "La version japonaise est plus facile et contient toute l'histoire, retirée en Occident. Les noms japonais des personnages sont gardés (Maruyama, Fingy...)."
+      }
+     ]
+    },
+    {
+     "titre": "Historique des versions",
+     "blocs": [
+      {
+       "puce": "DHv02 (25/11/2026) : Écran titre : APPUYEZ SUR START ; Les noms des scènes sont en français ; GAME OVER devient FIN DE PARTIE"
+      },
+      {
+       "puce": "DHv01 (24/11/2026) : Première version : tous les dialogues japonais traduits en français ; Fenêtres de dialogue de 6 lignes avec accents ; Écran titre, options et choix de scène en français ; Démarre sur toutes les Mega Drive"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/dynamite-headdy/01_appuyez.png",
+     "legende": "Écran titre : APPUYEZ SUR START"
+    },
+    {
+     "src": "images/dynamite-headdy/02_titre.png",
+     "legende": "Écran titre : DÉMARRER / OPTIONS"
+    },
+    {
+     "src": "images/dynamite-headdy/03_options.png",
+     "legende": "Le menu des options en français"
+    },
+    {
+     "src": "images/dynamite-headdy/04_choix_scene.png",
+     "legende": "Le choix de scène caché"
+    },
+    {
+     "src": "images/dynamite-headdy/05_dialogue.png",
+     "legende": "Maruyama, absent des versions occidentales, parle enfin français"
+    },
+    {
+     "src": "images/dynamite-headdy/06_dialogue2.png",
+     "legende": "Des fenêtres de 6 lignes avec une police accentuée"
+    },
+    {
+     "src": "images/dynamite-headdy/07_dialogue3.png",
+     "legende": "Tous les dialogues traduits depuis le japonais"
+    },
+    {
+     "src": "images/dynamite-headdy/08_carton.png",
+     "legende": "Les noms des scènes en français"
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/dynamite-headdy.bps",
+    "format": "bps",
+    "crc_source": "D03CDB53",
+    "taille_source": 2097152,
+    "crc_sortie": "992B6784",
+    "taille_sortie": 3145728,
+    "taille_patch": 123490
+   },
+   "revision": 1,
+   "date_maj": "25/11/2026"
+  },
+  {
+   "ordre": 10,
+   "categorie": "Traductions et améliorations",
+   "titre": "King Colossus",
+   "sous_titre": "Traduction française",
+   "plateforme": "Mega Drive",
+   "statut": "Version de test",
+   "resume": "L'action-RPG de Sega scénarisé par Makoto Ogino, resté au Japon, enfin en français : un jeune esclave gladiateur marqué d'un étrange emblème part à la recherche de ses origines. Traduit depuis le japonais.",
+   "couleur": "#c8a030",
+   "rom_attendue": "Tougi Ou - King Colossus (Japan)",
+   "nom_sortie": "King Colossus (FR).bin",
+   "format": "bps",
+   "version": "KCv01",
+   "date_version": "25/11/2026",
+   "nouveautes": [
+    "Première version française complète, traduite depuis le japonais",
+    "Écran titre, menus, objets, lieux et générique de fin en français",
+    "Mode debug : A + START sur l'écran titre"
+   ],
+   "id": "king-colossus",
+   "notes": [
+    {
+     "titre": "Ce qui est traduit",
+     "blocs": [
+      {
+       "puce": "Tous les dialogues (plus de 450 messages), traduits depuis le japonais"
+      },
+      {
+       "puce": "Menus, statut, inventaire, sauvegarde, loueur d'armes, classement de l'arène"
+      },
+      {
+       "puce": "Noms des objets, des lieux, des boss et des gladiateurs"
+      },
+      {
+       "puce": "Écran titre, crédits de l'introduction et générique de fin"
+      },
+      {
+       "puce": "Saisie du nom avec lettres accentuées (É, È, À, Ù, é, è, ç...)"
+      },
+      {
+       "puce": "Crédit « Traduction française par Player Time » dans le générique"
+      }
+     ]
+    },
+    {
+     "titre": "Bonus",
+     "blocs": [
+      {
+       "puce": "A + START sur l'écran titre : DEBUGMODE ON (vie et magie toujours pleines)"
+      },
+      {
+       "texte": "La ROM démarre sur toutes les Mega Drive (japonaise, américaine, européenne), la Mega Drive Mini et la Mega SG."
+      },
+      {
+       "texte": "Restent en anglais : la barre d'état (LIFE, EXP, MP, LEVEL) et l'image GAME OVER."
+      }
+     ]
+    },
+    {
+     "titre": "Historique des versions",
+     "blocs": [
+      {
+       "puce": "KCv01 (25/11/2026) : Première version française complète, traduite depuis le japonais ; Écran titre, menus, objets, lieux et générique de fin en français ; Mode debug : A + START sur l'écran titre"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/king-colossus/01_titre.png",
+     "legende": "L'écran titre : « Le roi des gladiateurs »"
+    },
+    {
+     "src": "images/king-colossus/02_menu.png",
+     "legende": "Le menu de départ"
+    },
+    {
+     "src": "images/king-colossus/03_nom.png",
+     "legende": "Le nom du héros, avec lettres accentuées"
+    },
+    {
+     "src": "images/king-colossus/04_intro.png",
+     "legende": "L'introduction"
+    },
+    {
+     "src": "images/king-colossus/05_mook.png",
+     "legende": "Le vieux Mook, toujours aimable"
+    },
+    {
+     "src": "images/king-colossus/06_flora.png",
+     "legende": "Flora, dans la cabane de Mook"
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/king-colossus.bps",
+    "format": "bps",
+    "crc_source": "FFE7B3C7",
+    "taille_source": 1048576,
+    "crc_sortie": "6F7E3703",
+    "taille_sortie": 2097152,
+    "taille_patch": 85595
+   },
+   "revision": 1,
+   "date_maj": "25/11/2026"
+  },
+  {
+   "ordre": 10,
+   "categorie": "Traductions et améliorations",
    "titre": "Lunar - The Silver Star",
    "sous_titre": "Traduction française",
    "plateforme": "Mega CD",
@@ -665,6 +880,114 @@
    },
    "revision": 4,
    "date_maj": "20/11/2026"
+  },
+  {
+   "ordre": 10,
+   "categorie": "Traductions et améliorations",
+   "titre": "Madou Monogatari I : La Tour Magique",
+   "sous_titre": "Traduction française",
+   "plateforme": "Mega Drive",
+   "statut": "Version de test",
+   "resume": "Traduction française complète du jeu de rôle de Compile où Arle, 5 ans, passe l'examen de fin d'école dans la Tour Magique, à partir de la version japonaise. Nouvelle police avec accents, écran titre en français, ROM « world ».",
+   "couleur": "#c0306a",
+   "rom_attendue": "Madou Monogatari I (Japan)",
+   "nom_sortie": "Madou Monogatari I (FR).bin",
+   "format": "bps",
+   "version": "MMv04",
+   "date_version": "25/11/2026",
+   "nouveautes": [
+    "Le petit logo de l'écran titre est traduit : « Agir contre le sida »"
+   ],
+   "id": "madou-monogatari-1",
+   "notes": [
+    {
+     "titre": "Ce qui est traduit",
+     "blocs": [
+      {
+       "puce": "Tous les dialogues, traduits depuis le japonais : histoire, monstres, boutiques, épreuves de la Tour Magique"
+      },
+      {
+       "puce": "Les combats, les sorts d'Arle et les objets"
+      },
+      {
+       "puce": "L'intro et la fin, avec le crédit de la traduction"
+      },
+      {
+       "puce": "L'écran titre et son menu (nouvelle partie, suite, choix du journal, cadeau, test son)"
+      },
+      {
+       "puce": "Noms des monstres et personnages traduits d'après leur sens japonais"
+      },
+      {
+       "puce": "Le logo du titre (« La Tour Magique ») et le slogan de Compile"
+      },
+      {
+       "texte": "Une nouvelle police avec tous les accents affiche deux lettres par case : les phrases tiennent dans les petites fenêtres du jeu."
+      },
+      {
+       "texte": "La ROM démarre sur les Mega Drive japonaises, américaines et européennes. Elle fait 3 Mo et garde la sauvegarde sur pile."
+      }
+     ]
+    },
+    {
+     "titre": "Historique des versions",
+     "blocs": [
+      {
+       "puce": "MMv04 (25/11/2026) : Le petit logo de l'écran titre est traduit : « Agir contre le sida »"
+      },
+      {
+       "puce": "MMv03 (25/11/2026) : Nouveau logo du titre en français : « La Tour Magique » ; Le slogan de Compile au démarrage est traduit"
+      },
+      {
+       "puce": "MMv02 (25/11/2026) : Noms des monstres traduits d'après leur sens japonais : Sorcière, Squelette T, Colin, Auber-Tombe, Dame Neige, Homme-Scorpion… ; Carbuncle devient Escarboucle ; La ponctuation (» ! ?) ne tombe plus seule en début de ligne"
+      },
+      {
+       "puce": "MMv01 (25/11/2026) : Première version française complète, traduite depuis le japonais ; Police avec accents, deux lettres par case ; Écran titre et menu en français ; Démarre sur toutes les Mega Drive, sauvegarde conservée"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/madou-monogatari-1/01_titre.png",
+     "legende": "L'écran titre avec le logo « La Tour Magique »"
+    },
+    {
+     "src": "images/madou-monogatari-1/02_menu_titre.png",
+     "legende": "Le menu du titre : nouvelle partie ou suite"
+    },
+    {
+     "src": "images/madou-monogatari-1/03_compile.png",
+     "legende": "Le logo Compile et son slogan traduit"
+    },
+    {
+     "src": "images/madou-monogatari-1/04_debut.png",
+     "legende": "Arle se réveille dans un endroit inconnu"
+    },
+    {
+     "src": "images/madou-monogatari-1/05_dialogue.png",
+     "legende": "Une police française avec accents, 16 lettres par ligne"
+    },
+    {
+     "src": "images/madou-monogatari-1/06_sauvegarde.png",
+     "legende": "Sauvegarde dans les journaux"
+    },
+    {
+     "src": "images/madou-monogatari-1/07_combat.png",
+     "legende": "Les combats et les sorts d'Arle"
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/madou-monogatari-1.bps",
+    "format": "bps",
+    "crc_source": "DD82C401",
+    "taille_source": 2097152,
+    "crc_sortie": "0708ED90",
+    "taille_sortie": 3145728,
+    "taille_patch": 107023
+   },
+   "revision": 1,
+   "date_maj": "25/11/2026"
   },
   {
    "ordre": 10,
@@ -3052,10 +3375,10 @@
    "rom_attendue": "Shining in the Darkness (USA, Europe)",
    "nom_sortie": "Shining in the Darkness (FR).bin",
    "format": "bps",
-   "version": "SITDv83",
+   "version": "SITDv90",
    "date_version": "24/11/2026",
    "nouveautes": [
-    "Bestiaire : les Cisailles indiquent leurs cases piège (étages 3 et 4)."
+    "Herboriste : descriptions des objets corrigées et vérifiées (Fruit de l'éveil = carte de l'étage, Eau de soin = résurrection...)."
    ],
    "id": "shining-in-the-darkness",
    "notes": [
@@ -3124,6 +3447,27 @@
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "SITDv90 (24/11/2026) : Herboriste : descriptions des objets corrigées et vérifiées (Fruit de l'éveil = carte de l'étage, Eau de soin = résurrection...)"
+      },
+      {
+       "puce": "SITDv89 (24/11/2026) : Herboriste : un cadre décrit l'objet sous le curseur (à quoi il sert)"
+      },
+      {
+       "puce": "SITDv88 (24/11/2026) : Bestiaire : la Bête-mur est montrée avec une main et son œil, sans le mur"
+      },
+      {
+       "puce": "SITDv87 (24/11/2026) : Bestiaire : l'Archelon a ses vraies couleurs (il avait celles du Dragon-tortue)"
+      },
+      {
+       "puce": "SITDv86 (24/11/2026) : Cartes : les fontaines (bleue et dorée) ont leur propre couleur sur la mini-carte et avec la magie Carte"
+      },
+      {
+       "puce": "SITDv85 (24/11/2026) : Labyrinthe ultime : nouvelles couleurs (niveau 1 braise et bleu nuit, niveau 2 obsidienne et lave)"
+      },
+      {
+       "puce": "SITDv84 (24/11/2026) : Outils : l'éditeur permet de changer les articles des magasins et les couleurs des étages bonus, et montre les images des monstres et les icônes des objets"
+      },
       {
        "puce": "SITDv83 (24/11/2026) : Bestiaire : les Cisailles indiquent leurs cases piège (étages 3 et 4)"
       },
@@ -3541,6 +3885,26 @@
     {
      "src": "images/shining-in-the-darkness/41_cercle_etage2.png",
      "legende": "Le cercle magique vers l'étage 2, en bleu sur les cartes"
+    },
+    {
+     "src": "images/shining-in-the-darkness/42_sitd_v85_labyrinthe_ultime.png",
+     "legende": "Labyrinthe ultime, niveau 1 : murs braise, sol bleu nuit"
+    },
+    {
+     "src": "images/shining-in-the-darkness/43_sitd_v86_fontaine_doree.png",
+     "legende": "Fontaine dorée de l’étage 2 et sa case or sur la mini-carte"
+    },
+    {
+     "src": "images/shining-in-the-darkness/44_sitd_v88_bete_mur.png",
+     "legende": "Fiche de la Bête-mur dans le bestiaire"
+    },
+    {
+     "src": "images/shining-in-the-darkness/45_sitd_v89_herboriste.png",
+     "legende": "Herboriste : description de la Plume d’ange"
+    },
+    {
+     "src": "images/shining-in-the-darkness/46_sitd_v90_herboriste.png",
+     "legende": "Herboriste : le Fruit de l’éveil montre la carte de l’étage"
     }
    ],
    "patch": {
@@ -3548,12 +3912,12 @@
     "format": "bps",
     "crc_source": "4D2785BC",
     "taille_source": 1048576,
-    "crc_sortie": "C0F3A3A8",
+    "crc_sortie": "9F7665D3",
     "taille_sortie": 2097152,
-    "taille_patch": 371425
+    "taille_patch": 369316
    },
-   "revision": 3,
-   "date_maj": "24/11/2026"
+   "revision": 4,
+   "date_maj": "25/11/2026"
   },
   {
    "ordre": 20,
@@ -5640,6 +6004,124 @@
    "date_maj": "01/11/2026"
   },
   {
+   "ordre": 36,
+   "categorie": "Traductions et améliorations",
+   "titre": "Phantasy Star II – Aventures textuelles",
+   "sous_titre": "Traduction française (8 aventures + menu)",
+   "plateforme": "Mega Drive",
+   "statut": "Version de test",
+   "resume": "Les 8 aventures textuelles japonaises de Phantasy Star II (Sega Meganet, 1990-1991), traduites en français et réunies sur une seule cartouche avec un menu : les histoires de Yushis, Nei, Rudger, Anne, Huey, Amia, Kains et Shilka avant Phantasy Star II.",
+   "couleur": "#3a5fa8",
+   "rom_attendue": "Nei Adventure (Japan) (Sega Meganet)",
+   "nom_sortie": "Phantasy Star II Aventures (FR).bin",
+   "format": "bps",
+   "version": "PSTAv06",
+   "date_version": "25/11/2026",
+   "nouveautes": [
+    "Menu : petit bruit du curseur, le même que dans les jeux, quand on change d'aventure."
+   ],
+   "id": "phantasy-star-2-aventures-textuelles",
+   "notes": [
+    {
+     "titre": "Ce qui est traduit",
+     "blocs": [
+      {
+       "puce": "Les textes des 8 aventures, traduits depuis le japonais (environ 3 100 textes)"
+      },
+      {
+       "puce": "Police française avec accents, lignes coupées proprement au mot"
+      },
+      {
+       "puce": "Écrans « Mode d'emploi », titres « L'AVENTURE DE ... » et logo du cadre"
+      },
+      {
+       "puce": "Bandeau PV / PA / MS (et PRISES dans l'aventure d'Amia)"
+      },
+      {
+       "puce": "Panneaux de direction NORD / SUD / EST / OUEST / HAUT / BAS"
+      },
+      {
+       "puce": "Un menu pour choisir l'aventure ; RESET revient au menu"
+      },
+      {
+       "puce": "Crédit « Traduction française : Player Time » à la fin de chaque aventure"
+      }
+     ]
+    },
+    {
+     "titre": "À savoir",
+     "blocs": [
+      {
+       "texte": "Le patch s'applique sur la ROM japonaise « Nei Adventure » et donne la compilation complète des 8 aventures. Les ROM séparées de chaque aventure sont aussi disponibles dans le dossier du projet."
+      },
+      {
+       "texte": "Dans la compilation, la petite mémoire de sauvegarde de la cartouche est commune aux 8 aventures."
+      }
+     ]
+    },
+    {
+     "titre": "Historique des versions",
+     "blocs": [
+      {
+       "puce": "PSTAv06 (25/11/2026) : Menu : petit bruit du curseur, le même que dans les jeux, quand on change d'aventure"
+      },
+      {
+       "puce": "PSTAv05 (25/11/2026) : Le menu affiche le portrait du héros choisi, dans un cadre à côté de la liste"
+      },
+      {
+       "puce": "PSTAv04 (25/11/2026) : Le texte ne défile plus tout seul : le jeu attend le bouton à chaque page pleine ; Panneaux de direction en français : NORD, SUD, EST, OUEST, HAUT, BAS ; Lettres « l » et « i » redessinées (plus de pixel bizarre)"
+      },
+      {
+       "puce": "PSTAv03 (25/11/2026) : Le menu présente les 8 aventures dans l'ordre de leur sortie : Amia, Shilka, Kains, Anne, Huey, Yushis, Rudger, Nei"
+      },
+      {
+       "puce": "PSTAv02 (24/11/2026) : Les phrases que le jeu assemble en plusieurs morceaux ne sont plus collées (espace manquante après un point, par exemple « Le quartier animé.À l'ouest »)"
+      },
+      {
+       "puce": "PSTAv01 (24/11/2026) : Première version : les 8 aventures textuelles de Phantasy Star II en français ; Compilation sur une seule cartouche avec un menu de choix ; Mode d'emploi, titres, logo et bandeau PV/PA/MS en français ; Fonctionne sur toutes les Mega Drive (ROM monde)"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/phantasy-star-2-aventures-textuelles/01_titre_nei.png",
+     "legende": "L'écran titre de l'aventure de Nei"
+    },
+    {
+     "src": "images/phantasy-star-2-aventures-textuelles/02_menu.png",
+     "legende": "Le menu : les 8 aventures, avec le portrait du héros choisi"
+    },
+    {
+     "src": "images/phantasy-star-2-aventures-textuelles/03_intro_rudger.png",
+     "legende": "Le début de l'aventure de Rudger"
+    },
+    {
+     "src": "images/phantasy-star-2-aventures-textuelles/04_chambre_yushis.png",
+     "legende": "Yushis dans sa chambre de l'orphelinat"
+    },
+    {
+     "src": "images/phantasy-star-2-aventures-textuelles/05_voir_quoi.png",
+     "legende": "Les commandes : Aller, Voir, Prendre, Utiliser, Jeter"
+    },
+    {
+     "src": "images/phantasy-star-2-aventures-textuelles/06_mode_emploi.png",
+     "legende": "Le mode d'emploi en français"
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/phantasy-star-2-aventures-textuelles.bps",
+    "format": "bps",
+    "crc_source": "3D9AD465",
+    "taille_source": 262144,
+    "crc_sortie": "04347721",
+    "taille_sortie": 2097152,
+    "taille_patch": 738139
+   },
+   "revision": 1,
+   "date_maj": "25/11/2026"
+  },
+  {
    "ordre": 40,
    "categorie": "Traductions et améliorations",
    "titre": "Advanced Daisenryaku (Grande Stratégie Avancée)",
@@ -5651,11 +6133,10 @@
    "rom_attendue": "Advanced Daisenryaku - Doitsu Dengeki Sakusen (Japan) (Rev 1)",
    "nom_sortie": "Advanced Daisenryaku (FR).bin",
    "format": "bps",
-   "version": "ADv07",
+   "version": "ADv12",
    "date_version": "24/11/2026",
    "nouveautes": [
-    "Le menu des ordres d'une unité défile correctement quand il y a plus de 5 ordres (le curseur ne disparaît plus sous le cadre).",
-    "Plus de lettres parasites dans les menus quand la liste défile."
+    "Noms complets pour toutes les unités, y compris les modèles allemands, soviétiques, italiens… (« Panzer Ⅰ Ausf. A », « Ju 87 B Stuka »)."
    ],
    "id": "advanced-daisenryaku",
    "notes": [
@@ -5698,6 +6179,21 @@
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "ADv12 (24/11/2026) : Noms complets pour toutes les unités, y compris les modèles allemands, soviétiques, italiens… (« Panzer Ⅰ Ausf. A », « Ju 87 B Stuka »)"
+      },
+      {
+       "puce": "ADv11 (24/11/2026) : Noms complets des unités (« Grenadiers modèle 1939 », « Hurricane Mk Ⅰ »…) dans le cadre de l'unité, la barre de la carte et la fiche"
+      },
+      {
+       "puce": "ADv10 (24/11/2026) : Tableau des armes de la fiche d'une unité : pictogrammes clairs (avion, char, soldat, navire, sous-marin, portée, précision, munitions) au lieu de mots coupés"
+      },
+      {
+       "puce": "ADv09 (24/11/2026) : Emplacement d'arme vide écrit « Aucune » au lieu de « NOT »"
+      },
+      {
+       "puce": "ADv08 (24/11/2026) : La fiche d'une unité est enfin lisible : tableau des armes avec des en-têtes en français ; Menus élargis avec des mots entiers : Ravitailler, Reconnaître, Brouillard, Réparer pont, Ravitaillement auto… ; Le menu général et le menu Travaux ne coupent plus les mots et ne laissent plus de lettres parasites ; Messages d'erreur sans abréviations (« Erreur 12 : … »)"
+      },
       {
        "puce": "ADv07 (24/11/2026) : Le menu des ordres d'une unité défile correctement quand il y a plus de 5 ordres (le curseur ne disparaît plus sous le cadre) ; Plus de lettres parasites dans les menus quand la liste défile"
       },
@@ -5759,12 +6255,12 @@
     "format": "bps",
     "crc_source": "E0D5E18A",
     "taille_source": 1048576,
-    "crc_sortie": "B04B69F4",
+    "crc_sortie": "C05C4F16",
     "taille_sortie": 2097152,
-    "taille_patch": 57870
+    "taille_patch": 103176
    },
-   "revision": 1,
-   "date_maj": "24/11/2026"
+   "revision": 2,
+   "date_maj": "25/11/2026"
   },
   {
    "ordre": 201,
