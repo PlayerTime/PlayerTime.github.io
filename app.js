@@ -380,11 +380,12 @@ function panneau(p) {
   // Mega CD : un patch par console (le jeu traduit est le même, seul le démarrage change)
   const variantes = cd && Array.isArray(info.variantes) && info.variantes.length > 1 ? info.variantes : null;
   let variante = variantes ? variantes[0] : null;
+  const blocCD = cd ? blocBpsCD(p, info) : null;
   const choixConsole = variantes ? el('fieldset', { class: 'choix-console' },
     el('legend', { text: '1. Ta console' }),
     ...variantes.map((v, k) => el('label', {},
       el('input', { type: 'radio', name: 'console-' + p.id, value: String(k), checked: k === 0 ? '' : null,
-        onchange: () => { variante = variantes[k]; } }),
+        onchange: () => { variante = variantes[k]; if (blocCD) blocCD.choisir(k); } }),
       ' ' + v.console))) : null;
   const journal = el('ul', { class: 'journal', 'aria-live': 'polite' });
   const barre = el('div', { class: 'barre', hidden: true }, el('div'));
@@ -446,7 +447,7 @@ function panneau(p) {
     el('p', { class: 'meta-patch', text:
       `Patch ${p.date_maj ? 'du ' + p.date_maj : ''}${p.revision ? ', révision ' + p.revision : ''}, ${ko(info.taille_patch)}. ` +
       'Le patch se fait dans ton navigateur : ta ROM ne quitte pas ton ordinateur.' }),
-    cd ? null : blocBps(p, info));
+    cd ? blocCD : blocBps(p, info));
   return box;
 }
 
@@ -466,6 +467,42 @@ function blocBps(p, info) {
         Stats.evenement(cheminCompteur(p), 'Patch BPS : ' + p.titre);
         setTimeout(() => document.querySelectorAll(`.etiquette-compteur[data-id="${p.id}"]`).forEach(sp => remplirCompteur(sp, p)), 300);
       } }));
+}
+
+/* ---------- Mega CD : .bps à télécharger, pour la console choisie ---------- */
+function blocBpsCD(p, info) {
+  const liste = Array.isArray(info.bps_megacd) ? info.bps_megacd.filter(b => b.bps_piste || b.bps_image) : [];
+  if (!liste.length) return null;
+  const base = (p.nom_sortie || p.id).replace(/\.[^.]+$/, '');
+  const zone = el('div');
+  const bloc = el('div', { class: 'bloc-bps' },
+    el('h3', { text: 'Ou télécharger le patch' }),
+    el('p', { text: 'Pour patcher toi-même avec Floating IPS (Flips) ou Beat : ouvre le patch, puis choisis le fichier .bin '
+      + 'de ton image Shining Force CD (USA) redump. Le format BPS vérifie que ton image est la bonne.' }),
+    zone,
+    el('p', { class: 'meta-patch', text: 'Garde ensuite ton .cue : renomme le .bin patché comme dans le .cue, '
+      + 'ou change le nom du fichier dans la ligne FILE du .cue. Les pistes audio ne changent pas.' }));
+  const lien = (fichier, nom, taille) => el('a', { class: 'bouton bouton-secondaire', href: BASE + fichier + '?r=' + p.revision, download: nom,
+    text: `${nom} (${ko(taille)})`,
+    onclick: () => {
+      Stats.evenement(cheminCompteur(p), 'Patch BPS : ' + p.titre);
+      setTimeout(() => document.querySelectorAll(`.etiquette-compteur[data-id="${p.id}"]`).forEach(sp => remplirCompteur(sp, p)), 300);
+    } });
+  bloc.choisir = k => {
+    const b = liste[Math.min(k, liste.length - 1)];
+    const suffixe = liste.length > 1 && b.console ? ` [${b.console}]` : '';
+    zone.replaceChildren(
+      b.console && liste.length > 1 ? el('p', { class: 'attendue', text: 'Console choisie : ' + b.console }) : null,
+      b.bps_image ? el('div', { class: 'ligne-bps' },
+        el('p', { text: 'Ton image est un seul fichier .bin (toutes les pistes) :' }),
+        lien(b.bps_image, `${base}${suffixe} (image complete).bps`, b.taille_image)) : null,
+      b.bps_piste ? el('div', { class: 'ligne-bps' },
+        el('p', { text: 'Ton image est en pistes séparées : patch à appliquer sur « (Track 01).bin »'
+          + (info.crc_piste01 ? ` (CRC32 ${info.crc_piste01})` : '') + ' :' }),
+        lien(b.bps_piste, `${base}${suffixe} (Track 01).bps`, b.taille_piste)) : null);
+  };
+  bloc.choisir(0);
+  return bloc;
 }
 
 /* ---------- Discord (lien_discord dans reglages_site.json) ---------- */

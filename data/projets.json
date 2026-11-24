@@ -1239,17 +1239,19 @@
    "rom_attendue": "The Hybrid Front (Japan)",
    "nom_sortie": "Hybrid Front, The (FR).bin",
    "format": "bps",
-   "version": "HFv04",
+   "version": "HFv12",
    "date_version": "24/11/2026",
    "nouveautes": [
-    "Écran « Fiches » des engins en français (noms complets, catégories, armement, déplacement)",
-    "Libellés et colonnes de la fiche technique traduits"
+    "Correction : les longues répliques sur la carte n'abîment plus le décor (passage automatique à la page suivante)"
    ],
    "id": "hybrid-front",
    "notes": [
     {
      "titre": "Ce qui est traduit",
      "blocs": [
+      {
+       "puce": "Intro animée : légendes de l'histoire et générique"
+      },
       {
        "puce": "Prologue, entractes et briefings des 26 scénarios"
       },
@@ -1260,7 +1262,7 @@
        "puce": "Tous les dialogues des combats (près de 2 000 répliques)"
       },
       {
-       "puce": "Fiches des personnages et chronologie du menu INDEX"
+       "puce": "Fiches des personnages et chronologie complète du menu INDEX"
       },
       {
        "puce": "Police française avec accents, retour à la ligne entre les mots"
@@ -1276,15 +1278,24 @@
       },
       {
        "puce": "Fiches techniques des engins (écran « Fiches »)"
+      },
+      {
+       "puce": "Bonus : test son caché des développeurs (A + START sur l'écran titre)"
+      },
+      {
+       "puce": "Menu de l'écran titre et écran INDEX redessinés en français"
+      },
+      {
+       "puce": "Écran titre : « APPUYEZ SUR START »"
+      },
+      {
+       "puce": "Bonus : l'éditeur de scénarios caché des développeurs (B + START dans le test son)"
       }
      ]
     },
     {
      "titre": "Reste à faire",
      "blocs": [
-      {
-       "puce": "Âge et sexe sur les fiches de personnages"
-      },
       {
        "puce": "Quelques écrans de combat rares à vérifier"
       }
@@ -1293,6 +1304,30 @@
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "HFv12 (24/11/2026) : Correction : les longues répliques sur la carte n'abîment plus le décor (passage automatique à la page suivante)"
+      },
+      {
+       "puce": "HFv11 (24/11/2026) : Intro animée en français (histoire et générique) ; Correction de petits défauts de pixels dans plusieurs images traduites"
+      },
+      {
+       "puce": "HFv10 (24/11/2026) : Derniers mots anglais de l'interface traduits (invite « APPUYEZ SUR START », fenêtre d'unité, barre d'état, état des unités)"
+      },
+      {
+       "puce": "HFv09 (24/11/2026) : Bonus : l'éditeur de scénarios caché des développeurs, en français (B + START dans le test son caché) ; En-têtes des listes d'unités traduits (préparation et carte)"
+      },
+      {
+       "puce": "HFv08 (24/11/2026) : Écran titre : « APPUYEZ SUR START » au lieu de « PUSH START BUTTON »"
+      },
+      {
+       "puce": "HFv07 (24/11/2026) : Chronologie du menu INDEX entièrement en français (liste des dates) ; Menu de l'écran titre en français : CONTINUER, NOUVEAU JEU, INDEX ; Écran INDEX : PERSONNAGES et CHRONOLOGIE"
+      },
+      {
+       "puce": "HFv06 (24/11/2026) : Bonus : tenir A et appuyer sur START à l'écran titre pour ouvrir le test son caché (DEBUGMODE ON)"
+      },
+      {
+       "puce": "HFv05 (24/11/2026) : Noms des personnages en lettres latines sur leurs fiches (menu INDEX) ; Âge et sexe des personnages en français"
+      },
       {
        "puce": "HFv04 (24/11/2026) : Écran « Fiches » des engins en français (noms complets, catégories, armement, déplacement) ; Libellés et colonnes de la fiche technique traduits"
       },
@@ -1310,36 +1345,36 @@
    ],
    "images": [
     {
-     "src": "images/hybrid-front/01_scenario1.png",
-     "legende": "Scénario 1 : Du sang sur la route de la Soie !"
+     "src": "images/hybrid-front/01_ecran_titre.png",
+     "legende": "L'écran titre en français"
     },
     {
-     "src": "images/hybrid-front/02_prologue.png",
+     "src": "images/hybrid-front/02_intro.png",
+     "legende": "L'intro animée en français"
+    },
+    {
+     "src": "images/hybrid-front/03_menu_titre.png",
+     "legende": "Le menu de l'écran titre"
+    },
+    {
+     "src": "images/hybrid-front/04_prologue.png",
      "legende": "Le prologue : XXVIe siècle, la Terre ravagée"
     },
     {
-     "src": "images/hybrid-front/03_briefing.png",
+     "src": "images/hybrid-front/05_briefing.png",
      "legende": "Le récit avant chaque bataille"
-    },
-    {
-     "src": "images/hybrid-front/04_fiche_personnage.png",
-     "legende": "Fiches des personnages (menu INDEX)"
-    },
-    {
-     "src": "images/hybrid-front/05_choix_pilote.png",
-     "legende": "Préparation : menus, unités, pilotes et armes en français"
     },
     {
      "src": "images/hybrid-front/06_carte.png",
      "legende": "Sur la carte : barre d'état et commandes en français"
     },
     {
-     "src": "images/hybrid-front/07_preparation.png",
-     "legende": "Choix du pilote et statistiques"
+     "src": "images/hybrid-front/07_chronologie.png",
+     "legende": "La chronologie du monde de The Hybrid Front"
     },
     {
-     "src": "images/hybrid-front/08_fiche_technique.png",
-     "legende": "La fiche technique des engins"
+     "src": "images/hybrid-front/08_profil_personnage.png",
+     "legende": "Les fiches des personnages"
     }
    ],
    "patch": {
@@ -1347,11 +1382,11 @@
     "format": "bps",
     "crc_source": "A1F1CFE7",
     "taille_source": 2097152,
-    "crc_sortie": "738AAA97",
+    "crc_sortie": "9EC9B82D",
     "taille_sortie": 2097152,
-    "taille_patch": 250872
+    "taille_patch": 306186
    },
-   "revision": 1,
+   "revision": 2,
    "date_maj": "24/11/2026"
   },
   {
@@ -2567,7 +2602,31 @@
       "fichier": "patchs/shining-force-cd-3.patch",
       "taille_patch": 1185218
      }
-    ]
+    ],
+    "bps_megacd": [
+     {
+      "console": "Sega CD américain",
+      "bps_image": "patchs/shining-force-cd-image.bps",
+      "taille_image": 1978093,
+      "bps_piste": "patchs/shining-force-cd-piste01.bps",
+      "taille_piste": 1978089
+     },
+     {
+      "console": "Mega-CD européen",
+      "bps_image": "patchs/shining-force-cd-2-image.bps",
+      "taille_image": 1979253,
+      "bps_piste": "patchs/shining-force-cd-2-piste01.bps",
+      "taille_piste": 1979249
+     },
+     {
+      "console": "Mega-CD japonais",
+      "bps_image": "patchs/shining-force-cd-3-image.bps",
+      "taille_image": 1980521,
+      "bps_piste": "patchs/shining-force-cd-3-piste01.bps",
+      "taille_piste": 1980517
+     }
+    ],
+    "crc_piste01": "5339BDB1"
    },
    "revision": 3,
    "date_maj": "24/11/2026"
@@ -5579,6 +5638,133 @@
    },
    "revision": 1,
    "date_maj": "01/11/2026"
+  },
+  {
+   "ordre": 40,
+   "categorie": "Traductions et améliorations",
+   "titre": "Advanced Daisenryaku (Grande Stratégie Avancée)",
+   "sous_titre": "Traduction française",
+   "plateforme": "Mega Drive",
+   "statut": "Version de test",
+   "resume": "Le grand wargame de Sega et SystemSoft sur la Seconde Guerre mondiale, jamais sorti hors du Japon, enfin jouable en français : campagne, briefings, menus et noms d'unités traduits depuis le japonais.",
+   "couleur": "#7a1f1f",
+   "rom_attendue": "Advanced Daisenryaku - Doitsu Dengeki Sakusen (Japan) (Rev 1)",
+   "nom_sortie": "Advanced Daisenryaku (FR).bin",
+   "format": "bps",
+   "version": "ADv07",
+   "date_version": "24/11/2026",
+   "nouveautes": [
+    "Le menu des ordres d'une unité défile correctement quand il y a plus de 5 ordres (le curseur ne disparaît plus sous le cadre).",
+    "Plus de lettres parasites dans les menus quand la liste défile."
+   ],
+   "id": "advanced-daisenryaku",
+   "notes": [
+    {
+     "titre": "Ce qui est traduit",
+     "blocs": [
+      {
+       "puce": "Les 42 briefings de la campagne, l'introduction et la fin"
+      },
+      {
+       "puce": "Les menus, réglages, ordres des unités et messages d'erreur"
+      },
+      {
+       "puce": "Les camps, commandants, scénarios, terrains, unités et armes"
+      },
+      {
+       "puce": "Police française avec tous les accents, version world (toutes les Mega Drive)"
+      },
+      {
+       "puce": "Générique de fin traduit, avec une page Player Time"
+      }
+     ]
+    },
+    {
+     "titre": "Version de test",
+     "blocs": [
+      {
+       "texte": "Quelques menus restent à vérifier. Les noms d'unités et d'armes sont abrégés à 8 lettres."
+      }
+     ]
+    },
+    {
+     "titre": "Mode debug",
+     "blocs": [
+      {
+       "texte": "A + START sur l'écran titre affiche « DEBUGMODE ON » : vos camps ont alors 99999 $ en permanence."
+      }
+     ]
+    },
+    {
+     "titre": "Historique des versions",
+     "blocs": [
+      {
+       "puce": "ADv07 (24/11/2026) : Le menu des ordres d'une unité défile correctement quand il y a plus de 5 ordres (le curseur ne disparaît plus sous le cadre) ; Plus de lettres parasites dans les menus quand la liste défile"
+      },
+      {
+       "puce": "ADv06 (24/11/2026) : Briefings plus agréables à lire : une phrase n'est plus coupée entre deux pages"
+      },
+      {
+       "puce": "ADv05 (24/11/2026) : Noms complets des scénarios (« Plan Blanc », « Bataille d'Angleterre »…) dans la liste, à l'écran de présentation et dans les sauvegardes ; Écrans de sauvegarde et de chargement plus clairs (« Où sauvegarder ? », « Oui / Non ») ; « Climat Doux 1 » : espace manquante ajoutée"
+      },
+      {
+       "puce": "ADv04 (24/11/2026) : Dates écrites à la française (jour/mois/année, ex. 01/09/39) sur l'écran de début de tour, la barre d'état, la liste des scénarios et les sauvegardes"
+      },
+      {
+       "puce": "ADv03 (24/11/2026) : Première version française : campagne, briefings, menus, unités et armes traduits depuis le japonais ; Écran titre en français : « Grande Stratégie Avancée — Blitzkrieg allemand » ; Générique de fin traduit ; Mode debug : A + START sur l'écran titre (budget illimité) ; Fonctionne sur toutes les Mega Drive"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/advanced-daisenryaku/01_titre.png",
+     "legende": "L'écran titre en français"
+    },
+    {
+     "src": "images/advanced-daisenryaku/02_intro.png",
+     "legende": "L'introduction historique"
+    },
+    {
+     "src": "images/advanced-daisenryaku/03_briefing.png",
+     "legende": "Un briefing de la campagne"
+    },
+    {
+     "src": "images/advanced-daisenryaku/04_tour.png",
+     "legende": "Le début d'un tour"
+    },
+    {
+     "src": "images/advanced-daisenryaku/05_carte.png",
+     "legende": "La carte et la barre d'état"
+    },
+    {
+     "src": "images/advanced-daisenryaku/06_ordres.png",
+     "legende": "Le menu des ordres d'une unité"
+    },
+    {
+     "src": "images/advanced-daisenryaku/07_scenarios.png",
+     "legende": "La liste des scénarios"
+    },
+    {
+     "src": "images/advanced-daisenryaku/08_menu_titre.png",
+     "legende": "Le menu de l'écran titre"
+    },
+    {
+     "src": "images/advanced-daisenryaku/09_generique.png",
+     "legende": "Le générique de fin"
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/advanced-daisenryaku.bps",
+    "format": "bps",
+    "crc_source": "E0D5E18A",
+    "taille_source": 1048576,
+    "crc_sortie": "B04B69F4",
+    "taille_sortie": 2097152,
+    "taille_patch": 57870
+   },
+   "revision": 1,
+   "date_maj": "24/11/2026"
   },
   {
    "ordre": 201,
