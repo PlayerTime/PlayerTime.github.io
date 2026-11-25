@@ -77,7 +77,7 @@ async function charger() {
     DONNEES = await r.json();
     for (const p of DONNEES.projets) {
       (p.images || []).forEach(im => { im.src = BASE + im.src; });
-      if (p.patch) p.patch.fichier = BASE + p.patch.fichier;
+      if (p.patch && !/^https?:/.test(p.patch.fichier)) p.patch.fichier = BASE + p.patch.fichier;
       if (p.patch && Array.isArray(p.patch.variantes)) p.patch.variantes.forEach(v => { v.fichier = BASE + v.fichier; });
     }
   } catch (e) {
@@ -526,7 +526,7 @@ function encartDon(phrase) {
 function panneauJeu(p, box) {
   const info = p.patch;
   $('h2', box).textContent = p.titre_panneau || 'Télécharger le jeu';
-  const lien = el('a', { class: 'bouton', href: info.fichier + '?r=' + p.revision, download: p.nom_sortie,
+  const lien = el('a', { class: 'bouton', href: info.externe ? info.fichier : info.fichier + '?r=' + p.revision, download: p.nom_sortie,
     text: 'Télécharger ' + p.nom_sortie,
     onclick: () => {
       Stats.evenement(cheminCompteur(p), 'Téléchargement : ' + p.titre);

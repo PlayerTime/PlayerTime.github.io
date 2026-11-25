@@ -86,6 +86,136 @@
    "date_maj": "18/10/2026"
   },
   {
+   "ordre": 0,
+   "categorie": "Mes outils",
+   "titre": "Émulateur Player Time",
+   "sous_titre": "Mega Drive, Master System et Mega CD, avec un atelier graphique",
+   "plateforme": "Windows",
+   "statut": "Version de test",
+   "version": "0.40",
+   "resume": "Mon émulateur en français pour Windows (cœur BlastEm) : Mega Drive, Master System et Mega CD, atelier graphique pour modifier les graphismes et les textes d'un jeu, débogage et deux consoles par câble.",
+   "nom_sortie": "Emulateur_Player_Time_0.40_Windows.zip",
+   "format": "jeu",
+   "couleur": "#3a7bd5",
+   "titre_panneau": "Télécharger l'émulateur",
+   "titre_page": "Émulateur Player Time : émulateur Mega Drive gratuit pour Windows, en français | Player Time",
+   "titre_notes": "À propos de l'émulateur",
+   "texte_telechargement": "Logiciel libre et gratuit pour Windows 10 et 11 (64 bits), rien à installer : décompresse tout le .zip et double-clique sur « Emulateur Mega Drive.exe ». Aucun jeu ni BIOS n'est fourni.",
+   "texte_don": "L'émulateur est gratuit. Si tu veux m'aider à le continuer, tu peux faire un don.",
+   "id": "emulateur-mega-drive",
+   "notes": [
+    {
+     "titre": "",
+     "blocs": [
+      {
+       "texte": "C'est l'émulateur que j'utilise pour créer, tester et traduire des jeux. Il est construit autour du cœur de BlastEm, l'un des émulateurs Mega Drive les plus précis, avec une interface en français."
+      }
+     ]
+    },
+    {
+     "titre": "Pour jouer",
+     "blocs": [
+      {
+       "puce": "Mega Drive et Master System ; Mega CD avec ton propre BIOS (non fourni)."
+      },
+      {
+       "puce": "Plein écran, forme TV 4:3 ou pixels carrés, pixels nets."
+      },
+      {
+       "puce": "Clavier et manettes (Xbox tout de suite, les autres se configurent), deux joueurs."
+      },
+      {
+       "puce": "Pause, avance rapide, sauvegardes à tout moment (F5 / F8), captures d'écran (F12)."
+      },
+      {
+       "puce": "Enregistrement vidéo MP4 avec le son (Ctrl+F12), pixels nets. Demande ffmpeg, gratuit, à installer à part."
+      }
+     ]
+    },
+    {
+     "titre": "L'atelier graphique (Ctrl+G)",
+     "blocs": [
+      {
+       "puce": "Clique sur un graphisme dans l'image du jeu pour l'extraire en PNG avec sa palette."
+      },
+      {
+       "puce": "Retouche-le dans l'éditeur intégré (seulement avec les couleurs du jeu) ou dans ton logiciel de dessin, puis réimporte-le."
+      },
+      {
+       "puce": "Éditeur des textes du jeu, avec la table des lettres accentuées ; réglages prêts pour Shining in the Darkness, Shining Force, Phantasy Star II et III, Battle Mania Daiginjou, Ristar, Buck Rogers."
+      },
+      {
+       "puce": "Fabrique une copie modifiée de la ROM et lance-la tout de suite ; ta ROM d'origine n'est jamais changée."
+      }
+     ]
+    },
+    {
+     "titre": "Pour créer des jeux",
+     "blocs": [
+      {
+       "puce": "Débogage en direct : palettes, VRAM, plans A et B, sprites (avec l'alerte des 20 sprites par ligne), registres du VDP."
+      },
+      {
+       "puce": "Variables du jeu par leur nom avec un projet SGDK (fichier symbol.txt)."
+      },
+      {
+       "puce": "Deux Mega Drive reliées par câble sur le port manette 2, chacune dans sa fenêtre."
+      }
+     ]
+    },
+    {
+     "titre": "Installation",
+     "blocs": [
+      {
+       "puce": "Windows 10 ou 11 (64 bits), rien d'autre à installer."
+      },
+      {
+       "puce": "Décompresse tout le .zip, puis double-clique sur « Emulateur Mega Drive.exe » ; on peut glisser une ROM dessus."
+      },
+      {
+       "puce": "Le programme n'est pas signé : si Windows affiche « Windows a protégé votre ordinateur », clique sur « Informations complémentaires » puis « Exécuter quand même »."
+      }
+     ]
+    },
+    {
+     "titre": "Licence",
+     "blocs": [
+      {
+       "puce": "Logiciel libre et gratuit sous licence GNU GPL v3, code source inclus (dossier source et SOURCES.txt)."
+      },
+      {
+       "puce": "Cœurs : BlastEm (Michael Pavone et ses contributeurs, GPL v3, modifié) et Genesis Plus GX pour le Mega CD (Charles MacDonald et Eke-Eke, licence non commerciale)."
+      },
+      {
+       "puce": "Aucun jeu ni BIOS n'est fourni. Mega Drive, Master System et Mega CD sont des marques de SEGA ; cet émulateur n'est pas lié à SEGA."
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/emulateur-mega-drive/01_emulateur.png",
+     "legende": "L'émulateur avec mon jeu Gem Assault"
+    },
+    {
+     "src": "images/emulateur-mega-drive/02_debogage_sprites.png",
+     "legende": "Débogage : la liste des sprites et leur place à l'écran"
+    },
+    {
+     "src": "images/emulateur-mega-drive/03_debogage_vram.png",
+     "legende": "Débogage : les tuiles de la mémoire vidéo"
+    }
+   ],
+   "patch": {
+    "fichier": "https://github.com/PlayerTime/PlayerTime.github.io/releases/download/telechargement-emulateur-mega-drive/Emulateur_Player_Time_0.40_Windows.zip",
+    "format": "jeu",
+    "taille_patch": 58365799,
+    "externe": true
+   },
+   "revision": 1,
+   "date_maj": "25/11/2026"
+  },
+  {
    "ordre": 1,
    "titre": "Shining Force",
    "sous_titre": "L'Héritage des Dieux",
