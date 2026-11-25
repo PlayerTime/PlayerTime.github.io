@@ -2945,11 +2945,10 @@
    "rom_attendue": "Shining Force CD (USA) - image redump .bin/.cue",
    "nom_sortie": "Shining Force CD (FR).bin",
    "format": "sfcd",
-   "version": "SFCDv27",
+   "version": "SFCDv31",
    "date_version": "25/11/2026",
    "nouveautes": [
-    "Mode debug : l'or est au maximum (999 999) et le reste même après un achat.",
-    "Mode debug : la victoire instantanée se déclenche avec un simple appui sur START pendant le combat, plus besoin de le maintenir."
+    "Correction d'un blocage du jeu quand Domingo rejoint l'équipe (livre 1, combat 12). Le même problème pouvait toucher les classes Shinobi, Samouraï et Prince promues."
    ],
    "id": "shining-force-cd",
    "notes": [
@@ -3018,6 +3017,18 @@
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "SFCDv31 (25/11/2026) : Correction d'un blocage du jeu quand Domingo rejoint l'équipe (livre 1, combat 12). Le même problème pouvait toucher les classes Shinobi, Samouraï et Prince promues"
+      },
+      {
+       "puce": "SFCDv30 (25/11/2026) : Mode debug : l'appui sur START en combat n'est plus oublié quand un nouveau tour de table commence avant la chute du chef"
+      },
+      {
+       "puce": "SFCDv29 (25/11/2026) : Mode debug : après une victoire instantanée, les personnages de la scène suivante s'affichent tout de suite avec le bon sprite"
+      },
+      {
+       "puce": "SFCDv28 (25/11/2026) : Mode debug : la victoire instantanée (START en combat) ne bloque plus le jeu après le combat de la tour du livre 1 ; les scènes d'après-combat se déroulent comme après une vraie victoire ; Correction de la case « Â » qui apparaissait sur le mur pendant cette scène"
+      },
       {
        "puce": "SFCDv27 (25/11/2026) : Mode debug : l'or est au maximum (999 999) et le reste même après un achat ; Mode debug : la victoire instantanée se déclenche avec un simple appui sur START pendant le combat, plus besoin de le maintenir"
       },
@@ -3144,50 +3155,50 @@
    "patch": {
     "fichier": "patchs/shining-force-cd.patch",
     "format": "sfcd",
-    "taille_patch": 1191748,
+    "taille_patch": 1192975,
     "variantes": [
      {
       "console": "Sega CD américain",
       "fichier": "patchs/shining-force-cd.patch",
-      "taille_patch": 1191748
+      "taille_patch": 1192975
      },
      {
       "console": "Mega-CD européen",
       "fichier": "patchs/shining-force-cd-2.patch",
-      "taille_patch": 1193433
+      "taille_patch": 1194635
      },
      {
       "console": "Mega-CD japonais",
       "fichier": "patchs/shining-force-cd-3.patch",
-      "taille_patch": 1192293
+      "taille_patch": 1193521
      }
     ],
     "bps_megacd": [
      {
       "console": "Sega CD américain",
       "bps_image": "patchs/shining-force-cd-image.bps",
-      "taille_image": 1979835,
+      "taille_image": 1980133,
       "bps_piste": "patchs/shining-force-cd-piste01.bps",
-      "taille_piste": 1979831
+      "taille_piste": 1980129
      },
      {
       "console": "Mega-CD européen",
       "bps_image": "patchs/shining-force-cd-2-image.bps",
-      "taille_image": 1980995,
+      "taille_image": 1981293,
       "bps_piste": "patchs/shining-force-cd-2-piste01.bps",
-      "taille_piste": 1980991
+      "taille_piste": 1981289
      },
      {
       "console": "Mega-CD japonais",
       "bps_image": "patchs/shining-force-cd-3-image.bps",
-      "taille_image": 1982263,
+      "taille_image": 1982561,
       "bps_piste": "patchs/shining-force-cd-3-piste01.bps",
-      "taille_piste": 1982259
+      "taille_piste": 1982557
      }
     ],
     "crc_piste01": "5339BDB1"
    },
-   "revision": 4,
+   "revision": 5,
    "date_maj": "25/11/2026"
   },
   {
