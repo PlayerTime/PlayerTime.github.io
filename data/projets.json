@@ -508,12 +508,11 @@
    "rom_attendue": "Dynamite Headdy (Japan)",
    "nom_sortie": "Dynamite Headdy (FR).bin",
    "format": "bps",
-   "version": "DHv02",
+   "version": "DHv03",
    "date_version": "25/11/2026",
    "nouveautes": [
-    "Écran titre : APPUYEZ SUR START",
-    "Les noms des scènes sont en français",
-    "GAME OVER devient FIN DE PARTIE"
+    "Nouveau mode debug : A + START sur l'écran de présentation",
+    "Choix de scène direct et invincibilité en mode debug"
    ],
    "id": "dynamite-headdy",
    "notes": [
@@ -535,6 +534,20 @@
      ]
     },
     {
+     "titre": "Mode debug",
+     "blocs": [
+      {
+       "puce": "A + START sur l'écran de présentation : DEBUGMODE ON"
+      },
+      {
+       "puce": "DÉMARRER ouvre alors le choix de scène"
+      },
+      {
+       "puce": "Headdy est invincible"
+      }
+     ]
+    },
+    {
      "titre": "Encore en anglais",
      "blocs": [
       {
@@ -551,6 +564,9 @@
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "DHv03 (25/11/2026) : Nouveau mode debug : A + START sur l'écran de présentation ; Choix de scène direct et invincibilité en mode debug"
+      },
       {
        "puce": "DHv02 (25/11/2026) : Écran titre : APPUYEZ SUR START ; Les noms des scènes sont en français ; GAME OVER devient FIN DE PARTIE"
       },
@@ -586,12 +602,12 @@
      "legende": "Des fenêtres de 6 lignes avec une police accentuée"
     },
     {
-     "src": "images/dynamite-headdy/07_dialogue3.png",
-     "legende": "Tous les dialogues traduits depuis le japonais"
+     "src": "images/dynamite-headdy/07_carton.png",
+     "legende": "Les noms des scènes en français"
     },
     {
-     "src": "images/dynamite-headdy/08_carton.png",
-     "legende": "Les noms des scènes en français"
+     "src": "images/dynamite-headdy/08_debugmode.png",
+     "legende": "Mode debug : A + START sur l'écran de présentation"
     }
    ],
    "patch": {
@@ -599,11 +615,11 @@
     "format": "bps",
     "crc_source": "D03CDB53",
     "taille_source": 2097152,
-    "crc_sortie": "992B6784",
+    "crc_sortie": "C4681F50",
     "taille_sortie": 3145728,
-    "taille_patch": 123490
+    "taille_patch": 123678
    },
-   "revision": 1,
+   "revision": 2,
    "date_maj": "25/11/2026"
   },
   {
@@ -618,12 +634,12 @@
    "rom_attendue": "Tougi Ou - King Colossus (Japan)",
    "nom_sortie": "King Colossus (FR).bin",
    "format": "bps",
-   "version": "KCv01",
+   "version": "KCv02",
    "date_version": "25/11/2026",
    "nouveautes": [
-    "Première version française complète, traduite depuis le japonais",
-    "Écran titre, menus, objets, lieux et générique de fin en français",
-    "Mode debug : A + START sur l'écran titre"
+    "Barre d'état en français : VIE, PM et NIV. à la place de LIFE, MP et LEVEL",
+    "Écran de statut et de chargement accordés (PV, PM, Nv)",
+    "Lettre « q » redessinée, plus lisible"
    ],
    "id": "king-colossus",
    "notes": [
@@ -635,6 +651,9 @@
       },
       {
        "puce": "Menus, statut, inventaire, sauvegarde, loueur d'armes, classement de l'arène"
+      },
+      {
+       "puce": "Barre d'état en jeu : VIE, EXP., PM, NIV."
       },
       {
        "puce": "Noms des objets, des lieux, des boss et des gladiateurs"
@@ -660,13 +679,16 @@
        "texte": "La ROM démarre sur toutes les Mega Drive (japonaise, américaine, européenne), la Mega Drive Mini et la Mega SG."
       },
       {
-       "texte": "Restent en anglais : la barre d'état (LIFE, EXP, MP, LEVEL) et l'image GAME OVER."
+       "texte": "Seule l'image GAME OVER reste en anglais."
       }
      ]
     },
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "KCv02 (25/11/2026) : Barre d'état en français : VIE, PM et NIV. à la place de LIFE, MP et LEVEL ; Écran de statut et de chargement accordés (PV, PM, Nv) ; Lettre « q » redessinée, plus lisible"
+      },
       {
        "puce": "KCv01 (25/11/2026) : Première version française complète, traduite depuis le japonais ; Écran titre, menus, objets, lieux et générique de fin en français ; Mode debug : A + START sur l'écran titre"
       }
@@ -697,6 +719,10 @@
     {
      "src": "images/king-colossus/06_flora.png",
      "legende": "Flora, dans la cabane de Mook"
+    },
+    {
+     "src": "images/king-colossus/07_statut.png",
+     "legende": "L'écran de statut"
     }
    ],
    "patch": {
@@ -704,11 +730,11 @@
     "format": "bps",
     "crc_source": "FFE7B3C7",
     "taille_source": 1048576,
-    "crc_sortie": "6F7E3703",
+    "crc_sortie": "CC78DB2D",
     "taille_sortie": 2097152,
-    "taille_patch": 85595
+    "taille_patch": 86186
    },
-   "revision": 1,
+   "revision": 2,
    "date_maj": "25/11/2026"
   },
   {
@@ -893,10 +919,12 @@
    "rom_attendue": "Madou Monogatari I (Japan)",
    "nom_sortie": "Madou Monogatari I (FR).bin",
    "format": "bps",
-   "version": "MMv04",
+   "version": "MMv06",
    "date_version": "25/11/2026",
    "nouveautes": [
-    "Le petit logo de l'écran titre est traduit : « Agir contre le sida »"
+    "Mode debug : tenir A et appuyer sur START sur l'écran titre (« DEBUGMODE ON »)",
+    "En mode debug : Arle ne perd plus de santé, magie pleine, or au maximum",
+    "En mode debug : le menu « Cadeau » (test son, voix, Madou Ondo) est débloqué"
    ],
    "id": "madou-monogatari-1",
    "notes": [
@@ -930,8 +958,25 @@
      ]
     },
     {
+     "titre": "Mode debug",
+     "blocs": [
+      {
+       "puce": "Écran titre : tenir A + START → « DEBUGMODE ON »"
+      },
+      {
+       "puce": "Santé et magie infinies, or au maximum, menu « Cadeau » débloqué"
+      }
+     ]
+    },
+    {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "MMv06 (25/11/2026) : Mode debug : tenir A et appuyer sur START sur l'écran titre (« DEBUGMODE ON ») ; En mode debug : Arle ne perd plus de santé, magie pleine, or au maximum ; En mode debug : le menu « Cadeau » (test son, voix, Madou Ondo) est débloqué"
+      },
+      {
+       "puce": "MMv05 (25/11/2026) : Sur vraie console, le menu « Cadeau » n'apparaît plus avant d'avoir fini le jeu ; Le curseur revient sur le dernier journal utilisé"
+      },
       {
        "puce": "MMv04 (25/11/2026) : Le petit logo de l'écran titre est traduit : « Agir contre le sida »"
       },
@@ -982,11 +1027,11 @@
     "format": "bps",
     "crc_source": "DD82C401",
     "taille_source": 2097152,
-    "crc_sortie": "0708ED90",
+    "crc_sortie": "30B07668",
     "taille_sortie": 3145728,
-    "taille_patch": 107023
+    "taille_patch": 108033
    },
-   "revision": 1,
+   "revision": 2,
    "date_maj": "25/11/2026"
   },
   {
@@ -1834,10 +1879,11 @@
    "rom_attendue": "Langrisser II (Japan) (Rev 1)",
    "nom_sortie": "Langrisser II (FR).bin",
    "format": "bps",
-   "version": "LAN2v06",
-   "date_version": "01/11/2026",
+   "version": "LAN2v08",
+   "date_version": "25/11/2026",
    "nouveautes": [
-    "Police des dialogues retouchée (Q, i, j, t, majuscules accentuées)"
+    "Mode débogage A+Start : équipe invincible et victoire immédiate",
+    "Écran de bilan traduit, message de niveau supérieur corrigé"
    ],
    "id": "langrisser-2",
    "notes": [
@@ -1884,6 +1930,12 @@
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "LAN2v08 (25/11/2026) : Mode débogage A+Start : équipe invincible et victoire immédiate ; Écran de bilan traduit, message de niveau supérieur corrigé"
+      },
+      {
+       "puce": "LAN2v07 (25/11/2026) : Écrans Charger et Sauver traduits (ils étaient restés en japonais) ; Codes de débogage expliqués dans le LISEZMOI, dont un mode pause image par image inédit"
+      },
       {
        "puce": "LAN2v06 (01/11/2026) : Police des dialogues retouchée (Q, i, j, t, majuscules accentuées)"
       },
@@ -1973,12 +2025,12 @@
     "format": "bps",
     "crc_source": "0CAA0593",
     "taille_source": 2097152,
-    "crc_sortie": "6D23724F",
+    "crc_sortie": "FD4F6B0A",
     "taille_sortie": 2097152,
-    "taille_patch": 322418
+    "taille_patch": 323833
    },
-   "revision": 1,
-   "date_maj": "06/11/2026"
+   "revision": 2,
+   "date_maj": "25/11/2026"
   },
   {
    "ordre": 20,
@@ -2129,11 +2181,13 @@
    "rom_attendue": "Langrisser (Japan)",
    "nom_sortie": "Langrisser (FR).bin",
    "format": "bps",
-   "version": "LGRv02",
+   "version": "LGRv03",
    "date_version": "01/11/2026",
    "nouveautes": [
-    "Nouveau logo « Langrisser » sur l'écran titre, centré dans son cadre",
-    "Écran de combat en français : bonus de grade et de terrain, niveau, hors de portée"
+    "Mode debug : A + START dans le choix du chapitre caché rend l'équipe invincible",
+    "A + START pendant une bataille donne la victoire immédiate",
+    "Le chapitre 20 peut être choisi dans le menu caché",
+    "Écran de sauvegarde : « Vide » au lieu de « No data »"
    ],
    "id": "langrisser",
    "notes": [
@@ -2154,6 +2208,23 @@
       },
       {
        "puce": "Police enrichie de toutes les lettres accentuées"
+      }
+     ]
+    },
+    {
+     "titre": "Menus cachés et mode debug",
+     "blocs": [
+      {
+       "puce": "Test son : en bataille, curseur 1 case à droite et 1 en bas du coin haut-gauche, maintenir B 4 secondes"
+      },
+      {
+       "puce": "Choix du chapitre : même chose après avoir appuyé sur A (vue d'ensemble)"
+      },
+      {
+       "puce": "Dans le choix du chapitre, A + START = équipe invincible (INV)"
+      },
+      {
+       "puce": "En bataille, A + START = victoire immédiate"
       },
       {
        "texte": "Traduction faite directement depuis le japonais (version Mega Drive de 1991, jamais sortie en France)."
@@ -2166,6 +2237,9 @@
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "LGRv03 (25/11/2026) : Mode debug : A + START dans le choix du chapitre caché rend l'équipe invincible ; A + START pendant une bataille donne la victoire immédiate ; Le chapitre 20 peut être choisi dans le menu caché ; Écran de sauvegarde : « Vide » au lieu de « No data »"
+      },
       {
        "puce": "LGRv02 (01/11/2026) : Nouveau logo « Langrisser » sur l'écran titre, centré dans son cadre ; Écran de combat en français : bonus de grade et de terrain, niveau, hors de portée"
       },
@@ -2212,6 +2286,10 @@
     {
      "src": "images/langrisser/09_combat.png",
      "legende": "L'écran de combat et ses bonus"
+    },
+    {
+     "src": "images/langrisser/10_debug.png",
+     "legende": "Le choix du chapitre caché, avec l'équipe invincible"
     }
    ],
    "patch": {
@@ -2219,12 +2297,12 @@
     "format": "bps",
     "crc_source": "B6EA5016",
     "taille_source": 524288,
-    "crc_sortie": "A8284061",
+    "crc_sortie": "20DDD88A",
     "taille_sortie": 1048576,
-    "taille_patch": 74752
+    "taille_patch": 75104
    },
-   "revision": 1,
-   "date_maj": "06/11/2026"
+   "revision": 2,
+   "date_maj": "25/11/2026"
   },
   {
    "ordre": 20,
@@ -2380,10 +2458,10 @@
    "rom_attendue": "Phantasy Star II (USA, Europe) (Rev A)",
    "nom_sortie": "Phantasy Star II (FR).bin",
    "format": "bps",
-   "version": "PS2v16",
-   "date_version": "20/11/2026",
+   "version": "PS2v17",
+   "date_version": "25/11/2026",
    "nouveautes": [
-    "Bestiaire : type du monstre (biomonstre ou robot), sa technique et sa fréquence, facilité de fuite."
+    "Nouvelle partie : choix des noms japonais (Yushis, Rudger…) ou américains (Rolf, Rudo…), avec les présentations des personnages adaptées."
    ],
    "id": "phantasy-star-2",
    "notes": [
@@ -2442,6 +2520,9 @@
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "PS2v17 (25/11/2026) : Nouvelle partie : choix des noms japonais (Yushis, Rudger…) ou américains (Rolf, Rudo…), avec les présentations des personnages adaptées"
+      },
       {
        "puce": "PS2v16 (20/11/2026) : Bestiaire : type du monstre (biomonstre ou robot), sa technique et sa fréquence, facilité de fuite"
       },
@@ -2542,6 +2623,10 @@
     {
      "src": "images/phantasy-star-2/12_bestiaire.png",
      "legende": "Le bestiaire : image du monstre, statistiques, type, technique et facilité de fuite."
+    },
+    {
+     "src": "images/phantasy-star-2/13_option_noms.png",
+     "legende": "Nouvelle partie : noms des personnages japonais ou américains."
     }
    ],
    "patch": {
@@ -2549,12 +2634,12 @@
     "format": "bps",
     "crc_source": "904FA047",
     "taille_source": 786432,
-    "crc_sortie": "9935B20B",
+    "crc_sortie": "5FC00FC7",
     "taille_sortie": 1048576,
-    "taille_patch": 103894
+    "taille_patch": 107100
    },
-   "revision": 3,
-   "date_maj": "20/11/2026"
+   "revision": 4,
+   "date_maj": "25/11/2026"
   },
   {
    "ordre": 20,
@@ -2730,10 +2815,11 @@
    "rom_attendue": "Shining Force CD (USA) - image redump .bin/.cue",
    "nom_sortie": "Shining Force CD (FR).bin",
    "format": "sfcd",
-   "version": "SFCDv24",
-   "date_version": "22/11/2026",
+   "version": "SFCDv27",
+   "date_version": "25/11/2026",
    "nouveautes": [
-    "Version world : patchs supplémentaires pour Mega-CD européen et japonais (même traduction, le disque démarre sur les consoles de chaque région)."
+    "Mode debug : l'or est au maximum (999 999) et le reste même après un achat.",
+    "Mode debug : la victoire instantanée se déclenche avec un simple appui sur START pendant le combat, plus besoin de le maintenir."
    ],
    "id": "shining-force-cd",
    "notes": [
@@ -2793,12 +2879,24 @@
       },
       {
        "puce": "Trois patchs : USA (Sega CD), Europe (Mega-CD) et Japon (Mega-CD), tous à appliquer sur l'image redump américaine."
+      },
+      {
+       "puce": "Mode debug : à l'écran titre, maintenir A puis appuyer sur START (« DEBUGMODE ON »), puis START pour jouer. Il débloque les 4 livres et le musée dès le départ, met l'or au maximum, permet de traverser les obstacles en maintenant B sur la carte, et en combat, un appui sur START donne la victoire à la fin de l'action en cours, avec 5 niveaux de plus pour les personnages sur le terrain. Rien n'est actif si on ne fait pas la manipulation."
       }
      ]
     },
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "SFCDv27 (25/11/2026) : Mode debug : l'or est au maximum (999 999) et le reste même après un achat ; Mode debug : la victoire instantanée se déclenche avec un simple appui sur START pendant le combat, plus besoin de le maintenir"
+      },
+      {
+       "puce": "SFCDv26 (25/11/2026) : Mode debug : en combat, maintenir START donne la victoire immédiate (tous les ennemis tombent) et chaque personnage encore debout sur le terrain gagne 5 niveaux"
+      },
+      {
+       "puce": "SFCDv25 (25/11/2026) : Mode debug caché du jeu accessible facilement : maintenir A et appuyer sur START à l'écran titre (« DEBUGMODE ON » s'affiche) ; Correction d'un bug d'affichage du jeu d'origine sous la liste des livres quand les 4 livres et le musée sont disponibles"
+      },
       {
        "puce": "SFCDv24 (22/11/2026) : Version world : patchs supplémentaires pour Mega-CD européen et japonais (même traduction, le disque démarre sur les consoles de chaque région)"
       },
@@ -2903,56 +3001,64 @@
     {
      "src": "images/shining-force-cd/07_combat.png",
      "legende": "Le premier combat, sur le bateau"
+    },
+    {
+     "src": "images/shining-force-cd/08_debugmode.png",
+     "legende": "A + START à l'écran titre : le mode debug caché"
+    },
+    {
+     "src": "images/shining-force-cd/09_livres_debug.png",
+     "legende": "Les 4 livres et le musée débloqués en mode debug"
     }
    ],
    "patch": {
     "fichier": "patchs/shining-force-cd.patch",
     "format": "sfcd",
-    "taille_patch": 760765,
+    "taille_patch": 1191748,
     "variantes": [
      {
       "console": "Sega CD américain",
       "fichier": "patchs/shining-force-cd.patch",
-      "taille_patch": 760765
+      "taille_patch": 1191748
      },
      {
       "console": "Mega-CD européen",
       "fichier": "patchs/shining-force-cd-2.patch",
-      "taille_patch": 1186362
+      "taille_patch": 1193433
      },
      {
       "console": "Mega-CD japonais",
       "fichier": "patchs/shining-force-cd-3.patch",
-      "taille_patch": 1185218
+      "taille_patch": 1192293
      }
     ],
     "bps_megacd": [
      {
       "console": "Sega CD américain",
       "bps_image": "patchs/shining-force-cd-image.bps",
-      "taille_image": 1978093,
+      "taille_image": 1979835,
       "bps_piste": "patchs/shining-force-cd-piste01.bps",
-      "taille_piste": 1978089
+      "taille_piste": 1979831
      },
      {
       "console": "Mega-CD européen",
       "bps_image": "patchs/shining-force-cd-2-image.bps",
-      "taille_image": 1979253,
+      "taille_image": 1980995,
       "bps_piste": "patchs/shining-force-cd-2-piste01.bps",
-      "taille_piste": 1979249
+      "taille_piste": 1980991
      },
      {
       "console": "Mega-CD japonais",
       "bps_image": "patchs/shining-force-cd-3-image.bps",
-      "taille_image": 1980521,
+      "taille_image": 1982263,
       "bps_piste": "patchs/shining-force-cd-3-piste01.bps",
-      "taille_piste": 1980517
+      "taille_piste": 1982259
      }
     ],
     "crc_piste01": "5339BDB1"
    },
-   "revision": 3,
-   "date_maj": "24/11/2026"
+   "revision": 4,
+   "date_maj": "25/11/2026"
   },
   {
    "ordre": 20,
@@ -2966,10 +3072,10 @@
    "rom_attendue": "Shining Force (USA)",
    "nom_sortie": "Shining Force Resurrection (FR).bin",
    "format": "bps",
-   "version": "SFRv79",
-   "date_version": "04/11/2026",
+   "version": "SFRv80",
+   "date_version": "25/11/2026",
    "nouveautes": [
-    "Début du jeu : plus de plantage (écran noir) quand Lowe s'en va."
+    "Code de triche : A+START pendant la présentation, puis START en combat pour gagner tout de suite ; les héros en combat gagnent 5 niveaux."
    ],
    "id": "shining-force-resurrection",
    "notes": [
@@ -3055,6 +3161,9 @@
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "SFRv80 (25/11/2026) : Code de triche : A+START pendant la présentation, puis START en combat pour gagner tout de suite ; les héros en combat gagnent 5 niveaux"
+      },
       {
        "puce": "SFRv79 (04/11/2026) : Début du jeu : plus de plantage (écran noir) quand Lowe s'en va"
       },
@@ -3349,6 +3458,10 @@
     {
      "src": "images/shining-force-resurrection/23_depart_lowe.png",
      "legende": "Début du jeu : Lowe part au château, la partie continue sans plantage"
+    },
+    {
+     "src": "images/shining-force-resurrection/24_triche_victoire.png",
+     "legende": "Code de triche : victoire immédiate avec START, +5 niveaux pour les héros en combat"
     }
    ],
    "patch": {
@@ -3356,12 +3469,12 @@
     "format": "bps",
     "crc_source": "E0594ABE",
     "taille_source": 1572864,
-    "crc_sortie": "BA62EB0D",
+    "crc_sortie": "4FB301E4",
     "taille_sortie": 3145728,
-    "taille_patch": 1336344
+    "taille_patch": 1336563
    },
-   "revision": 3,
-   "date_maj": "06/11/2026"
+   "revision": 4,
+   "date_maj": "25/11/2026"
   },
   {
    "ordre": 20,
@@ -3375,10 +3488,10 @@
    "rom_attendue": "Shining in the Darkness (USA, Europe)",
    "nom_sortie": "Shining in the Darkness (FR).bin",
    "format": "bps",
-   "version": "SITDv90",
-   "date_version": "24/11/2026",
+   "version": "SITDv93",
+   "date_version": "25/11/2026",
    "nouveautes": [
-    "Herboriste : descriptions des objets corrigées et vérifiées (Fruit de l'éveil = carte de l'étage, Eau de soin = résurrection...)."
+    "Le vieux sage propose la difficulté avec ses bulles de pensée (comme le choix de la vitesse des messages) : Très facile, Facile, Normal ou Difficile."
    ],
    "id": "shining-in-the-darkness",
    "notes": [
@@ -3447,6 +3560,15 @@
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "SITDv93 (25/11/2026) : Le vieux sage propose la difficulté avec ses bulles de pensée (comme le choix de la vitesse des messages) : Très facile, Facile, Normal ou Difficile"
+      },
+      {
+       "puce": "SITDv92 (24/11/2026) : Modes de difficulté au début d'une nouvelle partie : très facile, facile, normal ou difficile"
+      },
+      {
+       "puce": "SITDv91 (24/11/2026) : Mode debug : PV et PM infinis pour l'équipe"
+      },
       {
        "puce": "SITDv90 (24/11/2026) : Herboriste : descriptions des objets corrigées et vérifiées (Fruit de l'éveil = carte de l'étage, Eau de soin = résurrection...)"
       },
@@ -3905,6 +4027,14 @@
     {
      "src": "images/shining-in-the-darkness/46_sitd_v90_herboriste.png",
      "legende": "Herboriste : le Fruit de l’éveil montre la carte de l’étage"
+    },
+    {
+     "src": "images/shining-in-the-darkness/47_sitd_v92_difficulte.png",
+     "legende": "Le vieux sage propose la difficulté"
+    },
+    {
+     "src": "images/shining-in-the-darkness/48_sitd_v93_difficulte.png",
+     "legende": "Choix de la difficulté dans les bulles du vieux sage"
     }
    ],
    "patch": {
@@ -3912,11 +4042,11 @@
     "format": "bps",
     "crc_source": "4D2785BC",
     "taille_source": 1048576,
-    "crc_sortie": "9F7665D3",
+    "crc_sortie": "74DAFD65",
     "taille_sortie": 2097152,
-    "taille_patch": 369316
+    "taille_patch": 370402
    },
-   "revision": 4,
+   "revision": 5,
    "date_maj": "25/11/2026"
   },
   {
@@ -6015,10 +6145,10 @@
    "rom_attendue": "Nei Adventure (Japan) (Sega Meganet)",
    "nom_sortie": "Phantasy Star II Aventures (FR).bin",
    "format": "bps",
-   "version": "PSTAv06",
+   "version": "PSTAv09",
    "date_version": "25/11/2026",
    "nouveautes": [
-    "Menu : petit bruit du curseur, le même que dans les jeux, quand on change d'aventure."
+    "Mode debug caché : A + START sur le menu, puis B + START en jeu pour relire tous les textes de l'aventure dans la fenêtre du jeu."
    ],
    "id": "phantasy-star-2-aventures-textuelles",
    "notes": [
@@ -6062,6 +6192,15 @@
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "PSTAv09 (25/11/2026) : Mode debug caché : A + START sur le menu, puis B + START en jeu pour relire tous les textes de l'aventure dans la fenêtre du jeu"
+      },
+      {
+       "puce": "PSTAv08 (25/11/2026) : Menu : choix des noms des personnages, japonais (Yushis, Amia…) ou occidentaux comme dans la version anglaise de Phantasy Star II (Rolf, Anna…)"
+      },
+      {
+       "puce": "PSTAv07 (25/11/2026) : Menu : logo Phantasy Star II des jeux en haut de l'écran ; Menu : curseur devant l'aventure choisie, surbrillance corrigée ; Menu : musique de l'écran titre"
+      },
       {
        "puce": "PSTAv06 (25/11/2026) : Menu : petit bruit du curseur, le même que dans les jeux, quand on change d'aventure"
       },
@@ -6114,11 +6253,11 @@
     "format": "bps",
     "crc_source": "3D9AD465",
     "taille_source": 262144,
-    "crc_sortie": "04347721",
+    "crc_sortie": "B560FAAB",
     "taille_sortie": 2097152,
-    "taille_patch": 738139
+    "taille_patch": 1462063
    },
-   "revision": 1,
+   "revision": 2,
    "date_maj": "25/11/2026"
   },
   {
