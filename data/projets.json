@@ -2945,10 +2945,10 @@
    "rom_attendue": "Shining Force CD (USA) - image redump .bin/.cue",
    "nom_sortie": "Shining Force CD (FR).bin",
    "format": "sfcd",
-   "version": "SFCDv31",
+   "version": "SFCDv32",
    "date_version": "25/11/2026",
    "nouveautes": [
-    "Correction d'un blocage du jeu quand Domingo rejoint l'équipe (livre 1, combat 12). Le même problème pouvait toucher les classes Shinobi, Samouraï et Prince promues."
+    "Le générique de fin du livre 1 affiche maintenant le crédit « Traduction française / Player Time »."
    ],
    "id": "shining-force-cd",
    "notes": [
@@ -3017,6 +3017,9 @@
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "SFCDv32 (25/11/2026) : Le générique de fin du livre 1 affiche maintenant le crédit « Traduction française / Player Time »"
+      },
       {
        "puce": "SFCDv31 (25/11/2026) : Correction d'un blocage du jeu quand Domingo rejoint l'équipe (livre 1, combat 12). Le même problème pouvait toucher les classes Shinobi, Samouraï et Prince promues"
       },
@@ -3150,55 +3153,59 @@
     {
      "src": "images/shining-force-cd/09_livres_debug.png",
      "legende": "Les 4 livres et le musée débloqués en mode debug"
+    },
+    {
+     "src": "images/shining-force-cd/10_generique_livre1.png",
+     "legende": "Le générique de fin du livre 1, avec le crédit de la traduction"
     }
    ],
    "patch": {
     "fichier": "patchs/shining-force-cd.patch",
     "format": "sfcd",
-    "taille_patch": 1192975,
+    "taille_patch": 1192984,
     "variantes": [
      {
       "console": "Sega CD américain",
       "fichier": "patchs/shining-force-cd.patch",
-      "taille_patch": 1192975
+      "taille_patch": 1192984
      },
      {
       "console": "Mega-CD européen",
       "fichier": "patchs/shining-force-cd-2.patch",
-      "taille_patch": 1194635
+      "taille_patch": 1194665
      },
      {
       "console": "Mega-CD japonais",
       "fichier": "patchs/shining-force-cd-3.patch",
-      "taille_patch": 1193521
+      "taille_patch": 1193549
      }
     ],
     "bps_megacd": [
      {
       "console": "Sega CD américain",
       "bps_image": "patchs/shining-force-cd-image.bps",
-      "taille_image": 1980133,
+      "taille_image": 1980142,
       "bps_piste": "patchs/shining-force-cd-piste01.bps",
-      "taille_piste": 1980129
+      "taille_piste": 1980138
      },
      {
       "console": "Mega-CD européen",
       "bps_image": "patchs/shining-force-cd-2-image.bps",
-      "taille_image": 1981293,
+      "taille_image": 1981302,
       "bps_piste": "patchs/shining-force-cd-2-piste01.bps",
-      "taille_piste": 1981289
+      "taille_piste": 1981298
      },
      {
       "console": "Mega-CD japonais",
       "bps_image": "patchs/shining-force-cd-3-image.bps",
-      "taille_image": 1982561,
+      "taille_image": 1982570,
       "bps_piste": "patchs/shining-force-cd-3-piste01.bps",
-      "taille_piste": 1982557
+      "taille_piste": 1982566
      }
     ],
     "crc_piste01": "5339BDB1"
    },
-   "revision": 5,
+   "revision": 6,
    "date_maj": "25/11/2026"
   },
   {
