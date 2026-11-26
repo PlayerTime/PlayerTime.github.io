@@ -532,9 +532,15 @@ function panneauJeu(p, box) {
       Stats.evenement(cheminCompteur(p), 'Téléchargement : ' + p.titre);
       setTimeout(() => document.querySelectorAll(`.etiquette-compteur[data-id="${p.id}"]`).forEach(sp => remplirCompteur(sp, p)), 300);
     } });
+  // Jeu Mega Drive hébergé sur le site : on peut aussi y jouer tout de suite dans l'émulateur en ligne
+  const jouer = (!info.externe && /mega ?drive|genesis/i.test(p.plateforme || 'Mega Drive'))
+    ? el('a', { class: 'bouton', href: BASE + 'emulateur/?rom=' + encodeURIComponent('../' + info.fichier + (p.revision ? '?r=' + p.revision : '')) + '&titre=' + encodeURIComponent(p.titre),
+        text: '▶ Jouer maintenant (téléphone ou PC)',
+        onclick: () => Stats.evenement(cheminCompteur(p) + '-emulateur', 'Partie en ligne : ' + p.titre) })
+    : null;
   box.append(
     el('p', { text: p.texte_telechargement || 'Jeu gratuit : télécharge la ROM et lance-la dans un émulateur Mega Drive ou sur une cartouche flash.' }),
-    el('div', { class: 'telechargements' }, lien),
+    el('div', { class: 'telechargements' }, lien, jouer),
     encartDon(p.texte_don || 'Le jeu est gratuit. Si tu veux m\u2019aider à le continuer, tu peux faire un don.'),
     el('p', { class: 'meta-patch', text:
       `Version ${p.date_maj ? 'du ' + p.date_maj : ''}${p.revision ? ', révision ' + p.revision : ''}, ${ko(info.taille_patch)}.` }));

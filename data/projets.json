@@ -2588,10 +2588,10 @@
    "rom_attendue": "Phantasy Star II (USA, Europe) (Rev A)",
    "nom_sortie": "Phantasy Star II (FR).bin",
    "format": "bps",
-   "version": "PS2v26",
+   "version": "PS2v28",
    "date_version": "26/11/2026",
    "nouveautes": [
-    "En combat, A et C valident toute la suite des ordres (personnage, commande, technique, objet, cible) : on enchaîne au C après le raccourci. Curseurs recalés."
+    "Ennemi inédit réactivé : le « Chef des Vans », présent dans la ROM mais jamais rencontré, apparaît désormais avec un Van (et entre au bestiaire)."
    ],
    "id": "phantasy-star-2",
    "notes": [
@@ -2634,7 +2634,7 @@
        "puce": "Fonctionne sur toutes les Mega Drive (japonaise, américaine, européenne)."
       },
       {
-       "puce": "Au début de partie : gains d'expérience et de mésetas x1, x2 ou x4, couleurs classiques ou modernes, musique américaine ou japonaise (enregistrés dans la sauvegarde)."
+       "puce": "Au début de partie : mode Difficile (ennemis plus agressifs) ou gains d'expérience et de mésetas x1, x2 ou x4, couleurs classiques ou modernes, musique américaine ou japonaise (enregistrés dans la sauvegarde)."
       },
       {
        "puce": "Dans les magasins, un cadre détaille l'objet choisi : nom complet traduit du japonais, attaque, défense, particularités et qui peut l'équiper parmi les personnages déjà rencontrés."
@@ -2656,6 +2656,12 @@
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "PS2v28 (26/11/2026) : Ennemi inédit réactivé : le « Chef des Vans », présent dans la ROM mais jamais rencontré, apparaît désormais avec un Van (et entre au bestiaire)"
+      },
+      {
+       "puce": "PS2v27 (26/11/2026) : Nouvelle difficulté « Difficile » : ennemis plus agressifs (techniques plus fréquentes, ils visent souvent le personnage le plus blessé)"
+      },
       {
        "puce": "PS2v26 (26/11/2026) : En combat, A et C valident toute la suite des ordres (personnage, commande, technique, objet, cible) : on enchaîne au C après le raccourci. Curseurs recalés"
       },
@@ -2810,6 +2816,14 @@
     {
      "src": "images/phantasy-star-2/18_noms_techniques.png",
      "legende": "Les techniques avec leurs noms japonais complets."
+    },
+    {
+     "src": "images/phantasy-star-2/19_difficile.png",
+     "legende": "Le mode Difficile : des ennemis plus agressifs."
+    },
+    {
+     "src": "images/phantasy-star-2/20_chef_des_vans.png",
+     "legende": "Le Chef des Vans, ennemi inutilisé du jeu d'origine, enfin rencontrable."
     }
    ],
    "patch": {
@@ -2817,11 +2831,11 @@
     "format": "bps",
     "crc_source": "904FA047",
     "taille_source": 786432,
-    "crc_sortie": "566B9495",
+    "crc_sortie": "168C4885",
     "taille_sortie": 2097152,
-    "taille_patch": 292069
+    "taille_patch": 295660
    },
-   "revision": 5,
+   "revision": 6,
    "date_maj": "26/11/2026"
   },
   {

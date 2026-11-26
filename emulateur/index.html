@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<title>Émulateur Mega Drive (BlastEm) – Player Time</title>
+<meta name="description" content="Émulateur Mega Drive / Genesis en ligne basé sur BlastEm, jouable sur téléphone avec manette tactile. Fonctionne hors ligne, sauvegardes conservées.">
+<meta name="theme-color" content="#0d1233">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="MD Player Time">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icone-apple.png">
+<link rel="icon" href="icone-192.png">
+<link rel="stylesheet" href="emu.css">
+<link rel="modulepreload" href="blastem/blastem.sdk.js">
+</head>
+<body>
+
+<!-- ============ ACCUEIL ============ -->
+<section id="accueil" class="vue">
+  <div class="fenetre">
+    <h1>Émulateur Mega Drive</h1>
+    <p class="sous-titre">Cœur <strong>BlastEm 1.0</strong> · pensé pour le téléphone</p>
+
+    <div id="coeur" class="coeur">
+      <div class="barre"><div id="coeur-barre"></div></div>
+      <p id="coeur-texte">Préparation du cœur…</p>
+    </div>
+
+    <div id="lancer-url" class="bloc" hidden>
+      <button type="button" class="bouton bouton-or" id="btn-url"></button>
+    </div>
+
+    <div id="reprendre" class="bloc" hidden>
+      <button type="button" class="bouton bouton-or" id="btn-reprendre"></button>
+    </div>
+
+    <div class="bloc">
+      <label class="bouton" id="btn-rom">
+        Choisir une ROM…
+        <input type="file" id="fichier" accept=".bin,.gen,.md,.smd,.zip,application/octet-stream,application/zip">
+      </label>
+      <p class="aide">.bin, .gen, .md, .smd ou .zip — la ROM reste sur ton appareil, rien n'est envoyé.</p>
+    </div>
+
+    <details class="bloc reglages">
+      <summary>Réglages</summary>
+      <label>Région
+        <select id="r-region">
+          <option value="auto">Automatique</option>
+          <option value="eu">Europe (50 Hz)</option>
+          <option value="us">USA (60 Hz)</option>
+          <option value="jp">Japon (60 Hz)</option>
+        </select>
+      </label>
+      <label>Filtre d'image
+        <select id="r-shader">
+          <option value="standard">Aucun</option>
+          <option value="sharp">Net</option>
+          <option value="crt">CRT</option>
+          <option value="ntsc">NTSC composite</option>
+          <option value="xbrz">xBRZ (lissé)</option>
+        </select>
+      </label>
+      <label class="case"><input type="checkbox" id="r-lisse"> Lisser les pixels</label>
+      <label class="case"><input type="checkbox" id="r-scan"> Lignes de balayage</label>
+      <label class="case"><input type="checkbox" id="r-six"> Manette 6 boutons (X Y Z)</label>
+      <label class="case"><input type="checkbox" id="r-vibre" checked> Vibration au toucher</label>
+      <label>Taille des boutons
+        <input type="range" id="r-taille" min="70" max="140" step="5" value="100">
+      </label>
+      <label>Transparence de la manette
+        <input type="range" id="r-opacite" min="20" max="100" step="5" value="75">
+      </label>
+    </details>
+
+    <p id="installer" class="aide" hidden>
+      <button type="button" class="bouton petit" id="btn-installer">Installer sur l'écran d'accueil</button>
+    </p>
+    <p id="astuce-ios" class="aide" hidden>Sur iPhone : bouton Partager → « Sur l'écran d'accueil » pour l'avoir comme une appli.</p>
+
+    <p id="message" class="message" role="status"></p>
+
+    <p class="pied">
+      <a href="../">← Retour au site Player Time</a><br>
+      BlastEm © Michael Pavone (GPL v3) · <a href="licences.html">Licences et code source</a>
+    </p>
+  </div>
+</section>
+
+<!-- ============ JEU ============ -->
+<section id="jeu" class="vue" hidden>
+  <div id="ecran"></div>
+
+  <div id="barre-jeu">
+    <button type="button" data-action="menu" aria-label="Menu">☰</button>
+  </div>
+
+  <div id="manette" aria-hidden="true">
+    <div class="croix" id="croix">
+      <span class="fl h"></span><span class="fl b"></span><span class="fl g"></span><span class="fl d"></span>
+    </div>
+    <div class="centre">
+      <button type="button" class="pilule" data-k="mode" id="b-mode">MODE</button>
+      <button type="button" class="pilule" data-k="start">START</button>
+    </div>
+    <div class="boutons" id="boutons">
+      <div class="rang rang-xyz">
+        <button type="button" class="rond petit-rond" data-k="x">X</button>
+        <button type="button" class="rond petit-rond" data-k="y">Y</button>
+        <button type="button" class="rond petit-rond" data-k="z">Z</button>
+      </div>
+      <div class="rang rang-abc">
+        <button type="button" class="rond" data-k="a">A</button>
+        <button type="button" class="rond" data-k="b">B</button>
+        <button type="button" class="rond" data-k="c">C</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toucher" hidden>
+    <button type="button" class="bouton bouton-or">Touche pour lancer le jeu</button>
+  </div>
+
+  <dialog id="menu">
+    <h2 id="menu-titre">Pause</h2>
+    <div class="grille">
+      <button type="button" class="bouton" data-action="reprendre">▶ Reprendre</button>
+      <button type="button" class="bouton" data-action="sauver">💾 Sauver l'état</button>
+      <button type="button" class="bouton" data-action="charger">📂 Charger l'état</button>
+      <button type="button" class="bouton" data-action="plein">⛶ Plein écran</button>
+      <button type="button" class="bouton" data-action="reset">↺ Reset</button>
+      <button type="button" class="bouton" data-action="changer">🎮 Changer de jeu</button>
+    </div>
+    <label class="emplacement">Emplacement
+      <select id="slot">
+        <option value="0">1</option><option value="1">2</option><option value="2">3</option><option value="3">4</option>
+      </select>
+    </label>
+    <p id="menu-info" class="aide"></p>
+  </dialog>
+
+  <p id="bulle" class="bulle" hidden></p>
+</section>
+
+<script type="module" src="emu.js"></script>
+</body>
+</html>

@@ -1,0 +1,486 @@
+// Émulateur Mega Drive Player Time — page autour du cœur BlastEm (WebAssembly).
+// Le cœur : BlastEm 1.0 de Michael Pavone (GPL v3), compilé par wasm-gaming/blastem-wasm.
+// Ici : chargement léger du cœur (.wasm.gz décompressé dans le navigateur), manette tactile,
+// dernière ROM gardée sur l'appareil, sauvegardes d'état, mode appli (PWA, hors ligne).
+
+import BlastemSDK, { BLASTEM_CONTROLS } from './blastem/blastem.sdk.js';
+
+const $ = (s) => document.querySelector(s);
+const VERSION_COEUR = 'blastem-1.0.0+22';
+const OWNER = 'menu';
+
+// ------------------------------------------------------------------ réglages
+const DEFAUTS = { region: 'auto', shader: 'standard', lisse: false, scan: false, six: false, vibre: true, taille: 100, opacite: 75 };
+function lireReglages() {
+  try { return { ...DEFAUTS, ...JSON.parse(localStorage.getItem('pt-emu-reglages') || '{}') }; }
+  catch { return { ...DEFAUTS }; }
+}
+function ecrireReglages() {
+  try { localStorage.setItem('pt-emu-reglages', JSON.stringify(R)); } catch { /* navigation privée */ }
+}
+const R = lireReglages();
+
+function appliquerReglagesVisuels() {
+  document.documentElement.style.setProperty('--tr', R.taille / 100);
+  document.documentElement.style.setProperty('--o', R.opacite / 100);
+  document.body.classList.toggle('six', R.six);
+}
+function brancherReglages() {
+  const lien = [
+    ['#r-region', 'region', 'value'], ['#r-shader', 'shader', 'value'],
+    ['#r-lisse', 'lisse', 'checked'], ['#r-scan', 'scan', 'checked'],
+    ['#r-six', 'six', 'checked'], ['#r-vibre', 'vibre', 'checked'],
+    ['#r-taille', 'taille', 'value'], ['#r-opacite', 'opacite', 'value'],
+  ];
+  for (const [sel, cle, prop] of lien) {
+    const el = $(sel);
+    el[prop] = R[cle];
+    el.addEventListener('input', () => {
+      R[cle] = prop === 'checked' ? el.checked : (typeof DEFAUTS[cle] === 'number' ? Number(el.value) : el.value);
+      ecrireReglages();
+      appliquerReglagesVisuels();
+    });
+  }
+  appliquerReglagesVisuels();
+}
+
+// ------------------------------------------------------------------ messages
+function message(texte, type = '') {
+  const m = $('#message');
+  m.textContent = texte;
+  m.className = 'message ' + type;
+}
+let minuteurBulle = 0;
+function bulle(texte) {
+  const b = $('#bulle');
+  b.textContent = texte;
+  b.hidden = false;
+  clearTimeout(minuteurBulle);
+  minuteurBulle = setTimeout(() => (b.hidden = true), 1800);
+}
+
+// ------------------------------------------------------------------ le cœur (léger : 2,4 Mo)
+// Le .wasm fait 31 Mo brut mais 2,4 Mo compressé : on télécharge la version .gz et on la
+// décompresse dans le navigateur. Ça marche sur n'importe quel hébergeur (GitHub Pages compris).
+let coeurPromesse = null;
+function chargerCoeur() {
+  if (coeurPromesse) return coeurPromesse;
+  coeurPromesse = (async () => {
+    if (typeof DecompressionStream === 'undefined') {
+      throw new Error('Navigateur trop ancien (il faut Chrome 80+, Safari 16.4+ ou Firefox 113+).');
+    }
+    const rep = await fetch('blastem/blastem.wasm.gz');
+    if (!rep.ok) throw new Error('Cœur introuvable (' + rep.status + ').');
+    const total = Number(rep.headers.get('content-length')) || 2368234;
+    const lecteur = rep.body.getReader();
+    const morceaux = [];
+    let recu = 0;
+    for (;;) {
+      const { done, value } = await lecteur.read();
+      if (done) break;
+      morceaux.push(value);
+      recu += value.length;
+      $('#coeur-barre').style.width = Math.min(100, (recu / total) * 100) + '%';
+      $('#coeur-texte').textContent = `Téléchargement du cœur BlastEm… ${(recu / 1048576).toFixed(1)} / ${(total / 1048576).toFixed(1)} Mo`;
+    }
+    $('#coeur-texte').textContent = 'Décompression du cœur…';
+    const flux = new Blob(morceaux).stream().pipeThrough(new DecompressionStream('gzip'));
+    const wasm = await new Response(flux).arrayBuffer();
+    const url = URL.createObjectURL(new Blob([wasm], { type: 'application/wasm' }));
+    $('#coeur').classList.add('pret');
+    $('#coeur-texte').textContent = 'Cœur BlastEm prêt ✔ (fonctionne aussi hors ligne)';
+    return url;
+  })();
+  coeurPromesse.catch((e) => {
+    $('#coeur-texte').textContent = e.message;
+    message(e.message, 'erreur');
+  });
+  return coeurPromesse;
+}
+
+// ------------------------------------------------------------------ ROM : lecture, zip, mémoire
+function nomPropre(nom) {
+  return nom.replace(/\.[^.]+$/, '').replace(/[^\p{L}\p{N} _\-().[\]!]/gu, '').trim().slice(0, 80) || 'jeu';
+}
+function espace(nom) { // dossier des sauvegardes de ce jeu
+  return nomPropre(nom).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'jeu';
+}
+
+// .zip : on prend la première ROM du fichier (stockée ou « deflate »)
+async function dezipper(octets) {
+  const v = new DataView(octets.buffer, octets.byteOffset, octets.byteLength);
+  let fin = -1;
+  for (let i = octets.length - 22; i >= Math.max(0, octets.length - 65557); i--) {
+    if (v.getUint32(i, true) === 0x06054b50) { fin = i; break; }
+  }
+  if (fin < 0) throw new Error('Fichier .zip illisible.');
+  const nb = v.getUint16(fin + 10, true);
+  let p = v.getUint32(fin + 16, true);
+  const dec = new TextDecoder();
+  for (let n = 0; n < nb; n++) {
+    if (v.getUint32(p, true) !== 0x02014b50) break;
+    const methode = v.getUint16(p + 10, true);
+    const csize = v.getUint32(p + 20, true);
+    const taille = v.getUint32(p + 24, true);
+    const lnom = v.getUint16(p + 28, true), lext = v.getUint16(p + 30, true), lcom = v.getUint16(p + 32, true);
+    const local = v.getUint32(p + 42, true);
+    const nom = dec.decode(octets.subarray(p + 46, p + 46 + lnom));
+    p += 46 + lnom + lext + lcom;
+    if (!/\.(bin|gen|md|smd)$/i.test(nom)) continue;
+    const debut = local + 30 + v.getUint16(local + 26, true) + v.getUint16(local + 28, true);
+    const brut = octets.subarray(debut, debut + csize);
+    if (methode === 0) return { octets: brut.slice(), nom: nom.split('/').pop() };
+    if (methode === 8) {
+      const flux = new Blob([brut]).stream().pipeThrough(new DecompressionStream('deflate-raw'));
+      const out = new Uint8Array(await new Response(flux).arrayBuffer());
+      if (taille && out.length !== taille) throw new Error('Fichier .zip abîmé.');
+      return { octets: out, nom: nom.split('/').pop() };
+    }
+    throw new Error('Compression .zip non gérée : décompresse la ROM d\'abord.');
+  }
+  throw new Error('Aucune ROM Mega Drive (.bin, .gen, .md, .smd) dans ce .zip.');
+}
+
+async function preparerRom(octets, nom) {
+  if (octets[0] === 0x50 && octets[1] === 0x4b && octets[2] === 3 && octets[3] === 4) {
+    ({ octets, nom } = await dezipper(octets));
+  }
+  if (octets.length < 0x200) throw new Error('Ce fichier est trop petit pour être une ROM.');
+  if (octets.length > 10 * 1048576) throw new Error('Fichier trop gros pour une cartouche Mega Drive.');
+  return { octets, nom };
+}
+
+// Dernière ROM gardée sur l'appareil (OPFS) pour la relancer d'un geste
+async function dossierAppli() {
+  const racine = await navigator.storage.getDirectory();
+  return racine.getDirectoryHandle('playertime-emu', { create: true });
+}
+async function memoriserRom(octets, nom) {
+  try {
+    const d = await dossierAppli();
+    const f = await (await d.getFileHandle('derniere.rom', { create: true })).createWritable();
+    await f.write(octets); await f.close();
+    localStorage.setItem('pt-emu-derniere', nom);
+  } catch { /* stockage indisponible : tant pis, on joue quand même */ }
+}
+async function relireRom() {
+  try {
+    const nom = localStorage.getItem('pt-emu-derniere');
+    if (!nom) return null;
+    const d = await dossierAppli();
+    const f = await (await d.getFileHandle('derniere.rom')).getFile();
+    return { octets: new Uint8Array(await f.arrayBuffer()), nom };
+  } catch { return null; }
+}
+
+// ------------------------------------------------------------------ lancement
+let partie = null;
+let romCourante = null;
+
+async function lancer(octets, nom, titre) {
+  message('');
+  // Un seul BlastEm par page : pour changer de jeu, on recharge la page.
+  if (partie) {
+    await memoriserRom(octets, nom);
+    sessionStorage.setItem('pt-emu-relancer', '1');
+    location.reload();
+    return;
+  }
+  romCourante = { octets, nom, titre };
+  memoriserRom(octets, nom);
+  $('#accueil').hidden = true;
+  $('#jeu').hidden = false;
+  document.title = (titre || nomPropre(nom)) + ' – Émulateur Player Time';
+  pleinEcran(true);
+  try {
+    const wasmUrl = await chargerCoeur();
+    partie = await new BlastemSDK()
+      .config({
+        region: R.region,
+        shader: R.shader,
+        scanlines: R.scan,
+        renderFilter: R.lisse ? 'smooth' : 'pixelated',
+        border: 'hidden',
+        wasmUrl,
+      })
+      .assets({ rom: octets })
+      .storage({ namespace: espace(nom) })
+      .on('error', ({ detail }) => bulle('Erreur : ' + (detail?.message || detail)))
+      .mount($('#ecran'))
+      .start();
+    garderEcranAllume();
+    bulle(titre || nomPropre(nom));
+  } catch (e) {
+    console.error(e);
+    $('#jeu').hidden = true;
+    $('#accueil').hidden = false;
+    message('Impossible de lancer le jeu : ' + e.message, 'erreur');
+  }
+}
+
+async function depuisFichier(fichier) {
+  try {
+    message('Lecture de ' + fichier.name + '…');
+    const { octets, nom } = await preparerRom(new Uint8Array(await fichier.arrayBuffer()), fichier.name);
+    await lancer(octets, nom);
+  } catch (e) {
+    message(e.message, 'erreur');
+  }
+}
+
+async function depuisAdresse(url, titre) {
+  try {
+    message('Téléchargement du jeu…');
+    const rep = await fetch(url);
+    if (!rep.ok) throw new Error('jeu introuvable (' + rep.status + ')');
+    const nom = decodeURIComponent(new URL(url, location.href).pathname.split('/').pop() || 'jeu.bin');
+    const { octets, nom: n } = await preparerRom(new Uint8Array(await rep.arrayBuffer()), nom);
+    await lancer(octets, n, titre);
+  } catch (e) {
+    message('Impossible de charger le jeu : ' + e.message, 'erreur');
+  }
+}
+
+// ------------------------------------------------------------------ manette tactile
+const TOUCHES = Object.fromEntries(BLASTEM_CONTROLS.map((c) => [c.id, c]));
+const CODES_CLAVIER = { Enter: 13, ArrowLeft: 37, ArrowUp: 38, ArrowRight: 39, ArrowDown: 40 };
+const enfonce = new Set();
+
+function envoyerTouche(id, bas) {
+  const c = TOUCHES[id];
+  const canvas = $('#ecran canvas');
+  if (!c || !canvas) return;
+  // Même méthode que le SDK pour rejouer une touche : un vrai KeyboardEvent que SDL lit.
+  const ev = new KeyboardEvent(bas ? 'keydown' : 'keyup', { code: c.code, key: c.key, bubbles: true, cancelable: true });
+  const kc = CODES_CLAVIER[c.code] ?? c.key.toUpperCase().charCodeAt(0);
+  Object.defineProperty(ev, 'keyCode', { get: () => kc });
+  Object.defineProperty(ev, 'which', { get: () => kc });
+  canvas.dispatchEvent(ev);
+}
+
+function directionsCroix(x, y) {
+  const r = $('#croix').getBoundingClientRect();
+  const dx = x - (r.left + r.width / 2), dy = y - (r.top + r.height / 2);
+  const rayon = r.width / 2;
+  if (Math.hypot(dx, dy) < rayon * 0.18) return [];
+  // 8 directions : secteurs de 45°, diagonales comprises
+  const a = (Math.atan2(dy, dx) * 180) / Math.PI; // 0 = droite, 90 = bas
+  const out = [];
+  if (a > -67.5 && a < 67.5) out.push('right');
+  if (a > 112.5 || a < -112.5) out.push('left');
+  if (a > 22.5 && a < 157.5) out.push('down');
+  if (a < -22.5 && a > -157.5) out.push('up');
+  return out;
+}
+
+const doigts = new Map(); // pointerId -> {x, y, surCroix}
+function touchesSousDoigt({ x, y, surCroix }) {
+  if (surCroix) return directionsCroix(x, y);
+  const el = document.elementFromPoint(x, y);
+  const b = el?.closest?.('[data-k]');
+  return b ? [b.dataset.k] : [];
+}
+function recalculer() {
+  const voulu = new Set();
+  for (const d of doigts.values()) for (const k of touchesSousDoigt(d)) voulu.add(k);
+  let nouveau = false;
+  for (const k of enfonce) if (!voulu.has(k)) { enfonce.delete(k); envoyerTouche(k, false); }
+  for (const k of voulu) if (!enfonce.has(k)) { enfonce.add(k); envoyerTouche(k, true); nouveau = true; }
+  if (nouveau && R.vibre && navigator.vibrate) navigator.vibrate(12);
+  // affichage
+  const croix = $('#croix');
+  for (const dir of ['up', 'down', 'left', 'right']) croix.classList.toggle(dir, enfonce.has(dir));
+  for (const b of document.querySelectorAll('#manette [data-k]')) b.classList.toggle('appui', enfonce.has(b.dataset.k));
+}
+function brancherManette() {
+  const zone = $('#manette');
+  const debut = (e) => {
+    if (e.pointerType === 'mouse' && e.button !== 0) return;
+    const surCroix = !!e.target.closest('#croix');
+    if (!surCroix && !e.target.closest('[data-k]')) return;
+    e.preventDefault();
+    try { zone.setPointerCapture(e.pointerId); } catch { /* */ }
+    doigts.set(e.pointerId, { x: e.clientX, y: e.clientY, surCroix });
+    recalculer();
+  };
+  const bouge = (e) => {
+    const d = doigts.get(e.pointerId);
+    if (!d) return;
+    e.preventDefault();
+    d.x = e.clientX; d.y = e.clientY;
+    recalculer();
+  };
+  const fin = (e) => {
+    if (!doigts.delete(e.pointerId)) return;
+    recalculer();
+  };
+  zone.addEventListener('pointerdown', debut);
+  zone.addEventListener('pointermove', bouge);
+  zone.addEventListener('pointerup', fin);
+  zone.addEventListener('pointercancel', fin);
+  zone.addEventListener('lostpointercapture', fin);
+  zone.addEventListener('contextmenu', (e) => e.preventDefault());
+  // Un écran tactile détecté : on montre la manette même sur une tablette / PC tactile
+  addEventListener('touchstart', () => document.body.classList.add('tactile'), { once: true, passive: true });
+}
+function relacherTout() {
+  doigts.clear();
+  recalculer();
+}
+
+// ------------------------------------------------------------------ menu pause
+function ouvrirMenu() {
+  if (!partie) return;
+  relacherTout();
+  partie.pause(OWNER);
+  $('#menu-titre').textContent = romCourante ? (romCourante.titre || nomPropre(romCourante.nom)) : 'Pause';
+  majInfoSlot();
+  $('#menu').showModal();
+}
+function fermerMenu() {
+  $('#menu').close();
+}
+function majInfoSlot() {
+  try {
+    const s = partie.states.get(Number($('#slot').value));
+    $('#menu-info').textContent = s.savedAt
+      ? 'État sauvé le ' + s.savedAt.toLocaleString('fr-FR', { dateStyle: 'short', timeStyle: 'short' })
+      : 'Emplacement vide';
+  } catch { $('#menu-info').textContent = ''; }
+}
+async function action(nom) {
+  const slot = Number($('#slot').value);
+  try {
+    switch (nom) {
+      case 'menu': ouvrirMenu(); break;
+      case 'reprendre': fermerMenu(); break;
+      case 'sauver':
+        $('#menu-info').textContent = 'Sauvegarde…';
+        await partie.states.save(slot);
+        fermerMenu(); bulle('État sauvé (emplacement ' + (slot + 1) + ')');
+        break;
+      case 'charger':
+        if (partie.states.load(slot)) { fermerMenu(); bulle('État chargé (emplacement ' + (slot + 1) + ')'); }
+        else $('#menu-info').textContent = 'Rien dans cet emplacement.';
+        break;
+      case 'reset': fermerMenu(); await partie.restart(); bulle('Reset'); break;
+      case 'plein': fermerMenu(); pleinEcran(!document.fullscreenElement); break;
+      case 'changer':
+        await partie.flushSaves?.();
+        location.href = location.pathname; // retour à l'accueil (page neuve)
+        break;
+    }
+  } catch (e) {
+    $('#menu-info').textContent = e.message;
+  }
+}
+
+// ------------------------------------------------------------------ confort téléphone
+function pleinEcran(oui) {
+  try {
+    if (oui && !document.fullscreenElement) {
+      const p = document.documentElement.requestFullscreen?.({ navigationUI: 'hide' });
+      p?.then(() => screen.orientation?.lock?.('landscape').catch(() => {})).catch(() => {});
+    } else if (!oui && document.fullscreenElement) {
+      document.exitFullscreen?.();
+    }
+  } catch { /* iPhone : pas de plein écran pour les pages, l'appli installée en tient lieu */ }
+}
+let verrou = null;
+async function garderEcranAllume() {
+  try { verrou = await navigator.wakeLock?.request('screen'); } catch { /* */ }
+}
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) {
+    relacherTout();
+    partie?.flushSaves?.();
+  } else if (partie) {
+    garderEcranAllume();
+  }
+});
+
+// Installation en appli (Android / Chrome) et astuce iPhone
+let invite = null;
+addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  invite = e;
+  $('#installer').hidden = false;
+});
+function brancherInstallation() {
+  $('#btn-installer').addEventListener('click', async () => {
+    if (!invite) return;
+    invite.prompt();
+    await invite.userChoice;
+    invite = null;
+    $('#installer').hidden = true;
+  });
+  const ios = /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  const installee = matchMedia('(display-mode: standalone)').matches || navigator.standalone;
+  if (ios && !installee) $('#astuce-ios').hidden = false;
+}
+
+// ------------------------------------------------------------------ démarrage de la page
+async function demarrer() {
+  brancherReglages();
+  brancherManette();
+  brancherInstallation();
+
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js').catch(() => {});
+  }
+  // On prépare le cœur tout de suite : le jeu démarrera sans attente.
+  chargerCoeur().catch(() => {});
+
+  $('#fichier').addEventListener('change', (e) => {
+    const f = e.target.files[0];
+    e.target.value = '';
+    if (f) depuisFichier(f);
+  });
+
+  for (const b of document.querySelectorAll('[data-action]')) {
+    b.addEventListener('click', () => action(b.dataset.action));
+  }
+  $('#slot').addEventListener('change', majInfoSlot);
+  $('#menu').addEventListener('close', () => partie?.resume(OWNER));
+  $('#menu').addEventListener('click', (e) => { if (e.target === $('#menu')) fermerMenu(); });
+
+  // Touche Échap / bouton retour de la manette : menu (au clavier BlastEm garde ses touches)
+  addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && partie && !$('#menu').open) { e.preventDefault(); e.stopImmediatePropagation(); ouvrirMenu(); }
+  }, true);
+
+  // Un jeu passé dans l'adresse : emulateur/?rom=../jeux/gem-assault.bin (même site uniquement)
+  const param = new URLSearchParams(location.search).get('rom');
+  const titreJeu = (new URLSearchParams(location.search).get('titre') || '').slice(0, 80);
+  if (param) {
+    try {
+      const url = new URL(param, location.href);
+      if (url.origin !== location.origin) throw new Error();
+      const nom = decodeURIComponent(url.pathname.split('/').pop());
+      $('#btn-url').textContent = '▶ Jouer à ' + (titreJeu || nomPropre(nom));
+      $('#lancer-url').hidden = false;
+      $('#btn-url').addEventListener('click', () => depuisAdresse(url.href, titreJeu));
+    } catch { message('Adresse de jeu refusée (seuls les jeux de ce site).', 'erreur'); }
+  }
+
+  // Changement de jeu demandé avant le rechargement : un toucher pour relancer (le son l'exige)
+  const derniere = await relireRom();
+  if (sessionStorage.getItem('pt-emu-relancer') && derniere) {
+    sessionStorage.removeItem('pt-emu-relancer');
+    $('#accueil').hidden = true;
+    $('#jeu').hidden = false;
+    $('#toucher').hidden = false;
+    $('#toucher').addEventListener('click', () => {
+      $('#toucher').hidden = true;
+      lancer(derniere.octets, derniere.nom);
+    }, { once: true });
+    return;
+  }
+  if (derniere) {
+    $('#btn-reprendre').textContent = '▶ Reprendre : ' + nomPropre(derniere.nom);
+    $('#reprendre').hidden = false;
+    $('#btn-reprendre').addEventListener('click', () => lancer(derniere.octets, derniere.nom));
+  }
+}
+
+demarrer();
