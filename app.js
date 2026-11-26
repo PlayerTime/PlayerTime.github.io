@@ -77,7 +77,7 @@ async function charger() {
     DONNEES = await r.json();
     for (const p of DONNEES.projets) {
       (p.images || []).forEach(im => { im.src = BASE + im.src; });
-      if (p.patch && !/^https?:/.test(p.patch.fichier)) p.patch.fichier = BASE + p.patch.fichier;
+      if (p.patch && p.patch.fichier && !/^https?:/.test(p.patch.fichier)) p.patch.fichier = BASE + p.patch.fichier;
       if (p.patch && Array.isArray(p.patch.variantes)) p.patch.variantes.forEach(v => { v.fichier = BASE + v.fichier; });
     }
   } catch (e) {
@@ -127,7 +127,7 @@ function barre(p) {
     el('span', { class: 'avancement-piste' }, el('span', { class: 'avancement-plein', style: 'width:' + a + '%' })));
 }
 function compteur(p) {
-  if (!Stats.actif() || !p.patch) return null;
+  if (!Stats.actif() || !p.patch || p.patch.format === 'lien') return null;
   const span = el('span', { class: 'etiquette etiquette-compteur', 'data-id': p.id, hidden: true });
   remplirCompteur(span, p);
   return span;
@@ -376,6 +376,7 @@ function panneau(p) {
     return box;
   }
   if (info.format === 'jeu') return panneauJeu(p, box);
+  if (info.format === 'lien') return panneauLien(p, box);
   const cd = info.format === 'sfcd';
   // Mega CD : un patch par console (le jeu traduit est le même, seul le démarrage change)
   const variantes = cd && Array.isArray(info.variantes) && info.variantes.length > 1 ? info.variantes : null;
@@ -527,6 +528,23 @@ function boutonDon(texte) {
 function encartDon(phrase) {
   if (!lienDon()) return null;
   return el('div', { class: 'encart-don' }, el('p', { text: phrase }), boutonDon('Faire un don'));
+}
+
+// outil en ligne (ex. l'émulateur) : pas de téléchargement, un gros bouton qui l'ouvre
+function panneauLien(p, box) {
+  const info = p.patch;
+  $('h2', box).textContent = p.titre_panneau || 'Ouvrir';
+  const lien = el('a', { class: 'bouton bouton-ouvrir', href: BASE + info.lien, text: p.texte_bouton || '▶ Ouvrir',
+    onclick: () => Stats.evenement('ouverture-' + p.id, 'Ouverture : ' + p.titre) });
+  const points = (p.points_lien || []).length
+    ? el('ul', { class: 'points-lien' }, ...p.points_lien.map(t => el('li', { text: t }))) : null;
+  box.append(
+    p.texte_lien ? el('p', { text: p.texte_lien }) : null,
+    el('div', { class: 'telechargements' }, lien),
+    points,
+    encartDon(p.texte_don || 'C\u2019est gratuit. Si tu veux m\u2019aider à continuer, tu peux faire un don.'),
+    el('p', { class: 'meta-patch', text: `Version ${p.version || ''}${p.date_maj ? ' du ' + p.date_maj : ''}.` }));
+  return box;
 }
 
 function panneauJeu(p, box) {

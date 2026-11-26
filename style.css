@@ -328,3 +328,8 @@ body { padding-bottom: 120px; }
 .ligne-bps { margin: 0 0 12px; }
 .ligne-bps p { margin: 0 0 6px; }
 .ligne-bps .bouton { word-break: break-word; }
+
+/* fiche « lien » (outil en ligne, ex. l'émulateur) : un gros bouton qui l'ouvre */
+.bouton-ouvrir { display: block; width: 100%; text-align: center; font-size: 1.25rem; padding: 16px 18px 17px; }
+.points-lien { list-style: none; margin: 14px 0 4px; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 14px; color: var(--texte-doux); }
+.points-lien li::before { content: "✔ "; color: #5fd38a; }

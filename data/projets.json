@@ -319,6 +319,141 @@
    "date_maj": "18/10/2026"
   },
   {
+   "ordre": 1,
+   "categorie": "Mes outils",
+   "titre": "Émulateur Mega Drive en ligne",
+   "sous_titre": "Jouable sur téléphone, sans rien installer",
+   "plateforme": "Navigateur (Android, iPhone, PC)",
+   "statut": "Version de test",
+   "version": "0.6",
+   "date_version": "26/11/2026",
+   "resume": "Un émulateur Mega Drive qui tourne directement dans le navigateur du téléphone, avec manette tactile. Il reconnaît tout seul les jeux traduits sur le site et lance la version française.",
+   "format": "lien",
+   "lien": "emulateur/",
+   "couleur": "#2f6fd0",
+   "titre_panneau": "Jouer maintenant",
+   "texte_bouton": "▶ Ouvrir l'émulateur",
+   "texte_lien": "Rien à télécharger ni à installer : l'émulateur s'ouvre dans ton navigateur, sur téléphone comme sur PC. Choisis ta ROM, elle reste sur ton appareil. Aucun jeu n'est fourni.",
+   "points_lien": [
+    "Gratuit, sans publicité",
+    "Android, iPhone et PC",
+    "Marche aussi hors ligne"
+   ],
+   "titre_page": "Émulateur Mega Drive en ligne gratuit pour téléphone, en français | Player Time",
+   "titre_notes": "À propos de l'émulateur en ligne",
+   "texte_don": "L'émulateur est gratuit. Si tu veux m'aider à le continuer, tu peux faire un don.",
+   "id": "emulateur-en-ligne",
+   "notes": [
+    {
+     "titre": "",
+     "blocs": [
+      {
+       "texte": "Un émulateur Mega Drive qui tourne directement dans le navigateur, pensé d'abord pour le téléphone. Il utilise le cœur de BlastEm, l'un des émulateurs Mega Drive les plus précis, et il est entièrement en français."
+      }
+     ]
+    },
+    {
+     "titre": "Les traductions du site en un geste",
+     "blocs": [
+      {
+       "puce": "Choisis la ROM officielle d'un jeu que j'ai traduit : l'émulateur la reconnaît tout seul et te propose la version française."
+      },
+      {
+       "puce": "La traduction est téléchargée depuis le site et appliquée sur ton appareil, puis le jeu se lance en français."
+      },
+      {
+       "puce": "Quand je publie une nouvelle version d'une traduction, l'émulateur la récupère tout seul."
+      },
+      {
+       "puce": "Depuis la page d'une traduction ou d'un de mes jeux, le bouton « ▶ Jouer » ouvre directement le bon jeu."
+      }
+     ]
+    },
+    {
+     "titre": "Une vraie manette sur l'écran",
+     "blocs": [
+      {
+       "puce": "Croix, boutons A, B, C et START, et la manette 6 boutons (X, Y, Z) si tu veux."
+      },
+      {
+       "puce": "Tu peux déplacer chaque touche, changer leur taille et leur transparence. Le placement est gardé à part pour le portrait et le paysage."
+      },
+      {
+       "puce": "Vibration au toucher et test des touches pour vérifier ta manette."
+      }
+     ]
+    },
+    {
+     "titre": "Pour jouer",
+     "blocs": [
+      {
+       "puce": "Sauvegardes d'état à tout moment, sur 4 emplacements, pause, plein écran et reset."
+      },
+      {
+       "puce": "Région automatique, ou au choix Europe (50 Hz), USA ou Japon (60 Hz)."
+      },
+      {
+       "puce": "Filtres d'image : net, CRT, NTSC composite ou xBRZ (lissé), lignes de balayage."
+      },
+      {
+       "puce": "Fichiers .bin, .gen, .md, .smd et .zip."
+      }
+     ]
+    },
+    {
+     "titre": "Comme une appli",
+     "blocs": [
+      {
+       "puce": "Ajoute-le à l'écran d'accueil de ton téléphone : il s'ouvre ensuite comme une appli."
+      },
+      {
+       "puce": "Une fois ouvert une première fois, il fonctionne aussi hors ligne."
+      },
+      {
+       "puce": "Ta ROM reste sur ton appareil : rien n'est envoyé sur internet."
+      }
+     ]
+    },
+    {
+     "titre": "À savoir",
+     "blocs": [
+      {
+       "puce": "C'est une version de test : si un jeu ne marche pas bien, dis-le-moi sur le Discord."
+      },
+      {
+       "puce": "Il faut un navigateur récent (Chrome 80, Safari 16.4 ou Firefox 113, ou plus récent)."
+      },
+      {
+       "puce": "Aucun jeu ni BIOS n'est fourni : utilise tes propres ROM."
+      },
+      {
+       "puce": "BlastEm est un logiciel libre de Michael Pavone (licence GPL v3). Les licences et le code source sont indiqués dans l'émulateur."
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/emulateur-en-ligne/1-phantasy-star-2-telephone.jpg",
+     "legende": "Phantasy Star II en français, sur un téléphone Android"
+    },
+    {
+     "src": "images/emulateur-en-ligne/2-accueil.png",
+     "legende": "L'accueil de l'émulateur"
+    },
+    {
+     "src": "images/emulateur-en-ligne/3-gem-assault.png",
+     "legende": "Gem Assault avec la manette tactile"
+    }
+   ],
+   "patch": {
+    "format": "lien",
+    "lien": "emulateur/"
+   },
+   "revision": 1,
+   "date_maj": "26/11/2026"
+  },
+  {
    "ordre": 10,
    "categorie": "Traductions et améliorations",
    "titre": "Alien Soldier",
