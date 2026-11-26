@@ -638,11 +638,11 @@
    "rom_attendue": "Dynamite Headdy (Japan)",
    "nom_sortie": "Dynamite Headdy (FR).bin",
    "format": "bps",
-   "version": "DHv03",
-   "date_version": "25/11/2026",
+   "version": "DHv04",
+   "date_version": "26/11/2026",
    "nouveautes": [
-    "Nouveau mode debug : A + START sur l'écran de présentation",
-    "Choix de scène direct et invincibilité en mode debug"
+    "Les panneaux et écriteaux des niveaux sont en français (VILLE, EN VENTE, TOUR DES PANTINS, HEADDY le HÉROS...)",
+    "Les mots déjà compris de tous (SUPER STAR, DANGER, ACTION) sont gardés"
    ],
    "id": "dynamite-headdy",
    "notes": [
@@ -660,6 +660,9 @@
       },
       {
        "puce": "Les cartons des noms de scènes et l'écran de fin de partie"
+      },
+      {
+       "puce": "Les panneaux et écriteaux dessinés dans les niveaux"
       }
      ]
     },
@@ -681,7 +684,7 @@
      "titre": "Encore en anglais",
      "blocs": [
       {
-       "puce": "Défilé des personnages de l'intro, panneaux dans les niveaux"
+       "puce": "Défilé des personnages de l'intro et quelques panneaux pas encore repérés"
       },
       {
        "puce": "Écrans de score, bonus, continue et générique, icône kanji de la tête Bouddha"
@@ -694,6 +697,9 @@
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "DHv04 (26/11/2026) : Les panneaux et écriteaux des niveaux sont en français (VILLE, EN VENTE, TOUR DES PANTINS, HEADDY le HÉROS...) ; Les mots déjà compris de tous (SUPER STAR, DANGER, ACTION) sont gardés"
+      },
       {
        "puce": "DHv03 (25/11/2026) : Nouveau mode debug : A + START sur l'écran de présentation ; Choix de scène direct et invincibilité en mode debug"
       },
@@ -720,20 +726,20 @@
      "legende": "Le menu des options en français"
     },
     {
-     "src": "images/dynamite-headdy/04_choix_scene.png",
-     "legende": "Le choix de scène caché"
-    },
-    {
-     "src": "images/dynamite-headdy/05_dialogue.png",
+     "src": "images/dynamite-headdy/04_dialogue.png",
      "legende": "Maruyama, absent des versions occidentales, parle enfin français"
     },
     {
-     "src": "images/dynamite-headdy/06_dialogue2.png",
-     "legende": "Des fenêtres de 6 lignes avec une police accentuée"
+     "src": "images/dynamite-headdy/05_carton.png",
+     "legende": "Les noms des scènes en français"
     },
     {
-     "src": "images/dynamite-headdy/07_carton.png",
-     "legende": "Les noms des scènes en français"
+     "src": "images/dynamite-headdy/06_panneau.png",
+     "legende": "Les panneaux des niveaux en français"
+    },
+    {
+     "src": "images/dynamite-headdy/07_heros.png",
+     "legende": "HEADDY le HÉROS"
     },
     {
      "src": "images/dynamite-headdy/08_debugmode.png",
@@ -745,12 +751,12 @@
     "format": "bps",
     "crc_source": "D03CDB53",
     "taille_source": 2097152,
-    "crc_sortie": "C4681F50",
+    "crc_sortie": "61A9E8F6",
     "taille_sortie": 3145728,
-    "taille_patch": 123678
+    "taille_patch": 176596
    },
-   "revision": 2,
-   "date_maj": "25/11/2026"
+   "revision": 3,
+   "date_maj": "26/11/2026"
   },
   {
    "ordre": 10,

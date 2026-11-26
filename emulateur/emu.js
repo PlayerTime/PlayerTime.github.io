@@ -7,12 +7,20 @@ import BlastemSDK, { BLASTEM_CONTROLS } from './blastem/blastem.sdk.js';
 
 const $ = (s) => document.querySelector(s);
 const VERSION_COEUR = 'blastem-1.0.0+22';
+// Version de l'appli : à changer à chaque mise à jour, en même temps que VERSION dans sw.js
+export const VERSION_APPLI = '0.5';
+const DATE_APPLI = '26/11/2026';
 const OWNER = 'menu';
 
 // ------------------------------------------------------------------ réglages
-const DEFAUTS = { region: 'auto', shader: 'standard', lisse: false, scan: false, six: false, vibre: true, taille: 100, opacite: 75 };
+const DEFAUTS = { v: 2, region: 'auto', shader: 'standard', lisse: false, scan: false, six: false, vibre: false, diag: false, taille: 100, opacite: 75 };
 function lireReglages() {
-  try { return { ...DEFAUTS, ...JSON.parse(localStorage.getItem('pt-emu-reglages') || '{}') }; }
+  try {
+    const lu = JSON.parse(localStorage.getItem('pt-emu-reglages') || '{}');
+    // v2 : la vibration coupait le son sur Android, elle est désormais coupée par défaut
+    if ((lu.v || 1) < 2) { delete lu.vibre; lu.v = 2; }
+    return { ...DEFAUTS, ...lu };
+  }
   catch { return { ...DEFAUTS }; }
 }
 function ecrireReglages() {
@@ -24,12 +32,13 @@ function appliquerReglagesVisuels() {
   document.documentElement.style.setProperty('--tr', R.taille / 100);
   document.documentElement.style.setProperty('--o', R.opacite / 100);
   document.body.classList.toggle('six', R.six);
+  document.body.classList.toggle('diag', R.diag);
 }
 function brancherReglages() {
   const lien = [
     ['#r-region', 'region', 'value'], ['#r-shader', 'shader', 'value'],
     ['#r-lisse', 'lisse', 'checked'], ['#r-scan', 'scan', 'checked'],
-    ['#r-six', 'six', 'checked'], ['#r-vibre', 'vibre', 'checked'],
+    ['#r-six', 'six', 'checked'], ['#r-vibre', 'vibre', 'checked'], ['#r-diag', 'diag', 'checked'],
     ['#r-taille', 'taille', 'value'], ['#r-opacite', 'opacite', 'value'],
   ];
   for (const [sel, cle, prop] of lien) {
@@ -403,6 +412,7 @@ const CODES_CLAVIER = { Enter: 13, ArrowLeft: 37, ArrowUp: 38, ArrowRight: 39, A
 const enfonce = new Set();
 
 function envoyerTouche(id, bas) {
+  Diag.touche(id, bas);
   const c = TOUCHES[id];
   const canvas = $('#ecran canvas');
   if (!c || !canvas) return;
@@ -436,35 +446,45 @@ function touchesSousDoigt({ x, y, surCroix }) {
   const b = el?.closest?.('[data-k]');
   return b ? [b.dataset.k] : [];
 }
-// Une touche reste enfoncée au moins 3 images (50 ms) : un toucher très bref doit quand même
-// être vu par le jeu, qui ne lit la manette qu'une fois par image.
-const DUREE_MINI = 50;
-const appuiDepuis = new Map(); // touche -> heure de l'appui
-const relachesEnAttente = new Map(); // touche -> minuteur
+// Une touche reste enfoncée au moins 4 images affichées. Sur téléphone, l'émulation avance par
+// à-coups : avec une durée en millisecondes, l'appui et le relâché pouvaient arriver ensemble,
+// entre deux lectures de la manette, et le jeu ne voyait rien. Compter les images du navigateur
+// garantit que la boucle de l'émulateur a tourné plusieurs fois entre les deux.
+const IMAGES_MINI = 4;
+let image = 0;
+const appuiImage = new Map(); // touche -> numéro d'image de l'appui
+const relachesEnAttente = new Set();
+function boucleImages() {
+  image++;
+  for (const k of relachesEnAttente) {
+    if (image - (appuiImage.get(k) || 0) >= IMAGES_MINI) { relachesEnAttente.delete(k); envoyerTouche(k, false); }
+  }
+  Diag.image();
+  requestAnimationFrame(boucleImages);
+}
+requestAnimationFrame(boucleImages);
 function appuyer(k) {
-  if (relachesEnAttente.has(k)) { clearTimeout(relachesEnAttente.get(k)); relachesEnAttente.delete(k); return; }
-  appuiDepuis.set(k, performance.now());
+  if (relachesEnAttente.delete(k)) return; // ré-appui avant la fin : la touche n'a jamais été relâchée
+  appuiImage.set(k, image);
   envoyerTouche(k, true);
 }
 function relacher(k) {
-  const reste = DUREE_MINI - (performance.now() - (appuiDepuis.get(k) || 0));
-  if (reste > 0) {
-    relachesEnAttente.set(k, setTimeout(() => { relachesEnAttente.delete(k); envoyerTouche(k, false); }, reste));
-  } else {
-    envoyerTouche(k, false);
-  }
+  if (image - (appuiImage.get(k) || 0) >= IMAGES_MINI) envoyerTouche(k, false);
+  else relachesEnAttente.add(k);
 }
+let boutonsManette = null;
 function recalculer() {
   const voulu = new Set();
   for (const d of doigts.values()) for (const k of touchesSousDoigt(d)) voulu.add(k);
-  let nouveau = false;
-  for (const k of enfonce) if (!voulu.has(k)) { enfonce.delete(k); relacher(k); }
-  for (const k of voulu) if (!enfonce.has(k)) { enfonce.add(k); appuyer(k); nouveau = true; }
-  if (nouveau && R.vibre && navigator.vibrate) navigator.vibrate(12);
-  // affichage
+  let change = false, nouveau = false;
+  for (const k of enfonce) if (!voulu.has(k)) { enfonce.delete(k); relacher(k); change = true; }
+  for (const k of voulu) if (!enfonce.has(k)) { enfonce.add(k); appuyer(k); nouveau = change = true; }
+  if (!change) return; // le doigt a bougé sans changer de touche : rien à faire
+  if (nouveau && R.vibre && navigator.vibrate) navigator.vibrate(10);
   const croix = $('#croix');
   for (const dir of ['up', 'down', 'left', 'right']) croix.classList.toggle(dir, enfonce.has(dir));
-  for (const b of document.querySelectorAll('#manette [data-k]')) b.classList.toggle('appui', enfonce.has(b.dataset.k));
+  boutonsManette ??= [...document.querySelectorAll('#manette [data-k]')];
+  for (const b of boutonsManette) b.classList.toggle('appui', enfonce.has(b.dataset.k));
 }
 function brancherManette() {
   const zone = $('#manette');
@@ -510,6 +530,57 @@ function relacherTout() {
   recalculer();
 }
 
+// ------------------------------------------------------------------ test des touches
+// Panneau affiché par-dessus le jeu (menu ☰ → Test des touches, ou Réglages) :
+// - les 12 commandes s'allument quand la page les envoie à l'émulateur ;
+// - la durée de chaque appui, en millisecondes et en images ;
+// - la vitesse de l'émulateur (images/s annoncées par BlastEm) et de l'écran du téléphone.
+// Si une touche s'allume ici mais que le jeu ne réagit pas, le souci est du côté de l'émulateur.
+const Diag = (() => {
+  const ORDRE = ['up', 'down', 'left', 'right', 'a', 'b', 'c', 'start', 'x', 'y', 'z', 'mode'];
+  const NOMS = { up: '↑', down: '↓', left: '←', right: '→', start: 'ST', mode: 'MD' };
+  let cases = null, journal = null, ligne = null;
+  const debut = new Map();
+  let images = 0, t0 = performance.now(), hz = 0, pire = 0, dernier = performance.now();
+  function monter() {
+    const p = $('#diag');
+    p.querySelector('.diag-touches').replaceChildren(...ORDRE.map((k) => {
+      const c = document.createElement('span'); c.dataset.d = k; c.textContent = NOMS[k] || k.toUpperCase(); return c;
+    }));
+    cases = Object.fromEntries([...p.querySelectorAll('.diag-touches span')].map((c) => [c.dataset.d, c]));
+    journal = p.querySelector('.diag-journal');
+    ligne = p.querySelector('.diag-ligne');
+  }
+  function touche(k, bas) {
+    if (!R.diag) return;
+    if (!cases) monter();
+    cases[k]?.classList.toggle('on', bas);
+    const maintenant = performance.now();
+    if (bas) { debut.set(k, { t: maintenant, i: image }); return; }
+    const d = debut.get(k);
+    if (!d) return;
+    const li = document.createElement('li');
+    li.textContent = `${NOMS[k] || k.toUpperCase()} : ${Math.round(maintenant - d.t)} ms, ${image - d.i} images`;
+    journal.prepend(li);
+    while (journal.children.length > 5) journal.lastChild.remove();
+  }
+  function image_() {
+    const maintenant = performance.now();
+    pire = Math.max(pire, maintenant - dernier);
+    dernier = maintenant;
+    images++;
+    if (maintenant - t0 < 1000) return;
+    hz = Math.round((images * 1000) / (maintenant - t0));
+    if (R.diag && partie) {
+      if (!cases) monter();
+      const fps = (document.title.match(/([\d.]+)\s*fps/) || [])[1];
+      ligne.textContent = `v${VERSION_APPLI} · jeu ${fps ? Math.round(fps) + ' im/s' : '…'} · écran ${hz} Hz · pire pause ${Math.round(pire)} ms`;
+    }
+    images = 0; t0 = maintenant; pire = 0;
+  }
+  return { touche, image: image_ };
+})();
+
 // ------------------------------------------------------------------ menu pause
 function ouvrirMenu() {
   if (!partie) return;
@@ -547,6 +618,11 @@ async function action(nom) {
         break;
       case 'reset': fermerMenu(); await partie.restart(); bulle('Reset'); break;
       case 'plein': fermerMenu(); pleinEcran(!document.fullscreenElement); break;
+      case 'test':
+        R.diag = !R.diag; ecrireReglages(); appliquerReglagesVisuels();
+        $('#r-diag').checked = R.diag;
+        fermerMenu(); bulle(R.diag ? 'Test des touches affiché' : 'Test des touches masqué');
+        break;
       case 'changer':
         await partie.flushSaves?.();
         location.href = location.pathname; // retour à l'accueil (page neuve)
@@ -603,12 +679,22 @@ function brancherInstallation() {
 
 // ------------------------------------------------------------------ démarrage de la page
 async function demarrer() {
+  for (const e of document.querySelectorAll('.version-appli')) e.textContent = `Version ${VERSION_APPLI} du ${DATE_APPLI}`;
   brancherReglages();
   brancherManette();
   brancherInstallation();
 
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js').catch(() => {});
+    // Nouvelle version publiée : dès qu'elle est prête, la page se recharge toute seule
+    // (seulement depuis l'accueil, jamais pendant une partie).
+    const avait = !!navigator.serviceWorker.controller;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (avait && !partie && !sessionStorage.getItem('pt-emu-maj')) {
+        sessionStorage.setItem('pt-emu-maj', '1');
+        location.reload();
+      }
+    });
+    navigator.serviceWorker.register('sw.js').then((r) => r.update()).catch(() => {});
   }
   // On prépare le cœur tout de suite : le jeu démarrera sans attente.
   chargerCoeur().catch(() => {});

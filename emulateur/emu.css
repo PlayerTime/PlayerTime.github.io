@@ -211,3 +211,18 @@ dialog#menu h2 { margin: 0 0 10px; text-align: center; color: var(--cadre); font
   background: #0d1233ee; border: 2px solid var(--cadre); border-radius: 8px;
   padding: 6px 12px; margin: 0; z-index: 9; font-size: .95rem; white-space: nowrap;
 }
+
+/* ---------- Test des touches ---------- */
+#diag {
+  display: none;
+  position: absolute; left: calc(6px + env(safe-area-inset-left)); top: calc(6px + env(safe-area-inset-top));
+  z-index: 6; max-width: min(70vw, 340px);
+  background: #000c; border: 1px solid var(--cadre); border-radius: 6px;
+  padding: 6px 8px; font-size: .78rem; line-height: 1.3; pointer-events: none;
+}
+body.diag #diag { display: block; }
+.diag-ligne { margin: 0 0 4px; color: var(--cadre); }
+.diag-touches { display: flex; flex-wrap: wrap; gap: 3px; }
+.diag-touches span { min-width: 24px; text-align: center; padding: 1px 3px; border: 1px solid #555; border-radius: 4px; color: #888; }
+.diag-touches span.on { background: var(--ok); color: #000; border-color: var(--ok); }
+.diag-journal { list-style: none; margin: 4px 0 0; padding: 0; color: var(--texte-doux); }

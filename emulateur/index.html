@@ -78,7 +78,8 @@
       <label class="case"><input type="checkbox" id="r-lisse"> Lisser les pixels</label>
       <label class="case"><input type="checkbox" id="r-scan"> Lignes de balayage</label>
       <label class="case"><input type="checkbox" id="r-six"> Manette 6 boutons (X Y Z)</label>
-      <label class="case"><input type="checkbox" id="r-vibre" checked> Vibration au toucher</label>
+      <label class="case"><input type="checkbox" id="r-vibre"> Vibration au toucher (peut couper le son)</label>
+      <label class="case"><input type="checkbox" id="r-diag"> Test des touches pendant le jeu</label>
       <label>Taille des boutons
         <input type="range" id="r-taille" min="70" max="140" step="5" value="100">
       </label>
@@ -96,6 +97,7 @@
 
     <p class="pied">
       <a href="../">← Retour au site Player Time</a><br>
+      <span class="version-appli"></span><br>
       BlastEm © Michael Pavone (GPL v3) · <a href="licences.html">Licences et code source</a>
     </p>
   </div>
@@ -144,6 +146,7 @@
       <button type="button" class="bouton" data-action="plein">⛶ Plein écran</button>
       <button type="button" class="bouton" data-action="reset">↺ Reset</button>
       <button type="button" class="bouton" data-action="changer">🎮 Changer de jeu</button>
+      <button type="button" class="bouton" data-action="test">🔧 Test des touches</button>
     </div>
     <label class="emplacement">Emplacement
       <select id="slot">
@@ -151,11 +154,18 @@
       </select>
     </label>
     <p id="menu-info" class="aide"></p>
+    <p class="aide version-appli"></p>
   </dialog>
 
   <p id="bulle" class="bulle" hidden></p>
+
+  <div id="diag" aria-hidden="true">
+    <p class="diag-ligne">Test des touches : appuie sur la manette…</p>
+    <div class="diag-touches"></div>
+    <ul class="diag-journal"></ul>
+  </div>
 </section>
 
-<script type="module" src="emu.js"></script>
+<script type="module" src="emu.js?v=0.5"></script>
 </body>
 </html>
