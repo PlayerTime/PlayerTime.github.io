@@ -60,6 +60,11 @@ h1 { margin: 0; font-size: 1.6rem; color: var(--cadre); text-align: center; lett
 #btn-rom input { display: none; }
 .bouton:disabled { opacity: .5; }
 
+.encart { border: 2px dashed var(--cadre); border-radius: 8px; padding: 10px; background: #0d123366; }
+.encart p { margin: 0 0 8px; text-align: center; }
+.titre-encart { color: var(--cadre); font-weight: 700; }
+.liste-boutons { display: grid; gap: 8px; margin-bottom: 8px; }
+.bouton small { display: block; font-size: .75rem; font-weight: 400; opacity: .85; }
 .coeur .barre { height: 10px; border: 2px solid var(--cadre); border-radius: 6px; overflow: hidden; background: #0006; }
 .coeur .barre div { height: 100%; width: 0; background: var(--cadre); transition: width .2s; }
 .coeur p { margin: 4px 0 0; font-size: .85rem; text-align: center; color: var(--texte-doux); }

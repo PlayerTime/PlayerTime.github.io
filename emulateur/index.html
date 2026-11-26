@@ -29,6 +29,16 @@
       <p id="coeur-texte">Préparation du cœur…</p>
     </div>
 
+    <div id="demande-patch" class="bloc encart" hidden>
+      <p id="demande-patch-texte"></p>
+    </div>
+
+    <div id="choix" class="bloc encart" hidden>
+      <p class="titre-encart" id="choix-titre">Ce jeu existe en français sur le site !</p>
+      <div id="choix-liste" class="liste-boutons"></div>
+      <button type="button" class="bouton" id="btn-origine">Jouer à la version d'origine</button>
+    </div>
+
     <div id="lancer-url" class="bloc" hidden>
       <button type="button" class="bouton bouton-or" id="btn-url"></button>
     </div>
@@ -42,7 +52,8 @@
         Choisir une ROM…
         <input type="file" id="fichier" accept=".bin,.gen,.md,.smd,.zip,application/octet-stream,application/zip">
       </label>
-      <p class="aide">.bin, .gen, .md, .smd ou .zip — la ROM reste sur ton appareil, rien n'est envoyé.</p>
+      <p class="aide">.bin, .gen, .md, .smd ou .zip — la ROM reste sur ton appareil, rien n'est envoyé.<br>
+      Si une traduction française Player Time existe pour ce jeu, l'émulateur la propose tout seul.</p>
     </div>
 
     <details class="bloc reglages">

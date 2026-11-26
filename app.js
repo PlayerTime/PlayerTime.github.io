@@ -443,6 +443,12 @@ function panneau(p) {
       : 'Sélectionne ta ROM officielle. Le patch la vérifie puis crée la version française, que tu télécharges.' }),
     el('p', { class: 'attendue', text: `ROM attendue : ${p.rom_attendue}` + (info.crc_source ? ` (CRC32 ${info.crc_source}).` : '.') }),
     choixConsole, depot, barre, journal, sorties,
+    // Mega Drive : on peut aussi jouer tout de suite en français dans l'émulateur en ligne
+    (!cd && info.format === 'bps' && /mega ?drive|genesis/i.test(p.plateforme || ''))
+      ? el('div', { class: 'telechargements' }, el('a', { class: 'bouton', href: BASE + 'emulateur/?patch=' + encodeURIComponent(p.id),
+          text: '▶ Jouer en français dans l’émulateur (téléphone ou PC)',
+          onclick: () => Stats.evenement(cheminCompteur(p) + '-emulateur', 'Partie en ligne : ' + p.titre) }))
+      : null,
     (() => { const e = encartDon('Ce patch est gratuit. Si tu veux soutenir mon travail, tu peux faire un don.'); if (e) e.classList.add('encart-don-fixe'); return e; })(),
     el('p', { class: 'meta-patch', text:
       `Patch ${p.date_maj ? 'du ' + p.date_maj : ''}${p.revision ? ', révision ' + p.revision : ''}, ${ko(info.taille_patch)}. ` +

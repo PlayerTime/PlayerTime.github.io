@@ -150,44 +150,175 @@ async function preparerRom(octets, nom) {
   return { octets, nom };
 }
 
+// ------------------------------------------------------------------ traductions du site
+// Le site range chaque traduction avec l'empreinte (CRC32) de la ROM officielle qu'elle attend
+// (data/projets.json). L'émulateur calcule l'empreinte de la ROM choisie et propose la version
+// française s'il y en a une : il télécharge le patch, l'applique ici, et lance le jeu.
+const TABLE_CRC = new Uint32Array(256);
+for (let i = 0; i < 256; i++) {
+  let c = i;
+  for (let k = 0; k < 8; k++) c = c & 1 ? 0xEDB88320 ^ (c >>> 1) : c >>> 1;
+  TABLE_CRC[i] = c >>> 0;
+}
+function crc32(u8) {
+  let c = 0xFFFFFFFF;
+  for (let i = 0; i < u8.length; i++) c = TABLE_CRC[(c ^ u8[i]) & 0xFF] ^ (c >>> 8);
+  return (~c >>> 0).toString(16).toUpperCase().padStart(8, '0');
+}
+function appliquerBPS(src, patch) {
+  if (patch[0] !== 0x42 || patch[1] !== 0x50 || patch[2] !== 0x53 || patch[3] !== 0x31) throw new Error('Patch invalide.');
+  let o = 4;
+  const num = () => {
+    let d = 0, s = 1;
+    for (;;) { const x = patch[o++]; d += (x & 0x7F) * s; if (x & 0x80) return d; s *= 128; d += s; }
+  };
+  num(); const nt = num(), nm = num();
+  o += nm;
+  const dst = new Uint8Array(nt);
+  let w = 0, sr = 0, tr = 0;
+  const fin = patch.length - 12;
+  while (o < fin) {
+    const a = num(), m = a % 4, ln = Math.floor(a / 4) + 1;
+    if (m === 0) { dst.set(src.subarray(w, w + ln), w); w += ln; }
+    else if (m === 1) { dst.set(patch.subarray(o, o + ln), w); o += ln; w += ln; }
+    else {
+      const d = num(), dd = d & 1 ? -Math.floor(d / 2) : Math.floor(d / 2);
+      if (m === 2) { sr += dd; dst.set(src.subarray(sr, sr + ln), w); sr += ln; w += ln; }
+      else { tr += dd; for (let k = 0; k < ln; k++) dst[w++] = dst[tr++]; }
+    }
+  }
+  return dst;
+}
+// ROM « propre » : sans l'en-tête de 512 octets des copieurs (.smd) si c'est lui qui gêne
+function versionPropre(octets) {
+  const crc = crc32(octets);
+  if (octets.length % 1024 === 512) {
+    const sans = octets.subarray(512);
+    return { octets, crc, sans, crcSans: crc32(sans) };
+  }
+  return { octets, crc };
+}
+
+let catalogue = null;
+async function chargerCatalogue() {
+  if (catalogue) return catalogue;
+  try {
+    const r = await fetch('../data/projets.json', { cache: 'no-cache' });
+    if (!r.ok) throw new Error();
+    const d = await r.json();
+    catalogue = (d.projets || []).filter((p) => p.patch && p.patch.format === 'bps'
+      && /mega ?drive|genesis/i.test(p.plateforme || '') && p.patch.crc_source);
+  } catch {
+    catalogue = []; // hors ligne et jamais chargé : on joue sans proposer de traduction
+  }
+  return catalogue;
+}
+// Traductions qui s'appliquent à cette ROM (il peut y en avoir plusieurs : Dune et DuneRazorOpti…)
+async function traductionsPour(octets) {
+  const cat = await chargerCatalogue();
+  const v = versionPropre(octets);
+  const res = [];
+  for (const p of cat) {
+    if (p.patch.crc_source === v.crc) res.push({ p, source: v.octets });
+    else if (v.sans && p.patch.crc_source === v.crcSans) res.push({ p, source: v.sans });
+  }
+  const dejaFr = cat.find((p) => p.patch.crc_sortie === v.crc);
+  return { res, dejaFr };
+}
+async function patcher(p, source) {
+  const r = await fetch('../' + p.patch.fichier + (p.revision ? '?r=' + p.revision : ''), { cache: 'no-cache' });
+  if (!r.ok) throw new Error('patch introuvable sur le site (connexion internet ?)');
+  const out = appliquerBPS(source, new Uint8Array(await r.arrayBuffer()));
+  if (crc32(out) !== p.patch.crc_sortie) throw new Error('la vérification après le patch a échoué');
+  return out;
+}
+async function jouerTraduction(p, source) {
+  try {
+    message('Téléchargement de la traduction « ' + p.titre + ' »…');
+    const fr = await patcher(p, source);
+    await lancer(fr, p.nom_sortie || p.id + '.bin', p.titre + ' (FR)', { pid: p.id, rev: p.revision || 0, origine: source });
+  } catch (e) {
+    message('Impossible d\'appliquer la traduction : ' + e.message, 'erreur');
+  }
+}
+function libelleTrad(p) {
+  const b = document.createElement('button');
+  b.type = 'button';
+  b.className = 'bouton bouton-or';
+  b.textContent = '▶ Jouer en français : ' + p.titre;
+  const sm = document.createElement('small');
+  sm.textContent = [p.sous_titre, p.statut, p.version ? 'version ' + p.version : '', p.date_maj ? 'du ' + p.date_maj : '']
+    .filter(Boolean).join(' · ');
+  b.append(sm);
+  return b;
+}
+
 // Dernière ROM gardée sur l'appareil (OPFS) pour la relancer d'un geste
 async function dossierAppli() {
   const racine = await navigator.storage.getDirectory();
   return racine.getDirectoryHandle('playertime-emu', { create: true });
 }
-async function memoriserRom(octets, nom) {
+async function ecrireFichier(d, nom, octets) {
+  const f = await (await d.getFileHandle(nom, { create: true })).createWritable();
+  await f.write(octets); await f.close();
+}
+async function memoriserRom(octets, nom, titre, trad) {
   try {
     const d = await dossierAppli();
-    const f = await (await d.getFileHandle('derniere.rom', { create: true })).createWritable();
-    await f.write(octets); await f.close();
+    await ecrireFichier(d, 'derniere.rom', octets);
+    // pour une traduction, on garde aussi la ROM d'origine : si la traduction est mise à jour
+    // sur le site, l'émulateur refait le patch tout seul au prochain lancement
+    if (trad?.origine) await ecrireFichier(d, 'origine.rom', trad.origine);
     localStorage.setItem('pt-emu-derniere', nom);
+    localStorage.setItem('pt-emu-derniere-info', JSON.stringify({ titre: titre || '', pid: trad?.pid || '', rev: trad?.rev || 0 }));
   } catch { /* stockage indisponible : tant pis, on joue quand même */ }
 }
 async function relireRom() {
   try {
     const nom = localStorage.getItem('pt-emu-derniere');
     if (!nom) return null;
+    let info = {};
+    try { info = JSON.parse(localStorage.getItem('pt-emu-derniere-info') || '{}'); } catch { /* */ }
     const d = await dossierAppli();
     const f = await (await d.getFileHandle('derniere.rom')).getFile();
-    return { octets: new Uint8Array(await f.arrayBuffer()), nom };
+    return { octets: new Uint8Array(await f.arrayBuffer()), nom, info, dossier: d };
   } catch { return null; }
+}
+// Reprendre la dernière partie ; si c'est une traduction mise à jour depuis, on la repatche
+async function reprendre(derniere) {
+  const { info } = derniere;
+  if (info.pid) {
+    const p = (await chargerCatalogue()).find((x) => x.id === info.pid);
+    if (p && (p.revision || 0) !== info.rev) {
+      try {
+        const f = await (await derniere.dossier.getFileHandle('origine.rom')).getFile();
+        const origine = new Uint8Array(await f.arrayBuffer());
+        message('Nouvelle version de la traduction : mise à jour…');
+        const fr = await patcher(p, origine);
+        await lancer(fr, p.nom_sortie || derniere.nom, p.titre + ' (FR)', { pid: p.id, rev: p.revision || 0, origine });
+        bulle('Traduction mise à jour ✔');
+        return;
+      } catch { /* pas possible maintenant : on joue l'ancienne version */ }
+    }
+  }
+  lancer(derniere.octets, derniere.nom, info.titre || '');
 }
 
 // ------------------------------------------------------------------ lancement
 let partie = null;
 let romCourante = null;
 
-async function lancer(octets, nom, titre) {
+async function lancer(octets, nom, titre, trad) {
   message('');
   // Un seul BlastEm par page : pour changer de jeu, on recharge la page.
   if (partie) {
-    await memoriserRom(octets, nom);
+    await memoriserRom(octets, nom, titre, trad);
     sessionStorage.setItem('pt-emu-relancer', '1');
     location.reload();
     return;
   }
   romCourante = { octets, nom, titre };
-  memoriserRom(octets, nom);
+  memoriserRom(octets, nom, titre, trad);
   $('#accueil').hidden = true;
   $('#jeu').hidden = false;
   document.title = (titre || nomPropre(nom)) + ' – Émulateur Player Time';
@@ -218,11 +349,36 @@ async function lancer(octets, nom, titre) {
   }
 }
 
+let patchDemande = null; // emulateur/?patch=ristar : le joueur vient de la page d'une traduction
+
 async function depuisFichier(fichier) {
   try {
     message('Lecture de ' + fichier.name + '…');
     const { octets, nom } = await preparerRom(new Uint8Array(await fichier.arrayBuffer()), fichier.name);
-    await lancer(octets, nom);
+    message('Recherche d\'une traduction…');
+    const { res, dejaFr } = await traductionsPour(octets);
+    message('');
+    if (patchDemande) {
+      const bon = res.find((t) => t.p.id === patchDemande.id);
+      if (bon) return jouerTraduction(bon.p, bon.source);
+      if (dejaFr?.id === patchDemande.id) return lancer(octets, nom, patchDemande.titre + ' (FR)');
+      return message('Ce n\'est pas la bonne ROM pour « ' + patchDemande.titre + ' » : il faut ' +
+        (patchDemande.rom_attendue || 'la ROM officielle') + ' (CRC32 ' + patchDemande.patch.crc_source + ').', 'erreur');
+    }
+    if (!res.length) return lancer(octets, nom, dejaFr ? dejaFr.titre + ' (FR)' : '');
+    // une ou plusieurs traductions pour ce jeu : on laisse choisir
+    const liste = $('#choix-liste');
+    liste.replaceChildren(...res.map(({ p, source }) => {
+      const b = libelleTrad(p);
+      b.addEventListener('click', () => jouerTraduction(p, source));
+      return b;
+    }));
+    $('#choix-titre').textContent = res.length > 1
+      ? 'Ce jeu a ' + res.length + ' versions françaises sur le site !'
+      : 'Ce jeu existe en français sur le site !';
+    $('#btn-origine').onclick = () => { $('#choix').hidden = true; lancer(octets, nom, ''); };
+    $('#choix').hidden = false;
+    $('#choix').scrollIntoView({ behavior: 'smooth', block: 'center' });
   } catch (e) {
     message(e.message, 'erreur');
   }
@@ -449,6 +605,20 @@ async function demarrer() {
     if (e.key === 'Escape' && partie && !$('#menu').open) { e.preventDefault(); e.stopImmediatePropagation(); ouvrirMenu(); }
   }, true);
 
+  // Venu de la page d'une traduction : emulateur/?patch=ristar
+  const idPatch = new URLSearchParams(location.search).get('patch');
+  if (idPatch) {
+    const p = (await chargerCatalogue()).find((x) => x.id === idPatch);
+    if (p) {
+      patchDemande = p;
+      $('#demande-patch-texte').textContent = 'Pour jouer à « ' + p.titre + ' » en français, choisis ta ROM officielle : '
+        + (p.rom_attendue || 'le jeu d\'origine') + '. La traduction s\'applique toute seule.';
+      $('#demande-patch').hidden = false;
+      $('#btn-rom').firstChild.textContent = 'Choisir ma ROM de ' + p.titre + '…';
+    }
+  }
+  chargerCatalogue(); // en avance, pour reconnaître les jeux sans attendre
+
   // Un jeu passé dans l'adresse : emulateur/?rom=../jeux/gem-assault.bin (même site uniquement)
   const param = new URLSearchParams(location.search).get('rom');
   const titreJeu = (new URLSearchParams(location.search).get('titre') || '').slice(0, 80);
@@ -472,14 +642,14 @@ async function demarrer() {
     $('#toucher').hidden = false;
     $('#toucher').addEventListener('click', () => {
       $('#toucher').hidden = true;
-      lancer(derniere.octets, derniere.nom);
+      lancer(derniere.octets, derniere.nom, derniere.info.titre || '');
     }, { once: true });
     return;
   }
   if (derniere) {
-    $('#btn-reprendre').textContent = '▶ Reprendre : ' + nomPropre(derniere.nom);
+    $('#btn-reprendre').textContent = '▶ Reprendre : ' + (derniere.info.titre || nomPropre(derniere.nom));
     $('#reprendre').hidden = false;
-    $('#btn-reprendre').addEventListener('click', () => lancer(derniere.octets, derniere.nom));
+    $('#btn-reprendre').addEventListener('click', () => reprendre(derniere));
   }
 }
 
