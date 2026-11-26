@@ -1,6 +1,6 @@
 // Garde l'émulateur sur le téléphone : après la première visite, il marche hors ligne.
 // Changer VERSION à chaque mise à jour (et VERSION_APPLI dans emu.js) des fichiers pour que les téléphones la récupèrent.
-const VERSION = 'pt-emu-5';
+const VERSION = 'pt-emu-6';
 const FICHIERS = [
   './', 'index.html', 'emu.css', 'emu.js', 'manifest.webmanifest', 'licences.html',
   'icone-192.png', 'icone-512.png', 'icone-maskable.png', 'icone-apple.png',

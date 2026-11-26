@@ -8,12 +8,12 @@ import BlastemSDK, { BLASTEM_CONTROLS } from './blastem/blastem.sdk.js';
 const $ = (s) => document.querySelector(s);
 const VERSION_COEUR = 'blastem-1.0.0+22';
 // Version de l'appli : à changer à chaque mise à jour, en même temps que VERSION dans sw.js
-export const VERSION_APPLI = '0.5';
+export const VERSION_APPLI = '0.6';
 const DATE_APPLI = '26/11/2026';
 const OWNER = 'menu';
 
 // ------------------------------------------------------------------ réglages
-const DEFAUTS = { v: 2, region: 'auto', shader: 'standard', lisse: false, scan: false, six: false, vibre: false, diag: false, taille: 100, opacite: 75 };
+const DEFAUTS = { v: 2, region: 'auto', shader: 'standard', lisse: false, scan: false, six: false, vibre: false, diag: false, taille: 100, opacite: 75, disp: {} };
 function lireReglages() {
   try {
     const lu = JSON.parse(localStorage.getItem('pt-emu-reglages') || '{}');
@@ -492,6 +492,7 @@ function brancherManette() {
   // l'élément touché (et ses mouvements remontent jusqu'ici). Le reprendre envoyait un
   // « lostpointercapture » qui relâchait la touche aussitôt : rien n'arrivait au jeu.
   const debut = (e) => {
+    if (document.body.classList.contains('placement')) return;
     if (e.pointerType === 'mouse' && e.button !== 0) return;
     const surCroix = !!e.target.closest('#croix');
     if (!surCroix && !e.target.closest('[data-k]')) return;
@@ -581,6 +582,89 @@ const Diag = (() => {
   return { touche, image: image_ };
 })();
 
+// ------------------------------------------------------------------ placer les touches
+// Chaque bloc (croix, boutons A B C / X Y Z, START, MODE) peut être glissé au doigt.
+// Position gardée en fraction de la zone de la manette, à part pour le portrait et le paysage.
+const TRANSFORMS = { boutons: ' rotate(-18deg)' };
+const orientation = () => (matchMedia('(orientation: landscape)').matches ? 'paysage' : 'portrait');
+function placer(el, pos) {
+  if (pos) {
+    el.style.left = (pos.x * 100) + '%';
+    el.style.top = (pos.y * 100) + '%';
+    el.style.right = 'auto';
+    el.style.bottom = 'auto';
+    el.style.transform = 'translate(-50%, -50%)' + (TRANSFORMS[el.dataset.place] || '');
+  } else {
+    for (const p of ['left', 'top', 'right', 'bottom', 'transform']) el.style[p] = '';
+  }
+}
+function appliquerDisposition() {
+  const d = (R.disp || {})[orientation()] || {};
+  for (const el of document.querySelectorAll('#manette [data-place]')) placer(el, d[el.dataset.place]);
+}
+addEventListener('resize', appliquerDisposition);
+matchMedia('(orientation: landscape)').addEventListener?.('change', appliquerDisposition);
+
+function brancherPlacement() {
+  const zone = $('#manette');
+  let tenu = null; // { el, id, dx, dy }
+  zone.addEventListener('pointerdown', (e) => {
+    if (!document.body.classList.contains('placement')) return;
+    const el = e.target.closest('[data-place]');
+    if (!el) return;
+    e.preventDefault(); e.stopPropagation();
+    const r = el.getBoundingClientRect();
+    tenu = { el, id: el.dataset.place, pid: e.pointerId, dx: e.clientX - (r.left + r.width / 2), dy: e.clientY - (r.top + r.height / 2) };
+    el.classList.add('tenu');
+  }, true);
+  const bouge = (e) => {
+    if (!tenu || e.pointerId !== tenu.pid) return;
+    e.preventDefault();
+    const z = zone.getBoundingClientRect();
+    const x = Math.min(0.98, Math.max(0.02, (e.clientX - tenu.dx - z.left) / z.width));
+    const y = Math.min(0.98, Math.max(0.02, (e.clientY - tenu.dy - z.top) / z.height));
+    tenu.pos = { x: Math.round(x * 1000) / 1000, y: Math.round(y * 1000) / 1000 };
+    placer(tenu.el, tenu.pos);
+  };
+  const lache = (e) => {
+    if (!tenu || e.pointerId !== tenu.pid) return;
+    tenu.el.classList.remove('tenu');
+    if (tenu.pos) {
+      const o = orientation();
+      R.disp = R.disp || {};
+      R.disp[o] = { ...(R.disp[o] || {}), [tenu.id]: tenu.pos };
+      ecrireReglages();
+    }
+    tenu = null;
+  };
+  addEventListener('pointermove', bouge, { passive: false });
+  addEventListener('pointerup', lache);
+  addEventListener('pointercancel', lache);
+
+  $('#p-taille').addEventListener('input', (e) => {
+    R.taille = Number(e.target.value); $('#r-taille').value = R.taille;
+    ecrireReglages(); appliquerReglagesVisuels();
+  });
+  $('#p-reset').addEventListener('click', () => {
+    if (R.disp) delete R.disp[orientation()];
+    ecrireReglages(); appliquerDisposition();
+    bulle('Placement par défaut (' + orientation() + ')');
+  });
+  $('#p-ok').addEventListener('click', () => {
+    document.body.classList.remove('placement');
+    $('#placement').hidden = true;
+    partie?.resume(OWNER);
+    bulle('Placement enregistré');
+  });
+}
+function ouvrirPlacement() {
+  relacherTout();
+  partie?.pause(OWNER); // déjà en pause par le menu : le jeu reste figé pendant le placement
+  $('#p-taille').value = R.taille;
+  document.body.classList.add('placement');
+  $('#placement').hidden = false;
+}
+
 // ------------------------------------------------------------------ menu pause
 function ouvrirMenu() {
   if (!partie) return;
@@ -618,6 +702,7 @@ async function action(nom) {
         break;
       case 'reset': fermerMenu(); await partie.restart(); bulle('Reset'); break;
       case 'plein': fermerMenu(); pleinEcran(!document.fullscreenElement); break;
+      case 'placer': ouvrirPlacement(); $('#menu').close(); break;
       case 'test':
         R.diag = !R.diag; ecrireReglages(); appliquerReglagesVisuels();
         $('#r-diag').checked = R.diag;
@@ -682,6 +767,8 @@ async function demarrer() {
   for (const e of document.querySelectorAll('.version-appli')) e.textContent = `Version ${VERSION_APPLI} du ${DATE_APPLI}`;
   brancherReglages();
   brancherManette();
+  brancherPlacement();
+  appliquerDisposition();
   brancherInstallation();
 
   if ('serviceWorker' in navigator) {
@@ -709,7 +796,7 @@ async function demarrer() {
     b.addEventListener('click', () => action(b.dataset.action));
   }
   $('#slot').addEventListener('change', majInfoSlot);
-  $('#menu').addEventListener('close', () => partie?.resume(OWNER));
+  $('#menu').addEventListener('close', () => { if (!document.body.classList.contains('placement')) partie?.resume(OWNER); });
   $('#menu').addEventListener('click', (e) => { if (e.target === $('#menu')) fermerMenu(); });
 
   // Touche Échap / bouton retour de la manette : menu (au clavier BlastEm garde ses touches)

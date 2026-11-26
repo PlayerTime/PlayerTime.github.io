@@ -112,14 +112,12 @@
   </div>
 
   <div id="manette" aria-hidden="true">
-    <div class="croix" id="croix">
+    <div class="croix" id="croix" data-place="croix">
       <span class="fl h"></span><span class="fl b"></span><span class="fl g"></span><span class="fl d"></span>
     </div>
-    <div class="centre">
-      <button type="button" class="pilule" data-k="mode" id="b-mode">MODE</button>
-      <button type="button" class="pilule" data-k="start">START</button>
-    </div>
-    <div class="boutons" id="boutons">
+    <button type="button" class="pilule p-mode" data-k="mode" id="b-mode" data-place="mode">MODE</button>
+    <button type="button" class="pilule p-start" data-k="start" data-place="start">START</button>
+    <div class="boutons" id="boutons" data-place="boutons">
       <div class="rang rang-xyz">
         <button type="button" class="rond petit-rond" data-k="x">X</button>
         <button type="button" class="rond petit-rond" data-k="y">Y</button>
@@ -130,6 +128,15 @@
         <button type="button" class="rond" data-k="b">B</button>
         <button type="button" class="rond" data-k="c">C</button>
       </div>
+    </div>
+  </div>
+
+  <div id="placement" hidden>
+    <p>Glisse les touches où tu veux.<br><small>Le placement est gardé à part pour le portrait et le paysage.</small></p>
+    <label>Taille <input type="range" id="p-taille" min="70" max="140" step="5"></label>
+    <div class="placement-boutons">
+      <button type="button" class="bouton petit" id="p-reset">Remettre par défaut</button>
+      <button type="button" class="bouton petit bouton-or" id="p-ok">Terminé ✔</button>
     </div>
   </div>
 
@@ -147,6 +154,7 @@
       <button type="button" class="bouton" data-action="reset">↺ Reset</button>
       <button type="button" class="bouton" data-action="changer">🎮 Changer de jeu</button>
       <button type="button" class="bouton" data-action="test">🔧 Test des touches</button>
+      <button type="button" class="bouton" data-action="placer">✥ Placer les touches</button>
     </div>
     <label class="emplacement">Emplacement
       <select id="slot">
@@ -166,6 +174,6 @@
   </div>
 </section>
 
-<script type="module" src="emu.js?v=0.5"></script>
+<script type="module" src="emu.js?v=0.6"></script>
 </body>
 </html>
