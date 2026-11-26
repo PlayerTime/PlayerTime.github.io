@@ -2583,15 +2583,15 @@
    "sous_titre": "Traduction française",
    "plateforme": "Mega Drive",
    "statut": "Version de test",
-   "resume": "Nouvelle traduction française complète de Phantasy Star II, faite depuis le texte japonais, avec les noms d'origine (Yushis, Rudger, Shilka...). Menus en français, icônes, course, options de difficulté, de couleurs et de musique et bugs d'origine corrigés.",
+   "resume": "Nouvelle traduction française complète de Phantasy Star II, faite depuis le texte japonais, avec les noms d'origine (Yushis, Rudger, Shilka...). Menus en français, icônes, bestiaire, carte du monde, course, options de difficulté, de couleurs et de musique et bugs d'origine corrigés.",
    "couleur": "#3060c0",
    "rom_attendue": "Phantasy Star II (USA, Europe) (Rev A)",
    "nom_sortie": "Phantasy Star II (FR).bin",
    "format": "bps",
-   "version": "PS2v17",
-   "date_version": "25/11/2026",
+   "version": "PS2v26",
+   "date_version": "26/11/2026",
    "nouveautes": [
-    "Nouvelle partie : choix des noms japonais (Yushis, Rudger…) ou américains (Rolf, Rudo…), avec les présentations des personnages adaptées."
+    "En combat, A et C valident toute la suite des ordres (personnage, commande, technique, objet, cible) : on enchaîne au C après le raccourci. Curseurs recalés."
    ],
    "id": "phantasy-star-2",
    "notes": [
@@ -2625,7 +2625,7 @@
        "puce": "Maintenir B pour courir dans les villes et les donjons."
       },
       {
-       "puce": "En combat, le bouton A mène directement au choix des ordres."
+       "puce": "En combat, le bouton C mène directement au choix des ordres, puis A ou C valident chaque étape (A valide aussi Combat ou Tactique)."
       },
       {
        "puce": "Des cadres de menus agrandis pour que le français tienne sans abréviations."
@@ -2643,6 +2643,12 @@
        "puce": "Un bestiaire dans le menu : les monstres déjà vaincus, avec leur image animée et leurs statistiques."
       },
       {
+       "puce": "Une carte du monde dans le menu (Motavia, puis Dezoris une fois découverte) avec les lieux déjà visités, et dans les donjons un plan de l'étage qui se dévoile au fur et à mesure."
+      },
+      {
+       "puce": "Les techniques avec leurs noms japonais complets, et un menu « Manuel » qui détaille chacune d'après la notice japonaise."
+      },
+      {
        "puce": "Une trentaine de bugs du jeu d'origine corrigés (calcul des dégâts, techniques, collisions...)."
       }
      ]
@@ -2650,6 +2656,33 @@
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "PS2v26 (26/11/2026) : En combat, A et C valident toute la suite des ordres (personnage, commande, technique, objet, cible) : on enchaîne au C après le raccourci. Curseurs recalés"
+      },
+      {
+       "puce": "PS2v25 (26/11/2026) : PV/PT au lieu de HP/TP ; en combat A valide, C mène directement à « Ordre » ; Tactique réparé ; corrections de cadres"
+      },
+      {
+       "puce": "PS2v24 (26/11/2026) : Carte : les noms des villes clignotent pour laisser voir la carte dessous"
+      },
+      {
+       "puce": "PS2v23 (26/11/2026) : Noms japonais complets des techniques et menu « Manuel » (fiches des techniques d'après la notice). Shure devient Shuren, l'Amedas sur la carte"
+      },
+      {
+       "puce": "PS2v22 (26/11/2026) : Plans des donjons : escaliers en jaune, téléporteurs en vert, trous en bleu, sorties en orange"
+      },
+      {
+       "puce": "PS2v21 (26/11/2026) : Plans de tous les donjons, dévoilés au fur et à mesure (escaliers en jaune, trous en bleu). ROM de 2 Mo"
+      },
+      {
+       "puce": "PS2v20 (26/11/2026) : Carte : plan de l'étage dans les donjons (essai sur Shure)"
+      },
+      {
+       "puce": "PS2v19 (26/11/2026) : Carte du monde : Dezoris, cachée jusqu'à ce qu'on y aille, puis Gauche/Droite pour changer de planète"
+      },
+      {
+       "puce": "PS2v18 (26/11/2026) : Carte du monde dans le menu : Motavia, position de l'équipe (repère clignotant) et seulement les lieux déjà visités"
+      },
       {
        "puce": "PS2v17 (25/11/2026) : Nouvelle partie : choix des noms japonais (Yushis, Rudger…) ou américains (Rolf, Rudo…), avec les présentations des personnages adaptées"
       },
@@ -2757,6 +2790,26 @@
     {
      "src": "images/phantasy-star-2/13_option_noms.png",
      "legende": "Nouvelle partie : noms des personnages japonais ou américains."
+    },
+    {
+     "src": "images/phantasy-star-2/14_carte.png",
+     "legende": "La carte du monde : position de l'équipe et lieux déjà visités."
+    },
+    {
+     "src": "images/phantasy-star-2/15_carte_dezoris.png",
+     "legende": "Dezoris s'ajoute à la carte une fois découverte (Gauche/Droite pour changer de planète)."
+    },
+    {
+     "src": "images/phantasy-star-2/16_plan_donjon.png",
+     "legende": "Dans un donjon, le plan de l'étage se dévoile au fur et à mesure qu'on avance."
+    },
+    {
+     "src": "images/phantasy-star-2/17_manuel_techniques.png",
+     "legende": "Le menu « Manuel » : la fiche de chaque technique, d'après la notice japonaise."
+    },
+    {
+     "src": "images/phantasy-star-2/18_noms_techniques.png",
+     "legende": "Les techniques avec leurs noms japonais complets."
     }
    ],
    "patch": {
@@ -2764,12 +2817,12 @@
     "format": "bps",
     "crc_source": "904FA047",
     "taille_source": 786432,
-    "crc_sortie": "5FC00FC7",
-    "taille_sortie": 1048576,
-    "taille_patch": 107100
+    "crc_sortie": "566B9495",
+    "taille_sortie": 2097152,
+    "taille_patch": 292069
    },
-   "revision": 4,
-   "date_maj": "25/11/2026"
+   "revision": 5,
+   "date_maj": "26/11/2026"
   },
   {
    "ordre": 20,
@@ -4828,13 +4881,15 @@
    "rom_attendue": "Phantasy Star III - Generations of Doom (USA, Europe)",
    "nom_sortie": "Phantasy Star III (FR).bin",
    "format": "bps",
-   "version": "PS3v06",
-   "date_version": "20/11/2026",
+   "version": "PS3v07",
+   "date_version": "26/11/2026",
    "nouveautes": [
-    "Corrige un plantage à chaque montée de niveau (présent depuis la PS3v02).",
-    "Nouveau bestiaire : START sur la carte affiche les monstres vaincus avec leur image, leurs statistiques, leur technique et leurs résistances.",
-    "Sur la carte, START n'est plus la pause (elle reste disponible en combat).",
-    "La ROM fait maintenant 2 Mo."
+    "START sur la carte : petit choix « Carte / Bestiaire ».",
+    "Nouvelle carte du monde : une page par monde visité, villes et donjons déjà découverts, position de l'équipe et nom du lieu actuel.",
+    "Plans des donjons qui se dévoilent au fur et à mesure qu'on avance.",
+    "Magasins : un cadre donne le nom complet, l'attaque, la défense et qui peut porter chaque article.",
+    "Nouvelles options de début de partie : course x2 ou x4, et noms des personnages japonais ou américains.",
+    "Mode debug : A + START sur la carte donne de l'argent et soigne l'équipe."
    ],
    "id": "phantasy-star-3",
    "notes": [
@@ -4874,7 +4929,7 @@
        "puce": "Icônes devant l'équipement et les techniques."
       },
       {
-       "puce": "Au début de la partie : gains d'EXP et de mésetas x1, x2 ou x4, couleurs des fenêtres classiques ou modernes (enregistrés dans la sauvegarde)."
+       "puce": "Au début de la partie : gains d'EXP et de mésetas x1, x2 ou x4, couleurs des fenêtres, course x2 ou x4, noms japonais ou américains (enregistrés dans la sauvegarde)."
       },
       {
        "puce": "Correctifs de bugs du jeu d'origine."
@@ -4889,13 +4944,22 @@
        "puce": "Mode debug caché ajouté (A + START sur l'écran titre) : mésetas infinies, victoire immédiate, passe-muraille."
       },
       {
-       "puce": "Bestiaire (START sur la carte) : image, statistiques, technique et résistances de chaque monstre vaincu."
+       "puce": "Carte (START sur la carte) : une page par monde visité, lieux découverts, position de l'équipe ; plans des donjons dévoilés en marchant."
+      },
+      {
+       "puce": "Bestiaire : image, statistiques, technique et résistances de chaque monstre vaincu."
+      },
+      {
+       "puce": "Magasins : cadre d'informations sur chaque article."
       }
      ]
     },
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "PS3v07 (26/11/2026) : START sur la carte : petit choix « Carte / Bestiaire » ; Nouvelle carte du monde : une page par monde visité, villes et donjons déjà découverts, position de l'équipe et nom du lieu actuel ; Plans des donjons qui se dévoilent au fur et à mesure qu'on avance ; Magasins : un cadre donne le nom complet, l'attaque, la défense et qui peut porter chaque article ; Nouvelles options de début de partie : course x2 ou x4, et noms des personnages japonais ou américains ; Mode debug : A + START sur la carte donne de l'argent et soigne l'équipe"
+      },
       {
        "puce": "PS3v06 (20/11/2026) : Corrige un plantage à chaque montée de niveau (présent depuis la PS3v02) ; Nouveau bestiaire : START sur la carte affiche les monstres vaincus avec leur image, leurs statistiques, leur technique et leurs résistances ; Sur la carte, START n'est plus la pause (elle reste disponible en combat) ; La ROM fait maintenant 2 Mo"
       },
@@ -4954,6 +5018,22 @@
     {
      "src": "images/phantasy-star-3/09_bestiaire.png",
      "legende": "Le bestiaire (START sur la carte) : image, statistiques et résistances de chaque monstre vaincu."
+    },
+    {
+     "src": "images/phantasy-star-3/10_choix.png",
+     "legende": "START sur la carte : le choix entre la carte et le bestiaire."
+    },
+    {
+     "src": "images/phantasy-star-3/11_carte.png",
+     "legende": "La carte du monde de Rik, avec les lieux déjà visités."
+    },
+    {
+     "src": "images/phantasy-star-3/12_plan.png",
+     "legende": "Le plan d'un donjon, dévoilé au fur et à mesure."
+    },
+    {
+     "src": "images/phantasy-star-3/13_boutique.png",
+     "legende": "Le cadre d'informations des magasins."
     }
    ],
    "patch": {
@@ -4961,12 +5041,12 @@
     "format": "bps",
     "crc_source": "C6B42B0F",
     "taille_source": 786432,
-    "crc_sortie": "C97491FB",
+    "crc_sortie": "32252DB0",
     "taille_sortie": 2097152,
-    "taille_patch": 435622
+    "taille_patch": 666553
    },
-   "revision": 2,
-   "date_maj": "20/11/2026"
+   "revision": 3,
+   "date_maj": "26/11/2026"
   },
   {
    "ordre": 22,
@@ -6293,10 +6373,10 @@
    "rom_attendue": "Nei Adventure (Japan) (Sega Meganet)",
    "nom_sortie": "Phantasy Star II Aventures (FR).bin",
    "format": "bps",
-   "version": "PSTAv09",
-   "date_version": "25/11/2026",
+   "version": "PSTAv16",
+   "date_version": "26/11/2026",
    "nouveautes": [
-    "Mode debug caché : A + START sur le menu, puis B + START en jeu pour relire tous les textes de l'aventure dans la fenêtre du jeu."
+    "Mode d'emploi : une confirmation est demandée avant de sauvegarder et avant de revenir au menu."
    ],
    "id": "phantasy-star-2-aventures-textuelles",
    "notes": [
@@ -6340,6 +6420,27 @@
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "PSTAv16 (26/11/2026) : Mode d'emploi : une confirmation est demandée avant de sauvegarder et avant de revenir au menu"
+      },
+      {
+       "puce": "PSTAv15 (26/11/2026) : Corrigé : la sauvegarde ne marchait pas dans BlastEm"
+      },
+      {
+       "puce": "PSTAv14 (26/11/2026) : Corrigé : fausses disquettes et étoiles dans le menu sur les émulateurs sans mémoire de sauvegarde"
+      },
+      {
+       "puce": "PSTAv13 (26/11/2026) : Les 8 aventures peuvent être sauvegardées en même temps"
+      },
+      {
+       "puce": "PSTAv12 (26/11/2026) : Sauvegarde : dans le Mode d'emploi (START), A sauvegarde et C revient au menu ; Menu : reprendre une aventure sauvegardée, étoile sur les aventures terminées"
+      },
+      {
+       "puce": "PSTAv11 (26/11/2026) : Menu : la carte peut être activée ou coupée avec le bouton B"
+      },
+      {
+       "puce": "PSTAv10 (26/11/2026) : Nouvelle carte sur le bouton C : elle se dévoile au fur et à mesure des lieux visités, avec un curseur pour lire le nom des lieux"
+      },
       {
        "puce": "PSTAv09 (25/11/2026) : Mode debug caché : A + START sur le menu, puis B + START en jeu pour relire tous les textes de l'aventure dans la fenêtre du jeu"
       },
@@ -6394,6 +6495,14 @@
     {
      "src": "images/phantasy-star-2-aventures-textuelles/06_mode_emploi.png",
      "legende": "Le mode d'emploi en français"
+    },
+    {
+     "src": "images/phantasy-star-2-aventures-textuelles/07_carte.png",
+     "legende": "La carte (bouton C) : seuls les lieux déjà visités apparaissent"
+    },
+    {
+     "src": "images/phantasy-star-2-aventures-textuelles/08_reprise.png",
+     "legende": "Reprendre une aventure sauvegardée (étoile = aventure terminée)"
     }
    ],
    "patch": {
@@ -6401,12 +6510,12 @@
     "format": "bps",
     "crc_source": "3D9AD465",
     "taille_source": 262144,
-    "crc_sortie": "B560FAAB",
+    "crc_sortie": "6F9A4AE2",
     "taille_sortie": 2097152,
-    "taille_patch": 1462063
+    "taille_patch": 1539488
    },
-   "revision": 2,
-   "date_maj": "25/11/2026"
+   "revision": 3,
+   "date_maj": "26/11/2026"
   },
   {
    "ordre": 40,
