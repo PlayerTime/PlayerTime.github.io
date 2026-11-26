@@ -8,7 +8,7 @@ import BlastemSDK, { BLASTEM_CONTROLS } from './blastem/blastem.sdk.js';
 const $ = (s) => document.querySelector(s);
 const VERSION_COEUR = 'blastem-1.0.0+22';
 // Version de l'appli : à changer à chaque mise à jour, en même temps que VERSION dans sw.js
-export const VERSION_APPLI = '0.6';
+export const VERSION_APPLI = '0.7';
 const DATE_APPLI = '26/11/2026';
 const OWNER = 'menu';
 
@@ -234,6 +234,70 @@ async function traductionsPour(octets) {
   const dejaFr = cat.find((p) => p.patch.crc_sortie === v.crc);
   return { res, dejaFr };
 }
+// En-tête Mega Drive : nom japonais (0x120), nom international (0x150), numéro de série
+// avec révision (0x180), régions (0x1F0). Sert seulement à prévenir le joueur quand sa ROM est
+// le bon jeu mais pas la bonne version : la vraie vérification reste l'empreinte CRC32.
+function lireEntete(octets) {
+  const v = versionPropre(octets);
+  const r = v.sans && !/SEGA/.test(String.fromCharCode(...v.octets.subarray(0x100, 0x110))) ? v.sans : v.octets;
+  if (r.length < 0x200) return null;
+  const txt = (a, n) => String.fromCharCode(...r.subarray(a, a + n)).replace(/[^\x20-\x7e]/g, ' ').replace(/\s+/g, ' ').trim();
+  if (!/SEGA/.test(txt(0x100, 16))) return null;
+  const serie = txt(0x180, 14);
+  const reg = txt(0x1f0, 3);
+  const regions = [];
+  if (/^[0-9A-F]$/.test(reg)) { // nouveau format : un chiffre hexadécimal
+    const n = parseInt(reg, 16);
+    if (n & 1) regions.push('Japon'); if (n & 4) regions.push('USA'); if (n & 8) regions.push('Europe');
+  } else {
+    if (reg.includes('J')) regions.push('Japon'); if (reg.includes('U')) regions.push('USA'); if (reg.includes('E')) regions.push('Europe');
+  }
+  return {
+    nomJp: txt(0x120, 48), nomMonde: txt(0x150, 48), serie,
+    revision: (serie.match(/-(\d\d)\s*$/) || [])[1] || '',
+    regions,
+  };
+}
+const normaliser = (t) => (t || '').toUpperCase().normalize('NFD').replace(/[^A-Z0-9]/g, '')
+  .replace(/III$/, '3').replace(/II$/, '2');
+function memeJeu(p, e) {
+  // 1) le site connaît l'en-tête exact de la ROM attendue (champ patch.entete) : on compare le n° de série
+  const att = p.patch.entete;
+  if (att?.serie && e.serie) {
+    const coeur = (s) => normaliser(s.replace(/-\d\d\s*$/, '')).replace(/^GM/, '');
+    if (coeur(att.serie) && coeur(att.serie) === coeur(e.serie)) return true;
+  }
+  if (att && (att.nom_monde || att.nom_jp)) {
+    const a = [normaliser(att.nom_monde), normaliser(att.nom_jp)].filter((x) => x.length >= 4);
+    const b = [normaliser(e.nomMonde), normaliser(e.nomJp)].filter((x) => x.length >= 4);
+    if (a.some((x) => b.includes(x))) return true;
+    if (att.serie) return false; // en-tête connu et différent : ce n'est pas ce jeu
+  }
+  // 2) sinon, on compare le titre du projet aux noms de l'en-tête (moins sûr, d'où le message prudent)
+  const t = normaliser(p.titre);
+  if (t.length < 4) return false;
+  return [normaliser(e.nomMonde), normaliser(e.nomJp)].some((n) => n.length >= 4 && (n === t || n.startsWith(t) || t.startsWith(n)));
+}
+async function versionsProches(octets) {
+  const e = lireEntete(octets);
+  if (!e) return { e: null, proches: [] };
+  const vus = new Set();
+  const proches = (await chargerCatalogue()).filter((p) => {
+    if (!memeJeu(p, e) || vus.has(p.id)) return false;
+    vus.add(p.id); return true;
+  });
+  return { e, proches };
+}
+function decrireRom(e, titre) {
+  // le nom de l'en-tête qui ressemble le plus au titre du jeu (certains jeux mettent autre chose)
+  const t = normaliser(titre);
+  const nom = [e.nomMonde, e.nomJp].find((n) => t && normaliser(n).includes(t.slice(0, 6))) || e.nomMonde || e.nomJp;
+  const morceaux = [];
+  if (e.regions.length) morceaux.push('version ' + e.regions.join(' / '));
+  if (e.revision) morceaux.push('révision ' + Number(e.revision));
+  return nom + (morceaux.length ? ' (' + morceaux.join(', ') + ')' : '');
+}
+
 async function patcher(p, source) {
   const r = await fetch('../' + p.patch.fichier + (p.revision ? '?r=' + p.revision : ''), { cache: 'no-cache' });
   if (!r.ok) throw new Error('patch introuvable sur le site (connexion internet ?)');
@@ -371,8 +435,15 @@ async function depuisFichier(fichier) {
       const bon = res.find((t) => t.p.id === patchDemande.id);
       if (bon) return jouerTraduction(bon.p, bon.source);
       if (dejaFr?.id === patchDemande.id) return lancer(octets, nom, patchDemande.titre + ' (FR)');
+      const e = lireEntete(octets);
       return message('Ce n\'est pas la bonne ROM pour « ' + patchDemande.titre + ' » : il faut ' +
-        (patchDemande.rom_attendue || 'la ROM officielle') + ' (CRC32 ' + patchDemande.patch.crc_source + ').', 'erreur');
+        (patchDemande.rom_attendue || 'la ROM officielle') + ' (CRC32 ' + patchDemande.patch.crc_source + ').' +
+        (e ? ' Ta ROM : ' + decrireRom(e, patchDemande.titre) + '.' : ''), 'erreur');
+    }
+    if (!res.length && !dejaFr) {
+      // pas la bonne ROM… mais peut-être le bon jeu dans une autre version
+      const { e, proches } = await versionsProches(octets);
+      if (e && proches.length) return autreVersion(octets, nom, e, proches);
     }
     if (!res.length) return lancer(octets, nom, dejaFr ? dejaFr.titre + ' (FR)' : '');
     // une ou plusieurs traductions pour ce jeu : on laisse choisir
@@ -391,6 +462,24 @@ async function depuisFichier(fichier) {
   } catch (e) {
     message(e.message, 'erreur');
   }
+}
+
+// Le bon jeu, mais pas la version que demande la traduction
+function autreVersion(octets, nom, e, proches) {
+  const liste = $('#autre-liste');
+  liste.replaceChildren(...proches.map((p) => {
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = '../jeu/' + encodeURIComponent(p.id) + '/';
+    a.textContent = p.titre + (p.sous_titre ? ' – ' + p.sous_titre : '');
+    li.append(a, document.createElement('br'),
+      'Version attendue : ' + (p.rom_attendue || 'voir la page du jeu'));
+    return li;
+  }));
+  $('#autre-ta-rom').textContent = 'Ta ROM : ' + decrireRom(e, proches[0].titre) + '.';
+  $('#btn-autre-jouer').onclick = () => { $('#autre-version').hidden = true; lancer(octets, nom, ''); };
+  $('#autre-version').hidden = false;
+  $('#autre-version').scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
 async function depuisAdresse(url, titre) {
