@@ -436,12 +436,30 @@ function touchesSousDoigt({ x, y, surCroix }) {
   const b = el?.closest?.('[data-k]');
   return b ? [b.dataset.k] : [];
 }
+// Une touche reste enfoncée au moins 3 images (50 ms) : un toucher très bref doit quand même
+// être vu par le jeu, qui ne lit la manette qu'une fois par image.
+const DUREE_MINI = 50;
+const appuiDepuis = new Map(); // touche -> heure de l'appui
+const relachesEnAttente = new Map(); // touche -> minuteur
+function appuyer(k) {
+  if (relachesEnAttente.has(k)) { clearTimeout(relachesEnAttente.get(k)); relachesEnAttente.delete(k); return; }
+  appuiDepuis.set(k, performance.now());
+  envoyerTouche(k, true);
+}
+function relacher(k) {
+  const reste = DUREE_MINI - (performance.now() - (appuiDepuis.get(k) || 0));
+  if (reste > 0) {
+    relachesEnAttente.set(k, setTimeout(() => { relachesEnAttente.delete(k); envoyerTouche(k, false); }, reste));
+  } else {
+    envoyerTouche(k, false);
+  }
+}
 function recalculer() {
   const voulu = new Set();
   for (const d of doigts.values()) for (const k of touchesSousDoigt(d)) voulu.add(k);
   let nouveau = false;
-  for (const k of enfonce) if (!voulu.has(k)) { enfonce.delete(k); envoyerTouche(k, false); }
-  for (const k of voulu) if (!enfonce.has(k)) { enfonce.add(k); envoyerTouche(k, true); nouveau = true; }
+  for (const k of enfonce) if (!voulu.has(k)) { enfonce.delete(k); relacher(k); }
+  for (const k of voulu) if (!enfonce.has(k)) { enfonce.add(k); appuyer(k); nouveau = true; }
   if (nouveau && R.vibre && navigator.vibrate) navigator.vibrate(12);
   // affichage
   const croix = $('#croix');
@@ -450,12 +468,14 @@ function recalculer() {
 }
 function brancherManette() {
   const zone = $('#manette');
+  // Pas de setPointerCapture : sur un vrai téléphone, le navigateur garde déjà le doigt sur
+  // l'élément touché (et ses mouvements remontent jusqu'ici). Le reprendre envoyait un
+  // « lostpointercapture » qui relâchait la touche aussitôt : rien n'arrivait au jeu.
   const debut = (e) => {
     if (e.pointerType === 'mouse' && e.button !== 0) return;
     const surCroix = !!e.target.closest('#croix');
     if (!surCroix && !e.target.closest('[data-k]')) return;
     e.preventDefault();
-    try { zone.setPointerCapture(e.pointerId); } catch { /* */ }
     doigts.set(e.pointerId, { x: e.clientX, y: e.clientY, surCroix });
     recalculer();
   };
@@ -474,7 +494,13 @@ function brancherManette() {
   zone.addEventListener('pointermove', bouge);
   zone.addEventListener('pointerup', fin);
   zone.addEventListener('pointercancel', fin);
-  zone.addEventListener('lostpointercapture', fin);
+  // le doigt qui sort de l'écran ou part ailleurs : on relâche (pointerup peut ne pas arriver ici)
+  addEventListener('pointerup', fin);
+  addEventListener('pointercancel', fin);
+  // aucun geste du navigateur (zoom, défilement, menu de sélection) sur la manette
+  for (const t of ['touchstart', 'touchmove', 'touchend']) {
+    zone.addEventListener(t, (e) => { if (e.cancelable) e.preventDefault(); }, { passive: false });
+  }
   zone.addEventListener('contextmenu', (e) => e.preventDefault());
   // Un écran tactile détecté : on montre la manette même sur une tablette / PC tactile
   addEventListener('touchstart', () => document.body.classList.add('tactile'), { once: true, passive: true });
