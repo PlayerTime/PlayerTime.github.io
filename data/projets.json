@@ -91,7 +91,7 @@
    "titre": "Émulateur Player Time",
    "sous_titre": "Mega Drive, Master System et Mega CD, avec un atelier graphique",
    "plateforme": "Windows",
-   "statut": "Version de test",
+   "statut": "En cours",
    "version": "0.40",
    "resume": "Mon émulateur en français pour Windows (cœur BlastEm) : Mega Drive, Master System et Mega CD, atelier graphique pour modifier les graphismes et les textes d'un jeu, débogage et deux consoles par câble.",
    "nom_sortie": "Emulateur_Player_Time_0.40_Windows.zip",
@@ -192,6 +192,7 @@
      ]
     }
    ],
+   "avancement": 60,
    "images": [
     {
      "src": "images/emulateur-mega-drive/01_emulateur.png",
@@ -767,7 +768,7 @@
    "titre": "Dynamite Headdy",
    "sous_titre": "Traduction française",
    "plateforme": "Mega Drive",
-   "statut": "En cours",
+   "statut": "Version de test",
    "resume": "Traduction française de la version japonaise du jeu de plates-formes de Treasure, avec tous les dialogues supprimés dans la version occidentale : boss, alliés et vraie fin. ROM « world » qui démarre sur toutes les Mega Drive.",
    "couleur": "#f0a020",
    "rom_attendue": "Dynamite Headdy (Japan)",
@@ -865,6 +866,7 @@
      ]
     }
    ],
+   "avancement": 86,
    "images": [
     {
      "src": "images/dynamite-headdy/01_titre.png",
@@ -992,6 +994,7 @@
      ]
     }
    ],
+   "avancement": 90,
    "images": [
     {
      "src": "images/king-colossus/01_titre.png",
@@ -1289,6 +1292,7 @@
      ]
     }
    ],
+   "avancement": 90,
    "images": [
     {
      "src": "images/madou-monogatari-1/01_titre.png",
@@ -1661,6 +1665,7 @@
      ]
     }
    ],
+   "avancement": 90,
    "images": [
     {
      "src": "images/sailor-moon/01_titre.png",
@@ -1898,7 +1903,7 @@
    "titre": "The Hybrid Front",
    "sous_titre": "Traduction française",
    "plateforme": "Mega Drive",
-   "statut": "En cours",
+   "statut": "Version de test",
    "resume": "Traduction française du jeu de stratégie de Sega (1994, Japon uniquement), depuis le japonais : toute l'histoire et les dialogues, les listes de l'interface, les menus de préparation, la barre d'état et les commandes de combat. Les fiches techniques détaillées des engins restent en japonais.",
    "couleur": "#c8a040",
    "rom_attendue": "The Hybrid Front (Japan)",
@@ -2008,6 +2013,7 @@
      ]
     }
    ],
+   "avancement": 93,
    "images": [
     {
      "src": "images/hybrid-front/01_ecran_titre.png",
@@ -3359,7 +3365,7 @@
      ]
     }
    ],
-   "avancement": 92,
+   "avancement": 95,
    "images": [
     {
      "src": "images/shining-force-cd/01_titre.png",
@@ -5175,7 +5181,7 @@
      ]
     }
    ],
-   "avancement": 93,
+   "avancement": 95,
    "images": [
     {
      "src": "images/phantasy-star-3/01_titre.png",
@@ -5992,7 +5998,7 @@
      ]
     }
    ],
-   "avancement": 88,
+   "avancement": 90,
    "images": [
     {
      "src": "images/alisia-dragoon/01_titre.png",
@@ -6281,7 +6287,7 @@
      ]
     }
    ],
-   "avancement": 89,
+   "avancement": 93,
    "images": [
     {
      "src": "images/surging-aura/01_titre.png",
@@ -6673,6 +6679,7 @@
      ]
     }
    ],
+   "avancement": 90,
    "images": [
     {
      "src": "images/phantasy-star-2-aventures-textuelles/01_titre_nei.png",
@@ -6810,6 +6817,7 @@
      ]
     }
    ],
+   "avancement": 85,
    "images": [
     {
      "src": "images/advanced-daisenryaku/01_titre.png",
