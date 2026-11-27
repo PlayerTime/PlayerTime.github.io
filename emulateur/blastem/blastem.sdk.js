@@ -40,6 +40,8 @@ const SAVE_DIR = '/save';
 const ROM_DIR = '/rom';
 /** The config BlastEm reads at boot: upstream's default.cfg, embedded in the wasm. */
 const CONFIG_FILE = '/default.cfg';
+// Modifié par Player Time (26/11/2026) : la recopie de la SRAM est faite en silence par
+// blastem-pt.js (sans le message « Saved SRAM » de BlastEm), on peut donc la faire souvent.
 const SAVE_INTERVAL_MS = 10_000;
 const REGION_FLAG = { us: 'U', eu: 'E', jp: 'J' };
 /**

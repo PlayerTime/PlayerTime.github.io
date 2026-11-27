@@ -58,13 +58,15 @@
     <div class="bloc">
       <label class="bouton" id="btn-rom">
         Choisir une ROM…
-        <input type="file" id="fichier" accept=".bin,.gen,.md,.smd,.zip,application/octet-stream,application/zip">
+        <input type="file" id="fichier" multiple accept=".bin,.gen,.md,.smd,.zip,.cue,.iso,.chd,application/octet-stream,application/zip">
       </label>
-      <p class="aide">.bin, .gen, .md, .smd ou .zip — la ROM reste sur ton appareil, rien n'est envoyé.<br>
+      <p class="aide">Mega Drive : .bin, .gen, .md, .smd ou .zip.<br>
+      Mega CD : le .cue avec tous ses .bin (choisis-les ensemble), un .chd, un .iso, ou un .zip qui les contient.<br>
+      Tes fichiers restent sur ton appareil, rien n'est envoyé.<br>
       Si une traduction française Player Time existe pour ce jeu, l'émulateur la propose tout seul.</p>
     </div>
 
-    <details class="bloc reglages">
+    <details class="bloc reglages" id="reglages">
       <summary>Réglages</summary>
       <label>Région
         <select id="r-region">
@@ -94,6 +96,14 @@
       <label>Transparence de la manette
         <input type="range" id="r-opacite" min="20" max="100" step="5" value="75">
       </label>
+      <div id="bloc-bios" class="bios">
+        <p class="titre-encart">BIOS Mega CD</p>
+        <p class="aide">Le Mega CD a besoin du BIOS de la console (le programme de démarrage de Sega). Ajoute le tien une fois : il reste sur ce téléphone et n'est jamais envoyé. Europe, USA, Japon : un seul suffit, mais chaque disque préfère le BIOS de sa région.</p>
+        <label class="bouton petit">Ajouter mes BIOS Mega CD…
+          <input type="file" id="fichier-bios" multiple accept=".bin,.md,.zip,application/octet-stream" hidden>
+        </label>
+        <p id="bios-etat" class="aide"></p>
+      </div>
     </details>
 
     <p id="installer" class="aide" hidden>
@@ -182,6 +192,6 @@
   </div>
 </section>
 
-<script type="module" src="emu.js?v=0.7"></script>
+<script type="module" src="emu.js?v=0.9"></script>
 </body>
 </html>

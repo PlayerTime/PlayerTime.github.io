@@ -773,11 +773,11 @@
    "rom_attendue": "Dynamite Headdy (Japan)",
    "nom_sortie": "Dynamite Headdy (FR).bin",
    "format": "bps",
-   "version": "DHv04",
-   "date_version": "26/11/2026",
+   "version": "DHv09",
+   "date_version": "27/11/2026",
    "nouveautes": [
-    "Les panneaux et écriteaux des niveaux sont en français (VILLE, EN VENTE, TOUR DES PANTINS, HEADDY le HÉROS...)",
-    "Les mots déjà compris de tous (SUPER STAR, DANGER, ACTION) sont gardés"
+    "Bilan de fin de scène en français : POINTS SCÈNE, POINTS TEMPS, POINTS SECRETS",
+    "Affiches SCÈNE 1-1 du bilan accentuées"
    ],
    "id": "dynamite-headdy",
    "notes": [
@@ -794,10 +794,13 @@
        "puce": "L'écran titre, le menu des options et le choix de scène"
       },
       {
-       "puce": "Les cartons des noms de scènes et l'écran de fin de partie"
+       "puce": "Les cartons des noms de scènes, le bilan de fin de scène et l'écran de fin de partie"
       },
       {
-       "puce": "Les panneaux et écriteaux dessinés dans les niveaux"
+       "puce": "Les panneaux des niveaux, de l'introduction, de la salle des continues, du jeu bonus et de la fin"
+      },
+      {
+       "puce": "Les noms du défilé final des personnages (les noms propres restent)"
       }
      ]
     },
@@ -819,10 +822,10 @@
      "titre": "Encore en anglais",
      "blocs": [
       {
-       "puce": "Défilé des personnages de l'intro et quelques panneaux pas encore repérés"
+       "puce": "Quelques noms propres du défilé final (HEADDY, MARUYAMA, SHOGUN...)"
       },
       {
-       "puce": "Écrans de score, bonus, continue et générique, icône kanji de la tête Bouddha"
+       "puce": "Générique des développeurs (texte japonais dessiné dans un décor), icône kanji de la tête Bouddha"
       },
       {
        "texte": "La version japonaise est plus facile et contient toute l'histoire, retirée en Occident. Les noms japonais des personnages sont gardés (Maruyama, Fingy...)."
@@ -832,6 +835,21 @@
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "DHv09 (27/11/2026) : Bilan de fin de scène en français : POINTS SCÈNE, POINTS TEMPS, POINTS SECRETS ; Affiches SCÈNE 1-1 du bilan accentuées"
+      },
+      {
+       "puce": "DHv08 (27/11/2026) : Défilé final : les noms des personnages sont traduits (SOLDATS D.D., CANARD, CAPITAINE TONNERRE, FUSÉE POUR LA LUNE...), les noms propres restent ; Accents et apostrophe ajoutés à l'écriture du défilé"
+      },
+      {
+       "puce": "DHv07 (27/11/2026) : Le panneau HERO on the STAGE devient HÉROS en SCÈNE"
+      },
+      {
+       "puce": "DHv06 (27/11/2026) : Le panneau HEAD on the STAGE devient HEAD en SCÈNE (HEAD, c'est Headdy)"
+      },
+      {
+       "puce": "DHv05 (26/11/2026) : Introduction en français : TOUS EN SCÈNE, ROI DARK DEMON et tous les panneaux ; Salle des continues traduite : ON REJOUE ! / ABANDON, l'affiche, SORTIE, COULISSES ; Jeu bonus et écran du code secret traduits ; Nouveaux panneaux traduits dans les niveaux et à la fin du jeu ; HEAD ACTION redevient HEAD ACTION (nom de produit)"
+      },
       {
        "puce": "DHv04 (26/11/2026) : Les panneaux et écriteaux des niveaux sont en français (VILLE, EN VENTE, TOUR DES PANTINS, HEADDY le HÉROS...) ; Les mots déjà compris de tous (SUPER STAR, DANGER, ACTION) sont gardés"
       },
@@ -849,36 +867,44 @@
    ],
    "images": [
     {
-     "src": "images/dynamite-headdy/01_appuyez.png",
-     "legende": "Écran titre : APPUYEZ SUR START"
-    },
-    {
-     "src": "images/dynamite-headdy/02_titre.png",
+     "src": "images/dynamite-headdy/01_titre.png",
      "legende": "Écran titre : DÉMARRER / OPTIONS"
     },
     {
-     "src": "images/dynamite-headdy/03_options.png",
-     "legende": "Le menu des options en français"
+     "src": "images/dynamite-headdy/02_intro.png",
+     "legende": "L'introduction et ses panneaux en français"
     },
     {
-     "src": "images/dynamite-headdy/04_dialogue.png",
+     "src": "images/dynamite-headdy/03_dialogue.png",
      "legende": "Maruyama, absent des versions occidentales, parle enfin français"
     },
     {
-     "src": "images/dynamite-headdy/05_carton.png",
+     "src": "images/dynamite-headdy/04_carton.png",
      "legende": "Les noms des scènes en français"
     },
     {
-     "src": "images/dynamite-headdy/06_panneau.png",
+     "src": "images/dynamite-headdy/05_panneau.png",
      "legende": "Les panneaux des niveaux en français"
     },
     {
-     "src": "images/dynamite-headdy/07_heros.png",
-     "legende": "HEADDY le HÉROS"
+     "src": "images/dynamite-headdy/06_continues.png",
+     "legende": "La salle des continues : ON REJOUE ! / ABANDON"
+    },
+    {
+     "src": "images/dynamite-headdy/07_bonus.png",
+     "legende": "Le jeu bonus des paniers"
     },
     {
      "src": "images/dynamite-headdy/08_debugmode.png",
      "legende": "Mode debug : A + START sur l'écran de présentation"
+    },
+    {
+     "src": "images/dynamite-headdy/09_defile.png",
+     "legende": "Le défilé final des personnages, en français"
+    },
+    {
+     "src": "images/dynamite-headdy/10_bilan.png",
+     "legende": "Le bilan de fin de scène"
     }
    ],
    "patch": {
@@ -886,12 +912,12 @@
     "format": "bps",
     "crc_source": "D03CDB53",
     "taille_source": 2097152,
-    "crc_sortie": "61A9E8F6",
+    "crc_sortie": "32E260B7",
     "taille_sortie": 3145728,
-    "taille_patch": 176596
+    "taille_patch": 293652
    },
-   "revision": 3,
-   "date_maj": "26/11/2026"
+   "revision": 4,
+   "date_maj": "27/11/2026"
   },
   {
    "ordre": 10,
@@ -6528,10 +6554,12 @@
    "rom_attendue": "Nei Adventure (Japan) (Sega Meganet)",
    "nom_sortie": "Phantasy Star II Aventures (FR).bin",
    "format": "bps",
-   "version": "PSTAv16",
-   "date_version": "26/11/2026",
+   "version": "PSTAv18",
+   "date_version": "27/11/2026",
    "nouveautes": [
-    "Mode d'emploi : une confirmation est demandée avant de sauvegarder et avant de revenir au menu."
+    "Les cases des listes de choix sont plus larges : les noms d'objets et de lieux s'affichent en entier.",
+    "Les noms raccourcis dans la version précédente retrouvent leur forme complète (Tableau de bord, Canot gonflable...).",
+    "Les sauvegardes des versions précédentes restent bonnes."
    ],
    "id": "phantasy-star-2-aventures-textuelles",
    "notes": [
@@ -6575,6 +6603,12 @@
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "PSTAv18 (27/11/2026) : Les cases des listes de choix sont plus larges : les noms d'objets et de lieux s'affichent en entier ; Les noms raccourcis dans la version précédente retrouvent leur forme complète (Tableau de bord, Canot gonflable...) ; Les sauvegardes des versions précédentes restent bonnes"
+      },
+      {
+       "puce": "PSTAv17 (27/11/2026) : Corrigé : dans les listes de choix, les noms trop longs débordaient de leur case (ex. « Tableau de bord » chez Amia) ; Ces noms ont été raccourcis dans les 8 aventures (Boîte à gants, Canot, Miroir à main...) ; Les sauvegardes de la version précédente restent bonnes"
+      },
       {
        "puce": "PSTAv16 (26/11/2026) : Mode d'emploi : une confirmation est demandée avant de sauvegarder et avant de revenir au menu"
       },
@@ -6665,12 +6699,12 @@
     "format": "bps",
     "crc_source": "3D9AD465",
     "taille_source": 262144,
-    "crc_sortie": "6F9A4AE2",
+    "crc_sortie": "C901A594",
     "taille_sortie": 2097152,
-    "taille_patch": 1539488
+    "taille_patch": 1540024
    },
-   "revision": 3,
-   "date_maj": "26/11/2026"
+   "revision": 4,
+   "date_maj": "27/11/2026"
   },
   {
    "ordre": 40,

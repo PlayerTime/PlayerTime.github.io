@@ -246,3 +246,5 @@ body.placement #manette [data-place].tenu { outline-style: solid; }
 body.placement #barre-jeu, body.placement #diag { display: none; }
 .liste-versions { margin: 0 0 8px; padding-left: 18px; font-size: .9rem; }
 .liste-versions li { margin-bottom: 6px; }
+.bios { border-top: 1px solid #e8c46a55; margin-top: 10px; padding-top: 8px; text-align: center; }
+.bios .titre-encart { margin: 0; text-align: center; }

@@ -8,8 +8,8 @@ import BlastemSDK, { BLASTEM_CONTROLS } from './blastem/blastem.sdk.js';
 const $ = (s) => document.querySelector(s);
 const VERSION_COEUR = 'blastem-1.0.0+22';
 // Version de l'appli : à changer à chaque mise à jour, en même temps que VERSION dans sw.js
-export const VERSION_APPLI = '0.7';
-const DATE_APPLI = '26/11/2026';
+export const VERSION_APPLI = '0.9';
+const DATE_APPLI = '27/11/2026';
 const OWNER = 'menu';
 
 // ------------------------------------------------------------------ réglages
@@ -157,6 +157,124 @@ async function preparerRom(octets, nom) {
   if (octets.length < 0x200) throw new Error('Ce fichier est trop petit pour être une ROM.');
   if (octets.length > 10 * 1048576) throw new Error('Fichier trop gros pour une cartouche Mega Drive.');
   return { octets, nom };
+}
+
+// ------------------------------------------------------------------ Mega CD
+// BlastEm 1.0 émule le Mega CD : il lui faut le BIOS de la console (fourni par le joueur, gardé
+// sur son téléphone, jamais sur le site) et l'image du disque : .cue + .bin, .iso, .chd, ou un .zip.
+// Un .iso ne contient que les données : les musiques en pistes audio CD manquent. Le .cue + .bin
+// (ou le .chd) est le disque complet.
+const REGIONS_BIOS = { us: 'USA', eu: 'Europe', jp: 'Japon' };
+
+// Un BIOS Mega CD se reconnaît à son en-tête : « MEGA-CD BOOT ROM » ou « SEGA-CD BOOT ROM »
+function regionBios(o) {
+  if (o.length < 0x20000 || o.length > 0x40000) return null;
+  const t = String.fromCharCode(...o.subarray(0x120, 0x130));
+  if (!/(MEGA|SEGA)-CD BOOT ROM/.test(t) && !/CD BOOT|BOOT ROM/.test(t)) return null;
+  const r = String.fromCharCode(o[0x1f0]);
+  return r === 'J' ? 'jp' : r === 'U' ? 'us' : 'eu';
+}
+async function lireBios() {
+  const bios = {};
+  try {
+    const d = await dossierAppli();
+    for (const r of Object.keys(REGIONS_BIOS)) {
+      try { bios[r] = new Uint8Array(await (await (await d.getFileHandle('bios-' + r + '.md')).getFile()).arrayBuffer()); } catch { /* absent */ }
+    }
+  } catch { /* stockage indisponible */ }
+  return bios;
+}
+async function afficherBios() {
+  const bios = await lireBios();
+  const ok = Object.keys(bios);
+  $('#bios-etat').textContent = ok.length
+    ? 'BIOS gardés sur ce téléphone : ' + Object.entries(REGIONS_BIOS).map(([r, n]) => n + (bios[r] ? ' ✔' : ' ✗')).join(' · ')
+    : 'Aucun BIOS Mega CD pour l\'instant.';
+  return bios;
+}
+async function ajouterBios(fichiers) {
+  const ajoutes = [], refuses = [];
+  const d = await dossierAppli();
+  for (const f of fichiers) {
+    let entrees = [{ nom: f.name, octets: new Uint8Array(await f.arrayBuffer()) }];
+    if (estZip(entrees[0].octets)) entrees = await Promise.all((await listerZip(entrees[0].octets)).map(async (e) => ({ nom: e.nom, octets: await e.extraire() })));
+    for (const { nom, octets } of entrees) {
+      const r = regionBios(octets);
+      if (!r) { refuses.push(nom); continue; }
+      await ecrireFichier(d, 'bios-' + r + '.md', octets);
+      ajoutes.push(REGIONS_BIOS[r]);
+    }
+  }
+  await afficherBios();
+  if (ajoutes.length) message('BIOS Mega CD ajouté : ' + ajoutes.join(', ') + '.', 'ok');
+  if (refuses.length) message('Pas un BIOS Mega CD : ' + refuses.join(', ') + '.', 'erreur');
+}
+
+// .zip : liste des fichiers, chacun extrait à la demande (stocké ou « deflate »)
+const estZip = (o) => o[0] === 0x50 && o[1] === 0x4b && o[2] === 3 && o[3] === 4;
+async function listerZip(octets) {
+  const v = new DataView(octets.buffer, octets.byteOffset, octets.byteLength);
+  let fin = -1;
+  for (let i = octets.length - 22; i >= Math.max(0, octets.length - 65557); i--) {
+    if (v.getUint32(i, true) === 0x06054b50) { fin = i; break; }
+  }
+  if (fin < 0) throw new Error('Fichier .zip illisible.');
+  const nb = v.getUint16(fin + 10, true);
+  let p = v.getUint32(fin + 16, true);
+  const dec = new TextDecoder();
+  const liste = [];
+  for (let n = 0; n < nb; n++) {
+    if (v.getUint32(p, true) !== 0x02014b50) break;
+    const methode = v.getUint16(p + 10, true);
+    const csize = v.getUint32(p + 20, true), taille = v.getUint32(p + 24, true);
+    const lnom = v.getUint16(p + 28, true), lext = v.getUint16(p + 30, true), lcom = v.getUint16(p + 32, true);
+    const local = v.getUint32(p + 42, true);
+    const nom = dec.decode(octets.subarray(p + 46, p + 46 + lnom)).split('/').pop();
+    p += 46 + lnom + lext + lcom;
+    if (!nom) continue;
+    liste.push({
+      nom, taille,
+      async extraire() {
+        const debut = local + 30 + v.getUint16(local + 26, true) + v.getUint16(local + 28, true);
+        const brut = octets.subarray(debut, debut + csize);
+        if (methode === 0) return brut.slice();
+        if (methode !== 8) throw new Error('Compression .zip non gérée (' + nom + ') : décompresse-le d\'abord.');
+        const out = new Uint8Array(await new Response(new Blob([brut]).stream().pipeThrough(new DecompressionStream('deflate-raw'))).arrayBuffer());
+        if (taille && out.length !== taille) throw new Error('Fichier .zip abîmé.');
+        return out;
+      },
+    });
+  }
+  return liste;
+}
+
+// Fichiers choisis -> disque Mega CD complet, ou null si ce n'est pas un disque
+// entrees : [{ nom, taille, lire: async () => Uint8Array }]
+async function preparerDisque(entrees) {
+  const ext = (n) => (n.match(/\.([^.]+)$/) || [])[1]?.toLowerCase();
+  const cue = entrees.find((e) => ext(e.nom) === 'cue');
+  const seul = entrees.find((e) => ['iso', 'chd'].includes(ext(e.nom)));
+  if (!cue && !seul) return null;
+  if (!cue) return { principal: seul.nom, fichiers: [{ nom: seul.nom, octets: await seul.lire() }], titre: seul.nom };
+  const texte = new TextDecoder().decode(await cue.lire());
+  const voulus = [...texte.matchAll(/^\s*FILE\s+(?:"([^"]+)"|(\S+))/gim)].map((m) => (m[1] || m[2]).split(/[\\/]/).pop());
+  const fichiers = [{ nom: cue.nom, octets: new TextEncoder().encode(texte) }];
+  const manquants = [];
+  for (const v of voulus) {
+    const e = entrees.find((x) => x.nom.toLowerCase() === v.toLowerCase());
+    if (!e) { manquants.push(v); continue; }
+    fichiers.push({ nom: v, octets: await e.lire() });
+  }
+  if (manquants.length) {
+    throw new Error('Il manque des fichiers du disque : ' + manquants.join(', ') +
+      '. Choisis le .cue ET tous ses .bin en même temps (ou un .zip qui les contient).');
+  }
+  return { principal: cue.nom, fichiers, titre: cue.nom };
+}
+// Une piste .bin de disque choisie seule (sans son .cue) : on prévient au lieu de la lancer en cartouche
+function ressembleAPisteCD(o) {
+  const t = (a) => String.fromCharCode(...o.subarray(a, a + 14));
+  return t(0) === 'SEGADISCSYSTEM' || t(0x10) === 'SEGADISCSYSTEM';
 }
 
 // ------------------------------------------------------------------ traductions du site
@@ -381,9 +499,13 @@ async function reprendre(derniere) {
 let partie = null;
 let romCourante = null;
 
-async function lancer(octets, nom, titre, trad) {
+async function lancer(octets, nom, titre, trad, estDisque = false) {
   message('');
   // Un seul BlastEm par page : pour changer de jeu, on recharge la page.
+  if (partie && estDisque) {
+    message('Pour changer de jeu, passe par le menu ☰ → Changer de jeu.', 'erreur');
+    return;
+  }
   if (partie) {
     await memoriserRom(octets, nom, titre, trad);
     sessionStorage.setItem('pt-emu-relancer', '1');
@@ -391,7 +513,7 @@ async function lancer(octets, nom, titre, trad) {
     return;
   }
   romCourante = { octets, nom, titre };
-  memoriserRom(octets, nom, titre, trad);
+  if (!estDisque) memoriserRom(octets, nom, titre, trad); // un disque est trop gros pour être gardé
   $('#accueil').hidden = true;
   $('#jeu').hidden = false;
   document.title = (titre || nomPropre(nom)) + ' – Émulateur Player Time';
@@ -406,6 +528,8 @@ async function lancer(octets, nom, titre, trad) {
         renderFilter: R.lisse ? 'smooth' : 'pixelated',
         border: 'hidden',
         wasmUrl,
+        // notre enveloppe du cœur : sauvegarde de la cartouche sans le message « Saved SRAM »
+        jsUrl: new URL('blastem/blastem-pt.js', location.href).href,
       })
       .assets({ rom: octets })
       .storage({ namespace: espace(nom) })
@@ -424,10 +548,28 @@ async function lancer(octets, nom, titre, trad) {
 
 let patchDemande = null; // emulateur/?patch=ristar : le joueur vient de la page d'une traduction
 
-async function depuisFichier(fichier) {
+async function depuisFichiers(fichiers) {
   try {
-    message('Lecture de ' + fichier.name + '…');
-    const { octets, nom } = await preparerRom(new Uint8Array(await fichier.arrayBuffer()), fichier.name);
+    fichiers = [...fichiers];
+    message('Lecture de ' + fichiers.map((f) => f.name).join(', ') + '…');
+    // les fichiers choisis, ou le contenu du .zip
+    let entrees = fichiers.map((f) => ({ nom: f.name, taille: f.size, lire: async () => new Uint8Array(await f.arrayBuffer()) }));
+    if (entrees.length === 1 && /\.zip$/i.test(entrees[0].nom)) {
+      const contenu = await listerZip(await entrees[0].lire());
+      if (contenu.some((e) => /\.(cue|iso|chd)$/i.test(e.nom))) {
+        entrees = contenu.map((e) => ({ nom: e.nom, taille: e.taille, lire: e.extraire }));
+      }
+    }
+    // Mega CD ?
+    const disque = await preparerDisque(entrees);
+    if (disque) return await lancerDisque(disque);
+    if (entrees.length > 1) throw new Error('Choisis un seul jeu à la fois (pour un disque Mega CD : le .cue et ses .bin).');
+    const fichier = fichiers[0];
+    const brut = new Uint8Array(await fichier.arrayBuffer());
+    if (ressembleAPisteCD(brut)) {
+      throw new Error('Ce .bin est une piste de disque Mega CD : choisis le .cue avec tous ses .bin en même temps (ou un .zip qui les contient).');
+    }
+    const { octets, nom } = await preparerRom(brut, fichier.name);
     message('Recherche d\'une traduction…');
     const { res, dejaFr } = await traductionsPour(octets);
     message('');
@@ -480,6 +622,21 @@ function autreVersion(octets, nom, e, proches) {
   $('#btn-autre-jouer').onclick = () => { $('#autre-version').hidden = true; lancer(octets, nom, ''); };
   $('#autre-version').hidden = false;
   $('#autre-version').scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+async function lancerDisque(disque) {
+  let bios = await lireBios();
+  if (!Object.keys(bios).length) {
+    $('#reglages').open = true;
+    $('#bloc-bios').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    throw new Error('Pour le Mega CD, ajoute d\'abord ton BIOS Mega CD (Réglages → BIOS Mega CD). Il reste sur ton téléphone.');
+  }
+  const taille = disque.fichiers.reduce((t, f) => t + f.octets.length, 0);
+  message('Démarrage du Mega CD (' + (taille / 1048576).toFixed(0) + ' Mo)…');
+  globalThis.ptDisque = { ...disque, bios };
+  const titre = nomPropre(disque.titre);
+  // le kit attend une « ROM » : on lui passe le début du disque, c'est l'enveloppe qui donne le vrai disque à BlastEm
+  await lancer(disque.fichiers[disque.fichiers.length > 1 ? 1 : 0].octets.subarray(0, 0x1000), titre + '.cd', titre, null, true);
 }
 
 async function depuisAdresse(url, titre) {
@@ -798,6 +955,7 @@ async function action(nom) {
         fermerMenu(); bulle(R.diag ? 'Test des touches affiché' : 'Test des touches masqué');
         break;
       case 'changer':
+        globalThis.ptForcerSauvegarde = true;
         await partie.flushSaves?.();
         location.href = location.pathname; // retour à l'accueil (page neuve)
         break;
@@ -822,14 +980,26 @@ let verrou = null;
 async function garderEcranAllume() {
   try { verrou = await navigator.wakeLock?.request('screen'); } catch { /* */ }
 }
-document.addEventListener('visibilitychange', () => {
-  if (document.hidden) {
-    relacherTout();
-    partie?.flushSaves?.();
-  } else if (partie) {
-    garderEcranAllume();
-  }
-});
+// Écran éteint, bouton carré, autre appli : le jeu se met en pause et le son se coupe.
+// Il repart tout seul au retour (sauf si le menu ☰ était ouvert : il reste en pause).
+const FOND = 'arriere-plan';
+function mettreEnFond() {
+  relacherTout();
+  if (!partie) return;
+  partie.pause(FOND); // sans effet si le menu tient déjà la pause
+  partie.flushSaves?.();
+}
+function revenir() {
+  if (!partie || document.hidden) return;
+  partie.resume(FOND); // sans effet si c'est le menu qui tient la pause
+  garderEcranAllume();
+}
+document.addEventListener('visibilitychange', () => (document.hidden ? mettreEnFond() : revenir()));
+// pour le diagnostic (console du navigateur) : ptEmu.partie.pausedBy
+window.ptEmu = { get partie() { return partie; } };
+addEventListener('pagehide', mettreEnFond);
+addEventListener('blur', mettreEnFond);   // volet des notifications, appel entrant…
+addEventListener('focus', revenir);
 
 // Installation en appli (Android / Chrome) et astuce iPhone
 let invite = null;
@@ -876,10 +1046,16 @@ async function demarrer() {
   chargerCoeur().catch(() => {});
 
   $('#fichier').addEventListener('change', (e) => {
-    const f = e.target.files[0];
+    const f = [...e.target.files];
     e.target.value = '';
-    if (f) depuisFichier(f);
+    if (f.length) depuisFichiers(f);
   });
+  $('#fichier-bios').addEventListener('change', async (e) => {
+    const f = [...e.target.files];
+    e.target.value = '';
+    if (f.length) { try { await ajouterBios(f); } catch (err) { message(err.message, 'erreur'); } }
+  });
+  afficherBios();
 
   for (const b of document.querySelectorAll('[data-action]')) {
     b.addEventListener('click', () => action(b.dataset.action));

@@ -1,11 +1,11 @@
 // Garde l'émulateur sur le téléphone : après la première visite, il marche hors ligne.
 // Changer VERSION à chaque mise à jour (et VERSION_APPLI dans emu.js) des fichiers pour que les téléphones la récupèrent.
-const VERSION = 'pt-emu-7';
+const VERSION = 'pt-emu-10';
 const FICHIERS = [
   './', 'index.html', 'emu.css', 'emu.js', 'manifest.webmanifest', 'licences.html',
   'icone-192.png', 'icone-512.png', 'icone-maskable.png', 'icone-apple.png',
   'blastem/blastem.sdk.js', 'blastem/blastem.controls.js', 'blastem/blastem.options.js',
-  'blastem/blastem.video.js', 'blastem/engine-specs.js', 'blastem/blastem.js',
+  'blastem/blastem.video.js', 'blastem/engine-specs.js', 'blastem/blastem.js', 'blastem/blastem-pt.js',
   'blastem/blastem.wasm.gz',
 ];
 self.addEventListener('install', (e) => {
