@@ -8,7 +8,7 @@ import BlastemSDK, { BLASTEM_CONTROLS } from './blastem/blastem.sdk.js';
 const $ = (s) => document.querySelector(s);
 const VERSION_COEUR = 'blastem-1.0.0+22';
 // Version de l'appli : à changer à chaque mise à jour, en même temps que VERSION dans sw.js
-export const VERSION_APPLI = '0.9';
+export const VERSION_APPLI = '1.0';
 const DATE_APPLI = '27/11/2026';
 const OWNER = 'menu';
 
@@ -652,6 +652,82 @@ async function depuisAdresse(url, titre) {
   }
 }
 
+// ------------------------------------------------------------------ jeux gratuits
+// « Mes jeux » : les jeux Player Time du site (data/projets.json, format "jeu").
+// « Jeux d'autres créateurs » : emulateur/jeux-gratuits.json, rempli à la main, uniquement avec
+// des jeux dont l'auteur autorise la diffusion (fichier hébergé sur le site, avec son accord).
+function choisirOnglet(nom) {
+  for (const b of document.querySelectorAll('.onglet')) b.classList.toggle('actif', b.dataset.onglet === nom);
+  $('#onglet-jouer').hidden = nom !== 'jouer';
+  $('#onglet-gratuits').hidden = nom !== 'gratuits';
+  if (nom === 'gratuits') afficherJeuxGratuits();
+}
+function carteJeu({ titre, infos, image, fichier, page, lienPage }) {
+  const c = document.createElement('div');
+  c.className = 'carte';
+  const img = document.createElement('img');
+  img.alt = ''; img.loading = 'lazy';
+  if (image) img.src = image; else img.style.visibility = 'hidden';
+  img.onerror = () => (img.style.visibility = 'hidden');
+  const droite = document.createElement('div');
+  const h = document.createElement('h3'); h.textContent = titre;
+  const i = document.createElement('p'); i.className = 'infos'; i.textContent = infos;
+  const actions = document.createElement('div'); actions.className = 'actions';
+  const jouer = document.createElement('button');
+  jouer.type = 'button'; jouer.className = 'bouton bouton-or'; jouer.textContent = '▶ Jouer';
+  jouer.addEventListener('click', () => { choisirOnglet('jouer'); depuisAdresse(fichier, titre); });
+  actions.append(jouer);
+  if (page) {
+    const a = document.createElement('a');
+    a.className = 'petit-lien'; a.href = page; a.textContent = lienPage || 'Page du jeu';
+    if (/^https?:/.test(page)) { a.target = '_blank'; a.rel = 'noopener'; }
+    actions.append(a);
+  }
+  droite.append(h, i, actions);
+  c.append(img, droite);
+  return c;
+}
+let jeuxAffiches = false;
+async function afficherJeuxGratuits() {
+  if (jeuxAffiches) return;
+  jeuxAffiches = true;
+  // mes jeux, depuis la liste du site
+  let mes = [];
+  try {
+    const d = await (await fetch('../data/projets.json', { cache: 'no-cache' })).json();
+    mes = (d.projets || [])
+      .filter((p) => p.patch?.format === 'jeu' && !p.patch.externe && /mega ?drive|genesis/i.test(p.plateforme || ''))
+      .sort((a, b) => (a.ordre ?? 99) - (b.ordre ?? 99));
+  } catch { /* hors ligne */ }
+  const liste = $('#liste-mes-jeux');
+  liste.replaceChildren(...mes.map((p) => {
+    const images = Array.isArray(p.images) ? p.images : [];
+    return carteJeu({
+      titre: p.titre,
+      infos: ['par Player Time', p.sous_titre, p.version || p.statut].filter(Boolean).join(' · '),
+      image: images[0]?.src ? '../' + images[0].src : '',
+      fichier: '../' + p.patch.fichier + (p.revision ? '?r=' + p.revision : ''),
+      page: '../jeu/' + encodeURIComponent(p.id) + '/',
+    });
+  }));
+  if (!mes.length) liste.innerHTML = '<p class="aide">Liste indisponible (pas de connexion ?).</p>';
+  // jeux d'autres créateurs
+  try {
+    const d = await (await fetch('jeux-gratuits.json', { cache: 'no-cache' })).json();
+    const autres = (d.jeux || []).filter((j) => j.titre && j.fichier);
+    if (autres.length) {
+      $('#liste-autres').replaceChildren(...autres.map((j) => carteJeu({
+        titre: j.titre,
+        infos: ['par ' + (j.auteur || '?'), j.sous_titre, j.licence].filter(Boolean).join(' · '),
+        image: j.image ? '../' + j.image : '',
+        fichier: '../' + j.fichier,
+        page: j.page, lienPage: 'Site de l\'auteur',
+      })));
+      $('#section-autres').hidden = false;
+    }
+  } catch { /* pas de liste */ }
+}
+
 // ------------------------------------------------------------------ manette tactile
 const TOUCHES = Object.fromEntries(BLASTEM_CONTROLS.map((c) => [c.id, c]));
 const CODES_CLAVIER = { Enter: 13, ArrowLeft: 37, ArrowUp: 38, ArrowRight: 39, ArrowDown: 40 };
@@ -1057,6 +1133,8 @@ async function demarrer() {
   });
   afficherBios();
 
+  for (const b of document.querySelectorAll('.onglet')) b.addEventListener('click', () => choisirOnglet(b.dataset.onglet));
+  if (new URLSearchParams(location.search).get('onglet') === 'gratuits') choisirOnglet('gratuits');
   for (const b of document.querySelectorAll('[data-action]')) {
     b.addEventListener('click', () => action(b.dataset.action));
   }

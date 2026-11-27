@@ -1,0 +1,13 @@
+{
+  "_mode_d_emploi": "Jeux d'autres créateurs affichés dans l'onglet « Jeux gratuits » de l'émulateur. N'ajoute un jeu QUE si son auteur autorise la diffusion gratuite (accord écrit ou licence qui le permet). Mets la ROM dans site\\jeux\\ et une capture dans site\\images\\, puis ajoute un bloc comme l'exemple ci-dessous dans la liste \"jeux\". Chemins relatifs à la racine du site.",
+  "_exemple": {
+    "titre": "Nom du jeu",
+    "auteur": "Nom de l'auteur",
+    "sous_titre": "Plateforme / action…",
+    "licence": "Diffusion autorisée par l'auteur",
+    "fichier": "jeux/nom-du-jeu.bin",
+    "image": "images/nom-du-jeu/titre.png",
+    "page": "https://site-de-l-auteur.example/"
+  },
+  "jeux": []
+}

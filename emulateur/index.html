@@ -24,6 +24,23 @@
     <h1>Émulateur Mega Drive</h1>
     <p class="sous-titre">Cœur <strong>BlastEm 1.0</strong> · pensé pour le téléphone</p>
 
+    <nav class="onglets" role="tablist">
+      <button type="button" role="tab" class="onglet actif" data-onglet="jouer">🎮 Jouer</button>
+      <button type="button" role="tab" class="onglet" data-onglet="gratuits">⭐ Jeux gratuits</button>
+    </nav>
+
+    <div id="onglet-gratuits" class="vue-onglet" hidden>
+      <p class="aide">Des jeux Mega Drive gratuits, à lancer d'un toucher : rien à télécharger toi-même.</p>
+      <h2 class="titre-section">Mes jeux</h2>
+      <div id="liste-mes-jeux" class="cartes"><p class="aide">Chargement…</p></div>
+      <div id="section-autres" hidden>
+        <h2 class="titre-section">Jeux d'autres créateurs</h2>
+        <div id="liste-autres" class="cartes"></div>
+      </div>
+      <p class="aide">Pour les jeux du commerce : utilise ta propre cartouche copiée avec un lecteur USB, ou les compilations officielles de Sega.</p>
+    </div>
+
+    <div id="onglet-jouer" class="vue-onglet">
     <div id="coeur" class="coeur">
       <div class="barre"><div id="coeur-barre"></div></div>
       <p id="coeur-texte">Préparation du cœur…</p>
@@ -105,6 +122,8 @@
         <p id="bios-etat" class="aide"></p>
       </div>
     </details>
+
+    </div><!-- fin onglet-jouer -->
 
     <p id="installer" class="aide" hidden>
       <button type="button" class="bouton petit" id="btn-installer">Installer sur l'écran d'accueil</button>
@@ -192,6 +211,6 @@
   </div>
 </section>
 
-<script type="module" src="emu.js?v=0.9"></script>
+<script type="module" src="emu.js?v=1.0"></script>
 </body>
 </html>

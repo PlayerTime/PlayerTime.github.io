@@ -3179,10 +3179,10 @@
    "rom_attendue": "Shining Force CD (USA) - image redump .bin/.cue",
    "nom_sortie": "Shining Force CD (FR).bin",
    "format": "sfcd",
-   "version": "SFCDv32",
-   "date_version": "25/11/2026",
+   "version": "SFCDv33",
+   "date_version": "27/11/2026",
    "nouveautes": [
-    "Le générique de fin du livre 1 affiche maintenant le crédit « Traduction française / Player Time »."
+    "Mode debug : en combat, C maintenu + START permet de choisir le combat suivant ; l'équipe garde ses niveaux et ses objets."
    ],
    "id": "shining-force-cd",
    "notes": [
@@ -3251,6 +3251,9 @@
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "SFCDv33 (27/11/2026) : Mode debug : en combat, C maintenu + START permet de choisir le combat suivant ; l'équipe garde ses niveaux et ses objets"
+      },
       {
        "puce": "SFCDv32 (25/11/2026) : Le générique de fin du livre 1 affiche maintenant le crédit « Traduction française / Player Time »"
       },
@@ -3396,51 +3399,51 @@
    "patch": {
     "fichier": "patchs/shining-force-cd.patch",
     "format": "sfcd",
-    "taille_patch": 1192984,
+    "taille_patch": 1193024,
     "variantes": [
      {
       "console": "Sega CD américain",
       "fichier": "patchs/shining-force-cd.patch",
-      "taille_patch": 1192984
+      "taille_patch": 1193024
      },
      {
       "console": "Mega-CD européen",
       "fichier": "patchs/shining-force-cd-2.patch",
-      "taille_patch": 1194665
+      "taille_patch": 1194715
      },
      {
       "console": "Mega-CD japonais",
       "fichier": "patchs/shining-force-cd-3.patch",
-      "taille_patch": 1193549
+      "taille_patch": 1193602
      }
     ],
     "bps_megacd": [
      {
       "console": "Sega CD américain",
       "bps_image": "patchs/shining-force-cd-image.bps",
-      "taille_image": 1980142,
+      "taille_image": 1980250,
       "bps_piste": "patchs/shining-force-cd-piste01.bps",
-      "taille_piste": 1980138
+      "taille_piste": 1980246
      },
      {
       "console": "Mega-CD européen",
       "bps_image": "patchs/shining-force-cd-2-image.bps",
-      "taille_image": 1981302,
+      "taille_image": 1981410,
       "bps_piste": "patchs/shining-force-cd-2-piste01.bps",
-      "taille_piste": 1981298
+      "taille_piste": 1981406
      },
      {
       "console": "Mega-CD japonais",
       "bps_image": "patchs/shining-force-cd-3-image.bps",
-      "taille_image": 1982570,
+      "taille_image": 1982678,
       "bps_piste": "patchs/shining-force-cd-3-piste01.bps",
-      "taille_piste": 1982566
+      "taille_piste": 1982674
      }
     ],
     "crc_piste01": "5339BDB1"
    },
-   "revision": 6,
-   "date_maj": "25/11/2026"
+   "revision": 7,
+   "date_maj": "27/11/2026"
   },
   {
    "ordre": 20,

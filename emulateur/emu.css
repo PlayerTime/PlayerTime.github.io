@@ -248,3 +248,23 @@ body.placement #barre-jeu, body.placement #diag { display: none; }
 .liste-versions li { margin-bottom: 6px; }
 .bios { border-top: 1px solid #e8c46a55; margin-top: 10px; padding-top: 8px; text-align: center; }
 .bios .titre-encart { margin: 0; text-align: center; }
+
+/* ---------- Onglets et jeux gratuits ---------- */
+.onglets { display: flex; gap: 6px; margin: 0 0 12px; }
+.onglet {
+  flex: 1; font: inherit; font-size: .95rem; padding: 8px 6px; cursor: pointer;
+  color: var(--texte-doux); background: #0d123366; border: 2px solid #e8c46a66; border-radius: 8px;
+}
+.onglet.actif { color: #1a1430; background: var(--cadre); border-color: var(--cadre); font-weight: 700; }
+.titre-section { font-size: 1.05rem; color: var(--cadre); margin: 14px 0 6px; }
+.cartes { display: grid; gap: 10px; }
+.carte {
+  display: grid; grid-template-columns: 112px 1fr; gap: 10px; align-items: center;
+  background: #0d123399; border: 2px solid #e8c46a66; border-radius: 8px; padding: 8px;
+}
+.carte img { width: 112px; aspect-ratio: 4 / 3; object-fit: cover; image-rendering: pixelated; border-radius: 4px; background: #000; }
+.carte h3 { margin: 0; font-size: 1rem; color: var(--texte); }
+.carte .infos { margin: 2px 0 6px; font-size: .8rem; color: var(--texte-doux); }
+.carte .actions { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.carte .bouton { display: inline-block; width: auto; padding: 6px 12px; font-size: .9rem; }
+.carte a.petit-lien { font-size: .8rem; }
