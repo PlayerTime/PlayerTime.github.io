@@ -3179,10 +3179,10 @@
    "rom_attendue": "Shining Force CD (USA) - image redump .bin/.cue",
    "nom_sortie": "Shining Force CD (FR).bin",
    "format": "sfcd",
-   "version": "SFCDv33",
+   "version": "SFCDv35",
    "date_version": "27/11/2026",
    "nouveautes": [
-    "Mode debug : en combat, C maintenu + START permet de choisir le combat suivant ; l'équipe garde ses niveaux et ses objets."
+    "Générique des livres 3 et 4 : « Fighting staff » et « Burning staff » traduits (« Équipe de choc », « Équipe en feu »)."
    ],
    "id": "shining-force-cd",
    "notes": [
@@ -3251,6 +3251,12 @@
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "SFCDv35 (27/11/2026) : Générique des livres 3 et 4 : « Fighting staff » et « Burning staff » traduits (« Équipe de choc », « Équipe en feu »)"
+      },
+      {
+       "puce": "SFCDv34 (27/11/2026) : Fin du livre 3 : la voix de la bibliothécaire est maintenant sous-titrée en français (absent du jeu d'origine)"
+      },
       {
        "puce": "SFCDv33 (27/11/2026) : Mode debug : en combat, C maintenu + START permet de choisir le combat suivant ; l'équipe garde ses niveaux et ses objets"
       },
@@ -3394,55 +3400,59 @@
     {
      "src": "images/shining-force-cd/10_generique_livre1.png",
      "legende": "Le générique de fin du livre 1, avec le crédit de la traduction"
+    },
+    {
+     "src": "images/shining-force-cd/11_fin_livre3_sous_titres.png",
+     "legende": "Fin du livre 3 : la voix de la bibliothécaire, sous-titrée en français"
     }
    ],
    "patch": {
     "fichier": "patchs/shining-force-cd.patch",
     "format": "sfcd",
-    "taille_patch": 1193024,
+    "taille_patch": 1194309,
     "variantes": [
      {
       "console": "Sega CD américain",
       "fichier": "patchs/shining-force-cd.patch",
-      "taille_patch": 1193024
+      "taille_patch": 1194309
      },
      {
       "console": "Mega-CD européen",
       "fichier": "patchs/shining-force-cd-2.patch",
-      "taille_patch": 1194715
+      "taille_patch": 1196043
      },
      {
       "console": "Mega-CD japonais",
       "fichier": "patchs/shining-force-cd-3.patch",
-      "taille_patch": 1193602
+      "taille_patch": 1194807
      }
     ],
     "bps_megacd": [
      {
       "console": "Sega CD américain",
       "bps_image": "patchs/shining-force-cd-image.bps",
-      "taille_image": 1980250,
+      "taille_image": 1985191,
       "bps_piste": "patchs/shining-force-cd-piste01.bps",
-      "taille_piste": 1980246
+      "taille_piste": 1985187
      },
      {
       "console": "Mega-CD européen",
       "bps_image": "patchs/shining-force-cd-2-image.bps",
-      "taille_image": 1981410,
+      "taille_image": 1986351,
       "bps_piste": "patchs/shining-force-cd-2-piste01.bps",
-      "taille_piste": 1981406
+      "taille_piste": 1986347
      },
      {
       "console": "Mega-CD japonais",
       "bps_image": "patchs/shining-force-cd-3-image.bps",
-      "taille_image": 1982678,
+      "taille_image": 1987619,
       "bps_piste": "patchs/shining-force-cd-3-piste01.bps",
-      "taille_piste": 1982674
+      "taille_piste": 1987615
      }
     ],
     "crc_piste01": "5339BDB1"
    },
-   "revision": 7,
+   "revision": 8,
    "date_maj": "27/11/2026"
   },
   {
