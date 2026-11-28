@@ -2338,6 +2338,119 @@
   {
    "ordre": 20,
    "categorie": "Traductions et améliorations",
+   "titre": "Bahamut Senki",
+   "sous_titre": "Traduction française",
+   "plateforme": "Mega Drive",
+   "statut": "Version de test",
+   "resume": "Traduction française complète du jeu de stratégie de Sega, sorti seulement au Japon : conquérez le continent Bahamut à la tête d'un maître, de ses armées et de ses monstres. Intro, carte, combats, fins et générique en français, ROM « world ».",
+   "couleur": "#b08a3c",
+   "rom_attendue": "Bahamut Senki (Japan)",
+   "nom_sortie": "Bahamut Senki (FR).bin",
+   "format": "bps",
+   "version": "BSv01",
+   "date_version": "28/11/2026",
+   "nouveautes": [
+    "Première version complète en français, de l'écran titre au générique de fin.",
+    "Version de test : vos retours sont les bienvenus."
+   ],
+   "id": "bahamut-senki",
+   "notes": [
+    {
+     "titre": "",
+     "blocs": [
+      {
+       "texte": "Bahamut Senki n'est jamais sorti hors du Japon. Cette traduction est faite directement depuis le japonais, avec une police française à accents ajoutée au jeu."
+      }
+     ]
+    },
+    {
+     "titre": "Ce qui est traduit",
+     "blocs": [
+      {
+       "puce": "Écran titre redessiné, menus, options, test son avec les titres des 25 musiques."
+      },
+      {
+       "puce": "Introduction complète, préparation de la partie et scénarios."
+      },
+      {
+       "puce": "Carte : tours, phases, menus, conseiller, événements, noms des 40 régions, diplomatie et ordres."
+      },
+      {
+       "puce": "Combats : ordres, terrains, états, messages et magie."
+      },
+      {
+       "puce": "Noms des maîtres, des unités et des monstres."
+      },
+      {
+       "puce": "Les neuf fins et le générique de fin."
+      }
+     ]
+    },
+    {
+     "titre": "À savoir",
+     "blocs": [
+      {
+       "puce": "ROM « world » : elle démarre sur toutes les Mega Drive, la Mega Drive Mini et la Mega SG."
+      },
+      {
+       "puce": "En combat, les cases des terrains et des ordres ne font que 4 lettres : les mots sont courts (Pré, Dune, Coup, Fuir…)."
+      }
+     ]
+    },
+    {
+     "titre": "Historique des versions",
+     "blocs": [
+      {
+       "puce": "BSv01 (28/11/2026) : Première version complète en français, de l'écran titre au générique de fin ; Version de test : vos retours sont les bienvenus"
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "images/bahamut-senki/01_final_01_titre.png",
+     "legende": "Écran titre redessiné : BAHAMUT – Chroniques de guerre"
+    },
+    {
+     "src": "images/bahamut-senki/02_final_02_intro.png",
+     "legende": "L'introduction, traduite depuis le japonais"
+    },
+    {
+     "src": "images/bahamut-senki/03_final_03_intro_suite.png",
+     "legende": "Les maîtres se dressent pour le continent"
+    },
+    {
+     "src": "images/bahamut-senki/04_final_04_carte_region.png",
+     "legende": "La carte et la fiche d'une région"
+    },
+    {
+     "src": "images/bahamut-senki/05_final_05_combat.png",
+     "legende": "Un combat sur la grille d'hexagones"
+    },
+    {
+     "src": "images/bahamut-senki/06_final_06_fin.png",
+     "legende": "Une des neuf fins"
+    },
+    {
+     "src": "images/bahamut-senki/07_final_07_generique.png",
+     "legende": "Le générique de fin"
+    }
+   ],
+   "patch": {
+    "fichier": "patchs/bahamut-senki.bps",
+    "format": "bps",
+    "crc_source": "B1E268DA",
+    "taille_source": 524288,
+    "crc_sortie": "D42B152B",
+    "taille_sortie": 1048576,
+    "taille_patch": 31708
+   },
+   "revision": 1,
+   "date_maj": "28/11/2026"
+  },
+  {
+   "ordre": 20,
+   "categorie": "Traductions et améliorations",
    "titre": "Dune : La Bataille pour Arrakis",
    "sous_titre": "Traduction française",
    "plateforme": "Mega Drive",
@@ -3185,10 +3298,11 @@
    "rom_attendue": "Shining Force CD (USA) - image redump .bin/.cue",
    "nom_sortie": "Shining Force CD (FR).bin",
    "format": "sfcd",
-   "version": "SFCDv35",
-   "date_version": "27/11/2026",
+   "version": "SFCDv39",
+   "date_version": "28/11/2026",
    "nouveautes": [
-    "Générique des livres 3 et 4 : « Fighting staff » et « Burning staff » traduits (« Équipe de choc », « Équipe en feu »)."
+    "Fin du livre 3 : la petite bibliothécaire parle maintenant en français. Toutes les scènes doublées du jeu sont en VF, en qualité CD.",
+    "Comme pour la v38, utiliser le nouveau patcher fourni et charger le .cue qu'il crée (4 pistes audio ajoutées)."
    ],
    "id": "shining-force-cd",
    "notes": [
@@ -3257,6 +3371,18 @@
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "SFCDv39 (28/11/2026) : Fin du livre 3 : la petite bibliothécaire parle maintenant en français. Toutes les scènes doublées du jeu sont en VF, en qualité CD ; Comme pour la v38, utiliser le nouveau patcher fourni et charger le .cue qu'il crée (4 pistes audio ajoutées)"
+      },
+      {
+       "puce": "SFCDv38 (28/11/2026) : Intro et fins des livres 1 et 2 doublées en français (voix de synthèse), en qualité CD, calées sur les sous-titres ; Le patch ajoute 3 pistes audio au disque : il faut utiliser le nouveau patcher fourni et charger le .cue qu'il crée ; Fin du livre 3 : musique seule et sous-titres, en attendant une voix féminine"
+      },
+      {
+       "puce": "SFCDv37 (28/11/2026) : Textes de l'intro et des fins des livres 1, 2 et 3 plus lisibles : un contour noir entoure maintenant chaque lettre, le texte se détache sur tous les dessins"
+      },
+      {
+       "puce": "SFCDv36 (28/11/2026) : Intro et fins des livres 1, 2 et 3 : la musique est maintenant jouée en qualité CD (pistes audio d'origine) au lieu du son 8 bits qui grésillait ; La voix anglaise de ces scènes est retirée ; les sous-titres français restent affichés. Des voix françaises sont prévues plus tard"
+      },
       {
        "puce": "SFCDv35 (27/11/2026) : Générique des livres 3 et 4 : « Fighting staff » et « Burning staff » traduits (« Équipe de choc », « Équipe en feu »)"
       },
@@ -3373,7 +3499,7 @@
     },
     {
      "src": "images/shining-force-cd/02_intro.png",
-     "legende": "L'introduction, retraduite depuis le japonais"
+     "legende": "L'introduction, retraduite depuis le japonais (texte avec contour noir)"
     },
     {
      "src": "images/shining-force-cd/03_bibliothecaire.png",
@@ -3415,51 +3541,27 @@
    "patch": {
     "fichier": "patchs/shining-force-cd.patch",
     "format": "sfcd",
-    "taille_patch": 1194309,
+    "taille_patch": 23554586,
     "variantes": [
      {
       "console": "Sega CD américain",
       "fichier": "patchs/shining-force-cd.patch",
-      "taille_patch": 1194309
+      "taille_patch": 23554586
      },
      {
       "console": "Mega-CD européen",
       "fichier": "patchs/shining-force-cd-2.patch",
-      "taille_patch": 1196043
+      "taille_patch": 23556268
      },
      {
       "console": "Mega-CD japonais",
       "fichier": "patchs/shining-force-cd-3.patch",
-      "taille_patch": 1194807
+      "taille_patch": 23555159
      }
-    ],
-    "bps_megacd": [
-     {
-      "console": "Sega CD américain",
-      "bps_image": "patchs/shining-force-cd-image.bps",
-      "taille_image": 1985191,
-      "bps_piste": "patchs/shining-force-cd-piste01.bps",
-      "taille_piste": 1985187
-     },
-     {
-      "console": "Mega-CD européen",
-      "bps_image": "patchs/shining-force-cd-2-image.bps",
-      "taille_image": 1986351,
-      "bps_piste": "patchs/shining-force-cd-2-piste01.bps",
-      "taille_piste": 1986347
-     },
-     {
-      "console": "Mega-CD japonais",
-      "bps_image": "patchs/shining-force-cd-3-image.bps",
-      "taille_image": 1987619,
-      "bps_piste": "patchs/shining-force-cd-3-piste01.bps",
-      "taille_piste": 1987615
-     }
-    ],
-    "crc_piste01": "5339BDB1"
+    ]
    },
-   "revision": 8,
-   "date_maj": "27/11/2026"
+   "revision": 9,
+   "date_maj": "28/11/2026"
   },
   {
    "ordre": 20,
@@ -3889,10 +3991,10 @@
    "rom_attendue": "Shining in the Darkness (USA, Europe)",
    "nom_sortie": "Shining in the Darkness (FR).bin",
    "format": "bps",
-   "version": "SITDv93",
-   "date_version": "25/11/2026",
+   "version": "SITDv99",
+   "date_version": "28/11/2026",
    "nouveautes": [
-    "Le vieux sage propose la difficulté avec ses bulles de pensée (comme le choix de la vitesse des messages) : Très facile, Facile, Normal ou Difficile."
+    "Carte : les trous et les trappes cachées ne comptent plus dans le pourcentage, plus besoin d'y tomber pour avoir 100 %."
    ],
    "id": "shining-in-the-darkness",
    "notes": [
@@ -3961,6 +4063,24 @@
     {
      "titre": "Historique des versions",
      "blocs": [
+      {
+       "puce": "SITDv99 (28/11/2026) : Carte : les trous et les trappes cachées ne comptent plus dans le pourcentage, plus besoin d'y tomber pour avoir 100 %"
+      },
+      {
+       "puce": "SITDv98 (27/11/2026) : À l'étage 5 du labyrinthe, la salle du dernier boss ne compte plus dans le pourcentage de la carte : on peut atteindre 100 %"
+      },
+      {
+       "puce": "SITDv97 (27/11/2026) : La fontaine multicolore est maintenant indiquée sur la mini-carte et la grande carte"
+      },
+      {
+       "puce": "SITDv96 (27/11/2026) : Le Chevalier noir revient dans le labyrinthe ultime avec de nouveaux dialogues ; vaincu, il laisse la Lame obscure"
+      },
+      {
+       "puce": "SITDv95 (27/11/2026) : Le bestiaire indique dans quels coffres se cachent le Mange-main, le Spectre-trésor et le Coffre piégé"
+      },
+      {
+       "puce": "SITDv94 (27/11/2026) : Les portes à sens unique du labyrinthe apparaissent maintenant sur la mini-carte et la grande carte"
+      },
       {
        "puce": "SITDv93 (25/11/2026) : Le vieux sage propose la difficulté avec ses bulles de pensée (comme le choix de la vitesse des messages) : Très facile, Facile, Normal ou Difficile"
       },
@@ -4436,6 +4556,14 @@
     {
      "src": "images/shining-in-the-darkness/48_sitd_v93_difficulte.png",
      "legende": "Choix de la difficulté dans les bulles du vieux sage"
+    },
+    {
+     "src": "images/shining-in-the-darkness/49_sitd_v96_chevalier.png",
+     "legende": "Le Chevalier noir revenu : son armure vide parle"
+    },
+    {
+     "src": "images/shining-in-the-darkness/50_sitd_v97_fontaine.png",
+     "legende": "Fontaine multicolore sur la mini-carte"
     }
    ],
    "patch": {
@@ -4443,12 +4571,12 @@
     "format": "bps",
     "crc_source": "4D2785BC",
     "taille_source": 1048576,
-    "crc_sortie": "74DAFD65",
+    "crc_sortie": "B1C82177",
     "taille_sortie": 2097152,
-    "taille_patch": 370402
+    "taille_patch": 371161
    },
-   "revision": 5,
-   "date_maj": "25/11/2026"
+   "revision": 6,
+   "date_maj": "28/11/2026"
   },
   {
    "ordre": 20,
