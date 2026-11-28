@@ -2406,6 +2406,7 @@
      ]
     }
    ],
+   "avancement": 88,
    "images": [
     {
      "src": "images/bahamut-senki/01_final_01_titre.png",
@@ -3292,7 +3293,7 @@
    "titre": "Shining Force CD",
    "sous_titre": "Traduction française",
    "plateforme": "Mega CD",
-   "statut": "Version de test",
+   "statut": "Terminée",
    "resume": "Traduction française complète du tactical-RPG de Sonic! Software Planning sur Mega CD, retraduite depuis la version japonaise : dialogues, narration, menus, objets, sorts, classes, ennemis et génériques, avec une police accentuée.",
    "couleur": "#3a5fc8",
    "rom_attendue": "Shining Force CD (USA) - image redump .bin/.cue",
@@ -3491,7 +3492,7 @@
      ]
     }
    ],
-   "avancement": 95,
+   "avancement": 100,
    "images": [
     {
      "src": "images/shining-force-cd/01_titre.png",
